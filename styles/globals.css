@@ -1,5 +1,13 @@
+@font-face {
+  font-family: 'Namu';
+  font-style: normal;
+  font-weight: normal;
+  src: url('namu-pro.ttf') format('truetype');
+}
+
 :root {
   --font-family: 'Inter', sans-serif;
+  --font-family-title: 'Namu', sans-serif;
 
   --pink-primary: #ff666f;
   --pink-secondaty: #fb838c;
