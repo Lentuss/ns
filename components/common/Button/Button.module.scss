@@ -1,62 +1,52 @@
 .button {
-    border-radius: 5px;
-    border-width: 1px;
-    border-style: solid;
+  padding: 16px 26px;
 
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 14px;
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--black-900);
 
-    text-align: center;
+  border-radius: 50%;
 
-    padding: 10px;
-
-    cursor: pointer;
-
-    transition: background-color 0.2s ease, color 0.2s ease;
-
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .button-primary {
-    background-color: var(--primary);
-    border-color: var(--white);
-    color: var(--white);
-}
+  background-color: var(--pink-primary);
+  color: var(--white);
 
-.button-primary:hover {
-    background-color: var(--primary-hover);
+  &:hover {
+    background-color: var(--pink-secondary);
+  }
 }
 
 .button-ghost {
-    background-color: transparent;
-    border-color: var(--gray-light);
-    color: var(--black);
+  background-color: transparent;
+  border-color: var(--gray-light);
+  color: var(--black);
 }
 
 .button-ghost:hover {
-    background-color: var(--black);
-    color: var(--white);
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .button-ghost:hover .button__chevron {
-    fill: var(--white);
+  fill: var(--white);
 }
 
 .button__chevron {
-    transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .button__chevron--down {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .button-primary .button__chevron {
-    fill: var(--white);
+  fill: var(--white);
 }
 
 .button-ghost .button__chevron {
-    fill: var(--black);
+  fill: var(--black);
 }
