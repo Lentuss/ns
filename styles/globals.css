@@ -1,0 +1,32 @@
+:root {
+  --font-family: 'Inter', sans-serif;
+
+  --pink-primary: #ff666f;
+  --pink-secondaty: #fb838c;
+
+  --cyan-primary: #6cc1bb;
+  --cyan-secondaty: #89eee7;
+
+  --white: #ffffff;
+
+  --black-100: #f3f3f3;
+  --black-150: #ececec;
+  --black-200: #e6e6e6;
+  --black-400: #cdcdcd;
+  --black-700: #777777;
+  --black-800: #515151;
+  --black-900: #2c2c2c;
+  --black-1000: #070707;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 16px;
+  color: var(--black-1000);
+}

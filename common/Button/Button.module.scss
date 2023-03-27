@@ -1,0 +1,62 @@
+.button {
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+
+    text-align: center;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.button-primary {
+    background-color: var(--primary);
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.button-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.button-ghost {
+    background-color: transparent;
+    border-color: var(--gray-light);
+    color: var(--black);
+}
+
+.button-ghost:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.button-ghost:hover .button__chevron {
+    fill: var(--white);
+}
+
+.button__chevron {
+    transition: transform 0.2s ease;
+}
+
+.button__chevron--down {
+    transform: rotate(90deg);
+}
+
+.button-primary .button__chevron {
+    fill: var(--white);
+}
+
+.button-ghost .button__chevron {
+    fill: var(--black);
+}

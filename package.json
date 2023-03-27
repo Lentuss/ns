@@ -1,0 +1,30 @@
+{
+  "name": "new-staff",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "svgmin": "svgo ./assets/icons/ --config svgo.config.js",
+    "sprite": "svg-sprite -s --svg-namespace-classnames=true --symbol-dest assets/icons --symbol-sprite _sprite.svg assets/icons/*.svg --symbol-render-scss true --symbol-render-scss-dest ../../common/Icon/Icon.scss --symbol-render-scss-template styles/_sprite_template.scss "
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.3",
+    "@svgr/webpack": "^7.0.0",
+    "axios": "^1.3.4",
+    "classnames": "^2.3.2",
+    "date-fns": "^2.29.3",
+    "next": "13.2.4",
+    "prop-types": "^15.8.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.60.0"
+  },
+  "devDependencies": {
+    "svg-sprite": "^2.0.2",
+    "svgmin": "^0.1.0",
+    "svgo": "^3.0.2"
+  }
+}
