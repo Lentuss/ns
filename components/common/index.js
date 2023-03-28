@@ -5,3 +5,4 @@ export * from './Button/ButtonOutline/ButtonOutline';
 export * from './Button/ButtonPrimary/ButtonPrimary';
 export * from './Button/ButtonText/ButtonText';
 export * from './Wrapper/Wrapper';
+export * from './Chip/Chip';

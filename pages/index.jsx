@@ -1,4 +1,4 @@
-import { ButtonOutline, Wrapper } from '@/components/common';
+import { ButtonOutline, Wrapper, Chip } from '@/components/common';
 import { widthLayout } from '@/layout/Layout';
 
 import TestIcon from '@/assets/icons/heart.svg';
@@ -10,6 +10,7 @@ function Home() {
         HOME
         <ButtonOutline>ButtonOutline</ButtonOutline>
         <TestIcon />
+        <Chip className='active' name='hello' count={5} />
       </Wrapper>
     </>
   );
