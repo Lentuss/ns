@@ -6,7 +6,7 @@ import { Button } from '../..';
 import s from './ButtonText.module.scss';
 
 export const ButtonText = (props) => {
-  const { children, className, appearance = 'pink', ...buttonProps } = props;
+  const { children, className, appearance = 'black', ...buttonProps } = props;
 
   return (
     <Button
@@ -19,7 +19,7 @@ export const ButtonText = (props) => {
 };
 
 ButtonText.propTypes = {
-  classNames: PropTypes.string,
-  appearance: PropTypes.oneOf(['black', 'cyan', 'white', 'grey']),
+  className: PropTypes.string,
+  appearance: PropTypes.oneOf(['black', 'pink', 'white']),
   children: PropTypes.node.isRequired
 };

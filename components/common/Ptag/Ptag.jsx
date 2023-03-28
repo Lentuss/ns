@@ -15,7 +15,7 @@ export const Ptag = memo((props) => {
 });
 
 Ptag.propTypes = {
-  classNames: PropTypes.string,
+  className: PropTypes.string,
   tag: PropTypes.oneOf(['m', 's', 'l']),
   children: PropTypes.node.isRequired
 };

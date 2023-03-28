@@ -19,7 +19,7 @@ export const ButtonOutline = (props) => {
 };
 
 ButtonOutline.propTypes = {
-  classNames: PropTypes.string,
+  className: PropTypes.string,
   appearance: PropTypes.oneOf(['black', 'white']),
   children: PropTypes.node.isRequired
 };
