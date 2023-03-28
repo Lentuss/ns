@@ -1,0 +1,35 @@
+.buttonText {
+  background-color: transparent;
+
+  padding: 0;
+
+  &:hover:enabled {
+    text-decoration: underline;
+  }
+
+  &:disabled {
+    color: var(--black-400);
+  }
+}
+
+.text-black {
+  &:hover:enabled {
+    color: var(--pink-primary);
+  }
+}
+
+.text-pink {
+  color: var(--pink-primary);
+}
+
+.text-white {
+  color: var(--white);
+
+  &:hover:enabled {
+    color: var(--cyan-primary);
+  }
+
+  &:disabled {
+    color: var(--black-700);
+  }
+}

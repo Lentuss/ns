@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "svgmin": "svgo ./assets/icons/ --config svgo.config.js",
-    "sprite": "svg-sprite -s --svg-namespace-classnames=true --symbol-dest assets/icons --symbol-sprite _sprite.svg assets/icons/*.svg --symbol-render-scss true --symbol-render-scss-dest ../../common/Icon/Icon.scss --symbol-render-scss-template styles/_sprite_template.scss "
+    "svgmin": "svgo ./assets/icons/ --config svgo.config.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
