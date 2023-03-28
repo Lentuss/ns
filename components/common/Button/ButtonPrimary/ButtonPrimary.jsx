@@ -19,7 +19,7 @@ export const ButtonPrimary = (props) => {
 };
 
 ButtonPrimary.propTypes = {
-  classNames: PropTypes.string,
+  className: PropTypes.string,
   appearance: PropTypes.oneOf(['pink', 'cyan', 'white', 'grey']),
   children: PropTypes.node.isRequired
 };

@@ -18,6 +18,8 @@ export const Button = memo((props) => {
 
   const Tag = href ? Link : 'button';
 
+  const buttonProps = {};
+
   return (
     <Tag
       type={type}
@@ -33,7 +35,7 @@ export const Button = memo((props) => {
 });
 
 Button.propTypes = {
-  classNames: PropTypes.string,
+  className: PropTypes.string,
   href: PropTypes.string,
   children: PropTypes.node.isRequired,
   disabled: PropTypes.bool

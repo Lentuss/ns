@@ -8,7 +8,7 @@ export const Htag = memo((props) => {
   const { className, tag: Tag = 'h1', children, ...hProps } = props;
 
   return (
-    <Tag className={cx(s[`Htag-${Tag}`], className)} {...hProps}>
+    <Tag className={cx(s.Htag, s[`Htag-${Tag}`], className)} {...hProps}>
       {children}
     </Tag>
   );
