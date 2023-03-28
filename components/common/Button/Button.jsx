@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 import s from './Button.module.scss';
 
@@ -9,35 +10,31 @@ export const Button = memo((props) => {
     children,
     className,
     type = 'button',
-    appearance = 'primary-pink',
-    arrow = 'none',
     onClick,
-    ...buttonProps
+    href,
+    disabled = false,
+    ...bProps
   } = props;
+
+  const Tag = href ? Link : 'button';
+
   return (
-    <button
+    <Tag
       type={type}
-      className={cx(s.button, s[`button-${appearance}`], className)}
+      className={cx(s.button, className)}
       onClick={onClick}
-      {...buttonProps}
+      href={href}
+      disabled={disabled}
+      {...bProps}
     >
       {children}
-    </button>
+    </Tag>
   );
 });
 
 Button.propTypes = {
   classNames: PropTypes.string,
-  appearance: PropTypes.oneOf([
-    'primary-pink',
-    'primary-cyan',
-    'primary-white',
-    'secondary',
-    'outline-black',
-    'outline-white',
-    'text-black',
-    'text-pink',
-    'text-white'
-  ]),
-  children: PropTypes.node.isRequired
+  href: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  disabled: PropTypes.bool
 };

@@ -4,49 +4,17 @@
   font-family: 'Inter';
   font-weight: 400;
   font-size: 16px;
-  color: var(--black-900);
+  color: var(--black-1000);
 
-  border-radius: 50%;
+  border-radius: 100px;
 
   transition: color 0.2s ease, background-color 0.2s ease;
-}
 
-.button-primary {
-  background-color: var(--pink-primary);
-  color: var(--white);
+  display: inline-block;
 
-  &:hover {
-    background-color: var(--pink-secondary);
+  &:disabled {
+    background-color: var(--black-150);
+
+    color: var(--black-500);
   }
-}
-
-.button-ghost {
-  background-color: transparent;
-  border-color: var(--gray-light);
-  color: var(--black);
-}
-
-.button-ghost:hover {
-  background-color: var(--black);
-  color: var(--white);
-}
-
-.button-ghost:hover .button__chevron {
-  fill: var(--white);
-}
-
-.button__chevron {
-  transition: transform 0.2s ease;
-}
-
-.button__chevron--down {
-  transform: rotate(90deg);
-}
-
-.button-primary .button__chevron {
-  fill: var(--white);
-}
-
-.button-ghost .button__chevron {
-  fill: var(--black);
 }

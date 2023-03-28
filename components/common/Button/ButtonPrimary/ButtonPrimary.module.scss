@@ -1,0 +1,42 @@
+.primary-pink {
+  background-color: var(--pink-primary);
+  color: var(--white);
+
+  &:hover:enabled {
+    background-color: var(--pink-secondary);
+  }
+}
+
+.primary-cyan {
+  background-color: var(--cyan-primary);
+  color: var(--black-900);
+
+  &:hover:enabled {
+    background-color: var(--cyan-secondary);
+  }
+
+  &:disabled {
+    background-color: var(--black-800);
+
+    color: var(--black-600);
+  }
+}
+
+.primary-white {
+  background-color: var(--white);
+  color: var(--black-1000);
+
+  &:hover:enabled {
+    background-color: var(--black-150);
+  }
+}
+
+.primary-grey {
+  background-color: var(--black-150);
+
+  &:hover:enabled {
+    background-color: var(--pink-primary);
+
+    color: var(--white);
+  }
+}

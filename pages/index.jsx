@@ -1,15 +1,18 @@
-import TestIcon from '@/assets/icons/heart.svg';
-import { Icon } from '@/components/common';
+import { ButtonOutline, Wrapper } from '@/components/common';
+import { widthLayout } from '@/layout/Layout';
 
-export default function Home() {
+import TestIcon from '@/assets/icons/heart.svg';
+
+function Home() {
   return (
     <>
-      <main>
+      <Wrapper>
         HOME
-        <p>TEST TEXT</p>
-        <Icon icon="alert" color="#000" size={15} />
+        <ButtonOutline>ButtonOutline</ButtonOutline>
         <TestIcon />
-      </main>
+      </Wrapper>
     </>
   );
 }
+
+export default widthLayout(Home);
