@@ -1,6 +1,8 @@
+@import '/styles/mixins/css-lock';
+
 .Logo {
-  height: 19px;
-  width: 89px;
+  @include css-lock(16, 19, 320, 1280, height);
+  @include css-lock(76, 89, 320, 1280, width);
 
   transition: fill 50ms ease-in-out;
 

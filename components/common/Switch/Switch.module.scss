@@ -1,0 +1,38 @@
+.Switch {
+  position: relative;
+
+  display: block;
+  height: 24px;
+  width: 44px;
+  padding: 2px;
+
+  background-color: var(--black-200);
+  border-radius: 100px;
+}
+
+.Checkbox {
+  opacity: 0;
+
+  &:checked + .Slider {
+    background-color: var(--pink-primary);
+    transform: translateX(20px);
+
+    transition: background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  }
+}
+
+.Slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: 2;
+
+  display: block;
+  width: 20px;
+  height: 20px;
+
+  background-color: var(--black-400);
+  border-radius: 50%;
+
+  transition: background-color 150ms ease-in-out, transform 150ms ease-in-out;
+}
