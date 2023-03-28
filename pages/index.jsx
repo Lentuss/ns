@@ -1,4 +1,4 @@
-import { ButtonOutline, Htag, Wrapper, Chip } from '@/components/common';
+import { ButtonOutline, Htag, Wrapper, Chip, Logo, Label } from '@/components/common';
 import { widthLayout } from '@/layout/Layout';
 
 import TestIcon from '@/assets/icons/heart.svg';
@@ -8,10 +8,12 @@ function Home() {
     <>
       <Wrapper>
         HOME
+        <Logo />
         <ButtonOutline>ButtonOutline</ButtonOutline>
         <TestIcon />
-        <Chip className='active' name='hello' count={5} />
+        <Chip className='active' name='hello' count={155} />
         <Htag tag="h3">TEST Title</Htag>
+        <Label name='new label' />
       </Wrapper>
     </>
   );
