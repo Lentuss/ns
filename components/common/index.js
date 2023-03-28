@@ -6,3 +6,6 @@ export * from './Button/ButtonPrimary/ButtonPrimary';
 export * from './Button/ButtonText/ButtonText';
 export * from './Wrapper/Wrapper';
 export * from './Select/Select';
+export * from './Chip/Chip';
+export * from './Logo/Logo';
+export * from './Label/Label';

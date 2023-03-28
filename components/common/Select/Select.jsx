@@ -10,13 +10,6 @@ import s from './Select.module.scss';
 //   { value: 'chocolate', label: 'Chocolate', icon?: <Icon /> },
 // ];
 
-const Option = ({ icon, label }) => (
-  <div className={cx({ [s.optionPrimary]: !icon, [s.optionSecondary]: icon })}>
-    {icon && icon}
-    <span className={cx({ [s.optionLabel]: icon })}>{label}</span>
-  </div>
-);
-
 export const Select = (props) => {
   const {
     options,
@@ -27,8 +20,23 @@ export const Select = (props) => {
     errorMsg = 'Error',
     isDisabled = false,
     placeholder = 'Select',
+    isLangMode = false,
+    isSearchable = true,
     ...sProps
   } = props;
+
+  const Option = ({ icon, label }) => (
+    <div
+      className={cx({
+        [s.optionPrimary]: !isLangMode,
+        [s.optionSecondary]: isLangMode
+      })}
+    >
+      {icon && icon}
+      <span className={cx({ [s.optionLabel]: isLangMode })}>{label}</span>
+    </div>
+  );
+
   return (
     <div
       className={cx(s.selectWrapper, { [s.disabled]: isDisabled }, className)}
@@ -40,12 +48,14 @@ export const Select = (props) => {
         placeholder={placeholder}
         defaultMenuIsOpen
         formatOptionLabel={Option}
+        isSearchable={isSearchable}
         styles={{
           control: (baseStyles, state) => ({
             ...baseStyles,
             borderRadius: 8,
-            padding: '10px 16px',
-            backgroundColor: '#E6E6E6',
+            padding: isLangMode ? '0' : '10px 16px',
+            backgroundColor: isLangMode ? 'transparent' : '#E6E6E6',
+            borderWidth: isLangMode ? 0 : 1,
             borderColor: isError ? '#FF666F' : '#E6E6E6',
             cursor: 'pointer',
             boxShadow: 'none',
@@ -106,5 +116,7 @@ Select.propTypes = {
   isError: PropTypes.bool,
   errorMsg: PropTypes.string,
   isDisabled: PropTypes.bool,
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  isLangMode: PropTypes.bool,
+  isSearchable: PropTypes.bool
 };

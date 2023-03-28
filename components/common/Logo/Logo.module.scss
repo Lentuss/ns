@@ -1,0 +1,10 @@
+.Logo {
+  height: 19px;
+  width: 89px;
+
+  transition: fill 50ms ease-in-out;
+
+  &:hover {
+    fill: var(--pink-primary);
+  }
+}
