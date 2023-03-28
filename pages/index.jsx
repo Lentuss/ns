@@ -1,4 +1,13 @@
-import { ButtonOutline, Htag, Select, Wrapper, Chip, Logo, Label, Switch } from '@/components/common';
+import {
+  ButtonOutline,
+  Htag,
+  Select,
+  Wrapper,
+  Chip,
+  Logo,
+  Label,
+  Switch
+} from '@/components/common';
 import { widthLayout } from '@/layout/Layout';
 import { useState } from 'react';
 
@@ -28,7 +37,7 @@ function Home() {
           onChange={setSelectedOption}
         />
         <Label name="new label" />
-        <Switch isChecked={true} />
+        <Switch isChecked={false} />
       </Wrapper>
     </div>
   );

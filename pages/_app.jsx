@@ -1,4 +1,7 @@
 import Head from 'next/head';
+import { Provider } from 'react-redux';
+
+import { store } from '@/store/store';
 
 import '@/styles/globals.css';
 import '@/styles/reset.sass';
@@ -18,7 +21,9 @@ export default function App({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </>
   );
 }

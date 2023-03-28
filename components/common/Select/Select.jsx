@@ -4,6 +4,15 @@ import PropTypes from 'prop-types';
 
 import { Ptag } from '..';
 
+import {
+  black100,
+  black1000,
+  black200,
+  black700,
+  black800,
+  pinkPrimary
+} from '@/utils/const';
+
 import s from './Select.module.scss';
 
 // const options = [
@@ -46,26 +55,27 @@ export const Select = (props) => {
         onChange={onChange}
         options={options}
         placeholder={placeholder}
-        defaultMenuIsOpen
+        // defaultMenuIsOpen
         formatOptionLabel={Option}
         isSearchable={isSearchable}
+        instanceId={placeholder}
         styles={{
           control: (baseStyles, state) => ({
             ...baseStyles,
             borderRadius: 8,
             padding: isLangMode ? '0' : '10px 16px',
-            backgroundColor: isLangMode ? 'transparent' : '#E6E6E6',
+            backgroundColor: isLangMode ? 'transparent' : black200,
             borderWidth: isLangMode ? 0 : 1,
-            borderColor: isError ? '#FF666F' : '#E6E6E6',
+            borderColor: isError ? pinkPrimary : black200,
             cursor: 'pointer',
             boxShadow: 'none',
             '&:hover': {
-              borderColor: '#E6E6E6'
+              borderColor: black200
             }
           }),
           dropdownIndicator: (baseStyles, state) => ({
             ...baseStyles,
-            color: '#515151',
+            color: black800,
             transform: state.isFocused ? 'rotate(0)' : 'rotate(-180deg)',
             transition: 'transform 0.2s ease',
             padding: 0
@@ -80,19 +90,19 @@ export const Select = (props) => {
           }),
           placeholder: (baseStyles, state) => ({
             ...baseStyles,
-            color: state.isFocused ? '#070707' : '#777777'
+            color: state.isFocused ? black1000 : black700
           }),
           input: (baseStyles, state) => ({
             ...baseStyles,
-            color: '#070707'
+            color: black1000
           }),
           option: (baseStyles, state) => ({
             ...baseStyles,
-            backgroundColor: state.isSelected && '#F3F3F3;',
-            color: '#515151',
+            backgroundColor: state.isSelected && black100,
+            color: black800,
             padding: 0,
             '&:hover': {
-              backgroundColor: '#F3F3F3;'
+              backgroundColor: black100
             }
           })
         }}
