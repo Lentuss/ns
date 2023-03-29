@@ -3,8 +3,8 @@ import { Provider } from 'react-redux';
 
 import { store } from '@/store/store';
 
-import '@/styles/globals.css';
 import '@/styles/reset.sass';
+import '@/styles/globals.css';
 
 export default function App({ Component, pageProps }) {
   return (

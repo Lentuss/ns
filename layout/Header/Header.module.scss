@@ -1,0 +1,91 @@
+@import '/styles/mixins/css-lock';
+
+.header {
+  margin-top: 24px;
+
+  @media (max-width: 980px) {
+    margin-top: 0;
+  }
+}
+
+.headerInner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 10px 10px 40px;
+  @include css-lock(20, 40, 1000, 1280, padding-left);
+
+  background: rgba(247, 247, 247, 0.85);
+
+  border: 1px solid var(--black-200);
+  backdrop-filter: blur(8px);
+
+  border-radius: 100px;
+
+  transition: background-color 0.5s ease;
+
+  @media (max-width: 980px) {
+    border-radius: 0;
+
+    margin: 0 -16px;
+    padding: 16px;
+  }
+
+  &.isMenuOpen {
+    background-color: var(--white);
+  }
+}
+
+.headerNav {
+  @include css-lock(24, 65, 1000, 1280, margin-left);
+
+  @media (max-width: 980px) {
+    display: none !important;
+  }
+}
+
+.headerLangSelect {
+  max-width: 120px;
+
+  margin-left: auto;
+
+  flex-shrink: 0;
+
+  @media (max-width: 980px) {
+    display: none;
+  }
+}
+
+.headerButton {
+  padding: 12px 22px;
+
+  @include css-lock(10, 35, 1000, 1280, margin-left);
+
+  flex-shrink: 0;
+
+  @media (max-width: 980px) {
+    display: none;
+  }
+}
+
+.headerMenuButton {
+  display: none;
+
+  @media (max-width: 980px) {
+    display: block;
+
+    margin-left: auto;
+
+    cursor: pointer;
+
+    stroke-width: 2px;
+  }
+}
+
+.crossIcon {
+  stroke: var(--black-500);
+}
+
+.menuIcon {
+  stroke: var(--pink-primary);
+}
