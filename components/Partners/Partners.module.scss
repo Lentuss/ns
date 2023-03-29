@@ -1,0 +1,42 @@
+.partnersInner {
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+
+  @media (max-width: 1023px) {
+    gap: 42px;
+  }
+}
+
+.partnersHeading {
+  display: flex;
+  gap: 15px;
+
+  @media (max-width: 1023px) {
+    flex-direction: column;
+  }
+}
+
+.partnersList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.partnersItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: calc((100% - 125px) / 6);
+  height: auto;
+
+  @media (max-width: 1023px) {
+    width: 143px;
+    height: 143px;
+  }
+
+  @media (max-width: 767px) {
+    width: 90px;
+    height: 90px;
+  }
+}

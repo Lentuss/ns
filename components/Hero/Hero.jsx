@@ -1,11 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import s from './Hero.module.scss';
 
 import { Wrapper, Htag, Ptag, AccentH, Subtitle, ButtonPrimary } from '@/components/common';
 
-export const Hero = props => {
+export const Hero = () => {
     return (
         <div>
             <Wrapper>
@@ -30,4 +29,3 @@ export const Hero = props => {
     )
 }
 
-Hero.propTypes = {}

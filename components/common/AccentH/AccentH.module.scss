@@ -34,7 +34,7 @@
   @include css-lock(41, 116, 320, 1280, height);
 }
 
-.line-companies {
+.line-partners {
   bottom: -8px;
 
   background-image: url(../../../assets/images/svg/accent-lines/l-companies.svg);
@@ -42,7 +42,7 @@
   @include css-lock(3, 10, 320, 1280, height);
 }
 
-.line-partners {
+.line-practicing {
   bottom: -8px;
 
   background-image: url(../../../assets/images/svg/accent-lines/line.svg);

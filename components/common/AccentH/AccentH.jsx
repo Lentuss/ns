@@ -18,6 +18,6 @@ export const AccentH = props => {
 
 AccentH.propTypes = {
     className: PropTypes.string,
-    location: PropTypes.string.isRequired,
+    location: PropTypes.oneOf(['main', 'specialists', 'partners', 'practicing', 'cooperation', 'footer', 'works', 'about', 'contacts']),
     children: PropTypes.node.isRequired
 }

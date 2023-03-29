@@ -1,10 +1,11 @@
 import { widthLayout } from '@/layout/Layout';
-import { Hero } from '@/components'
+import { Hero, Partners } from '@/components'
 
 
 function Home() {
-  return <div style={{ height: '100vh' }}>
+  return <div>
     <Hero />
+    <Partners />
     Home
 
   </div>;
