@@ -5,7 +5,9 @@
 
   height: calc(100vh - 56px);
 
-  position: relative;
+  position: fixed;
+  inset: 0;
+  top: 56px;
 
   transition: transform 0.5s ease;
 

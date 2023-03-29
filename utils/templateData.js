@@ -16,3 +16,8 @@ export const langSelectOptions = [
   { value: 'il', label: 'IL', icon: <ILFlagIcon /> },
   { value: 'ua', label: 'UA', icon: <UAFlagIcon /> }
 ];
+
+export const benefitsData = [
+  { value: '40%', text: 'економія коштів' },
+  { value: 'в 7', text: 'разів швидше' }
+];
