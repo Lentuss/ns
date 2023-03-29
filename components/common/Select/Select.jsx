@@ -101,7 +101,7 @@ export const Select = (props) => {
             ...baseStyles,
             marginTop: 0,
             backgroundColor: white,
-            borderRadius: '0 0 8px 8px'
+            borderRadius: isLangMode ? 8 : '0 0 8px 8px'
           }),
           option: (baseStyles, state) => ({
             ...baseStyles,

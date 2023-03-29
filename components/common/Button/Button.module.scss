@@ -1,9 +1,12 @@
+@import '/styles/mixins/css-lock';
+
 .button {
   padding: 16px 26px;
 
   font-family: 'Inter';
   font-weight: 400;
-  font-size: 16px;
+  @include css-lock(13, 16, 320, 1280);
+
   color: var(--black-1000);
 
   border-radius: 100px;

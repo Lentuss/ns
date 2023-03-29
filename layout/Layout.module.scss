@@ -1,4 +1,15 @@
+@import '/styles/mixins/css-lock';
+
 .header {
+}
+
+.headerPatterIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  @include css-lock(216, 648, 320, 1280, max-width);
+  @include css-lock(96, 288, 320, 1280, max-height);
 }
 
 .body {
