@@ -1,0 +1,89 @@
+@import '/styles/mixins/css-lock';
+
+.AccentH {
+  position: relative;
+  color: var(--cyan-primary);
+
+  margin-bottom: 50px;
+  font-family: var(--font-family-title);
+}
+
+.line {
+  position: absolute;
+  left: 0;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.line-main {
+  bottom: -8px;
+
+  background-image: url(../../../../assets/images/svg/accent-lines/l-main.svg);
+  @include css-lock(219, 461, 320, 1280, width);
+  @include css-lock(8, 14, 320, 1280, height);
+}
+
+.line-specialists {
+  bottom: -64px;
+
+  background-image: url(../../../../assets/images/svg/accent-lines/arr-specialists.svg);
+  @include css-lock(254, 530, 320, 1280, width);
+  @include css-lock(41, 116, 320, 1280, height);
+}
+
+.line-companies {
+  bottom: -8px;
+
+  background-image: url(../../../../assets/images/svg/accent-lines/l-companies.svg);
+  @include css-lock(191, 391, 320, 1280, width);
+  @include css-lock(3, 10, 320, 1280, height);
+}
+
+.line-partners {
+  bottom: -8px;
+
+  background-image: url(../../../../assets/images/svg/accent-lines/line.svg);
+  @include css-lock(214, 412, 320, 1280, width);
+  @include css-lock(3, 7, 320, 1280, height);
+}
+
+.line-cooperation {
+  bottom: -15px;
+
+  background-image: url(../../../../assets/images/svg/accent-lines/arr-cooperation.svg);
+  @include css-lock(251, 620, 320, 1280, width);
+  @include css-lock(1, 49, 320, 1280, height);
+}
+
+.line-footer {
+  bottom: -64px;
+
+  background-image: url(../../../../assets/images/svg/accent-lines/line.svg);
+  @include css-lock(241, 482, 320, 1280, width);
+  @include css-lock(1, 3, 320, 1280, height);
+}
+
+.line-works {
+  bottom: -8px;
+
+  background-image: url(../../../../assets/images/svg/accent-lines/l-works.svg);
+  @include css-lock(149, 652, 320, 1280, width);
+  @include css-lock(4, 10, 320, 1280, height);
+}
+
+.line-about {
+  bottom: 0;
+
+  background-image: url(../../../../assets/images/svg/accent-lines/l-about.svg);
+  @include css-lock(192, 435, 320, 1280, width);
+  @include css-lock(4, 10, 320, 1280, height);
+}
+
+.line-contacts {
+  bottom: 0;
+
+  background-image: url(../../../../assets/images/svg/accent-lines/l-contacts.svg);
+  @include css-lock(208, 673, 320, 1280, width);
+  @include css-lock(5, 10, 320, 1280, height);
+}
