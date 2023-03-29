@@ -17,7 +17,7 @@
     background-color: var(--pink-primary);
     transform: translateX(20px);
 
-    transition: background-color 150ms ease-in-out, transform 150ms ease-in-out;
+    transition: background-color 50ms ease-in-out, transform 50ms ease-in-out;
   }
 }
 
@@ -33,5 +33,5 @@
   background-color: var(--black-400);
   border-radius: 50%;
 
-  transition: background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  transition: background-color 50ms ease-in-out, transform 50ms ease-in-out;
 }
