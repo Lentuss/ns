@@ -18,8 +18,6 @@ export const Button = memo((props) => {
 
   const Tag = href ? Link : 'button';
 
-  const buttonProps = {};
-
   return (
     <Tag
       type={type}
