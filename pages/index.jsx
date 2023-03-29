@@ -6,7 +6,8 @@ import {
   Chip,
   Logo,
   Label,
-  Switch
+  Switch,
+  Input
 } from '@/components/common';
 import { widthLayout } from '@/layout/Layout';
 import { useState } from 'react';
@@ -21,6 +22,7 @@ const options = [
 
 function Home() {
   const [selectedOption, setSelectedOption] = useState(null);
+  const [inputValue, setInputValue] = useState('');
 
   return (
     <div style={{ height: '100vh' }}>
@@ -38,6 +40,12 @@ function Home() {
         />
         <Label name="new label" />
         <Switch isChecked={false} />
+        <Input
+          placeholder="Input"
+          onChange={(e) => setInputValue(e.target.value)}
+          value={inputValue}
+          type="textarea"
+        />
       </Wrapper>
     </div>
   );

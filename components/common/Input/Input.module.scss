@@ -1,0 +1,85 @@
+@import '/styles/mixins/css-lock';
+
+.label {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+}
+
+.input {
+  width: inherit;
+
+  padding: 22px 16px 19px 16px;
+
+  border-bottom: 1px solid var(--black-500);
+
+  font-family: 'Inter';
+  font-weight: 400;
+  @include css-lock(13, 16, 320, 1280);
+  color: var(--black-700);
+
+  &:hover {
+    border-bottom-color: var(--black-700);
+  }
+
+  &.isError {
+    border-bottom-color: var(--pink-primary);
+  }
+
+  &:disabled {
+    border-bottom-color: var(--black-200);
+  }
+}
+.textArea {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+
+  resize: vertical;
+
+  height: 60px;
+  min-height: 60px;
+  max-height: 300px;
+}
+
+.inputPlaceholder {
+  position: absolute;
+
+  top: 22px;
+  left: 16px;
+
+  transition: transform 0.2s ease, font-size 0.2s ease;
+
+  &.isFocused {
+    font-size: 13px;
+
+    transform: translateY(-22px);
+  }
+
+  &.isDisabled {
+    color: var(--black-500);
+  }
+}
+
+.errorIcon {
+  position: absolute;
+
+  top: 22px;
+  right: 16px;
+
+  fill: var(--white);
+
+  path {
+    stroke: var(--pink-primary);
+  }
+}
+
+.erorrMessage {
+  position: absolute;
+  left: 16px;
+  top: calc(100% + 2px);
+
+  color: var(--pink-primary);
+}

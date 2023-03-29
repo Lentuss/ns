@@ -11,3 +11,4 @@ export * from './Logo/Logo';
 export * from './Label/Label';
 export * from './Switch/Switch';
 export * from './Subtitle/Subtitle';
+export * from './Input/Input';

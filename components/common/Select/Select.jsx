@@ -10,7 +10,8 @@ import {
   black200,
   black700,
   black800,
-  pinkPrimary
+  pinkPrimary,
+  white
 } from '@/utils/const';
 
 import s from './Select.module.scss';
@@ -62,7 +63,7 @@ export const Select = (props) => {
         styles={{
           control: (baseStyles, state) => ({
             ...baseStyles,
-            borderRadius: 8,
+            borderRadius: state.isFocused ? '8px 8px 0 0' : 8,
             padding: isLangMode ? '0' : '10px 16px',
             backgroundColor: isLangMode ? 'transparent' : black200,
             borderWidth: isLangMode ? 0 : 1,
@@ -95,6 +96,12 @@ export const Select = (props) => {
           input: (baseStyles, state) => ({
             ...baseStyles,
             color: black1000
+          }),
+          menu: (baseStyles, state) => ({
+            ...baseStyles,
+            marginTop: 0,
+            backgroundColor: white,
+            borderRadius: '0 0 8px 8px'
           }),
           option: (baseStyles, state) => ({
             ...baseStyles,
