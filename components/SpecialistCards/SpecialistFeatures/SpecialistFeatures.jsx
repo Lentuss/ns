@@ -9,7 +9,7 @@ export const SpecialistFeatures = ({ className, skills }) => {
   return (
     <ul className={cx(s.SpecialistFeaturesList, className)}>
       {skills.map(({ label, list }) => (
-        <li className={s.SpecialistFeatureItem}>
+        <li className={s.SpecialistFeatureItem} key={label}>
           <Subtitle className={s.SpecialistFeatureLabel} size="small">
             {label}
           </Subtitle>
@@ -31,5 +31,5 @@ export const SpecialistFeatures = ({ className, skills }) => {
 
 SpecialistFeatures.propTypes = {
   className: PropTypes.string,
-  skills: PropTypes.object.isRequired
+  skills: PropTypes.array.isRequired
 };

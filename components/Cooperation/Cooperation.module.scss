@@ -1,0 +1,66 @@
+.cooperation {
+  padding: 120px 0;
+
+  @media (min-width: 1024px) {
+    background-image: url(../../assets/images/svg/patterns/cooperation-pattern.svg);
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width: 767px) {
+    padding: 60px 0;
+  }
+}
+
+.cooperationInner {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 48px;
+  }
+}
+
+.cooperationHeading {
+  max-width: 543px;
+}
+
+.cooperationFactors {
+  max-width: 519px;
+}
+
+.factors {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (max-width: 767px) {
+    gap: 16px;
+  }
+}
+
+.factorsItem {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 40px 48px 48px;
+
+  background-color: var(--black-150);
+  border-radius: 24px;
+
+  @media (max-width: 767px) {
+    gap: 24px;
+    padding: 20px;
+  }
+}
+
+.factorsHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.factorsText {
+  color: var(--black-800);
+}

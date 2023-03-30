@@ -1,10 +1,13 @@
 import { widthLayout } from '@/layout/Layout';
+
 import {
-  Outstaff,
   Hero,
+  Outstaff,
+  SpecialistCards,
   Partners,
   Comparison,
-  SpecialistCards
+  Cooperation,
+  FeedBack
 } from '@/components';
 
 function Home() {
@@ -15,6 +18,8 @@ function Home() {
       <SpecialistCards />
       <Partners />
       <Comparison />
+      <Cooperation />
+      <FeedBack page="home" />
     </div>
   );
 }

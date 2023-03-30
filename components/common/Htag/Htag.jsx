@@ -16,6 +16,6 @@ export const Htag = memo((props) => {
 
 Htag.propTypes = {
   className: PropTypes.string,
-  tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4']),
+  tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5']),
   children: PropTypes.node.isRequired
 };

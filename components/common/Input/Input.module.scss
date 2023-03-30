@@ -20,6 +20,8 @@
   @include css-lock(13, 16, 320, 1280);
   color: var(--black-700);
 
+  background-color: transparent;
+
   &:hover {
     border-bottom-color: var(--black-700);
   }
@@ -49,6 +51,8 @@
 
   top: 22px;
   left: 16px;
+
+  color: var(--black-700);
 
   transition: transform 0.2s ease, font-size 0.2s ease;
 

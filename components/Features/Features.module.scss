@@ -1,3 +1,5 @@
+@import '/styles/mixins/css-lock';
+
 .featuresItem {
   display: flex;
   flex-direction: column;
@@ -8,6 +10,10 @@
   border-top: 1px solid var(--black-500);
 }
 
-// .featuresOutstaff {
-//   color: rgba(255, 255, 255, 0.75);
-// }
+.featuresItem-light {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.featuresHeading {
+  @include css-lock(23, 47, 320, 1280);
+}

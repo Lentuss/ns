@@ -1,5 +1,9 @@
 .partners {
   padding: 120px 0;
+
+  @media (max-width: 767px) {
+    padding: 120px 0 48px;
+  }
 }
 
 .partnersInner {
@@ -24,7 +28,11 @@
 .partnersList {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 18px;
+
+  @media (max-width: 767px) {
+    gap: 8px;
+  }
 }
 
 .partnersItem {
