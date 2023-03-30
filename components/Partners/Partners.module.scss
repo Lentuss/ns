@@ -24,7 +24,11 @@
 .partnersList {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 18px;
+
+  @media (max-width: 767px) {
+    gap: 8px;
+  }
 }
 
 .partnersItem {
