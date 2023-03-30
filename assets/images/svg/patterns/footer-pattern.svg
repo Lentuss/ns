@@ -1,0 +1,21 @@
+<svg width="720" height="360" viewBox="0 0 720 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.05">
+<rect width="72" height="72" fill="white"/>
+<rect x="72" width="72" height="72" fill="white" fill-opacity="0.3"/>
+<rect x="144" width="72" height="72" fill="white"/>
+<rect x="216" width="72" height="72" fill="white"/>
+<rect x="216" y="72" width="72" height="72" fill="white" fill-opacity="0.3"/>
+<rect x="288" y="72" width="72" height="72" fill="white" fill-opacity="0.3"/>
+<rect x="360" width="72" height="72" fill="white"/>
+<rect x="432" width="72" height="72" fill="white" fill-opacity="0.3"/>
+<rect x="432" y="72" width="72" height="72" fill="white"/>
+<rect x="504" y="144" width="72" height="72" fill="white" fill-opacity="0.3"/>
+<rect x="504" y="216" width="72" height="72" fill="white"/>
+<rect x="576" y="72" width="72" height="72" fill="white"/>
+<rect x="144" y="144" width="72" height="72" fill="white" fill-opacity="0.3"/>
+<rect x="576" y="144" width="72" height="72" fill="white" fill-opacity="0.3"/>
+<rect x="648" y="144" width="72" height="72" fill="white"/>
+<rect x="648" y="216" width="72" height="72" fill="white" fill-opacity="0.3"/>
+<rect x="648" y="288" width="72" height="72" fill="white"/>
+</g>
+</svg>

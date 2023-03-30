@@ -1,0 +1,9 @@
+<svg width="216" height="360" viewBox="0 0 216 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="72" height="72" transform="matrix(1 0 0 -1 0 360)" fill="#FF666F"/>
+<rect width="72" height="72" transform="matrix(1 0 0 -1 0 216)" fill="#FF666F" fill-opacity="0.3"/>
+<rect width="72" height="72" transform="matrix(1 0 0 -1 72 288)" fill="#FF666F" fill-opacity="0.3"/>
+<rect width="72" height="72" transform="matrix(1 0 0 -1 72 144)" fill="#FF666F" fill-opacity="0.3"/>
+<rect width="72" height="72" transform="matrix(1 0 0 -1 72 216)" fill="#FF666F"/>
+<rect width="72" height="72" transform="matrix(1 0 0 -1 144 144)" fill="#FF666F"/>
+<rect width="72" height="72" transform="matrix(1 0 0 -1 0 72)" fill="#FF666F"/>
+</svg>
