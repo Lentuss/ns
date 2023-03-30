@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import { Ptag } from '..';
 
-// import AlertIcon from '@/assets/images/svg/icons/alert.svg';
-
 import AlertIcon from '@/assets/icons/alert.svg';
 
 import s from './Input.module.scss';

@@ -5,13 +5,15 @@
 
   height: calc(100vh - 56px);
 
-  position: relative;
+  position: fixed;
+  inset: 0;
+  top: 56px;
 
   transition: transform 0.5s ease;
 
   transform: translateX(200%);
 
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
     display: block;
   }
 

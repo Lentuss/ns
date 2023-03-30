@@ -16,6 +16,9 @@
 
   display: inline-block;
 
+  width: fit-content;
+  height: fit-content;
+
   &:disabled {
     background-color: var(--black-150);
 

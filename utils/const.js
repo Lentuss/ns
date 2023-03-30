@@ -16,7 +16,7 @@ export const black1000 = '#070707';
 export const BREAKPOINTS = {
   desktop: 1279,
   desktopSm: 1119,
-  tablet: 980,
+  tablet: 1024,
   mobile: 767,
   mobileSm: 479
 };
