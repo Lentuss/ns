@@ -2,6 +2,8 @@
 
 .outstaff {
   overflow: hidden;
+
+  @include css-lock(80, 200, 320, 1280, margin-bottom);
 }
 
 .outstaffInner {

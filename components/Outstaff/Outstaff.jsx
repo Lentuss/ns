@@ -12,7 +12,7 @@ export const Outstaff = ({ className }) => {
   const renderBenefits = () => (
     <ul className={s.benefits}>
       {benefitsData.map(({ value, text }) => (
-        <li className={s.benefitsItem}>
+        <li className={s.benefitsItem} key={value}>
           <span className={s.benefitsItemValue}>{value}</span>
           <Ptag className={s.benefitsItemText} size="m">
             {text}
