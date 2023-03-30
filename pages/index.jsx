@@ -1,5 +1,5 @@
 import { widthLayout } from '@/layout/Layout';
-import { Outstaff, Hero, Partners, Comparison } from '@/components';
+import { Outstaff, Hero, Partners, Comparison, Cooperation } from '@/components';
 
 function Home() {
   return (
@@ -8,6 +8,7 @@ function Home() {
       <Outstaff />
       <Partners />
       <Comparison />
+      <Cooperation />
     </div>
   );
 }

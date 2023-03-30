@@ -2,7 +2,6 @@
 
 .Htag {
   font-family: var(--font-family-title);
-  // font-weight: 900;
   line-height: 120%;
 }
 
@@ -17,4 +16,14 @@
 
 .Htag-h3 {
   @include css-lock(28, 47, 320, 1280);
+}
+
+.Htag-h4 {
+  font-family: var(--family-title);
+  @include css-lock(17, 27, 320, 1280);
+  @include css-lock(24, 35, 320, 1280, line-height);
+}
+
+.Htag-h5 {
+  @include css-lock(23, 36, 320, 1280);
 }
