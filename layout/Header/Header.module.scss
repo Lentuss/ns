@@ -3,7 +3,7 @@
 .header {
   margin-top: 24px;
 
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
     margin-top: 0;
   }
 }
@@ -24,7 +24,7 @@
 
   transition: background-color 0.5s ease;
 
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
     border-radius: 0;
 
     margin: 0 -16px;
@@ -39,7 +39,7 @@
 .headerNav {
   @include css-lock(24, 65, 1000, 1280, margin-left);
 
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
     display: none !important;
   }
 }
@@ -51,7 +51,7 @@
 
   flex-shrink: 0;
 
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 }
@@ -63,7 +63,7 @@
 
   flex-shrink: 0;
 
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 }
@@ -71,7 +71,7 @@
 .headerMenuButton {
   display: none;
 
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
     display: block;
 
     margin-left: auto;

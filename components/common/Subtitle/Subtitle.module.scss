@@ -28,3 +28,7 @@
   @include css-lock(10, 13, 320, 1280);
   @include css-lock(12, 18, 320, 1280, line-height);
 }
+
+.featuresOutstaff {
+  color: rgba(255, 255, 255, 0.75);
+}

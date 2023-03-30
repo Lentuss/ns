@@ -26,7 +26,6 @@ export const Outstaff = ({ className }) => {
     <div className={cx(s.outstaff, className)}>
       <Wrapper>
         <div className={s.outstaffInner}>
-          {/* <div className={s.outstaffLeft}> */}
           <Htag className={s.outstaffTitle} tag="h3">
             Аутстафінг економить ваш час і гроші
           </Htag>
@@ -34,7 +33,6 @@ export const Outstaff = ({ className }) => {
           <ButtonPrimary className={s.outstaffButton} appearance="white">
             Отримати спеціаліста
           </ButtonPrimary>
-          {/* </div> */}
 
           {renderBenefits()}
 

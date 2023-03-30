@@ -12,4 +12,4 @@ export * from './Label/Label';
 export * from './Switch/Switch';
 export * from './Subtitle/Subtitle';
 export * from './Input/Input';
-export * from './Htag/AccentH/AccentH';
+export * from './AccentH/AccentH';

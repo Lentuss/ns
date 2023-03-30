@@ -1,13 +1,13 @@
 import { widthLayout } from '@/layout/Layout';
-import { Outstaff } from '@/components';
-import { Input } from '@/components/common';
+import { Outstaff, Hero, Partners, Comparison } from '@/components';
 
 function Home() {
   return (
-    <div style={{ height: '100vh' }}>
+    <div>
+      <Hero />
       <Outstaff />
-
-      <Input placeholder="Test" />
+      <Partners />
+      <Comparison />
     </div>
   );
 }
