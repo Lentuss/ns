@@ -15,6 +15,8 @@ import {
 } from '@/utils/const';
 
 import s from './Select.module.scss';
+import { useDetectDevice } from '@/hooks';
+import { useEffect } from 'react';
 
 // const options = [
 //   { value: 'chocolate', label: 'Chocolate', icon?: <Icon /> },
@@ -47,6 +49,10 @@ export const Select = (props) => {
     </div>
   );
 
+  const { isMobile } = useDetectDevice();
+
+  const controlPadding = isMobile ? 12 : 16;
+
   return (
     <div
       className={cx(s.selectWrapper, { [s.disabled]: isDisabled }, className)}
@@ -64,7 +70,7 @@ export const Select = (props) => {
           control: (baseStyles, state) => ({
             ...baseStyles,
             borderRadius: state.isFocused ? '8px 8px 0 0' : 8,
-            padding: isLangMode ? '0' : '10px 16px',
+            padding: isLangMode ? 0 : controlPadding,
             backgroundColor: isLangMode ? 'transparent' : black200,
             borderWidth: isLangMode ? 0 : 1,
             borderColor: isError ? pinkPrimary : black200,

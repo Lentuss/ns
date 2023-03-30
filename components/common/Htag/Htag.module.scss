@@ -18,3 +18,9 @@
 .Htag-h3 {
   @include css-lock(28, 47, 320, 1280);
 }
+
+.Htag-h4 {
+  font-family: var(--family-title);
+  @include css-lock(17, 27, 320, 1280);
+  @include css-lock(24, 35, 320, 1280, line-height);
+}

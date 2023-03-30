@@ -1,0 +1,68 @@
+@import '/styles/mixins/css-lock';
+
+.specialistCards {
+  @include css-lock(160, 300, 320, 1280, margin-bottom);
+}
+
+.specialistSubTitle {
+  @include css-lock(16, 24, 320, 1280, margin-bottom);
+}
+
+.specialistTitle {
+  @include css-lock(48, 96, 320, 1280, margin-bottom);
+
+  @media (min-width: 1025px) {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+  }
+}
+
+.specialistList {
+}
+
+.specialistItem {
+  border-top: 1px solid var(--black-400);
+
+  padding: 56px 0px;
+
+  @media (min-width: 1025px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      'title title .'
+      'features features buttons';
+
+    gap: 32px 0;
+  }
+
+  @media (max-width: 1024px) {
+    display: block;
+
+    padding: 40px 0px;
+  }
+}
+
+.specialistItemTitle {
+  grid-area: title;
+}
+
+.specialistItemFeatures {
+  grid-area: features;
+}
+
+.specialistItemButtons {
+  grid-area: buttons;
+
+  align-self: end;
+  justify-self: end;
+  display: flex;
+  gap: 10px;
+
+  button {
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
+  }
+}

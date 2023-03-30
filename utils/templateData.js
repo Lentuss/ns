@@ -62,3 +62,58 @@ export const features = {
     { question: 'Витрати', answer: '$1000' }
   ]
 };
+
+import specialist1 from '@/assets/images/specialists/specialist-1.jpg';
+import specialist2 from '@/assets/images/specialists/specialist-2.jpg';
+import specialist3 from '@/assets/images/specialists/specialist-3.jpg';
+
+export const specialistCards = [
+  {
+    id: 1,
+    jobName: 'Інженер-проектувальник у Revit',
+    experiense: '5+ років досвіду',
+    imageSrc: specialist1,
+    features: [
+      { label: 'мови', list: ['Англійська', 'Російська', 'Українська'] },
+      {
+        label: 'Навички',
+        list: [
+          'Revit',
+          'Autocad',
+          'Blender',
+          '3ds Max',
+          'Spline',
+          'Adobe Photoshop',
+          'Adobe Illustrator',
+          'Webflow'
+        ]
+      }
+    ]
+  },
+  {
+    id: 2,
+    jobName: 'Розробник програмного забезпечення',
+    experiense: '5+ років досвіду',
+    imageSrc: specialist2,
+    features: [
+      { label: 'мови', list: ['Англійська', 'Російська'] },
+      {
+        label: 'Навички',
+        list: ['Python', 'C++', 'Javascript', 'Revit', 'Autocad', 'Blender']
+      }
+    ]
+  },
+  {
+    id: 3,
+    jobName: 'Інженер каналізацій',
+    experiense: '5+ років досвіду',
+    imageSrc: specialist3,
+    features: [
+      { label: 'мови', list: ['Англійська', 'Російська', 'Українська'] },
+      {
+        label: 'Навички',
+        list: ['Python', 'C++', 'Javascript', 'Revit', 'Autocad', 'Blender']
+      }
+    ]
+  }
+];
