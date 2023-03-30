@@ -1,13 +1,12 @@
 import { widthLayout } from '@/layout/Layout';
-import { Hero, Partners } from '@/components'
+import { Hero, Partners, Comparison } from '@/components'
 
 
 function Home() {
   return <div>
     <Hero />
     <Partners />
-    Home
-
+    <Comparison />
   </div>;
 }
 

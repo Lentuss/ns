@@ -1,0 +1,35 @@
+.comparison {
+  padding: 120px 0;
+}
+
+.comparisonInner {
+  display: flex;
+  gap: 24px;
+}
+
+.comparisonStandart {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  padding: 48px 64px 64px;
+
+  width: 100%;
+}
+
+.comparisonOutstaff {
+  color: var(--white);
+
+  background-color: var(--cyan-primary);
+  border-radius: 24px;
+}
+
+.comparisonHeadingWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comparisonHeading {
+  display: inline-block;
+
+  font-size: 47px;
+}

@@ -30,4 +30,10 @@ import Company10 from '@/assets/images/svg/partners/company_logo10.svg';
 import Company11 from '@/assets/images/svg/partners/company_logo11.svg';
 import Company12 from '@/assets/images/svg/partners/company_logo12.svg';
 
-export const partners = [<Company1 />, <Company2 />, <Company3 />, <Company4 />, <Company5 />, <Company6 />, <Company7 />, <Company8 />, <Company9 />, <Company10 />, <Company11 />, <Company12 />]
+export const partners = [<Company1 />, <Company2 />, <Company3 />, <Company4 />, <Company5 />, <Company6 />, <Company7 />, <Company8 />, <Company9 />, <Company10 />, <Company11 />, <Company12 />];
+
+export const features = {
+  standart: [{ question: 'Часові затрати', answer: '2 місяці' }, { question: 'Юридичні питання', answer: '5+ документів' }, { question: 'Витрати', answer: '$2000 + податки' }],
+  outstaff: [{ question: 'Часові затрати', answer: '3 дні' }, { question: 'Юридичні питання', answer: '1 договір' }, { question: 'Витрати', answer: '$1000' }]
+
+}

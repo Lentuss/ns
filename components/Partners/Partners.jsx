@@ -7,7 +7,7 @@ import s from './Partners.module.scss';
 
 export const Partners = () => {
     return (
-        <div>
+        <div className={s.partners}>
             <Wrapper>
                 <div className={s.partnersInner}>
                     <Htag className={s.partnersHeading} tag='h2'>Нам довіряють
