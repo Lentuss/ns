@@ -28,6 +28,10 @@
 
 .cooperationFactors {
   max-width: 519px;
+
+  @media (max-width: 767px) {
+    max-width: 100%;
+  }
 }
 
 .factors {

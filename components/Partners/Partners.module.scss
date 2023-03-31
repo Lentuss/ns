@@ -1,3 +1,5 @@
+@import '/styles/mixins/css-lock';
+
 .partners {
   padding: 120px 0;
 
@@ -26,12 +28,24 @@
 }
 
 .partnersList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 16px;
+    justify-content: center;
+  }
 
   @media (max-width: 767px) {
-    gap: 8px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 8px;
+    justify-content: center;
   }
 }
 
@@ -39,16 +53,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-basis: calc((100% - 125px) / 6);
-  height: auto;
-
-  @media (max-width: 1023px) {
-    width: 143px;
-    height: 143px;
-  }
-
-  @media (max-width: 767px) {
-    width: 90px;
-    height: 90px;
-  }
+  @include css-lock(90, 165, 320, 1280, height);
+  @include css-lock(90, 165, 320, 1280, width);
 }

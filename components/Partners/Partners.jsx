@@ -14,8 +14,8 @@ export const Partners = () => {
                         <AccentH location='partners'> 50+ компаній, </AccentH>
                         серед яких
                     </Htag>
-                    <ul className={s.partnersList}>{partners.map((p, i) => <li className={s.partnersItem} key={i}>{p}</li>)
-                    }
+                    <ul className={s.partnersList}>{partners.map((p, i) =>
+                        <li className={s.partnersItem} key={i}>{p}</li>)}
                     </ul>
                 </div>
             </Wrapper>
