@@ -15,6 +15,7 @@ export const Input = (props) => {
     onChange,
     value = '',
     className,
+    name = '',
     isError = false,
     disabled = false,
     errorMessage = 'Error'

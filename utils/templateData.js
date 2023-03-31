@@ -1,4 +1,5 @@
 export const navLinks = [
+  { label: 'Головна', href: '/' },
   { label: 'Спеціалісти', href: '/' },
   { label: 'Як це працює', href: '/' },
   { label: 'Про нас', href: '/' },

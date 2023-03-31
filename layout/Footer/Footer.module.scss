@@ -1,2 +1,159 @@
+@import '/styles/mixins/css-lock';
+
 .footer {
+  margin: 0 auto 24px;
+  padding: 64px 80px 32px;
+  max-width: 1392px;
+
+  background-color: var(--black-900);
+  background-image: url(../../assets/images/svg/patterns/footer-pattern.svg);
+  background-position: top right;
+  background-size: auto;
+  background-repeat: no-repeat;
+  border-radius: 24px;
+
+  @media (max-width: 1023px) {
+    margin: 0;
+    padding: 48px 16px 24px;
+  }
+}
+
+.footerHeading {
+  display: flex;
+  align-items: flex-end;
+  gap: 48px;
+  margin-bottom: 80px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+}
+
+.footerTitle {
+  color: var(--white);
+}
+
+.footerBtn {
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.footerInner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+.footerWrapper {
+  display: flex;
+  gap: 80px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.footerAddressWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.footerAddress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footerAddressCountry {
+  margin-bottom: 8px;
+}
+
+.footerAddressLink {
+  font-family: var(--font-family-title);
+  @include css-lock(17, 21, 320, 1280);
+  @include css-lock(20, 27, 320, 1280, line-height);
+  font-style: initial;
+  color: var(--white);
+}
+
+.footerNav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footerNavItem {
+  @include css-lock(13, 16, 320, 1280);
+  line-height: 1.5;
+  color: var(--white);
+}
+
+.footerSocials {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+
+  @media (max-width: 767px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+.footerSocialsBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  height: 40px;
+  width: 110px;
+
+  @include css-lock(13, 16, 320, 1280);
+
+  @media (max-width: 767px) {
+    flex-basis: calc((100% - 8px) / 2);
+  }
+}
+
+.footerCopyright {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+
+  border-top: 1px solid var(--black-700);
+  color: var(--black-700);
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.footerTerms {
+  display: flex;
+  gap: 16px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.footerTermsItem {
+  color: inherit;
+  @include css-lock(10, 13, 320, 1280);
+  @include css-lock(12, 16, 320, 1280, line-height);
 }

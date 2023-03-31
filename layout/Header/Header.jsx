@@ -40,7 +40,7 @@ export const Header = () => {
             className={cx(s.headerInner, { [s.isMenuOpen]: isOpenMobileMenu })}
           >
             <Logo />
-            <Nav className={s.headerNav} data={navLinks} />
+            <Nav className={s.headerNav} data={navLinks.slice(1)} />
             <Select
               className={s.headerLangSelect}
               options={langSelectOptions}

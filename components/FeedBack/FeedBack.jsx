@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames';
 
@@ -7,12 +7,17 @@ import s from './FeedBack.module.scss';
 import { Wrapper, Htag, Ptag, Subtitle, Input, Select, ButtonPrimary } from '@/components/common';
 
 export const FeedBack = props => {
+    const [inputName, setInputName] = useState('')
+    const [inputEmail, setInputEmail] = useState('')
+    const [inputText, setInputText] = useState('')
     const { className, page } = props;
+
     const options = [
         { value: 'Unit', label: 'Unit' },
         { value: 'Unit', label: 'Unit' },
         { value: 'Unit', label: 'Unit' },
     ];
+
     return (
         <div className={cx(s.feedback, s[`feedback-${page}`], className)}>
             <Wrapper>
@@ -24,8 +29,8 @@ export const FeedBack = props => {
                             <div className={s.formWrapper}>
                                 <div className={s.formInputWrapper}>
                                     <Ptag className={s.formSubtitle}>Ваші дані</Ptag>
-                                    <Input placeholder="Iм'я" />
-                                    <Input placeholder='E-mail' />
+                                    <Input placeholder="Iм'я" value={inputName} onChange={(e) => { setInputName(e.currentTarget.value) }} />
+                                    <Input placeholder='E-mail' value={inputEmail} onChange={(e) => { setInputEmail(e.currentTarget.value) }} />
                                 </div>
                                 <div className={s.formInputWrapper}>
                                     <Ptag className={s.formSubtitle}>Оберіть спеціаліста</Ptag>
@@ -33,11 +38,11 @@ export const FeedBack = props => {
                                     <Select options={options} placeholder='Оберіть спеціаліста' />
                                 </div>
                             </div>
-                            <Input type='textarea' placeholder='Коментар' />
+                            <Input type='textarea' placeholder='Коментар' value={inputText} onChange={(e) => { setInputText(e.currentTarget.value) }} />
                         </div>
                         <div className={s.formSubmitionWrapper}>
-                            <Ptag className={s.formText}>Ми зв’яжемось з вами протягом декількох хвилин, щоб надіслати договір на ознайомлення</Ptag>
-                            <ButtonPrimary appearance='pink' className={s.formBtn}>Підтвердити</ButtonPrimary>
+                            <Ptag className={s.formText} size='m'>Ми зв’яжемось з вами протягом декількох хвилин, щоб надіслати договір на ознайомлення</Ptag>
+                            <ButtonPrimary appearance='pink' type='submit' className={s.formBtn}>Підтвердити</ButtonPrimary>
                         </div>
                     </form>
                 </div>
