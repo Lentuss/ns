@@ -1,0 +1,123 @@
+@import '/styles/mixins/css-lock';
+
+.latestNews {
+  @include css-lock(120, 240, 320, 1280, margin-bottom);
+}
+
+.latestNewsInner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 70px 1fr;
+  grid-template-areas:
+    'title title button'
+    'news news news';
+  gap: 80px 0;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 35px 1fr 55px;
+    grid-template-areas:
+      'title'
+      'news'
+      'button';
+    gap: 0;
+  }
+}
+
+.latestNewsTitle {
+  grid-area: title;
+}
+
+.latestNewsButton {
+  grid-area: button;
+
+  justify-self: end;
+
+  @media (max-width: 768px) {
+    justify-self: center;
+
+    max-width: 288px;
+    width: 100%;
+  }
+}
+
+.latestNewsList {
+  grid-area: news;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 40px 0;
+
+    margin: 40px 0;
+  }
+}
+
+.latestNewsListItem {
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+.articleWrapImage {
+  position: relative;
+
+  @include css-lock(16, 24, 320, 1280, margin-bottom);
+
+  border-radius: 16px;
+  overflow: hidden;
+
+  align-self: center;
+
+  @media (min-width: 769px) {
+    max-height: 420px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background: var(--white);
+    mix-blend-mode: color;
+  }
+}
+
+.articleImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.articleTopInfo {
+  display: flex;
+  align-items: center;
+  @include css-lock(8, 12, 320, 1280, gap);
+
+  @include css-lock(12, 16, 320, 1280, margin-bottom);
+}
+
+.articleTitle {
+  @include css-lock(12, 40, 320, 1280, margin-bottom);
+}
+
+.articleBottomInfo {
+  margin-top: auto;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.articleBottomTag {
+  background-color: rgba(104, 201, 194, 0.25);
+
+  color: var(--cyan-900);
+}

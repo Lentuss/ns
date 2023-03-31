@@ -7,19 +7,21 @@ import {
   Partners,
   Comparison,
   Cooperation,
+  LatestNews,
   FeedBack
 } from '@/components';
 
 function Home() {
   return (
     <div>
-      <Hero />
+      {/* <Hero />
       <Outstaff />
       <SpecialistCards />
       <Partners />
       <Comparison />
-      <Cooperation />
-      <FeedBack page="home" />
+      <Cooperation /> */}
+      <LatestNews />
+      {/* <FeedBack page="home" /> */}
     </div>
   );
 }
