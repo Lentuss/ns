@@ -7,6 +7,7 @@ import {
   Partners,
   Comparison,
   Cooperation,
+  LatestNews,
   FeedBack
 } from '@/components';
 
@@ -19,6 +20,7 @@ function Home() {
       <Partners />
       <Comparison />
       <Cooperation />
+      <LatestNews />
       <FeedBack page="home" />
     </div>
   );

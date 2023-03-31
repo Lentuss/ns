@@ -146,3 +146,37 @@ export const factors = [
     text: 'Готуючи великий проект, ви можете найняти одразу декількох спеціалістів під різні задачі, замість того, щоб шукати кожного окремо'
   }
 ];
+
+import latestNews1 from '@/assets/images/latestNews/latest-news-1.jpg';
+import latestNews2 from '@/assets/images/latestNews/latest-news-2.jpg';
+import latestNews3 from '@/assets/images/latestNews/latest-news-3.jpg';
+
+export const latestNewsList = [
+  {
+    title: 'Аутсорсинг або аутстафінг. 10 ефективних порад',
+    author: 'Дмитро Степанчук',
+    publicDate: '09.03.2023',
+    tags: ['Аутстафінг', 'NewStaff'],
+    timeRead: '5 хвилин',
+    href: '/',
+    image: latestNews1
+  },
+  {
+    title: '2022 у NewStaff: огляд року',
+    author: 'Олена Іванчук',
+    publicDate: '09.03.2023',
+    tags: ['NewStaff'],
+    timeRead: '5 хвилин',
+    href: '/',
+    image: latestNews2
+  },
+  {
+    title: 'Інженери програмного забезпечення NewStaff',
+    author: 'Богдан Романчук',
+    publicDate: '09.03.2023',
+    tags: ['Cпеціалізації', 'Аутстафінг', 'NewStaff'],
+    timeRead: '5 хвилин',
+    href: '/',
+    image: latestNews3
+  }
+];
