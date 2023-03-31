@@ -14,14 +14,14 @@ import {
 function Home() {
   return (
     <div>
-      {/* <Hero />
+      <Hero />
       <Outstaff />
       <SpecialistCards />
       <Partners />
       <Comparison />
-      <Cooperation /> */}
+      <Cooperation />
       <LatestNews />
-      {/* <FeedBack page="home" /> */}
+      <FeedBack page="home" />
     </div>
   );
 }
