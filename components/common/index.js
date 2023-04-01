@@ -13,3 +13,4 @@ export * from './Switch/Switch';
 export * from './Subtitle/Subtitle';
 export * from './Input/Input';
 export * from './AccentH/AccentH';
+export * from './CustomCollapse/CustomCollapse';
