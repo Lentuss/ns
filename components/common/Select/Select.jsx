@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import { Ptag } from '..';
 
+import { useDetectDevice } from '@/hooks';
+
 import {
   black100,
   black1000,
@@ -15,8 +17,6 @@ import {
 } from '@/utils/const';
 
 import s from './Select.module.scss';
-import { useDetectDevice } from '@/hooks';
-import { useEffect } from 'react';
 
 // const options = [
 //   { value: 'chocolate', label: 'Chocolate', icon?: <Icon /> },
@@ -37,17 +37,19 @@ export const Select = (props) => {
     ...sProps
   } = props;
 
-  const Option = ({ icon, label }) => (
-    <div
-      className={cx({
-        [s.optionPrimary]: !isLangMode,
-        [s.optionSecondary]: isLangMode
-      })}
-    >
-      {icon && icon}
-      <span className={cx({ [s.optionLabel]: isLangMode })}>{label}</span>
-    </div>
-  );
+  const Option = ({ icon, label }) => {
+    return (
+      <div
+        className={cx({
+          [s.optionPrimary]: !isLangMode,
+          [s.optionSecondary]: isLangMode
+        })}
+      >
+        {icon && icon}
+        <span className={cx({ [s.optionLabel]: isLangMode })}>{label}</span>
+      </div>
+    );
+  };
 
   const { isMobile } = useDetectDevice();
 
@@ -113,7 +115,7 @@ export const Select = (props) => {
             ...baseStyles,
             backgroundColor: state.isSelected && black100,
             color: black800,
-            padding: 0,
+            padding: isLangMode ? '8px 16px' : 16,
             '&:hover': {
               backgroundColor: black100
             }
