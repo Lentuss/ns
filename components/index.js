@@ -9,3 +9,4 @@ export * from './Cooperation/Cooperation';
 export * from './FeedBack/FeedBack';
 export * from './LatestNews/LatestNews';
 export * from './OftenQuestions/OftenQuestions';
+export * from './SpecialistsHead/SpecialistsHead';

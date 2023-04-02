@@ -14,7 +14,7 @@ import {
 
 function Home() {
   return (
-    <div>
+    <>
       <Hero />
       <Outstaff />
       <SpecialistCards />
@@ -24,7 +24,7 @@ function Home() {
       <LatestNews />
       <OftenQuestions />
       <FeedBack page="home" />
-    </div>
+    </>
   );
 }
 
