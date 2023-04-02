@@ -11,18 +11,18 @@ import s from './OftenQuestions.module.scss';
 export const OftenQuestions = (props) => {
   const [activeCollapse, setActiveCollapse] = useState(null);
 
-  const setActiveCollapseHandler = (question) =>
-    setActiveCollapse(question === activeCollapse ? null : question);
+  const setActiveCollapseHandler = (id) =>
+    setActiveCollapse(id === activeCollapse ? null : id);
 
   const renderCollapses = () => (
-    <ul className={s.oftenQuestionsList}>
-      {oftenQuestionsData.map(({ question, answer }, idx) => (
-        <li key={question}>
+    <ul>
+      {oftenQuestionsData.map(({ id, question, answer }, idx) => (
+        <li key={id}>
           <CustomCollapse
             title={question}
             number={`0${++idx}`}
-            isOpened={activeCollapse === question}
-            onClick={() => setActiveCollapseHandler(question)}
+            isOpened={activeCollapse === id}
+            onClick={() => setActiveCollapseHandler(id)}
           >
             <Ptag size="m" color={black800}>
               {answer}
@@ -35,7 +35,9 @@ export const OftenQuestions = (props) => {
   return (
     <section className={s.oftenQuestions}>
       <Wrapper>
-        <Htag tag="h2">Часті запитання</Htag>
+        <Htag className={s.oftenQuestionsTitle} tag="h2">
+          Часті запитання
+        </Htag>
         {renderCollapses()}
       </Wrapper>
     </section>
