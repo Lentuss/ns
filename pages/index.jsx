@@ -19,8 +19,8 @@ function Home() {
       <Outstaff />
       <SpecialistCards />
       <Partners />
-      <Practicing />
       <Comparison />
+      <Practicing />
       <Cooperation />
       <LatestNews />
       <FeedBack page="home" />

@@ -181,34 +181,34 @@ export const latestNewsList = [
   }
 ];
 
-import CompS1 from '@/assets/images/svg/practicing/company-s1.svg';
-import CompS2 from '@/assets/images/svg/practicing/company-s2.svg';
-import CompS3 from '@/assets/images/svg/practicing/company-s3.svg';
-import CompS4 from '@/assets/images/svg/practicing/company-s4.svg';
-import CompS5 from '@/assets/images/svg/practicing/company-s5.svg';
-import CompM1 from '@/assets/images/svg/practicing/company-m1.svg';
-import CompM2 from '@/assets/images/svg/practicing/company-m2.svg';
-import CompM3 from '@/assets/images/svg/practicing/company-m3.svg';
-import CompM4 from '@/assets/images/svg/practicing/company-m4.svg';
-import CompM5 from '@/assets/images/svg/practicing/company-m5.svg';
-import CompL1 from '@/assets/images/svg/practicing/company-l1.svg';
-import CompL2 from '@/assets/images/svg/practicing/company-l2.svg';
-import CompL3 from '@/assets/images/svg/practicing/company-l3.svg';
-import CompL4 from '@/assets/images/svg/practicing/company-l4.svg';
+import Logo0 from '@/assets/images/svg/practicing/company-s4.svg';
+import Logo1 from '@/assets/images/svg/practicing/company-s5.svg';
+import Logo2 from '@/assets/images/svg/practicing/company-m1.svg';
+import Logo3 from '@/assets/images/svg/practicing/company-m5.svg';
+import Logo4 from '@/assets/images/svg/practicing/company-l2.svg';
+import Logo5 from '@/assets/images/svg/practicing/company-l3.svg';
+import Logo6 from '@/assets/images/svg/practicing/company-s1.svg';
+import Logo7 from '@/assets/images/svg/practicing/company-s2.svg';
+import Logo8 from '@/assets/images/svg/practicing/company-m4.svg';
+import Logo9 from '@/assets/images/svg/practicing/company-l1.svg';
+import Logo10 from '@/assets/images/svg/practicing/company-s3.svg';
+import Logo11 from '@/assets/images/svg/practicing/company-m2.svg';
+import Logo12 from '@/assets/images/svg/practicing/company-m3.svg';
+import Logo13 from '@/assets/images/svg/practicing/company-l4.svg';
 
 export const practicing = [
-  <CompS1 />,
-  <CompS2 />,
-  <CompS3 />,
-  <CompS4 />,
-  <CompS5 />,
-  <CompM1 />,
-  <CompM2 />,
-  <CompM3 />,
-  <CompM4 />,
-  <CompM5 />,
-  <CompL1 />,
-  <CompL2 />,
-  <CompL3 />,
-  <CompL4 />
+  <Logo0 />,
+  <Logo1 />,
+  <Logo2 />,
+  <Logo3 />,
+  <Logo4 />,
+  <Logo5 />,
+  <Logo6 />,
+  <Logo7 />,
+  <Logo8 />,
+  <Logo9 />,
+  <Logo10 />,
+  <Logo11 />,
+  <Logo12 />,
+  <Logo13 />
 ];
