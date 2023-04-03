@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -5,7 +6,7 @@ import { Button } from '../..';
 
 import s from './ButtonOutline.module.scss';
 
-export const ButtonOutline = (props) => {
+export const ButtonOutline = memo((props) => {
   const { children, className, appearance = 'black', ...buttonProps } = props;
 
   return (
@@ -16,7 +17,7 @@ export const ButtonOutline = (props) => {
       {children}
     </Button>
   );
-};
+});
 
 ButtonOutline.propTypes = {
   className: PropTypes.string,

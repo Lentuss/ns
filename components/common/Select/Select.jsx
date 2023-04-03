@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import ReactSelect from 'react-select';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
@@ -22,7 +23,7 @@ import s from './Select.module.scss';
 //   { value: 'chocolate', label: 'Chocolate', icon?: <Icon /> },
 // ];
 
-export const Select = (props) => {
+export const Select = memo((props) => {
   const {
     options,
     selectedOption,
@@ -131,7 +132,7 @@ export const Select = (props) => {
       )}
     </div>
   );
-};
+});
 
 Select.propTypes = {
   options: PropTypes.array.isRequired,

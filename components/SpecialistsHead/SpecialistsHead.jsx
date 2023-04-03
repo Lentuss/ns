@@ -1,5 +1,5 @@
+import { memo } from 'react';
 import { useRouter } from 'next/router';
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import { ButtonOutline, Chip, Htag, Wrapper } from '../common';
@@ -10,7 +10,7 @@ import PlusIcon from '@/assets/icons/plus.svg';
 
 import s from './SpecialistsHead.module.scss';
 
-export const SpecialistsHead = (props) => {
+export const SpecialistsHead = memo((props) => {
   const { query, pathname, push } = useRouter();
 
   const renderCategories = () => (
@@ -21,11 +21,11 @@ export const SpecialistsHead = (props) => {
           onClick={() =>
             push({
               pathname,
-              query: { alias: href }
+              query: { pid: href }
             })
           }
         >
-          <Chip name={label} count={count} isActive={query?.alias === href} />
+          <Chip name={label} count={count} isActive={query?.pid === href} />
         </li>
       ))}
       <li>
@@ -50,7 +50,7 @@ export const SpecialistsHead = (props) => {
       </Wrapper>
     </div>
   );
-};
+});
 
 SpecialistsHead.propTypes = {
   className: PropTypes.string

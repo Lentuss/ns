@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -5,7 +6,7 @@ import { Button } from '../..';
 
 import s from './ButtonPrimary.module.scss';
 
-export const ButtonPrimary = (props) => {
+export const ButtonPrimary = memo((props) => {
   const { children, className, appearance = 'pink', ...buttonProps } = props;
 
   return (
@@ -16,7 +17,7 @@ export const ButtonPrimary = (props) => {
       {children}
     </Button>
   );
-};
+});
 
 ButtonPrimary.propTypes = {
   className: PropTypes.string,
