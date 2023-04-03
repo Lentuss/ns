@@ -1,5 +1,4 @@
 import { widthLayout } from '@/layout/Layout';
-
 import {
   Hero,
   Outstaff,
@@ -11,13 +10,29 @@ import {
   FeedBack,
   OftenQuestions
 } from '@/components';
+import { AccentH, Htag, Subtitle, Wrapper } from '@/components/common';
+
+import s from '@/styles/pages/Home.module.scss';
 
 function Home() {
   return (
     <>
       <Hero />
       <Outstaff />
-      <SpecialistCards />
+
+      <section className={s.specialistSection}>
+        <Wrapper>
+          <Subtitle className={s.specialistSubTitle} size="thin">
+            NewStaff 5 років на ринку
+          </Subtitle>
+          <Htag className={s.specialistTitle} tag="h2">
+            Ми маємо спеціалістів,
+            <AccentH location="specialists">яких ви шукаєте</AccentH>
+          </Htag>
+          <SpecialistCards />
+        </Wrapper>
+      </section>
+
       <Partners />
       <Comparison />
       <Cooperation />

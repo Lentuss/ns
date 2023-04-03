@@ -218,21 +218,53 @@ export const specialistsCategoriesList = [
   {
     id: 1,
     label: 'Розробка програмного забезпечення',
-    count: '10'
+    count: '10',
+    href: 'developers'
   },
   {
     id: 2,
     label: 'Конструктори',
-    count: '7'
+    count: '7',
+    href: 'constructors'
   },
   {
     id: 3,
     label: 'Інженерія',
-    count: '12'
+    count: '12',
+    href: 'engineers'
   },
   {
     id: 4,
     label: 'Архітектура',
-    count: '7'
+    count: '7',
+    href: 'architects'
+  }
+];
+
+export const specialistPageSections = [
+  {
+    title: 'Популярні спеціалісти',
+    accent: '',
+    href: ''
+  },
+  {
+    title: 'Спеціалісти розробники',
+    accent: 'від $3500/місяць',
+    href: '/developers'
+  },
+  {
+    title: 'Спеціалісти конструктори',
+    accent: 'від $1750/місяць',
+    href: '/constructors'
+  },
+  {
+    title: 'Спеціалісти інженери',
+    accent: 'від $950/місяць',
+    href: '/engineers'
+  },
+  {
+    title: 'Спеціалісти архітектори',
+    accent: 'від $950/місяць',
+    href: '/architects'
   }
 ];

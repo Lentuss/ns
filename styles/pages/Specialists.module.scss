@@ -1,0 +1,11 @@
+@import '/styles/mixins/css-lock';
+
+.specialistSection {
+  & + & {
+    @include css-lock(78, 160, 320, 1280, margin-top);
+  }
+
+  &:last-of-type {
+    @include css-lock(88, 164, 320, 1280, margin-bottom);
+  }
+}

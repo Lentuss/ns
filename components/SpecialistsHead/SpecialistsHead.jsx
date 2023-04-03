@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRouter } from 'next/router';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -11,13 +11,21 @@ import PlusIcon from '@/assets/icons/plus.svg';
 import s from './SpecialistsHead.module.scss';
 
 export const SpecialistsHead = (props) => {
-  const [activeCategory, setActiveCategory] = useState(1);
+  const { query, pathname, push } = useRouter();
 
   const renderCategories = () => (
     <ul className={s.specialistsHeadList}>
-      {specialistsCategoriesList.map(({ id, count, label }) => (
-        <li key={id} onClick={() => setActiveCategory(id)}>
-          <Chip name={label} count={count} isActive={activeCategory === id} />
+      {specialistsCategoriesList.map(({ id, count, label, href }) => (
+        <li
+          key={id}
+          onClick={() =>
+            push({
+              pathname,
+              query: { alias: href }
+            })
+          }
+        >
+          <Chip name={label} count={count} isActive={query?.alias === href} />
         </li>
       ))}
       <li>
@@ -44,4 +52,6 @@ export const SpecialistsHead = (props) => {
   );
 };
 
-SpecialistsHead.propTypes = {};
+SpecialistsHead.propTypes = {
+  className: PropTypes.string
+};

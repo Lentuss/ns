@@ -1,0 +1,19 @@
+@import '/styles/mixins/css-lock';
+
+.specialistSection {
+  @include css-lock(160, 300, 320, 1280, margin-bottom);
+}
+
+.specialistSubTitle {
+  @include css-lock(16, 24, 320, 1280, margin-bottom);
+}
+
+.specialistTitle {
+  @include css-lock(48, 96, 320, 1280, margin-bottom);
+
+  @media (min-width: 1025px) {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+  }
+}

@@ -1,6 +1,7 @@
 @import '/styles/mixins/css-lock';
 
 .specialistsHead {
+  @include css-lock(64, 80, 320, 1280, margin-top);
   @include css-lock(64, 120, 320, 1280, margin-bottom);
 }
 
