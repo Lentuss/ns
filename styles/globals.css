@@ -2,7 +2,7 @@
   font-family: 'Namu';
   font-style: normal;
   font-weight: normal;
-  src: url('/assets/fonts/NAMU-Pro.ttf') format('truetype');
+  src: url('../assets/fonts/NAMU-Pro.ttf') format('truetype');
 }
 
 :root {
