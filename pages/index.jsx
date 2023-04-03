@@ -9,6 +9,7 @@ import {
   Cooperation,
   LatestNews,
   FeedBack,
+  OftenQuestions,
   Practicing
 } from '@/components';
 
@@ -23,6 +24,7 @@ function Home() {
       <Practicing />
       <Cooperation />
       <LatestNews />
+      <OftenQuestions />
       <FeedBack page="home" />
     </div>
   );
