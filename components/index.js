@@ -8,3 +8,4 @@ export * from './SpecialistCards/SpecialistCards';
 export * from './Cooperation/Cooperation';
 export * from './FeedBack/FeedBack';
 export * from './LatestNews/LatestNews';
+export * from './Practicing/Practicing';

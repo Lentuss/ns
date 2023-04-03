@@ -8,7 +8,8 @@ import {
   Comparison,
   Cooperation,
   LatestNews,
-  FeedBack
+  FeedBack,
+  Practicing
 } from '@/components';
 
 function Home() {
@@ -18,6 +19,7 @@ function Home() {
       <Outstaff />
       <SpecialistCards />
       <Partners />
+      <Practicing />
       <Comparison />
       <Cooperation />
       <LatestNews />
