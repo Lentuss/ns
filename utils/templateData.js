@@ -1,6 +1,8 @@
+import { MAIN_PAGE_ROUTE, SPECIALISTS_PAGE_ROUTE } from './const';
+
 export const navLinks = [
-  { label: 'Головна', href: '/' },
-  { label: 'Спеціалісти', href: '/' },
+  { label: 'Головна', href: MAIN_PAGE_ROUTE },
+  { label: 'Спеціалісти', href: SPECIALISTS_PAGE_ROUTE },
   { label: 'Як це працює', href: '/' },
   { label: 'Про нас', href: '/' },
   { label: 'Блог', href: '/' },
@@ -74,6 +76,7 @@ export const specialistCards = [
     jobName: 'Інженер-проектувальник у Revit',
     experiense: '5+ років досвіду',
     imageSrc: specialist1,
+    sallary: 'від $750/місяць',
     features: [
       { label: 'мови', list: ['Англійська', 'Російська', 'Українська'] },
       {
@@ -96,6 +99,7 @@ export const specialistCards = [
     jobName: 'Розробник програмного забезпечення',
     experiense: '5+ років досвіду',
     imageSrc: specialist2,
+    sallary: 'від $750/місяць',
     features: [
       { label: 'мови', list: ['Англійська', 'Російська'] },
       {
@@ -109,6 +113,7 @@ export const specialistCards = [
     jobName: 'Інженер каналізацій',
     experiense: '5+ років досвіду',
     imageSrc: specialist3,
+    sallary: 'від $750/місяць',
     features: [
       { label: 'мови', list: ['Англійська', 'Російська', 'Українська'] },
       {
@@ -181,8 +186,6 @@ export const latestNewsList = [
   }
 ];
 
-
-
 export const oftenQuestionsData = [
   {
     id: 1,
@@ -216,6 +219,60 @@ export const oftenQuestionsData = [
   }
 ];
 
+export const specialistsCategoriesList = [
+  {
+    id: 1,
+    label: 'Розробка програмного забезпечення',
+    count: '10',
+    href: 'developers'
+  },
+  {
+    id: 2,
+    label: 'Конструктори',
+    count: '7',
+    href: 'constructors'
+  },
+  {
+    id: 3,
+    label: 'Інженерія',
+    count: '12',
+    href: 'engineers'
+  },
+  {
+    id: 4,
+    label: 'Архітектура',
+    count: '7',
+    href: 'architects'
+  }
+];
+
+export const specialistPageSections = [
+  {
+    title: 'Популярні спеціалісти',
+    accent: '',
+    href: ''
+  },
+  {
+    title: 'Спеціалісти розробники',
+    accent: 'від $3500/місяць',
+    href: 'developers'
+  },
+  {
+    title: 'Спеціалісти конструктори',
+    accent: 'від $1750/місяць',
+    href: 'constructors'
+  },
+  {
+    title: 'Спеціалісти інженери',
+    accent: 'від $950/місяць',
+    href: 'engineers'
+  },
+  {
+    title: 'Спеціалісти архітектори',
+    accent: 'від $950/місяць',
+    href: 'architects'
+  }
+];
 import Logo0 from '@/assets/images/svg/practicing/company-s4.svg';
 import Logo1 from '@/assets/images/svg/practicing/company-s5.svg';
 import Logo2 from '@/assets/images/svg/practicing/company-m1.svg';

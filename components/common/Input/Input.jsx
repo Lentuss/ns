@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useState } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
@@ -8,7 +9,7 @@ import AlertIcon from '@/assets/icons/alert.svg';
 
 import s from './Input.module.scss';
 
-export const Input = (props) => {
+export const Input = memo((props) => {
   const {
     type = 'text',
     placeholder,
@@ -63,7 +64,7 @@ export const Input = (props) => {
       )}
     </label>
   );
-};
+});
 
 Input.propTypes = {
   type: PropTypes.oneOf(['text', 'email', 'textarea']),

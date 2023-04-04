@@ -9,10 +9,16 @@ import { black800 } from '@/utils/const';
 import s from './OftenQuestions.module.scss';
 
 export const OftenQuestions = (props) => {
-  const [activeCollapse, setActiveCollapse] = useState(null);
+  const [activeCollapse, setActiveCollapse] = useState([]);
 
   const setActiveCollapseHandler = (id) =>
-    setActiveCollapse(id === activeCollapse ? null : id);
+    setActiveCollapse((prev) => {
+      if (prev.includes(id)) {
+        return prev.filter((i) => i !== id);
+      } else {
+        return [...prev, id];
+      }
+    });
 
   const renderCollapses = () => (
     <ul>
@@ -21,7 +27,7 @@ export const OftenQuestions = (props) => {
           <CustomCollapse
             title={question}
             number={`0${++idx}`}
-            isOpened={activeCollapse === id}
+            isOpened={activeCollapse.includes(id)}
             onClick={() => setActiveCollapseHandler(id)}
           >
             <Ptag size="m" color={black800}>
