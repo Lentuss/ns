@@ -2028,6 +2028,16 @@
     "react-transition-group" "^4.3.0"
     "use-isomorphic-layout-effect" "^1.1.2"
 
+"react-transition-group-v2@^4.3.0":
+  "integrity" "sha512-sFJYg7Ry4EVn4SaILJzkKDJaDwt5I794ZkMGvm7IDMtsS04vuWPQrEkVdLQEMABFw/tIJF5ksDdg35MI62908w=="
+  "resolved" "https://registry.npmjs.org/react-transition-group-v2/-/react-transition-group-v2-4.3.0.tgz"
+  "version" "4.3.0"
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "dom-helpers" "^5.0.1"
+    "loose-envify" "^1.4.0"
+    "prop-types" "^15.6.2"
+
 "react-transition-group@^4.3.0":
   "integrity" "sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g=="
   "resolved" "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.5.tgz"
