@@ -17,6 +17,33 @@
     background-image: url(../../assets/images/svg/patterns/feedback-mobile-pattern.svg);
   }
 }
+.feedback-specialists {
+  background-image: url(../../assets/images/svg/patterns/feedback-specialists-pattern.svg);
+  background-position: top right;
+  background-repeat: no-repeat;
+
+  @media (max-width: 767px) {
+    background-image: url(../../assets/images/svg/patterns/feedback-specialists-mobile-pattern.svg);
+  }
+}
+.feedback-about {
+  background-image: url(../../assets/images/svg/patterns/feedback-about-pattern.svg);
+  background-position: top right;
+  background-repeat: no-repeat;
+
+  @media (max-width: 767px) {
+    background-image: url(../../assets/images/svg/patterns/feedback-about-mobile-pattern.svg);
+  }
+}
+.feedback-works {
+  background-image: url(../../assets/images/svg/patterns/feedback-works-pattern.svg);
+  background-position: top right;
+  background-repeat: no-repeat;
+
+  @media (max-width: 767px) {
+    background-image: url(../../assets/images/svg/patterns/feedback-works-mobile-pattern.svg);
+  }
+}
 
 .feedbackHeading {
   margin: 24px 0 80px;
