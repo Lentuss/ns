@@ -197,25 +197,25 @@ export const oftenQuestionsData = [
     id: 2,
     question: 'Чим ваші послуги відрізняються від аутсорсингу?',
     answer:
-      'Ми надаємо відповідного до ваших вимог спеціаліста, який закриє поставлені перед вами задачі. Та можемо замінити спеціаліста, після того, як отримаємо таке звернення від вас. Додаткових витрат при цьому немає.'
+      'Аутсорсинг - передача функцій зовнішньому постачальнику послуг, а аутстафінг - це використання агентства для найму працівників для виконання завдань.'
   },
   {
     id: 3,
     question: 'Як відбувається комунікація зі спеціалістом?',
     answer:
-      'Ми надаємо відповідного до ваших вимог спеціаліста, який закриє поставлені перед вами задачі. Та можемо замінити спеціаліста, після того, як отримаємо таке звернення від вас. Додаткових витрат при цьому немає.'
+      'Спілкування може проходити як на англійській так і на російській мові, проте всі робочі матеріали, та проєкти створюються на англійській мові.'
   },
   {
     id: 4,
     question: 'Чи мають працівники безперервний доступ до мережі?',
     answer:
-      'Ми надаємо відповідного до ваших вимог спеціаліста, який закриє поставлені перед вами задачі. Та можемо замінити спеціаліста, після того, як отримаємо таке звернення від вас. Додаткових витрат при цьому немає.'
+      'Так, наші працівники знаходяться в офісі NewStaff в Україні, у безпечному місці. Ми забезпечуємо працівників комфортними умовами, програмами мотивації, та постійним доступом до мережі.'
   },
   {
     id: 5,
     question: 'Потрібна передоплата?',
     answer:
-      'Ми надаємо відповідного до ваших вимог спеціаліста, який закриє поставлені перед вами задачі. Та можемо замінити спеціаліста, після того, як отримаємо таке звернення від вас. Додаткових витрат при цьому немає.'
+      'Оплата за перший місяць роботи спеціаліста відбувається за звичним принципом, в кінці місяці. Передоплата не потрібна.'
   }
 ];
 
@@ -272,4 +272,35 @@ export const specialistPageSections = [
     accent: 'від $950/місяць',
     href: 'architects'
   }
+];
+import Logo0 from '@/assets/images/svg/practicing/company-s4.svg';
+import Logo1 from '@/assets/images/svg/practicing/company-s5.svg';
+import Logo2 from '@/assets/images/svg/practicing/company-m1.svg';
+import Logo3 from '@/assets/images/svg/practicing/company-m5.svg';
+import Logo4 from '@/assets/images/svg/practicing/company-l2.svg';
+import Logo5 from '@/assets/images/svg/practicing/company-l3.svg';
+import Logo6 from '@/assets/images/svg/practicing/company-s1.svg';
+import Logo7 from '@/assets/images/svg/practicing/company-s2.svg';
+import Logo8 from '@/assets/images/svg/practicing/company-m4.svg';
+import Logo9 from '@/assets/images/svg/practicing/company-l1.svg';
+import Logo10 from '@/assets/images/svg/practicing/company-s3.svg';
+import Logo11 from '@/assets/images/svg/practicing/company-m2.svg';
+import Logo12 from '@/assets/images/svg/practicing/company-m3.svg';
+import Logo13 from '@/assets/images/svg/practicing/company-l4.svg';
+
+export const practicing = [
+  <Logo0 />,
+  <Logo1 />,
+  <Logo2 />,
+  <Logo3 />,
+  <Logo4 />,
+  <Logo5 />,
+  <Logo6 />,
+  <Logo7 />,
+  <Logo8 />,
+  <Logo9 />,
+  <Logo10 />,
+  <Logo11 />,
+  <Logo12 />,
+  <Logo13 />
 ];

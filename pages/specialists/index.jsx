@@ -6,6 +6,7 @@ import { FeedBack, SpecialistsHead, SpecialistSection } from '@/components';
 import { specialistPageSections } from '@/utils/templateData';
 
 import s from '@/styles/pages/Specialists.module.scss';
+import { SpecialistsFormModal, SpecialistsModal } from '@/components/modals';
 
 function Specialists() {
   const { asPath } = useRouter();
@@ -29,6 +30,9 @@ function Specialists() {
       {renderSpecialistSections()}
 
       <FeedBack page="specialists" />
+
+      <SpecialistsModal />
+      <SpecialistsFormModal />
     </>
   );
 }

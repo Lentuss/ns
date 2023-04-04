@@ -8,11 +8,13 @@ import {
   Cooperation,
   LatestNews,
   FeedBack,
-  OftenQuestions
+  OftenQuestions,
+  Practicing
 } from '@/components';
 import { AccentH, Htag, Subtitle, Wrapper } from '@/components/common';
 
 import s from '@/styles/pages/Home.module.scss';
+import { SpecialistsFormModal, SpecialistsModal } from '@/components/modals';
 
 function Home() {
   return (
@@ -35,10 +37,14 @@ function Home() {
 
       <Partners />
       <Comparison />
+      <Practicing />
       <Cooperation />
       <LatestNews />
       <OftenQuestions />
       <FeedBack page="home" />
+
+      <SpecialistsModal />
+      <SpecialistsFormModal />
     </>
   );
 }

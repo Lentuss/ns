@@ -11,3 +11,4 @@ export * from './LatestNews/LatestNews';
 export * from './OftenQuestions/OftenQuestions';
 export * from './SpecialistsHead/SpecialistsHead';
 export * from './SpecialistSection/SpecialistSection';
+export * from './Practicing/Practicing';

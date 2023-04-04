@@ -1,0 +1,139 @@
+.logo {
+  position: absolute;
+  @media (min-width: 768px) {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  @media (max-width: 767px) {
+    width: 350px;
+    height: 100%;
+  }
+  @media (max-width: 360px) {
+    width: 304px;
+    height: 100%;
+  }
+}
+
+.logoItem {
+  position: absolute;
+
+  @media (max-width: 767px) {
+    transform: scale(0.62);
+  }
+}
+
+.logoItem-0 {
+  top: 83%;
+  left: 36%;
+  @media (max-width: 1023px) {
+    top: 72%;
+    left: 33%;
+  }
+  @media (max-width: 767px) {
+    top: 79%;
+    left: 29%;
+  }
+}
+
+.logoItem-1 {
+  top: 7%;
+  left: 55%;
+  @media (max-width: 767px) {
+    top: 0%;
+    left: 43%;
+  }
+}
+.logoItem-2 {
+  top: 15%;
+  left: 39%;
+  @media (max-width: 767px) {
+    top: 10%;
+    left: 58%;
+  }
+}
+.logoItem-3 {
+  top: 73%;
+  left: 51%;
+  @media (max-width: 1023px) {
+    top: 62%;
+    left: 47%;
+  }
+  @media (max-width: 767px) {
+    top: 58%;
+    left: -5%;
+  }
+}
+.logoItem-4 {
+  top: 68%;
+  left: 73%;
+  @media (max-width: 1023px) {
+    top: 64%;
+    left: 68%;
+  }
+  @media (max-width: 767px) {
+    top: 58%;
+    left: 47%;
+  }
+}
+.logoItem-5 {
+  top: 9%;
+  left: 15.5%;
+  @media (max-width: 1023px) {
+    top: 16%;
+    left: 9%;
+  }
+  @media (max-width: 767px) {
+    top: 0%;
+    left: -8%;
+  }
+}
+
+.logoItem-6 {
+  top: 40%;
+  left: 16%;
+  @media (max-width: 1023px) {
+    top: 43%;
+    left: 4%;
+  }
+}
+.logoItem-7 {
+  top: 45%;
+  left: 78%;
+  @media (max-width: 1023px) {
+    top: 46%;
+    left: 82%;
+  }
+}
+.logoItem-8 {
+  top: 68%;
+  left: 22%;
+  @media (max-width: 1023px) {
+    top: 64%;
+    left: 9%;
+  }
+}
+.logoItem-9 {
+  top: 12%;
+  left: 67%;
+  @media (max-width: 1023px) {
+  }
+}
+
+.logoItem-10 {
+  top: 58%;
+  left: 94%;
+}
+.logoItem-11 {
+  top: 31%;
+  left: -1%;
+}
+.logoItem-12 {
+  top: 30%;
+  left: 89%;
+}
+.logoItem-13 {
+  top: 53%;
+  left: 1%;
+}
