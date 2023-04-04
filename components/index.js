@@ -10,3 +10,6 @@ export * from './FeedBack/FeedBack';
 export * from './LatestNews/LatestNews';
 export * from './OftenQuestions/OftenQuestions';
 export * from './Practicing/Practicing';
+export * from './inNumbers/inNumbers';
+export * from './OurWay/OurWay';
+

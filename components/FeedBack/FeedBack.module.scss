@@ -3,6 +3,8 @@
 .feedback {
   padding: 108px 0 120px;
 
+  background-color: var(--white);
+
   @media (max-width: 767px) {
     padding: 72px 0 120px;
   }

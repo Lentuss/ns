@@ -1,0 +1,92 @@
+.ourWay {
+  position: relative;
+}
+
+.ourWayInner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ourWayProgress {
+  position: relative;
+  top: 25px;
+  right: 50%;
+
+  height: 100%;
+  width: 5px;
+
+  border: 1px solid red;
+}
+
+.ourWayProgressBar {
+  position: fixed;
+  top: 25px;
+  right: 50%;
+
+  z-index: -1;
+
+  width: 5px;
+  height: 50vh;
+
+  background-color: var(--cyan-primary);
+  transform: translateX(50%);
+}
+
+.ourWayHeading {
+  padding-bottom: 120px;
+  text-align: center;
+
+  background-color: var(--white);
+
+  @media (max-width: 767px) {
+    padding-bottom: 48px;
+  }
+}
+
+.ourWayWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.ourWayPeriod {
+  display: block;
+  height: 30vh;
+}
+
+.ourWaySticky {
+  position: sticky;
+  top: -1px;
+
+  display: flex;
+  justify-content: space-between;
+
+  background-color: teal;
+}
+
+.ourWayLeft {
+  width: 40%;
+}
+
+.ourWayCenter {
+  display: flex;
+  justify-content: center;
+  width: 10%;
+}
+
+.ourWayCircle {
+  width: 19px;
+  height: 19px;
+
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  background-color: var(--black-400);
+}
+
+.ourWayRight {
+  width: 40%;
+}
