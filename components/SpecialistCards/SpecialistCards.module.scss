@@ -3,7 +3,11 @@
 .specialistItem {
   border-top: 1px solid var(--black-400);
 
+  position: relative;
+
   padding: 56px 0px;
+
+  cursor: pointer;
 
   @media (min-width: 1025px) {
     display: grid;
@@ -20,6 +24,16 @@
     display: block;
 
     padding: 40px 0px;
+  }
+
+  &.isActive {
+    background-color: var(--white);
+    margin: 0 -16px;
+    padding-left: 16px;
+
+    z-index: 140;
+
+    pointer-events: none;
   }
 }
 

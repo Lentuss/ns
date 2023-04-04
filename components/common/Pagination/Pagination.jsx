@@ -21,23 +21,25 @@ export const Pagination = ({ numPages, className, activePage, onClick }) => {
   const isFirstPage = activePage > 1;
   const isLastPage = activePage < numPages;
 
-  const renderPaginationList = () => {
-    return (
-      <ul className={s.paginationList}>
-        {new Array(numPages).fill(0).map((_, idx) => (
+  const renderPaginationList = () => (
+    <ul className={s.paginationList}>
+      {new Array(numPages).fill(0).map((_, idx) => {
+        const currentPage = idx + 1;
+
+        return (
           <li
             className={cx(s.paginationListItem, {
-              [s.isActive]: idx + 1 === activePage
+              [s.isActive]: currentPage === activePage
             })}
-            onClick={() => onClickHandler(idx + 1)}
+            onClick={() => onClickHandler(currentPage)}
             key={idx}
           >
-            {idx + 1}
+            {currentPage}
           </li>
-        ))}
-      </ul>
-    );
-  };
+        );
+      })}
+    </ul>
+  );
 
   const onClickHandler = (nextPage) => {
     if (nextPage > numPages || nextPage < 1) return;

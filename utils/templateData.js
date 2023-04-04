@@ -1,6 +1,8 @@
+import { MAIN_PAGE_ROUTE, SPECIALISTS_PAGE_ROUTE } from './const';
+
 export const navLinks = [
-  { label: 'Головна', href: '/' },
-  { label: 'Спеціалісти', href: '/' },
+  { label: 'Головна', href: MAIN_PAGE_ROUTE },
+  { label: 'Спеціалісти', href: SPECIALISTS_PAGE_ROUTE },
   { label: 'Як це працює', href: '/' },
   { label: 'Про нас', href: '/' },
   { label: 'Блог', href: '/' },
@@ -74,6 +76,7 @@ export const specialistCards = [
     jobName: 'Інженер-проектувальник у Revit',
     experiense: '5+ років досвіду',
     imageSrc: specialist1,
+    sallary: 'від $750/місяць',
     features: [
       { label: 'мови', list: ['Англійська', 'Російська', 'Українська'] },
       {
@@ -96,6 +99,7 @@ export const specialistCards = [
     jobName: 'Розробник програмного забезпечення',
     experiense: '5+ років досвіду',
     imageSrc: specialist2,
+    sallary: 'від $750/місяць',
     features: [
       { label: 'мови', list: ['Англійська', 'Російська'] },
       {
@@ -109,6 +113,7 @@ export const specialistCards = [
     jobName: 'Інженер каналізацій',
     experiense: '5+ років досвіду',
     imageSrc: specialist3,
+    sallary: 'від $750/місяць',
     features: [
       { label: 'мови', list: ['Англійська', 'Російська', 'Українська'] },
       {
@@ -250,21 +255,21 @@ export const specialistPageSections = [
   {
     title: 'Спеціалісти розробники',
     accent: 'від $3500/місяць',
-    href: '/developers'
+    href: 'developers'
   },
   {
     title: 'Спеціалісти конструктори',
     accent: 'від $1750/місяць',
-    href: '/constructors'
+    href: 'constructors'
   },
   {
     title: 'Спеціалісти інженери',
     accent: 'від $950/місяць',
-    href: '/engineers'
+    href: 'engineers'
   },
   {
     title: 'Спеціалісти архітектори',
     accent: 'від $950/місяць',
-    href: '/architects'
+    href: 'architects'
   }
 ];

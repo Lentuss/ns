@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 import { ButtonOutline, Chip, Htag, Wrapper } from '../common';
 
@@ -11,21 +12,15 @@ import PlusIcon from '@/assets/icons/plus.svg';
 import s from './SpecialistsHead.module.scss';
 
 export const SpecialistsHead = memo((props) => {
-  const { query, pathname, push } = useRouter();
+  const { query } = useRouter();
 
   const renderCategories = () => (
     <ul className={s.specialistsHeadList}>
       {specialistsCategoriesList.map(({ id, count, label, href }) => (
-        <li
-          key={id}
-          onClick={() =>
-            push({
-              pathname,
-              query: { pid: href }
-            })
-          }
-        >
-          <Chip name={label} count={count} isActive={query?.pid === href} />
+        <li key={id}>
+          <Link href={`/specialists/${href}`}>
+            <Chip name={label} count={count} isActive={query?.alias === href} />
+          </Link>
         </li>
       ))}
       <li>

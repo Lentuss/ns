@@ -9,3 +9,26 @@
     @include css-lock(88, 164, 320, 1280, margin-bottom);
   }
 }
+
+.specialistPagination {
+  @include css-lock(60, 120, 320, 1280, margin-top);
+  @include css-lock(88, 164, 320, 1280, margin-bottom);
+}
+
+.specialistPaginationInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.specialistPaginationElement {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.specialistPaginationButtonMore {
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}

@@ -16,7 +16,7 @@ function Specialists() {
         className={s.specialistSection}
         title={title}
         accent={accent}
-        href={asPath + href}
+        href={href ? `${asPath}/${href}` : ''}
         key={title}
       />
     ));
@@ -28,7 +28,7 @@ function Specialists() {
 
       {renderSpecialistSections()}
 
-      <FeedBack page="home" />
+      <FeedBack page="specialists" />
     </>
   );
 }

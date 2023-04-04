@@ -1,0 +1,102 @@
+@import '/styles/mixins/css-lock';
+
+.modalSection {
+  @include css-lock(24, 32, 320, 1280, margin-top);
+  @include css-lock(24, 32, 320, 1280, padding-top);
+
+  border-top: 1px solid var(--black-400);
+}
+
+.modalHead {
+  display: grid;
+  grid-template-columns: fit-content(100%) 1fr;
+  grid-template-rows: 1fr fit-content(100%);
+  grid-template-areas:
+    'image title'
+    '. labels';
+
+  gap: 16px 24px;
+
+  @media (max-width: 768px) {
+    grid-template-areas:
+      'image title'
+      'labels labels';
+
+    gap: 20px 12px;
+  }
+}
+
+.modalHeadImage {
+  grid-area: image;
+}
+
+.modalHeadTitle {
+  grid-area: title;
+}
+
+.modalFeatures {
+  & + & {
+    @include css-lock(24, 32, 320, 1280, margin-top);
+  }
+}
+
+.modalHeadLabels {
+  grid-area: labels;
+
+  display: flex;
+  align-items: center;
+  @include css-lock(8, 16, 320, 1280, gap);
+}
+
+.modalHeadSallary {
+  color: var(--pink-primary);
+}
+
+.modalFeaturesLabel {
+  margin-bottom: 16px;
+}
+
+.modalFeaturesList {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.modalSectionTitle {
+  margin-bottom: 16px;
+}
+
+.modalDescriptionText {
+  color: var(--black-800);
+}
+
+.modalSkillsList {
+  @include css-lock(48, 56, 320, 1280, margin-bottom);
+}
+
+.modalSkillsListItem {
+  padding-left: 12px;
+
+  position: relative;
+
+  & + & {
+    margin-top: 4px;
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    width: 4px;
+    height: 4px;
+
+    background-color: var(--cyan-primary);
+
+    border: 100%;
+  }
+}
