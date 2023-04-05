@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -5,18 +6,28 @@ import { Button } from '../..';
 
 import s from './ButtonPrimary.module.scss';
 
-export const ButtonPrimary = (props) => {
-  const { children, className, appearance = 'pink', ...buttonProps } = props;
+export const ButtonPrimary = memo((props) => {
+  const {
+    children,
+    className,
+    appearance = 'pink',
+    isActive = false,
+    ...buttonProps
+  } = props;
 
   return (
     <Button
-      className={cx(s[`primary-${appearance}`], className)}
+      className={cx(
+        s[`primary-${appearance}`],
+        { [s.isActive]: isActive },
+        className
+      )}
       {...buttonProps}
     >
       {children}
     </Button>
   );
-};
+});
 
 ButtonPrimary.propTypes = {
   className: PropTypes.string,

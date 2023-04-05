@@ -1,52 +1,84 @@
-import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import { AccentH, ButtonPrimary, Htag, Subtitle, Wrapper } from '../common';
+import { ButtonPrimary } from '../common';
 import { SpecialistTitle } from './SpecialistTitle/SpecialistTitle';
 import { SpecialistFeatures } from './SpecialistFeatures/SpecialistFeatures';
+
+import {
+  selectSpecialist,
+  toogleShowSpecialistFormModal,
+  toogleShowSpecialistModal
+} from '@/store/slices/specialist';
+import { disableHTMLScrolling } from '@/utils/utils';
 
 import { specialistCards } from '@/utils/templateData';
 
 import s from './SpecialistCards.module.scss';
 
 export const SpecialistCards = (props) => {
+  const { className } = props;
+  const selectedSpecialist = useSelector(
+    (state) => state.specialist.selectedSpecialist
+  );
+
+  const dispatch = useDispatch();
+
+  const onSelectSpecialistHandler = (data) => {
+    dispatch(selectSpecialist(data));
+    dispatch(toogleShowSpecialistModal(true));
+
+    console.log('yiss');
+    disableHTMLScrolling();
+  };
+
+  const onGoToSpecialistFormModal = (e, data) => {
+    e.stopPropagation();
+    dispatch(selectSpecialist(data));
+    dispatch(toogleShowSpecialistFormModal(true));
+    disableHTMLScrolling();
+  };
+
   return (
-    <div className={s.specialistCards}>
-      <Wrapper>
-        <Subtitle className={s.specialistSubTitle} size="thin">
-          NewStaff 5 років на ринку
-        </Subtitle>
-        <Htag className={s.specialistTitle} tag="h2">
-          Ми маємо спеціалістів,
-          <AccentH location="specialists">яких ви шукаєте</AccentH>
-        </Htag>
+    <ul className={className}>
+      {specialistCards.map((specialist) => {
+        const { id, experiense, features, imageSrc, jobName } = specialist;
 
-        <ul className={s.specialistList}>
-          {specialistCards.map(
-            ({ id, experiense, features, imageSrc, jobName }) => (
-              <li className={s.specialistItem} key={id}>
-                <SpecialistTitle
-                  className={s.specialistItemTitle}
-                  experience={experiense}
-                  image={imageSrc}
-                  jobName={jobName}
-                />
-                <SpecialistFeatures
-                  className={s.specialistItemFeatures}
-                  skills={features}
-                />
+        return (
+          <li
+            className={cx(s.specialistItem, {
+              [s.isActive]: selectedSpecialist?.id === id
+            })}
+            onClick={() => onSelectSpecialistHandler(specialist)}
+            key={id}
+          >
+            <SpecialistTitle
+              className={s.specialistItemTitle}
+              experience={experiense}
+              image={imageSrc}
+              jobName={jobName}
+            />
+            <SpecialistFeatures
+              className={s.specialistItemFeatures}
+              skills={features}
+            />
 
-                <div className={s.specialistItemButtons}>
-                  <ButtonPrimary appearance="grey">Більше</ButtonPrimary>
-                  <ButtonPrimary>Обрати</ButtonPrimary>
-                </div>
-              </li>
-            )
-          )}
-        </ul>
-      </Wrapper>
-    </div>
+            <div className={s.specialistItemButtons}>
+              <ButtonPrimary appearance="grey">Більше</ButtonPrimary>
+              <ButtonPrimary
+                onClick={(e) => onGoToSpecialistFormModal(e, specialist)}
+              >
+                Обрати
+              </ButtonPrimary>
+            </div>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 
-SpecialistCards.propTypes = {};
+SpecialistCards.propTypes = {
+  className: PropTypes.string
+};

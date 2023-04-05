@@ -9,8 +9,15 @@ export * from './Cooperation/Cooperation';
 export * from './FeedBack/FeedBack';
 export * from './LatestNews/LatestNews';
 export * from './OftenQuestions/OftenQuestions';
+export * from './SpecialistsHead/SpecialistsHead';
+export * from './SpecialistSection/SpecialistSection';
 export * from './Practicing/Practicing';
 export * from './inNumbers/inNumbers';
 export * from './OurWay/OurWay';
 export * from './Product/Product';
 
+export * from './Articles/Articles';
+export * from './FooterContacts/FooterContacts';
+export * from './FooterSocials/FooterSocials';
+export * from './FooterCopyright/FooterCopyright';
+export * from './BlogSidebar/BlogSidebar';

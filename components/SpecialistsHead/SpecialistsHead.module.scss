@@ -1,0 +1,32 @@
+@import '/styles/mixins/css-lock';
+
+.specialistsHead {
+  @include css-lock(64, 80, 320, 1280, margin-top);
+  @include css-lock(64, 120, 320, 1280, margin-bottom);
+}
+
+.specialistsHeadTitle {
+  @include css-lock(32, 64, 320, 1280, margin-bottom);
+}
+
+.specialistsHeadList {
+  display: flex;
+  align-items: center;
+  @include css-lock(8, 16, 320, 1280, gap);
+
+  overflow-x: auto;
+
+  li {
+    flex-shrink: 0;
+  }
+}
+
+.specialistsHeadListButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  svg {
+    stroke: currentColor;
+  }
+}

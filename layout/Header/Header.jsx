@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import cx from 'classnames';
@@ -10,7 +11,7 @@ import { setLanguage, toogleMobileMenu } from '@/store/slices/general';
 import { useWindowDimensions } from '@/hooks';
 
 import { langSelectOptions, navLinks } from '@/utils/templateData';
-import { BREAKPOINTS } from '@/utils/const';
+import { BREAKPOINTS, SPECIALISTS_PAGE_ROUTE } from '@/utils/const';
 
 import MenuIcon from '@/assets/icons/menu.svg';
 import CrossIcon from '@/assets/icons/cross.svg';
@@ -19,8 +20,8 @@ import s from './Header.module.scss';
 
 export const Header = () => {
   const dispatch = useDispatch();
+  const { pathname, ...router } = useRouter();
   const { width } = useWindowDimensions();
-
   const isOpenMobileMenu = useSelector(
     (state) => state.general.isOpenMobileMenu
   );
@@ -40,7 +41,11 @@ export const Header = () => {
             className={cx(s.headerInner, { [s.isMenuOpen]: isOpenMobileMenu })}
           >
             <Logo />
-            <Nav className={s.headerNav} data={navLinks.slice(1)} />
+            <Nav
+              className={s.headerNav}
+              data={navLinks.slice(1)}
+              currentPathname={pathname}
+            />
             <Select
               className={s.headerLangSelect}
               options={langSelectOptions}
@@ -49,7 +54,10 @@ export const Header = () => {
               isSearchable={false}
               onChange={setLanguageHandler}
             />
-            <ButtonOutline className={s.headerButton}>
+            <ButtonOutline
+              className={s.headerButton}
+              href={SPECIALISTS_PAGE_ROUTE}
+            >
               Обрати спеціаліста
             </ButtonOutline>
 

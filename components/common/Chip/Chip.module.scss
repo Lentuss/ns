@@ -11,6 +11,8 @@
 
   transition: color 50ms ease-in-out, background-color 50ms ease-in-out;
 
+  cursor: pointer;
+
   &:hover {
     color: var(--white);
     background-color: var(--pink-primary);

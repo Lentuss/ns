@@ -14,3 +14,7 @@ export * from './Subtitle/Subtitle';
 export * from './Input/Input';
 export * from './AccentH/AccentH';
 export * from './CustomCollapse/CustomCollapse';
+export * from './Pagination/Pagination';
+export * from './Modal/Modal';
+export * from './Heading/Heading';
+export * from './Text/Text';

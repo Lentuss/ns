@@ -1,5 +1,4 @@
 import { widthLayout } from '@/layout/Layout';
-
 import {
   Hero,
   Outstaff,
@@ -12,13 +11,35 @@ import {
   OftenQuestions,
   Practicing
 } from '@/components';
+import { AccentH, Htag, Subtitle, Wrapper } from '@/components/common';
+
+import s from '@/styles/pages/Home.module.scss';
+import {
+  HomeFormModal,
+  SpecialistsFormModal,
+  SpecialistsModal,
+  SuccessModal
+} from '@/components/modals';
 
 function Home() {
   return (
-    <div>
+    <>
       <Hero />
       <Outstaff />
-      <SpecialistCards />
+
+      <section className={s.specialistSection}>
+        <Wrapper>
+          <Subtitle className={s.specialistSubTitle} size="thin">
+            NewStaff 5 років на ринку
+          </Subtitle>
+          <Htag className={s.specialistTitle} tag="h2">
+            Ми маємо спеціалістів,
+            <AccentH location="specialists">яких ви шукаєте</AccentH>
+          </Htag>
+          <SpecialistCards />
+        </Wrapper>
+      </section>
+
       <Partners />
       <Comparison />
       <Practicing />
@@ -26,7 +47,12 @@ function Home() {
       <LatestNews />
       <OftenQuestions />
       <FeedBack page="home" />
-    </div>
+
+      <HomeFormModal />
+      <SuccessModal />
+      <SpecialistsModal />
+      <SpecialistsFormModal />
+    </>
   );
 }
 

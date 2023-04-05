@@ -20,3 +20,7 @@ export const BREAKPOINTS = {
   mobile: 767,
   mobileSm: 479
 };
+
+export const MAIN_PAGE_ROUTE = '/';
+export const SPECIALISTS_PAGE_ROUTE = '/specialists';
+export const BLOG_PAGE_ROUTE = '/blog';

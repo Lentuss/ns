@@ -1,11 +1,17 @@
+import {
+  BLOG_PAGE_ROUTE,
+  MAIN_PAGE_ROUTE,
+  SPECIALISTS_PAGE_ROUTE
+} from './const';
+
 export const navLinks = [
-  { label: 'Головна', href: '/' },
-  { label: 'Спеціалісти', href: '/' },
-  { label: 'Як це працює', href: '/' },
-  { label: 'Про нас', href: '/about' },
-  { label: 'Блог', href: '/' },
-  { label: 'Контакти', href: '/' },
-  { label: 'Вакансії', href: '/' }
+  { label: 'Головна', href: MAIN_PAGE_ROUTE },
+  { label: 'Спеціалісти', href: SPECIALISTS_PAGE_ROUTE },
+  { label: 'Як це працює', href: '#' },
+  { label: 'Про нас', href: '#' },
+  { label: 'Блог', href: BLOG_PAGE_ROUTE },
+  { label: 'Контакти', href: '#' },
+  { label: 'Вакансії', href: '#' }
 ];
 
 import GBFlagIcon from '@/assets/images/svg/flags/GB.svg';
@@ -74,6 +80,7 @@ export const specialistCards = [
     jobName: 'Інженер-проектувальник у Revit',
     experiense: '5+ років досвіду',
     imageSrc: specialist1,
+    sallary: 'від $750/місяць',
     features: [
       { label: 'мови', list: ['Англійська', 'Російська', 'Українська'] },
       {
@@ -96,6 +103,7 @@ export const specialistCards = [
     jobName: 'Розробник програмного забезпечення',
     experiense: '5+ років досвіду',
     imageSrc: specialist2,
+    sallary: 'від $750/місяць',
     features: [
       { label: 'мови', list: ['Англійська', 'Російська'] },
       {
@@ -109,6 +117,7 @@ export const specialistCards = [
     jobName: 'Інженер каналізацій',
     experiense: '5+ років досвіду',
     imageSrc: specialist3,
+    sallary: 'від $750/місяць',
     features: [
       { label: 'мови', list: ['Англійська', 'Російська', 'Українська'] },
       {
@@ -159,7 +168,9 @@ export const latestNewsList = [
     tags: ['Аутстафінг', 'NewStaff'],
     timeRead: '5 хвилин',
     href: '/',
-    image: latestNews1
+    image: latestNews1,
+    desription:
+      'У світі розробки програмного забезпечення існує давнє питання: що краще — ІТ-аутсорсинг чи аутстафінг і чи є різниця між ними? Простіше кажучи: що буде ефективніше — найняти зовнішню команду за кордоном чи замовити спеціальну команду розробки програмного забезпечення повного циклу в компанії, яка пропонує таку послугу.'
   },
   {
     title: '2022 у NewStaff: огляд року',
@@ -168,7 +179,9 @@ export const latestNewsList = [
     tags: ['NewStaff'],
     timeRead: '5 хвилин',
     href: '/',
-    image: latestNews2
+    image: latestNews2,
+    desription:
+      'Простіше кажучи: що буде ефективніше — найняти зовнішню команду за кордоном чи замовити спеціальну команду розробки програмного забезпечення повного циклу в компанії, яка пропонує таку послугу.'
   },
   {
     title: 'Інженери програмного забезпечення NewStaff',
@@ -177,11 +190,11 @@ export const latestNewsList = [
     tags: ['Cпеціалізації', 'Аутстафінг', 'NewStaff'],
     timeRead: '5 хвилин',
     href: '/',
-    image: latestNews3
+    image: latestNews3,
+    desription:
+      'Простіше кажучи: що буде ефективніше — найняти зовнішню команду за кордоном чи замовити спеціальну команду розробки програмного забезпечення повного циклу в компанії, яка пропонує таку послугу.'
   }
 ];
-
-
 
 export const oftenQuestionsData = [
   {
@@ -216,6 +229,61 @@ export const oftenQuestionsData = [
   }
 ];
 
+export const specialistsCategoriesList = [
+  {
+    id: 1,
+    label: 'Розробка програмного забезпечення',
+    count: '10',
+    href: '/developers'
+  },
+  {
+    id: 2,
+    label: 'Конструктори',
+    count: '7',
+    href: '/constructors'
+  },
+  {
+    id: 3,
+    label: 'Інженерія',
+    count: '12',
+    href: '/engineers'
+  },
+  {
+    id: 4,
+    label: 'Архітектура',
+    count: '7',
+    href: '/architects'
+  }
+];
+
+export const specialistPageSections = [
+  {
+    title: 'Популярні спеціалісти',
+    accent: '',
+    href: ''
+  },
+  {
+    title: 'Спеціалісти розробники',
+    accent: 'від $3500/місяць',
+    href: '/developers'
+  },
+  {
+    title: 'Спеціалісти конструктори',
+    accent: 'від $1750/місяць',
+    href: '/constructors'
+  },
+  {
+    title: 'Спеціалісти інженери',
+    accent: 'від $950/місяць',
+    href: '/engineers'
+  },
+  {
+    title: 'Спеціалісти архітектори',
+    accent: 'від $950/місяць',
+    href: '/architects'
+  }
+];
+
 import Logo0 from '@/assets/images/svg/practicing/company-s4.svg';
 import Logo1 from '@/assets/images/svg/practicing/company-s5.svg';
 import Logo2 from '@/assets/images/svg/practicing/company-m1.svg';
@@ -247,6 +315,43 @@ export const practicing = [
   <Logo12 />,
   <Logo13 />
 ];
+
+export const blogCategoriesList = [
+  'Всі новини',
+  'NewStaff',
+  'Аутстафінг',
+  'Спеціалізації',
+  'Події',
+  'Спільнота'
+];
+
+export const contactsData = [
+  {
+    country: 'Україна',
+    phone: '+380 (63) 145-47-78',
+    email: 'info@newstaff.co.il'
+  },
+  {
+    country: 'info@newstaff.co.il',
+    phone: '+97 (250) 486-5294',
+    email: 'engineers@newstaff.co.il'
+  }
+];
+
+export const socialsData = [
+  { label: 'Instagram', href: '#' },
+  { label: 'YouTube', href: '#' },
+  { label: 'Telegram', href: '#' },
+  { label: 'Twitter', href: '#' }
+];
+
+export const footerCopyrightLinks = [
+  { label: 'Посібник користувача', href: '#' },
+  { label: 'Політика конфіденційності', href: '#' },
+  { label: 'Публічна оферта', href: '#' },
+  { label: 'Налаштування Cookie', href: '#' }
+];
+
 
 export const heroes = {
   home: { subtitle: 'послуги аутстафінгу', text: '100+ компетентних, мотивованих і висококваліфікованих віддалених працівників, готові працювати для вас', button: 'Дивитись перелік спеціалістів' },
