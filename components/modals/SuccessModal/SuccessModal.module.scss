@@ -1,0 +1,27 @@
+@import '/styles/mixins/css-lock';
+
+.modalHeader {
+  @include css-lock(8, 16, 320, 1280, margin-bottom);
+}
+
+.modalDescription {
+  margin-bottom: 40px;
+}
+
+.modalBody {
+  @media (min-width: 769px) {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    height: fit-content;
+  }
+}
+
+.modalBottomButtons {
+  @media (min-width: 769px) {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}

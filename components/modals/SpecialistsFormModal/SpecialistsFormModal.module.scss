@@ -55,12 +55,3 @@
     @include css-lock(16, 20, 320, 1280, margin-top);
   }
 }
-
-.modalBottomButtons {
-  display: flex;
-  gap: 8px;
-
-  @media (max-width: 768px) {
-    justify-content: space-between;
-  }
-}

@@ -16,6 +16,7 @@ export const Modal = ({
   onClickPrimaryButton,
   onClickSecondaryButton,
   className,
+  bottomButtonsClassName,
   primaryButtonLabel,
   secondareButtonLabel
 }) => {
@@ -37,7 +38,7 @@ export const Modal = ({
         <div className={cx(s.modalInner, className)} ref={modalInnerRef}>
           {children}
 
-          <div className={s.modalBottomButtons}>
+          <div className={cx(s.modalBottomButtons, bottomButtonsClassName)}>
             <ButtonPrimary appearance="grey" onClick={onClickPrimaryButton}>
               {primaryButtonLabel}
             </ButtonPrimary>

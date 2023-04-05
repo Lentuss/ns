@@ -1,14 +1,24 @@
+import { useDispatch } from 'react-redux';
 import cx from 'classnames';
 
 import { ButtonPrimary, Htag, Ptag, Wrapper } from '../common';
 
+import { toogleShowHomeFormModal } from '@/store/slices/specialist';
 import { benefitsData } from '@/utils/templateData';
+import { disableHTMLScrolling } from '@/utils/utils';
 
 import OutstaffPatternIcon from '@/assets/images/svg/patterns/outstaff-pattern.svg';
 
 import s from './Outstaff.module.scss';
 
 export const Outstaff = ({ className }) => {
+  const dispatch = useDispatch();
+
+  const onOpenHomeFormModal = () => {
+    dispatch(toogleShowHomeFormModal(true));
+    disableHTMLScrolling();
+  };
+
   const renderBenefits = () => (
     <ul className={s.benefits}>
       {benefitsData.map(({ value, text }) => (
@@ -30,7 +40,11 @@ export const Outstaff = ({ className }) => {
             Аутстафінг економить ваш час і гроші
           </Htag>
 
-          <ButtonPrimary className={s.outstaffButton} appearance="white">
+          <ButtonPrimary
+            className={s.outstaffButton}
+            appearance="white"
+            onClick={onOpenHomeFormModal}
+          >
             Отримати спеціаліста
           </ButtonPrimary>
 
