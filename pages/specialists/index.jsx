@@ -17,7 +17,7 @@ function Specialists() {
         className={s.specialistSection}
         title={title}
         accent={accent}
-        href={href ? `${asPath}/${href}` : ''}
+        href={href ? `${asPath}${href}` : ''}
         key={title}
       />
     ));

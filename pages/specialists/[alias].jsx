@@ -4,11 +4,12 @@ import { FeedBack, SpecialistSection, SpecialistsHead } from '@/components';
 import { ButtonOutline, Pagination, Wrapper } from '@/components/common';
 import { SpecialistsModal } from '@/components/modals';
 import { widthLayout } from '@/layout/Layout';
+import { SpecialistsFormModal } from '@/components/modals';
 
 import { specialistPageSections } from '@/utils/templateData';
+import { SPECIALISTS_PAGE_ROUTE } from '@/utils/const';
 
 import s from '@/styles/pages/Specialists.module.scss';
-import { SpecialistsFormModal } from '@/components/modals';
 
 function Specialist({ headData }) {
   const { title, accent } = headData || {};
@@ -48,7 +49,7 @@ export default widthLayout(Specialist);
 export const getStaticPaths = async () => {
   return {
     paths: specialistPageSections
-      .map(({ href }) => href && `/specialists/${href}`)
+      .map(({ href }) => href && `${SPECIALISTS_PAGE_ROUTE}${href}`)
       .filter((href) => href),
     fallback: true
   };

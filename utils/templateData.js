@@ -1,11 +1,15 @@
-import { MAIN_PAGE_ROUTE, SPECIALISTS_PAGE_ROUTE } from './const';
+import {
+  BLOG_PAGE_ROUTE,
+  MAIN_PAGE_ROUTE,
+  SPECIALISTS_PAGE_ROUTE
+} from './const';
 
 export const navLinks = [
   { label: 'Головна', href: MAIN_PAGE_ROUTE },
   { label: 'Спеціалісти', href: SPECIALISTS_PAGE_ROUTE },
   { label: 'Як це працює', href: '/' },
   { label: 'Про нас', href: '/' },
-  { label: 'Блог', href: '/' },
+  { label: 'Блог', href: BLOG_PAGE_ROUTE },
   { label: 'Контакти', href: '/' },
   { label: 'Вакансії', href: '/' }
 ];
@@ -255,22 +259,22 @@ export const specialistPageSections = [
   {
     title: 'Спеціалісти розробники',
     accent: 'від $3500/місяць',
-    href: 'developers'
+    href: '/developers'
   },
   {
     title: 'Спеціалісти конструктори',
     accent: 'від $1750/місяць',
-    href: 'constructors'
+    href: '/constructors'
   },
   {
     title: 'Спеціалісти інженери',
     accent: 'від $950/місяць',
-    href: 'engineers'
+    href: '/engineers'
   },
   {
     title: 'Спеціалісти архітектори',
     accent: 'від $950/місяць',
-    href: 'architects'
+    href: '/architects'
   }
 ];
 import Logo0 from '@/assets/images/svg/practicing/company-s4.svg';
