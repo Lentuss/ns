@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ButtonOutline, Chip, Htag, Wrapper } from '../common';
 
 import { specialistsCategoriesList } from '@/utils/templateData';
+import { SPECIALISTS_PAGE_ROUTE } from '@/utils/const';
 
 import PlusIcon from '@/assets/icons/plus.svg';
 
@@ -18,8 +19,12 @@ export const SpecialistsHead = memo((props) => {
     <ul className={s.specialistsHeadList}>
       {specialistsCategoriesList.map(({ id, count, label, href }) => (
         <li key={id}>
-          <Link href={`/specialists/${href}`}>
-            <Chip name={label} count={count} isActive={query?.alias === href} />
+          <Link href={`${SPECIALISTS_PAGE_ROUTE}${href}`}>
+            <Chip
+              name={label}
+              count={count}
+              isActive={href.includes(query?.alias)}
+            />
           </Link>
         </li>
       ))}

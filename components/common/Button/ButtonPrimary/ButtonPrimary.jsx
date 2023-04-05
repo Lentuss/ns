@@ -7,11 +7,21 @@ import { Button } from '../..';
 import s from './ButtonPrimary.module.scss';
 
 export const ButtonPrimary = memo((props) => {
-  const { children, className, appearance = 'pink', ...buttonProps } = props;
+  const {
+    children,
+    className,
+    appearance = 'pink',
+    isActive = false,
+    ...buttonProps
+  } = props;
 
   return (
     <Button
-      className={cx(s[`primary-${appearance}`], className)}
+      className={cx(
+        s[`primary-${appearance}`],
+        { [s.isActive]: isActive },
+        className
+      )}
       {...buttonProps}
     >
       {children}
