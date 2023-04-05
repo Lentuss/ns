@@ -1,0 +1,23 @@
+@import '/styles/mixins/css-lock';
+
+.modalHeader {
+  @include css-lock(8, 16, 320, 1280, margin-bottom);
+}
+
+.modalDescription {
+  @include css-lock(40, 48, 320, 1280, margin-bottom);
+}
+
+.modalForm {
+  @include css-lock(48, 67, 320, 1280, margin-bottom);
+}
+
+.modalFormTitle {
+  @include css-lock(20, 24, 320, 1280, margin-bottom);
+}
+
+.modalFormInput {
+  & + & {
+    @include css-lock(16, 20, 320, 1280, margin-top);
+  }
+}

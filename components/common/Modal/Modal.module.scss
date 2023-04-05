@@ -10,6 +10,8 @@
   right: 0;
   bottom: 0;
 
+  z-index: 150;
+
   background-color: #f7f7f7;
 
   transform: translateX(200%);
@@ -24,7 +26,6 @@
 
   &.isOpen {
     transform: translateX(0);
-    z-index: 150;
   }
 }
 

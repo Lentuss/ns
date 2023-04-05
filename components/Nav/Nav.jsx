@@ -1,17 +1,22 @@
 import { memo } from 'react';
 import cx from 'classnames';
-import Link from 'next/link';
 import PropTypes from 'prop-types';
+
+import { ButtonText } from '../common';
 
 import s from './Nav.module.scss';
 
-export const Nav = memo(({ className, data }) => (
+export const Nav = memo(({ className, data, currentPathname }) => (
   <nav className={cx(s.nav, className)}>
     {data.map(({ label, href }) => (
       <li className={s.navItem} key={label}>
-        <Link className={s.navItemLink} href={href}>
+        <ButtonText
+          className={s.navItemLink}
+          href={href}
+          isActive={currentPathname?.includes(href)}
+        >
           {label}
-        </Link>
+        </ButtonText>
       </li>
     ))}
   </nav>
@@ -19,5 +24,6 @@ export const Nav = memo(({ className, data }) => (
 
 Nav.propTypes = {
   className: PropTypes.string,
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
+  currentPathname: PropTypes.string
 };

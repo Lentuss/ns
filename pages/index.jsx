@@ -14,7 +14,12 @@ import {
 import { AccentH, Htag, Subtitle, Wrapper } from '@/components/common';
 
 import s from '@/styles/pages/Home.module.scss';
-import { SpecialistsFormModal, SpecialistsModal } from '@/components/modals';
+import {
+  HomeFormModal,
+  SpecialistsFormModal,
+  SpecialistsModal,
+  SuccessModal
+} from '@/components/modals';
 
 function Home() {
   return (
@@ -43,6 +48,8 @@ function Home() {
       <OftenQuestions />
       <FeedBack page="home" />
 
+      <HomeFormModal />
+      <SuccessModal />
       <SpecialistsModal />
       <SpecialistsFormModal />
     </>

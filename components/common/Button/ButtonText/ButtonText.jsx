@@ -7,11 +7,22 @@ import { Button } from '../..';
 import s from './ButtonText.module.scss';
 
 export const ButtonText = memo((props) => {
-  const { children, className, appearance = 'black', ...buttonProps } = props;
+  const {
+    children,
+    className,
+    appearance = 'black',
+    isActive,
+    ...buttonProps
+  } = props;
 
   return (
     <Button
-      className={cx(s.buttonText, s[`text-${appearance}`], className)}
+      className={cx(
+        s.buttonText,
+        s[`text-${appearance}`],
+        { [s.isActive]: isActive },
+        className
+      )}
       {...buttonProps}
     >
       {children}
@@ -22,5 +33,6 @@ export const ButtonText = memo((props) => {
 ButtonText.propTypes = {
   className: PropTypes.string,
   appearance: PropTypes.oneOf(['black', 'pink', 'white']),
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  isActive: PropTypes.bool
 };

@@ -2,9 +2,21 @@
   background-color: transparent;
 
   padding: 0;
+  border-radius: 0;
 
-  &:hover:enabled {
-    text-decoration: underline;
+  position: relative;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+
+    transition: background-color 0.2s ease;
+
+    height: 1px;
   }
 
   &:disabled {
@@ -13,8 +25,13 @@
 }
 
 .text-black {
-  &:hover:enabled {
+  &:hover,
+  &.isActive {
     color: var(--pink-primary);
+
+    &::after {
+      background-color: var(--pink-primary);
+    }
   }
 }
 

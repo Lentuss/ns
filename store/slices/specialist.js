@@ -3,7 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   isSpecialistModalShow: false,
   selectedSpecialist: null,
-  isSpecialistFormModalShow: false
+  isSpecialistFormModalShow: false,
+  isHomeFormModalShow: false,
+  isSuccessModalShow: false
 };
 
 const specialistSlice = createSlice({
@@ -18,6 +20,12 @@ const specialistSlice = createSlice({
     },
     selectSpecialist: (state, action) => {
       state.selectedSpecialist = action.payload;
+    },
+    toogleShowHomeFormModal: (state, action) => {
+      state.isHomeFormModalShow = action.payload;
+    },
+    toogleShowSuccessModal: (state, action) => {
+      state.isSuccessModalShow = action.payload;
     }
   }
 });
@@ -25,7 +33,9 @@ const specialistSlice = createSlice({
 export const {
   toogleShowSpecialistModal,
   toogleShowSpecialistFormModal,
-  selectSpecialist
+  selectSpecialist,
+  toogleShowHomeFormModal,
+  toogleShowSuccessModal
 } = specialistSlice.actions;
 
 export default specialistSlice.reducer;

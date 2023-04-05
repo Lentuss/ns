@@ -3,11 +3,11 @@ import { MAIN_PAGE_ROUTE, SPECIALISTS_PAGE_ROUTE } from './const';
 export const navLinks = [
   { label: 'Головна', href: MAIN_PAGE_ROUTE },
   { label: 'Спеціалісти', href: SPECIALISTS_PAGE_ROUTE },
-  { label: 'Як це працює', href: '/' },
-  { label: 'Про нас', href: '/' },
-  { label: 'Блог', href: '/' },
-  { label: 'Контакти', href: '/' },
-  { label: 'Вакансії', href: '/' }
+  { label: 'Як це працює', href: '#' },
+  { label: 'Про нас', href: '#' },
+  { label: 'Блог', href: '#' },
+  { label: 'Контакти', href: '#' },
+  { label: 'Вакансії', href: '#' }
 ];
 
 import GBFlagIcon from '@/assets/images/svg/flags/GB.svg';
