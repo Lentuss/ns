@@ -1,14 +1,14 @@
 import {
   BLOG_PAGE_ROUTE,
   MAIN_PAGE_ROUTE,
-  SPECIALISTS_PAGE_ROUTE
+  SPECIALISTS_PAGE_ROUTE, ABOUT_PAGE_ROUTE
 } from './const';
 
 export const navLinks = [
   { label: 'Головна', href: MAIN_PAGE_ROUTE },
   { label: 'Спеціалісти', href: SPECIALISTS_PAGE_ROUTE },
   { label: 'Як це працює', href: '#' },
-  { label: 'Про нас', href: '#' },
+  { label: 'Про нас', href: ABOUT_PAGE_ROUTE },
   { label: 'Блог', href: BLOG_PAGE_ROUTE },
   { label: 'Контакти', href: '#' },
   { label: 'Вакансії', href: '#' }
