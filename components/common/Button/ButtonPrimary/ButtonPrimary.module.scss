@@ -34,7 +34,8 @@
 .primary-grey {
   background-color: var(--black-150);
 
-  &:hover:enabled {
+  &:hover:enabled,
+  &.isActive {
     background-color: var(--pink-primary);
 
     color: var(--white);

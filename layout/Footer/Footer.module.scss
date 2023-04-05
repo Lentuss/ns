@@ -65,27 +65,7 @@
   }
 }
 
-.footerAddressWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-}
-
-.footerAddress {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.footerAddressCountry {
-  margin-bottom: 8px;
-}
-
-.footerAddressLink {
-  font-family: var(--font-family-title);
-  @include css-lock(17, 21, 320, 1280);
-  @include css-lock(20, 27, 320, 1280, line-height);
-  font-style: initial;
+.footerContacts {
   color: var(--white);
 }
 
@@ -101,34 +81,6 @@
   color: var(--white);
 }
 
-.footerSocials {
-  display: flex;
-  flex-direction: column;
-  gap: 27px;
-
-  @media (max-width: 767px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-}
-
-.footerSocialsBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0;
-  height: 40px;
-  width: 110px;
-
-  @include css-lock(13, 16, 320, 1280);
-
-  @media (max-width: 767px) {
-    flex-basis: calc((100% - 8px) / 2);
-  }
-}
-
 .footerCopyright {
   display: flex;
   justify-content: space-between;
@@ -141,20 +93,4 @@
     flex-direction: column;
     gap: 16px;
   }
-}
-
-.footerTerms {
-  display: flex;
-  gap: 16px;
-
-  @media (max-width: 767px) {
-    flex-direction: column;
-    gap: 8px;
-  }
-}
-
-.footerTermsItem {
-  color: inherit;
-  @include css-lock(10, 13, 320, 1280);
-  @include css-lock(12, 16, 320, 1280, line-height);
 }

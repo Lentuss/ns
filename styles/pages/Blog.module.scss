@@ -1,1 +1,91 @@
 @import '/styles/mixins/css-lock';
+
+.blog {
+  @include css-lock(40, 80, 320, 1280, padding-top);
+  @include css-lock(80, 120, 320, 1280, padding-bottom);
+}
+
+.blogInner {
+  display: grid;
+  grid-template-columns: 1fr 1px 350px;
+  grid-template-rows: fit-content(100%) 1fr fit-content(100%);
+  grid-template-areas:
+    'title line sidebar'
+    'articles line sidebar'
+    'pagination . .';
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, fit-content(100%)) 1fr;
+    grid-template-areas:
+      'title'
+      'sidebar'
+      'articles'
+      'pagination';
+  }
+}
+
+.blogTitle {
+  grid-area: title;
+
+  @include css-lock(32, 64, 320, 1280, margin-bottom);
+}
+
+.blogArticles {
+  grid-area: articles;
+
+  @include css-lock(32, 64, 1024, 1280, padding-right);
+
+  @media (max-width: 1024px) {
+    padding-right: 0;
+  }
+}
+
+.blogLine {
+  grid-area: line;
+
+  width: 1px;
+
+  background-color: var(--black-400);
+
+  height: 100%;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.blogSidebar {
+  grid-area: sidebar;
+
+  @include css-lock(24, 48, 1024, 1280, padding-left);
+
+  @media (max-width: 1024px) {
+    padding-left: 0;
+  }
+}
+
+.blogPagination {
+  @include css-lock(40, 80, 320, 1280, margin-top);
+}
+
+.blogPagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-right: 64px;
+
+  @media (max-width: 1024px) {
+    padding-right: 0;
+  }
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.blogPaginationButton {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

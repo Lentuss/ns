@@ -12,3 +12,8 @@ export * from './OftenQuestions/OftenQuestions';
 export * from './SpecialistsHead/SpecialistsHead';
 export * from './SpecialistSection/SpecialistSection';
 export * from './Practicing/Practicing';
+export * from './Articles/Articles';
+export * from './FooterContacts/FooterContacts';
+export * from './FooterSocials/FooterSocials';
+export * from './FooterCopyright/FooterCopyright';
+export * from './BlogSidebar/BlogSidebar';
