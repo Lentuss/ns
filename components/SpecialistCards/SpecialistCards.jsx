@@ -28,8 +28,6 @@ export const SpecialistCards = (props) => {
   const onSelectSpecialistHandler = (data) => {
     dispatch(selectSpecialist(data));
     dispatch(toogleShowSpecialistModal(true));
-
-    console.log('yiss');
     disableHTMLScrolling();
   };
 

@@ -63,7 +63,8 @@ export const getStaticProps = async ({ params }) => {
   }
 
   const headData =
-    specialistPageSections.find(({ href }) => href === params.alias) || {};
+    specialistPageSections.find(({ href }) => href.includes(params.alias)) ||
+    {};
 
   return {
     props: {

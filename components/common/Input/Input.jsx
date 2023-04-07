@@ -13,7 +13,7 @@ export const Input = memo((props) => {
   const {
     type = 'text',
     placeholder,
-    onChange,
+    onChange = () => {},
     value = '',
     className,
     name = '',

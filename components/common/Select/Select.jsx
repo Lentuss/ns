@@ -135,7 +135,7 @@ export const Select = memo((props) => {
 });
 
 Select.propTypes = {
-  options: PropTypes.array.isRequired,
+  options: PropTypes.array,
   selectedOption: PropTypes.object,
   className: PropTypes.string,
   onChange: PropTypes.func,

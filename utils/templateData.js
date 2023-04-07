@@ -1,7 +1,8 @@
 import {
   BLOG_PAGE_ROUTE,
   MAIN_PAGE_ROUTE,
-  SPECIALISTS_PAGE_ROUTE, ABOUT_PAGE_ROUTE
+  SPECIALISTS_PAGE_ROUTE,
+  ABOUT_PAGE_ROUTE
 } from './const';
 
 export const navLinks = [
@@ -166,8 +167,9 @@ export const latestNewsList = [
     author: 'Дмитро Степанчук',
     publicDate: '09.03.2023',
     tags: ['Аутстафінг', 'NewStaff'],
+    rating: 4,
     timeRead: '5 хвилин',
-    href: '/',
+    href: '/1',
     image: latestNews1,
     desription:
       'У світі розробки програмного забезпечення існує давнє питання: що краще — ІТ-аутсорсинг чи аутстафінг і чи є різниця між ними? Простіше кажучи: що буде ефективніше — найняти зовнішню команду за кордоном чи замовити спеціальну команду розробки програмного забезпечення повного циклу в компанії, яка пропонує таку послугу.'
@@ -177,8 +179,9 @@ export const latestNewsList = [
     author: 'Олена Іванчук',
     publicDate: '09.03.2023',
     tags: ['NewStaff'],
+    rating: 3,
     timeRead: '5 хвилин',
-    href: '/',
+    href: '/2',
     image: latestNews2,
     desription:
       'Простіше кажучи: що буде ефективніше — найняти зовнішню команду за кордоном чи замовити спеціальну команду розробки програмного забезпечення повного циклу в компанії, яка пропонує таку послугу.'
@@ -188,8 +191,9 @@ export const latestNewsList = [
     author: 'Богдан Романчук',
     publicDate: '09.03.2023',
     tags: ['Cпеціалізації', 'Аутстафінг', 'NewStaff'],
+    rating: 5,
     timeRead: '5 хвилин',
-    href: '/',
+    href: '/3',
     image: latestNews3,
     desription:
       'Простіше кажучи: що буде ефективніше — найняти зовнішню команду за кордоном чи замовити спеціальну команду розробки програмного забезпечення повного циклу в компанії, яка пропонує таку послугу.'
@@ -352,12 +356,103 @@ export const footerCopyrightLinks = [
   { label: 'Налаштування Cookie', href: '#' }
 ];
 
+export const mainTextArticle = [
+  {
+    title: 'The Difference between Outsourcing and Outstaffing',
+    text: `People often assume Outsourcing and Outstaffing are the same things, but they are not.
+  Software Development Outsourcing refers to a model where a company hires workers from another company to get specific tasks done. The IT industry can be developing an app, a website, software product, etc. Often, Outsourcing means that the contractor will carry out the entire scope of work and not just one or two tasks. For instance, if you want to develop a mobile app, they will deal with everything, from technical requirements to maintenance and final checks.
+  If you choose to outsource, you will get a project manager assigned to your project. They will interact with you and also handle the entire team.
+  On the contrary, Outstaffing is a type of model in which a third-party worker or a team performs your work. The third party is officially employed by another company but performs the work for you. In Outstaffing, the customers control the entire scope of work, and they have direct access to the outsourced team. When you outsource, you have to manage the hired team and your own; however, the Outstaffing team will handle the payroll.
+  This approach works best when you already have a development team but lack some expertise required for a particular project.`
+  },
+  {
+    title: 'Outsourcing vs. Outstaffing: Looking for the Best Fit',
+    text: `There is no one-size-fits-all, and no one can tell you what to opt for. Every situation is unique and requires consideration. To develop the best fit, you need first to evaluate the available resources at your disposal.
+  If you don’t have a software department in your company and have enough funds to accomplish your project, Outsourcing is the option for you. On the contrary, your team doesn’t have enough strength, and you can seamlessly manage a third-party team and yours to complete a project, outstaffing is the best choice for you.
+  When deciding between Outsourcing and outstaffing, you need to be aware of the general principles on which the models work.`
+  },
+  {
+    title: 'Make Outsourcing and Outstaffing Great (Always): Useful Cues',
+    text: `Whether it is Outsourcing or outstaffing, you need to determine the goal of your project. You need first to know which model you will choose. After hiring a team, you can then communicate your objectives to the vendor to get started. It would help if you then supplied them with a complete list of the details of your project. With more accurate information, they will let you know the cost and duration of the project.
+  When picking vendors for your project, you need to consider a few essential points, the competence domain of your vendor, their portfolio, past client’s reviews, etc. Other crucial considerations include language barriers, timezone, work ethics, cultural background, etc. This will narrow down the options for you to decide on the best company.
+  It may sound tempting, but you should disregard the vendor who charges the lowest rates. You cannot expect to get quality at thrift prices; hence, such a decision may make you compromise on the key performance indicators of your software product.
+  In the beginning, if you know how much you will have to pay, you will have a sense of control and safety since all upcharges and financial risks will be handled by your outsourcer only. However, if you relieve yourself from all the worries, you may face other concerns. For instance, in the fixed cost, the vendor may keep a risk margin along, and hence you end up paying more. Also, if the sum is stipulated initially, the developers will limit their creativity and try to fit in the budget with no improvements.
+  The best recipe to get financial, technical, communication, management, and all possible moments regulated, signing a contract is a must. This document will cover all necessary details of the project and will be signed by both parties.
+  If you cooperate with a vendor for the first time, we recommend starting with an assignment of smaller scope. If you are satisfied with the results, you can continue obtaining the benefits of software development outsourcing.
+  Don’t make the entire payment upfront. A sensible move is to make an advance payment of one-third of the final amount and then divide the remaining amount to complete milestones. In this way, they will also work towards meeting deadlines.
+  When you choose outstaffing, this tip is essential. When you explain the potential benefits to your regular employees, they will accept, and the resistance of introducing new temporary employees will be reduced. It further helps to enhance the efficacy of the workflow.
+  Communication is essential when cooperating with remote teams. If it fails, the project may be defeated. To prevent such mishaps, you should establish effective communication channels with which both sides are comfortable.
+  It is critical to integrate a support clause specifying the possible cooperation of the parties after the completion of a project. By doing so, you will not have to look for another vendor to get the required fixes done or get something corrected after the product launch.`
+  }
+];
+
+export const commentsData = [
+  {
+    id: 1,
+    author: 'Дмитро Степанчук',
+    publishDate: '09.03.2023',
+    rating: 5,
+    comment:
+      'The benefits of outsourcing and outstaffing are that they can help you save money by hiring people who are cheaper than your staff, they can also be used when your own team lacks skills, or if the team lacks the time to complete the work.',
+    likes: 4,
+    answers: []
+  },
+  {
+    id: 2,
+    author: 'Дмитро Степанчук',
+    publishDate: '09.03.2023',
+    rating: 5,
+    comment:
+      'The benefits of outsourcing and outstaffing are that they can help you save money by hiring people who are cheaper than your staff, they can also be used when your own team lacks skills, or if the team lacks the time to complete the work.',
+    likes: 4,
+    answers: [
+      {
+        id: 21,
+        author: 'Дмитро Степанчук',
+        publishDate: '09.03.2023',
+        rating: 5,
+        comment:
+          'The benefits of outsourcing and outstaffing are that they can help you save money by hiring people who are cheaper than your staff, they can also be used when your own team lacks skills, or if the team lacks the time to complete the work.',
+        likes: 4
+      }
+    ]
+  }
+];
+
+export const articleNewsMini = [
+  {
+    publishDate: '09.03.2023',
+    timeRead: '5 хвилин',
+    title: 'Аутсорсинг або аутстафінг. 10 ефективних порад',
+    id: 1
+  },
+  {
+    publishDate: '09.03.2023',
+    timeRead: '5 хвилин',
+    title: '2022 у NewStaff: огляд року',
+    id: 2
+  },
+  {
+    publishDate: '09.03.2023',
+    timeRead: '5 хвилин',
+    title: 'Інженери програмного забезпечення NewStaff',
+    id: 3
+  }
+];
 
 export const heroes = {
-  home: { subtitle: 'послуги аутстафінгу', text: '100+ компетентних, мотивованих і висококваліфікованих віддалених працівників, готові працювати для вас', button: 'Дивитись перелік спеціалістів' },
-  about: { subtitle: 'Про нас', text: 'Ми поєднуємо лаконічність та професійність, кожен раз знаходячи оптимальне кадрове рішення до кожного бізнесу', button: '' },
+  home: {
+    subtitle: 'послуги аутстафінгу',
+    text: '100+ компетентних, мотивованих і висококваліфікованих віддалених працівників, готові працювати для вас',
+    button: 'Дивитись перелік спеціалістів'
+  },
+  about: {
+    subtitle: 'Про нас',
+    text: 'Ми поєднуємо лаконічність та професійність, кожен раз знаходячи оптимальне кадрове рішення до кожного бізнесу',
+    button: ''
+  },
   howItWorks: { subtitle: '', text: '', button: '' }
-}
+};
 
 export const inNumbers = [
   { number: 20, text: 'працюючих спеціалістів станом на сьогодні' },
@@ -366,10 +461,19 @@ export const inNumbers = [
   { number: null, text: ' ' },
   { number: 7, text: 'партнерів' },
   { number: 4, text: 'роки на ринку' }
-]
+];
 
 export const ourWay = [
-  { year: '2020', text: 'В 2020 році, ми відкрили напрямок діяльності в сфері аутстафінгу - надання для віддаленої роботи, якісних працівників з України в закордонні компанії. Наша діяльність обумовлена викликами, які прийшли в бізнес по всьому світу. ' },
-  { year: '2021', text: 'З появою коронавіруса, запит на віддалену роботу виріс, багато компаній почали формувати штат віддалених працівників, для гнучкості. Відповідно підвищений попит на українських спеціалістів сформував наше бачення на наступні роки.' },
-  { year: '2022', text: 'Проте війна внесла свої корективи в темп росту, але все ж зробила нас сильнішими, ми пройшли і продовжуєм шлях до цілі створення рабочих місць.' }
-]
+  {
+    year: '2020',
+    text: 'В 2020 році, ми відкрили напрямок діяльності в сфері аутстафінгу - надання для віддаленої роботи, якісних працівників з України в закордонні компанії. Наша діяльність обумовлена викликами, які прийшли в бізнес по всьому світу. '
+  },
+  {
+    year: '2021',
+    text: 'З появою коронавіруса, запит на віддалену роботу виріс, багато компаній почали формувати штат віддалених працівників, для гнучкості. Відповідно підвищений попит на українських спеціалістів сформував наше бачення на наступні роки.'
+  },
+  {
+    year: '2022',
+    text: 'Проте війна внесла свої корективи в темп росту, але все ж зробила нас сильнішими, ми пройшли і продовжуєм шлях до цілі створення рабочих місць.'
+  }
+];

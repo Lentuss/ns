@@ -20,7 +20,7 @@ import s from './Header.module.scss';
 
 export const Header = () => {
   const dispatch = useDispatch();
-  const { pathname, ...router } = useRouter();
+  const { pathname } = useRouter();
   const { width } = useWindowDimensions();
   const isOpenMobileMenu = useSelector(
     (state) => state.general.isOpenMobileMenu

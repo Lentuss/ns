@@ -21,3 +21,8 @@ export * from './FooterContacts/FooterContacts';
 export * from './FooterSocials/FooterSocials';
 export * from './FooterCopyright/FooterCopyright';
 export * from './BlogSidebar/BlogSidebar';
+export * from './ArticleItem/ArticleItem';
+export * from './CommentForm/CommentForm';
+export * from './CommentsList/CommentsList';
+export * from './ArticleSidebar/ArticleSidebar';
+export * from './ArticleReadInfo/ArticleReadInfo';

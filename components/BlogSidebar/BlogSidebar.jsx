@@ -15,7 +15,7 @@ export const BlogSidebar = ({ className }) => {
       <Text className={s.sidebarTitle}>Категорії</Text>
       <ul className={s.sidebarCategoriesList}>
         {blogCategoriesList.map((category, idx) => (
-          <li key={category}>
+          <li className={s.sidebarCategoriesItem} key={category}>
             <ButtonPrimary appearance="grey" isActive={idx === 0}>
               {category}
             </ButtonPrimary>
@@ -35,7 +35,7 @@ export const BlogSidebar = ({ className }) => {
   const renderSocials = () => (
     <ul className={s.sidebarSocials}>
       {socialsData.map(({ label, href }) => (
-        <li>
+        <li key={label}>
           <ButtonPrimary
             className={s.sidebarSocialsButton}
             appearance="grey"

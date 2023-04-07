@@ -40,4 +40,13 @@ body {
   font-family: var(--font-family);
   font-size: 16px;
   color: var(--black-1000);
+
+  background-color: #f7f7f7;
+}
+
+mark {
+  font-size: inherit;
+  color: var(--pink-primary);
+
+  background: 0;
 }
