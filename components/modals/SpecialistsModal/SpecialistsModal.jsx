@@ -33,7 +33,7 @@ export const SpecialistsModal = (props) => {
   const { experiense, features, imageSrc, jobName, sallary } =
     selectedSpecialist || {};
 
-  if (!selectedSpecialist) return <></>;
+  // if (!selectedSpecialist) return <></>;
 
   const onCloseHandler = () => {
     dispatch(toogleShowSpecialistModal(false));

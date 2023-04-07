@@ -25,7 +25,7 @@ export const SpecialistsFormModal = (props) => {
 
   const { imageSrc, jobName } = selectedSpecialist || {};
 
-  if (!selectedSpecialist) return <></>;
+  // if (!selectedSpecialist) return <></>;
 
   const onCloseHandler = () => {
     dispatch(toogleShowSpecialistFormModal(false));

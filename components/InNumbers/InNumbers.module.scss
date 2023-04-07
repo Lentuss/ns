@@ -1,0 +1,112 @@
+@import '/styles/mixins/css-lock';
+
+.inNumbers {
+  padding: 120px 0 180px;
+
+  background-image: url(../../assets/images/svg/patterns/numbers-big-pattern.svg);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-color: #fff;
+
+  @media (max-width: 767px) {
+    padding: 0 0 48px;
+    background-image: url(../../assets/images/svg/patterns/numbers-big-mobile-pattern.svg);
+  }
+}
+
+.inNumbersInner {
+  display: flex;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+.inNumbersHeading {
+  @media (min-width: 1024px) {
+    max-width: 326px;
+  }
+}
+
+.inNumbersList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 'it1 it2 it3' 'it4 it5 it6';
+
+  background-image: url(../../assets/images/svg/patterns/numbers-pattern.svg);
+  background-position: top right;
+  background-repeat: no-repeat;
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 'it1 it3' 'it2 it5' 'it4 it6';
+    margin-top: 48px;
+
+    background-image: url(../../assets/images/svg/patterns/numbers-big-mobile-pattern.svg),
+      url(../../assets/images/svg/patterns/numbers-mobile-pattern.svg);
+  }
+}
+
+.inNumbersItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 40px 40px;
+  @include css-lock(144, 282, 320, 1280, height);
+  @include css-lock(144, 282, 320, 1280, height);
+
+  @media (max-width: 1023px) {
+    padding: 16px 16px 20px;
+  }
+}
+
+.inNumbersItem-0 {
+  grid-area: it1;
+  border-bottom: 1px solid var(--black-400);
+}
+
+.inNumbersItem-1 {
+  grid-area: it2;
+  border-left: 1px solid var(--black-400);
+  border-bottom: 1px solid var(--black-400);
+  @media (max-width: 767px) {
+    border-left: 0;
+  }
+}
+
+.inNumbersItem-2 {
+  grid-area: it3;
+  border-left: 1px solid var(--black-400);
+  border-bottom: 1px solid var(--black-400);
+}
+
+.inNumbersItem-3 {
+  grid-area: it4;
+}
+
+.inNumbersItem-4 {
+  grid-area: it5;
+  border-left: 1px solid var(--black-400);
+  @media (max-width: 767px) {
+    border-bottom: 1px solid var(--black-400);
+  }
+}
+
+.inNumbersItem-5 {
+  grid-area: it6;
+  border-left: 1px solid var(--black-400);
+}
+
+.inNumbersNumber {
+  font-family: var(--font-family-title);
+  line-height: 120%;
+  @include css-lock(34, 76, 320, 1280);
+  color: var(--cyan-primary);
+}
+
+.inNumbersText {
+  @include css-lock(10, 16, 320, 1280);
+  @include css-lock(12, 24, 320, 1280, line-height);
+}
