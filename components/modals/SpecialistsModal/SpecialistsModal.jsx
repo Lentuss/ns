@@ -33,6 +33,8 @@ export const SpecialistsModal = (props) => {
   const { experiense, features, imageSrc, jobName, sallary } =
     selectedSpecialist || {};
 
+  if (!selectedSpecialist) return <></>;
+
   const onCloseHandler = () => {
     dispatch(toogleShowSpecialistModal(false));
     dispatch(selectSpecialist(null));
@@ -46,11 +48,7 @@ export const SpecialistsModal = (props) => {
 
   const renderModalHead = () => (
     <div className={s.modalHead}>
-      <Image
-        className={s.modalHeadImage}
-        src={imageSrc}
-        alt="specialist-image"
-      />
+      <Image className={s.modalHeadImage} src={imageSrc} alt={jobName} />
       <Htag className={s.modalHeadTitle} tag="h4">
         {jobName}
       </Htag>
@@ -66,13 +64,13 @@ export const SpecialistsModal = (props) => {
   const renderModalFeatures = () => (
     <div className={s.modalSection}>
       {features?.map(({ label, list }) => (
-        <div className={s.modalFeatures}>
+        <div className={s.modalFeatures} key={label}>
           <Subtitle className={s.modalFeaturesLabel} size="small">
             {label}
           </Subtitle>
           <ul className={s.modalFeaturesList}>
             {list?.map((i) => (
-              <li>
+              <li key={i}>
                 <Label name={i} />
               </li>
             ))}

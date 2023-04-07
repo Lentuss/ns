@@ -20,6 +20,6 @@ export const Chip = (props) => {
 Chip.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string.isRequired,
-  count: PropTypes.number.isRequired,
+  count: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   isActive: PropTypes.bool
 };
