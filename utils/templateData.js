@@ -373,3 +373,18 @@ export const ourWay = [
   { year: '2021', text: 'З появою коронавіруса, запит на віддалену роботу виріс, багато компаній почали формувати штат віддалених працівників, для гнучкості. Відповідно підвищений попит на українських спеціалістів сформував наше бачення на наступні роки.' },
   { year: '2022', text: 'Проте війна внесла свої корективи в темп росту, але все ж зробила нас сильнішими, ми пройшли і продовжуєм шлях до цілі створення рабочих місць.' }
 ]
+
+import member1 from '@/assets/images/team/member1.jpg'
+import member2 from '@/assets/images/team/member2.jpg'
+import member3 from '@/assets/images/team/member3.jpg'
+import member4 from '@/assets/images/team/member4.jpg'
+import member5 from '@/assets/images/team/member5.jpg'
+import member6 from '@/assets/images/team/member6.jpg'
+
+export const team = [
+  { id: 1, img: member1, name: 'Олександр Коваленко', title: 'CEO', info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff', linkedin: '#', twitter: '#' },
+  { id: 2, img: member2, name: 'Олександр Коваленко', title: 'Technical Writer', info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff', linkedin: '#', twitter: '#' },
+  { id: 3, img: member3, name: 'Олександр Коваленко', title: 'Project Manager', info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff', linkedin: '#', twitter: '#' },
+  { id: 4, img: member4, name: 'Олександр Коваленко', title: 'Customer Support Specialist', info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff', linkedin: '#', twitter: '#' },
+  { id: 5, img: member5, name: 'Олександр Коваленко', title: 'Quality Assurance Engineer', info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff', linkedin: '#', twitter: '#' },
+  { id: 6, img: member6, name: 'Олександр Коваленко', title: 'Data Analyst', info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff', linkedin: '#', twitter: '#' }]

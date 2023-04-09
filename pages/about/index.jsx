@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 
 import { widthLayout } from '@/layout/Layout';
-import { FeedBack, Hero, InNumbers, OurWay, Product } from '@/components';
+import { FeedBack, Hero, InNumbers, OurWay, Product, Team } from '@/components';
 
 import s from '@/styles/pages/About.module.scss';
 
@@ -14,6 +14,7 @@ function About() {
             <InNumbers />
             <OurWay />
             <Product />
+            <Team />
 
             <FeedBack page="about" />
         </>

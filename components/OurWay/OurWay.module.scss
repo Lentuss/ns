@@ -40,8 +40,21 @@
   height: 30vh;
 }
 
+.ourWayTextWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    order: 2;
+    margin-left: 29px;
+  }
+}
+
 .ourWayLeft {
-  width: 40%;
+  width: 45%;
   height: fit-content;
   text-align: right;
   margin-right: 159px;
@@ -53,18 +66,24 @@
 
   @media (max-width: 767px) {
     margin-right: 0;
+    margin-bottom: 12px;
     order: 2;
+
+    text-align: left;
     // padding-bottom: 48px;
   }
 }
 
 .ourWayCenter {
   position: relative;
+  left: 50%;
+
   display: flex;
   justify-content: center;
-  width: 10%;
+  width: 5%;
 
   @media (max-width: 767px) {
+    left: 0;
     order: 1;
   }
 }

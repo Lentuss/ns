@@ -19,10 +19,8 @@ export const OurWay = () => {
 
             sections.forEach((section) => {
                 const tl = gsap.timeline();
-                const textHeight = section.querySelector('.rightSide').clientHeight;
-                const yearHeight = section.querySelector('.leftSide').clientHeight;
-                const maxHeight = textHeight > yearHeight ? textHeight : yearHeight;
                 const sectionHeight = section.closest('.wrapper').clientHeight;
+                const contentHeight = section.querySelector('.contentWrapper').clientHeight;
 
                 tl
                     .to(section.querySelector('.circle'), {
@@ -54,19 +52,19 @@ export const OurWay = () => {
                         },
                     })
                     .to(section.querySelector('.center'), {
-                        y: maxHeight - 20, scrollTrigger: {
+                        y: contentHeight - 20, scrollTrigger: {
                             trigger: section,
                             start: 'top 50%',
-                            end: `+=${sectionHeight - maxHeight - 5}`,
+                            end: `+=${sectionHeight - contentHeight - 5}`,
                             scrub: true,
                         },
                     })
                     .to(section, {
-                        y: `${sectionHeight - maxHeight}`,
+                        y: `${sectionHeight - contentHeight}`,
                         scrollTrigger: {
                             trigger: section,
                             start: 'top 50%',
-                            end: `+=${sectionHeight - maxHeight - 5}`,
+                            end: `+=${sectionHeight - contentHeight - 5}`,
                             scrub: 1,
                             // markers: true
                         },
@@ -88,16 +86,19 @@ export const OurWay = () => {
                             <div className={cx(s.ourWayPeriodWrapper, 'wrapper')} key={period.year}>
 
                                 <div className={cx(s.ourWayPeriod, 'section')}>
-                                    <div className={cx(s.ourWayLeft, 'leftSide', 'accent')}>
-                                        {period.year}
-                                    </div>
                                     <div className={cx(s.ourWayCenter, 'center')}>
                                         <div className={cx(s.ourWayProgress)}>
                                             <div className={cx(s.ourWayProgressBar)}></div>
                                             <div className={cx(s.ourWayCircle, 'circle')}></div>
                                         </div>
                                     </div>
-                                    <Ptag className={cx(s.ourWayRight, 'rightSide')}>{period.text}</Ptag>
+                                    <div className={cx(s.ourWayTextWrapper, 'contentWrapper')}>
+                                        <div className={cx(s.ourWayLeft, 'leftSide', 'accent')}>
+                                            {period.year}
+                                        </div>
+                                        <Ptag className={cx(s.ourWayRight, 'rightSide')}>{period.text}</Ptag>
+
+                                    </div>
                                 </div>
                             </div>
                         )}

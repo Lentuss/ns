@@ -1,0 +1,22 @@
+<svg width="288" height="240" viewBox="0 0 288 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.15">
+<rect x="240" y="48" width="48" height="48" transform="rotate(180 240 48)" fill="white" fill-opacity="0.4"/>
+<rect x="192" y="144" width="48" height="48" transform="rotate(180 192 144)" fill="white" fill-opacity="0.8"/>
+<rect x="192" y="48" width="48" height="48" transform="rotate(180 192 48)" fill="white" fill-opacity="0.4"/>
+<rect x="240" y="144" width="48" height="48" transform="rotate(180 240 144)" fill="white" fill-opacity="0.4"/>
+<rect x="192" y="96" width="48" height="48" transform="rotate(180 192 96)" fill="white" fill-opacity="0.8"/>
+<rect x="288" y="96" width="48" height="48" transform="rotate(180 288 96)" fill="white" fill-opacity="0.8"/>
+<rect x="192" y="192" width="48" height="48" transform="rotate(180 192 192)" fill="white" fill-opacity="0.4"/>
+<rect x="144" y="48" width="48" height="48" transform="rotate(180 144 48)" fill="white" fill-opacity="0.8"/>
+<rect x="144" y="144" width="48" height="48" transform="rotate(180 144 144)" fill="white" fill-opacity="0.8"/>
+<rect x="96" y="48" width="48" height="48" transform="rotate(180 96 48)" fill="white" fill-opacity="0.8"/>
+<rect x="96" y="96" width="48" height="48" transform="rotate(180 96 96)" fill="white" fill-opacity="0.8"/>
+<rect x="96" y="144" width="48" height="48" transform="rotate(180 96 144)" fill="white" fill-opacity="0.4"/>
+<rect x="48" y="240" width="48" height="48" transform="rotate(180 48 240)" fill="white" fill-opacity="0.4"/>
+<rect x="96" y="192" width="48" height="48" transform="rotate(180 96 192)" fill="white" fill-opacity="0.8"/>
+<rect x="48" y="48" width="48" height="48" transform="rotate(180 48 48)" fill="white" fill-opacity="0.4"/>
+<rect x="48" y="96" width="48" height="48" transform="rotate(180 48 96)" fill="white" fill-opacity="0.8"/>
+<rect x="48" y="144" width="48" height="48" transform="rotate(180 48 144)" fill="white" fill-opacity="0.8"/>
+<rect x="48" y="192" width="48" height="48" transform="rotate(180 48 192)" fill="white" fill-opacity="0.4"/>
+</g>
+</svg>
