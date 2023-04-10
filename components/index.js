@@ -15,7 +15,6 @@ export * from './Practicing/Practicing';
 export * from './inNumbers/inNumbers';
 export * from './OurWay/OurWay';
 export * from './Product/Product';
-
 export * from './Articles/Articles';
 export * from './FooterContacts/FooterContacts';
 export * from './FooterSocials/FooterSocials';
@@ -26,3 +25,5 @@ export * from './CommentForm/CommentForm';
 export * from './CommentsList/CommentsList';
 export * from './ArticleSidebar/ArticleSidebar';
 export * from './ArticleReadInfo/ArticleReadInfo';
+export * from './ContactsHero/ContactsHero';
+export * from './ContactsInfo/ContactsInfo';

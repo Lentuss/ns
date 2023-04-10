@@ -12,14 +12,14 @@ import {
   Practicing
 } from '@/components';
 import { AccentH, Htag, Subtitle, Wrapper } from '@/components/common';
-
-import s from '@/styles/pages/Home.module.scss';
 import {
   HomeFormModal,
   SpecialistsFormModal,
   SpecialistsModal,
   SuccessModal
 } from '@/components/modals';
+
+import s from '@/styles/pages/Home.module.scss';
 
 function Home() {
   return (
