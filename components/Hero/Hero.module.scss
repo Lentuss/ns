@@ -11,6 +11,19 @@
   }
 }
 
+.heroInner-howItWorks {
+  flex-direction: column;
+
+  & .heroHeading {
+    width: 75%;
+  }
+
+  & .heroText {
+    align-self: center;
+    max-width: 512px;
+  }
+}
+
 .heroHeading {
   display: flex;
   flex-direction: column;
@@ -37,7 +50,7 @@
   text-align: end;
 }
 
-.heroCall {
+.heroText {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

@@ -1,13 +1,13 @@
 import {
   BLOG_PAGE_ROUTE,
   MAIN_PAGE_ROUTE,
-  SPECIALISTS_PAGE_ROUTE, ABOUT_PAGE_ROUTE
+  SPECIALISTS_PAGE_ROUTE, ABOUT_PAGE_ROUTE, HOW_IT_WORKS_PAGE_ROUTE
 } from './const';
 
 export const navLinks = [
   { label: 'Головна', href: MAIN_PAGE_ROUTE },
   { label: 'Спеціалісти', href: SPECIALISTS_PAGE_ROUTE },
-  { label: 'Як це працює', href: '#' },
+  { label: 'Як це працює', href: HOW_IT_WORKS_PAGE_ROUTE },
   { label: 'Про нас', href: ABOUT_PAGE_ROUTE },
   { label: 'Блог', href: BLOG_PAGE_ROUTE },
   { label: 'Контакти', href: '#' },
@@ -356,7 +356,7 @@ export const footerCopyrightLinks = [
 export const heroes = {
   home: { subtitle: 'послуги аутстафінгу', text: '100+ компетентних, мотивованих і висококваліфікованих віддалених працівників, готові працювати для вас', button: 'Дивитись перелік спеціалістів' },
   about: { subtitle: 'Про нас', text: 'Ми поєднуємо лаконічність та професійність, кожен раз знаходячи оптимальне кадрове рішення до кожного бізнесу', button: '' },
-  howItWorks: { subtitle: '', text: '', button: '' }
+  howItWorks: { subtitle: 'Як це працює', text: 'Ми наймаємо компетентних спеціалістів. Робимо відбір, контроль якості та онбординг. Надаючи їх компаніям, контролюємо їх ефективність та закриваємо базові потреби, в тому числі і юридичні. Після укладання договору, компанія-споживач отримує працівника майже одразу', button: '' }
 }
 
 export const inNumbers = [

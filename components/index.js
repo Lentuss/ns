@@ -22,3 +22,4 @@ export * from './FooterSocials/FooterSocials';
 export * from './FooterCopyright/FooterCopyright';
 export * from './BlogSidebar/BlogSidebar';
 export * from './Team/Team';
+export * from './WorkStages/WorkStages';

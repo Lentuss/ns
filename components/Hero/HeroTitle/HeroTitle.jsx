@@ -22,7 +22,7 @@ export const HeroTitle = props => {
                 <span>з нами ріст</span>
                 <span className={s.start}>у всьому</span>
             </>}
-            {location === 'how-it-works' && <>
+            {location === 'howItWorks' && <>
                 <span className={s.start}>Як ми працюємо,</span>
                 <AccentH location='works'>в двох словах</AccentH>
             </>}

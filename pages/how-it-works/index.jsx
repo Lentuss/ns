@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 
 import { widthLayout } from '@/layout/Layout';
-import { FeedBack } from '@/components';
+import { Hero, FeedBack, WorkStages } from '@/components';
 
 // import { specialistPageSections } from '@/utils/templateData';
 
@@ -11,9 +11,11 @@ function HowItWorks() {
     const { pathname } = useRouter();
     console.log(pathname)
     return (
-        <>
-            howww
-        </>
+        <div>
+            <Hero />
+            <WorkStages />
+            <FeedBack page='works' />
+        </div>
     );
 }
 

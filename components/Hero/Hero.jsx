@@ -12,7 +12,12 @@ import { SPECIALISTS_PAGE_ROUTE } from '@/utils/const';
 
 export const Hero = () => {
   const { pathname } = useRouter();
-  const page = pathname !== '/' ? pathname.slice(1) : 'home';
+  let page = pathname !== '/' ? pathname.slice(1) : 'home';
+  if (page.includes('-')) {
+    const words = page.split('-');
+    const wordFormated = words.slice(1).map((word) => word.replace(word[0], word[0].toUpperCase()));
+    page = [words[0], ...wordFormated].join('');
+  }
 
   return (
     <div>
@@ -24,10 +29,10 @@ export const Hero = () => {
               <HeroTitle location={page} />
             </Htag>
           </div>
-          <div className={s.heroCall}>
+          <div className={s.heroText}>
             <Ptag size='m'>{heroes[page].text}</Ptag>
             {page === 'home' &&
-              <ButtonPrimary href='SPECIALISTS_PAGE_ROUTE' className={s.heroBtn} appearance='pink'>{heroes[page].button}
+              <ButtonPrimary href={SPECIALISTS_PAGE_ROUTE} className={s.heroBtn} appearance='pink'>{heroes[page].button}
               </ButtonPrimary>
             }
           </div>
