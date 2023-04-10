@@ -1,0 +1,23 @@
+@import '/styles/mixins/css-lock';
+
+.contactsInfo {
+}
+
+.contactsInfoTitle {
+  @include css-lock(40, 48, 320, 1280, margin-bottom);
+}
+
+.contactsInfoList {
+}
+
+.contactsInfoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include css-lock(20, 32, 320, 1280, padding-top);
+  @include css-lock(20, 32, 320, 1280, padding-bottom);
+  @include css-lock(12, 16, 320, 1280, gap);
+
+  border-top: 1px solid var(--black-400);
+}

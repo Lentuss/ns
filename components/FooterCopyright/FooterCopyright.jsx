@@ -8,9 +8,9 @@ import { footerCopyrightLinks } from '@/utils/templateData';
 
 import s from './FooterCopyright.module.scss';
 
-export const FooterCopyright = ({ className }) => {
+export const FooterCopyright = ({ className, tag: Tag = 'div' }) => {
   return (
-    <div className={cx(s.footerCopyright, className)}>
+    <Tag className={cx(s.footerCopyright, className)}>
       <Ptag>© NewStaff 2023, Всі права захищені</Ptag>
       <ul className={s.footerTerms}>
         {footerCopyrightLinks.map(({ label, href }) => (
@@ -19,7 +19,7 @@ export const FooterCopyright = ({ className }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </Tag>
   );
 };
 

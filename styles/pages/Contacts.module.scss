@@ -1,0 +1,81 @@
+@import '/styles/mixins/css-lock';
+
+.contacts {
+  @include css-lock(64, 80, 320, 1280, padding-top);
+  @include css-lock(40, 120, 320, 1280, padding-bottom);
+}
+
+.contactsHero {
+  @include css-lock(80, 168, 320, 1280, margin-bottom);
+}
+
+.contactsInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr fit-content(100%);
+
+  @include css-lock(60, 120, 1024, 1280, column-gap);
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, fit-content(100%));
+
+    gap: 80px 0;
+  }
+}
+
+.contactsInfoLegal {
+  @media (min-width: 1024px) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+}
+
+.contactsInfoEmails {
+  @media (min-width: 1024px) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+}
+
+.contactsSocials {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+
+  @media (min-width: 1024px) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  a {
+    width: 100%;
+
+    padding: 8px 16px;
+  }
+}
+
+.contactsFooter {
+  max-width: 1440px;
+
+  margin: 0 auto;
+  @include css-lock(24, 32, 320, 1280, padding-top);
+  @include css-lock(24, 32, 320, 1280, padding-bottom);
+  @include css-lock(15, 80, 1280, 1440, padding-left);
+  @include css-lock(15, 80, 1280, 1440, padding-right);
+
+  display: flex;
+  justify-content: space-between;
+
+  background-color: var(--black-900);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

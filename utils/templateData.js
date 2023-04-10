@@ -2,7 +2,8 @@ import {
   BLOG_PAGE_ROUTE,
   MAIN_PAGE_ROUTE,
   SPECIALISTS_PAGE_ROUTE,
-  ABOUT_PAGE_ROUTE
+  ABOUT_PAGE_ROUTE,
+  CONTACTS_PAGE_ROUTE
 } from './const';
 
 export const navLinks = [
@@ -11,7 +12,7 @@ export const navLinks = [
   { label: 'Як це працює', href: '#' },
   { label: 'Про нас', href: ABOUT_PAGE_ROUTE },
   { label: 'Блог', href: BLOG_PAGE_ROUTE },
-  { label: 'Контакти', href: '#' },
+  { label: 'Контакти', href: CONTACTS_PAGE_ROUTE },
   { label: 'Вакансії', href: '#' }
 ];
 
@@ -477,3 +478,72 @@ export const ourWay = [
     text: 'Проте війна внесла свої корективи в темп росту, але все ж зробила нас сильнішими, ми пройшли і продовжуєм шлях до цілі створення рабочих місць.'
   }
 ];
+
+export const contactInfoData = {
+  legalInfo: [
+    {
+      label: 'ТОВ',
+      info: '"НЬЮСТАФФ"'
+    },
+    {
+      label: 'Юридична адреса',
+      info: 'Україна, 04108, Київ, Проспект Правди 9-Б, кв. 132'
+    },
+    {
+      label: 'ЄДРПОУ',
+      info: '37571469'
+    },
+    {
+      label: 'IBAN',
+      info: 'UA391342178878366161231831936'
+    },
+    {
+      label: 'Privatbank SWIFT CODE',
+      info: 'PBANUA2X'
+    },
+    {
+      label: 'SWIFT CODE',
+      info: 'CHASUS33'
+    }
+  ],
+  legalInfo: [
+    {
+      label: 'ТОВ',
+      info: '"НЬЮСТАФФ"'
+    },
+    {
+      label: 'Юридична адреса',
+      info: 'Україна, 04108, Київ, Проспект Правди 9-Б, кв. 132'
+    },
+    {
+      label: 'ЄДРПОУ',
+      info: '37571469'
+    },
+    {
+      label: 'IBAN',
+      info: 'UA391342178878366161231831936'
+    },
+    {
+      label: 'Privatbank SWIFT CODE',
+      info: 'PBANUA2X'
+    },
+    {
+      label: 'SWIFT CODE',
+      info: 'CHASUS33'
+    }
+  ],
+  emailsInfo: [
+    {
+      label: 'HR',
+      info: 'hr@newstaff.co.il'
+    },
+    {
+      label: 'Finance',
+      info: 'finance@newstaff.co.il'
+    },
+    {
+      label: 'Lawyer',
+      info: 'lawyer@newstaff.co.il'
+    }
+  ]
+};
