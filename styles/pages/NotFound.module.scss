@@ -1,0 +1,35 @@
+@import '/styles/mixins/css-lock';
+
+.notFound {
+  @include css-lock(120, 212, 320, 1280, padding-top);
+  @include css-lock(120, 160, 320, 1280, margin-bottom);
+}
+
+.notFoundInner {
+  text-align: center;
+}
+
+.notFoundIcon {
+  @include css-lock(48, 64, 320, 1280, margin-bottom);
+
+  @include css-lock(220, 440, 320, 1280, width);
+  @include css-lock(100, 200, 320, 1280, height);
+}
+
+.notFoundTitle {
+  margin-bottom: 16px;
+
+  @include css-lock(23, 47, 320, 1280);
+}
+
+.notFoundButtons {
+  @include css-lock(48, 40, 320, 1280, margin-top);
+
+  display: flex;
+  justify-content: center;
+  @include css-lock(8, 16, 320, 1280, gap);
+
+  @media (max-width: 768px) {
+    flex-direction: row-reverse;
+  }
+}
