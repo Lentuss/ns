@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { ButtonPrimary } from '../common';
+import { ButtonPrimary, PatternsAnimationWrap } from '../common';
 import { SpecialistTitle } from './SpecialistTitle/SpecialistTitle';
 import { SpecialistFeatures } from './SpecialistFeatures/SpecialistFeatures';
 
@@ -15,10 +16,16 @@ import { disableHTMLScrolling } from '@/utils/utils';
 
 import { specialistCards } from '@/utils/templateData';
 
+import ProgressIcon1 from '@/assets/images/svg/patterns/specialists/progress-1.svg';
+import ProgressIcon2 from '@/assets/images/svg/patterns/specialists/progress-2.svg';
+import ProgressIcon3 from '@/assets/images/svg/patterns/specialists/progress-3.svg';
+import ProgressIcon4 from '@/assets/images/svg/patterns/specialists/progress-4.svg';
+
 import s from './SpecialistCards.module.scss';
 
 export const SpecialistCards = (props) => {
   const { className } = props;
+  const [isShowPatterns, setShowPatterns] = useState(null);
   const selectedSpecialist = useSelector(
     (state) => state.specialist.selectedSpecialist
   );
@@ -49,6 +56,8 @@ export const SpecialistCards = (props) => {
               [s.isActive]: selectedSpecialist?.id === id
             })}
             onClick={() => onSelectSpecialistHandler(specialist)}
+            onMouseEnter={() => setShowPatterns(id)}
+            onMouseLeave={() => setShowPatterns(null)}
             key={id}
           >
             <SpecialistTitle
@@ -70,6 +79,13 @@ export const SpecialistCards = (props) => {
                 Обрати
               </ButtonPrimary>
             </div>
+
+            <PatternsAnimationWrap isShow={isShowPatterns === id}>
+              <ProgressIcon1 className={s.specialistItemPattern} />
+              <ProgressIcon2 className={s.specialistItemPattern} />
+              <ProgressIcon3 className={s.specialistItemPattern} />
+              <ProgressIcon4 className={s.specialistItemPattern} />
+            </PatternsAnimationWrap>
           </li>
         );
       })}

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { ButtonText, Subtitle, Text } from '../common';
+import { Subtitle, Text } from '../common';
 
 import { isEmail } from '@/utils/utils';
 
@@ -19,9 +19,9 @@ export const ContactsInfo = ({ title, contactData, className }) => {
           <li className={s.contactsInfoItem} key={label}>
             <Subtitle size="small">{label}</Subtitle>
             {isEmail(info) ? (
-              <ButtonText href={`email:${info}`}>
+              <a className={s.contactInfoLink} href={`email:${info}`}>
                 <Text>{info}</Text>
-              </ButtonText>
+              </a>
             ) : (
               <Text>{info}</Text>
             )}

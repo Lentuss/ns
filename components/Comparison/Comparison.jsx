@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-import React from 'react';
 import cx from 'classnames';
 
 import { BREAKPOINTS } from '@/utils/const';
@@ -14,7 +13,7 @@ import { Features } from '@/components';
 
 import s from './Comparison.module.scss';
 
-export const Comparison = () => {
+export const Comparison = ({ className }) => {
   const dispatch = useDispatch();
 
   const { width } = useWindowDimensions();
@@ -25,7 +24,7 @@ export const Comparison = () => {
   };
 
   return (
-    <div className={s.comparison}>
+    <div className={cx(s.comparison, className)}>
       <Wrapper>
         <div className={s.comparisonInner}>
           <div className={s.comparisonStandart}>

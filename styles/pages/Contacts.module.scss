@@ -1,8 +1,8 @@
 @import '/styles/mixins/css-lock';
 
 .contacts {
-  @include css-lock(64, 80, 320, 1280, padding-top);
-  @include css-lock(40, 120, 320, 1280, padding-bottom);
+  @include css-lock(120, 172, 320, 1280, padding-top);
+  @include css-lock(40, 120, 320, 1280, margin-bottom);
 }
 
 .contactsHero {

@@ -8,10 +8,15 @@ import { Nav } from '@/components';
 import { MobileHeader } from './MobileHeader/MobileHeader';
 
 import { setLanguage, toogleMobileMenu } from '@/store/slices/general';
-import { useWindowDimensions } from '@/hooks';
+import { useScrollDirection, useWindowDimensions } from '@/hooks';
 
 import { langSelectOptions, navLinks } from '@/utils/templateData';
 import { BREAKPOINTS, SPECIALISTS_PAGE_ROUTE } from '@/utils/const';
+import {
+  disableHTMLScrolling,
+  enableHTMLScrolling,
+  setCssVH
+} from '@/utils/utils';
 
 import MenuIcon from '@/assets/icons/menu.svg';
 import CrossIcon from '@/assets/icons/cross.svg';
@@ -22,6 +27,7 @@ export const Header = () => {
   const dispatch = useDispatch();
   const { pathname } = useRouter();
   const { width } = useWindowDimensions();
+  const direction = useScrollDirection();
   const isOpenMobileMenu = useSelector(
     (state) => state.general.isOpenMobileMenu
   );
@@ -29,13 +35,38 @@ export const Header = () => {
 
   const setLanguageHandler = (option) => dispatch(setLanguage(option));
 
+  const toggleMobileMenuHandler = () => {
+    const isWillOpen = !isOpenMobileMenu;
+
+    if (isWillOpen) {
+      disableHTMLScrolling();
+    } else {
+      enableHTMLScrolling();
+    }
+
+    dispatch(toogleMobileMenu(isWillOpen));
+  };
+
   useEffect(() => {
     setLanguageHandler(langSelectOptions[0]);
+
+    setCssVH();
+
+    window.addEventListener('resize', setCssVH);
+
+    return () => window.removeEventListener('resize', setCssVH);
   }, []);
+
+  useEffect(() => {
+    if (isOpenMobileMenu) {
+      dispatch(toogleMobileMenu(false));
+      enableHTMLScrolling();
+    }
+  }, [pathname]);
 
   return (
     <>
-      <header className={s.header}>
+      <header className={cx(s.header, { [s.isHidden]: direction === 'down' })}>
         <Wrapper>
           <div
             className={cx(s.headerInner, { [s.isMenuOpen]: isOpenMobileMenu })}
@@ -63,7 +94,7 @@ export const Header = () => {
 
             <div
               className={s.headerMenuButton}
-              onClick={() => dispatch(toogleMobileMenu(!isOpenMobileMenu))}
+              onClick={toggleMobileMenuHandler}
             >
               {isOpenMobileMenu ? (
                 <CrossIcon className={s.crossIcon} />

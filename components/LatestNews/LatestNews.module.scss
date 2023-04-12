@@ -1,7 +1,6 @@
 @import '/styles/mixins/css-lock';
 
 .latestNews {
-  @include css-lock(120, 240, 320, 1280, margin-bottom);
 }
 
 .latestNewsInner {
@@ -57,6 +56,11 @@
 }
 
 .latestNewsListItem {
+  &:hover {
+    .articleImage {
+      transform: scale(1.1);
+    }
+  }
 }
 
 .article {
@@ -96,6 +100,8 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
+
+  transition: transform 0.3s ease;
 }
 
 .articleTopInfo {

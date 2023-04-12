@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -10,15 +10,31 @@ import { langSelectOptions, navLinks } from '@/utils/templateData';
 import s from './MobileHeader.module.scss';
 
 export const MobileHeader = ({ isOpen, seletedLanguage, setLanguage }) => {
+  const [selectedOptions, setSelectedOptions] = useState({});
+  const selectListRef = useRef(null);
+  const selectItemRef = useRef([]);
+  const selectActivePointRef = useRef(null);
+
+  useEffect(() => {
+    const activeSelectedItem = selectItemRef.current.filter(
+      (item) => item.dataset.active === 'true'
+    );
+
+    const { clientHeight, clientWidth, offsetLeft } =
+      activeSelectedItem[0] || {};
+
+    setSelectedOptions({ clientHeight, clientWidth, offsetLeft });
+  }, [seletedLanguage]);
+
   const renderLanguageSelect = () => (
-    <ul className={s.languageSelect}>
+    <ul className={s.languageSelect} ref={selectListRef}>
       {langSelectOptions.map((option, idx) => (
         <Fragment key={option.value}>
           <li
-            className={cx(s.languageSelectItem, {
-              [s.isSelected]: seletedLanguage?.value === option.value
-            })}
+            className={s.languageSelectItem}
             onClick={() => setLanguage(option)}
+            ref={(el) => (selectItemRef.current[idx] = el)}
+            data-active={seletedLanguage?.value === option.value}
           >
             {option.icon}
             {option.label}
@@ -29,6 +45,15 @@ export const MobileHeader = ({ isOpen, seletedLanguage, setLanguage }) => {
           )}
         </Fragment>
       ))}
+      <span
+        className={s.languageSelectActivePoint}
+        style={{
+          height: selectedOptions?.clientHeight,
+          width: selectedOptions?.clientWidth,
+          transform: `translateX(calc(${selectedOptions?.offsetLeft}px - 4px))`
+        }}
+        ref={selectActivePointRef}
+      />
     </ul>
   );
 

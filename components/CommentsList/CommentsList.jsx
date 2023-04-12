@@ -1,10 +1,10 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 import { ButtonPrimary, ButtonText, Heading, Ptag, Rating } from '../common';
 
-import { black700, black800, pinkPrimary } from '@/utils/const';
+import { black700, black800 } from '@/utils/const';
 
 import HeartIcon from '@/assets/icons/heart.svg';
 
@@ -19,9 +19,17 @@ const CommentItem = ({
   comment,
   likes,
   isAnswer = false,
-  isCommentWithAnswer = false
+  isCommentWithAnswer = false,
+  isShowAnswers = false,
+  id,
+  onToggleVisibileAnswers = () => {}
 }) => (
-  <li className={cx(s.commentItem, { [s.commentItemAnswer]: isAnswer })}>
+  <li
+    className={cx(s.commentItem, {
+      [s.commentItemAnswer]: isAnswer,
+      [s.isHidden]: isShowAnswers
+    })}
+  >
     <div className={s.commentItemTitle}>
       <Heading size="s">{author}</Heading>
       <Ptag size="m" color={black700}>
@@ -41,17 +49,16 @@ const CommentItem = ({
           <HeartIcon />
         </button>
 
-        <Ptag size="m" color={pinkPrimary}>
-          {likes} Підтримали
-        </Ptag>
+        <ButtonText appearance="pink">{likes} Підтримали</ButtonText>
       </div>
 
       {isCommentWithAnswer && (
         <ButtonText
           className={s.commentItemToggleAnswersButton}
           appearance="pink"
+          onClick={() => onToggleVisibileAnswers(id, !isShowAnswers)}
         >
-          Сховати відповіді
+          {isShowAnswers ? 'Сховати відповіді' : 'Показати відповіді'}
         </ButtonText>
       )}
 
@@ -65,13 +72,44 @@ const CommentItem = ({
 );
 
 export const CommentsList = ({ className }) => {
+  const [isShowAnswers, setShowAnswers] = useState([]);
+
+  const onToggleVisibileAnswersHandler = (id, isShow) => {
+    const answer = isShowAnswers.find((a) => a.id === id);
+    console.log('isShow', isShow);
+    if (answer) {
+      answer.isShow = isShow;
+      setShowAnswers([...isShowAnswers.filter((a) => a.id !== id), answer]);
+    } else {
+      setShowAnswers([...isShowAnswers, { id, isShow }]);
+    }
+  };
+
+  console.log('isShowAnswers', isShowAnswers);
+
   return (
     <ul className={cx(s.commentsList, className)}>
-      {commentsData.map(({ answers, id, ...comment }) => (
-        <Fragment key={id}>
-          <CommentItem {...comment} isCommentWithAnswer={!!answers.length} />
+      {commentsData.map(({ answers, ...comment }) => (
+        <Fragment key={comment.id}>
+          <CommentItem
+            {...comment}
+            isCommentWithAnswer={!!answers.length}
+            onToggleVisibileAnswers={onToggleVisibileAnswersHandler}
+            isShowAnswers={
+              isShowAnswers.find((a) => a.id === comment.id)?.isShow
+            }
+          />
           {answers.length > 0 &&
-            answers.map((c) => <CommentItem {...c} isAnswer key={c.id} />)}
+            answers.map((c) => (
+              <CommentItem
+                {...c}
+                isAnswer
+                key={c.id}
+                isShowAnswers={
+                  isShowAnswers.find((a) => a.id === comment.id)?.isShow
+                }
+              />
+            ))}
         </Fragment>
       ))}
     </ul>

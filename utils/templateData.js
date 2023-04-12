@@ -251,7 +251,8 @@ export const specialistsCategoriesList = [
     id: 3,
     label: 'Інженерія',
     count: '12',
-    href: '/engineers'
+    href: '/engineers',
+    labelText: 'Revit'
   },
   {
     id: 4,
@@ -303,6 +304,7 @@ import Logo10 from '@/assets/images/svg/practicing/company-s3.svg';
 import Logo11 from '@/assets/images/svg/practicing/company-m2.svg';
 import Logo12 from '@/assets/images/svg/practicing/company-m3.svg';
 import Logo13 from '@/assets/images/svg/practicing/company-l4.svg';
+import { symbol } from 'prop-types';
 
 export const practicing = [
   <Logo0 />,

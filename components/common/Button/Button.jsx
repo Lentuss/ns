@@ -27,7 +27,7 @@ export const Button = memo((props) => {
       disabled={disabled}
       {...bProps}
     >
-      {children}
+      <span>{children}</span>
     </Tag>
   );
 });

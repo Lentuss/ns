@@ -1,0 +1,11 @@
+.pattern {
+  transition: opacity 0.1s ease, visibility 0.1s ease;
+
+  opacity: 0;
+  visibility: hidden;
+
+  &.isShow {
+    opacity: 1;
+    visibility: visible;
+  }
+}

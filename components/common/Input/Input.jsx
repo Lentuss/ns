@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { Ptag } from '..';
 
 import AlertIcon from '@/assets/icons/alert.svg';
+import SizingIcon from '@/assets/icons/sizing.svg';
 
 import s from './Input.module.scss';
 
@@ -28,7 +29,7 @@ export const Input = memo((props) => {
   const onBlurHandler = () => setFocused(false);
 
   const isTextarea = type === 'textarea';
-  const InputType = isTextarea ? 'textarea' : 'input';
+  // const InputType = isTextarea ? 'textarea' : 'input';
 
   return (
     <label className={cx(s.label, className)}>
@@ -42,10 +43,10 @@ export const Input = memo((props) => {
         {placeholder}
       </Ptag>
 
-      <InputType
+      <input
         className={cx(s.input, {
-          [s.isError]: isError,
-          [s.textArea]: isTextarea
+          [s.isError]: isError
+          // [s.textArea]: isTextarea
         })}
         type={type}
         onChange={onChange}
@@ -62,6 +63,8 @@ export const Input = memo((props) => {
           {errorMessage}
         </Ptag>
       )}
+
+      {isTextarea && <SizingIcon className={s.sizingIcon} />}
     </label>
   );
 });
