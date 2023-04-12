@@ -14,6 +14,10 @@
 
 .modalFormTitle {
   @include css-lock(20, 24, 320, 1280, margin-bottom);
+
+  &:last-of-type {
+    @include css-lock(32, 48, 320, 1280, margin-top);
+  }
 }
 
 .modalFormInput {
