@@ -1,8 +1,6 @@
 @import '/styles/mixins/css-lock';
 
 .specialistsHead {
-  @include css-lock(64, 80, 320, 1280, margin-top);
-  @include css-lock(64, 120, 320, 1280, margin-bottom);
 }
 
 .specialistsHeadTitle {
@@ -16,6 +14,8 @@
 
   overflow-x: auto;
 
+  padding-top: 20px;
+
   &::-webkit-scrollbar {
     height: 0;
   }
@@ -26,9 +26,11 @@
 }
 
 .specialistsHeadListButton {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 
   svg {
     stroke: currentColor;

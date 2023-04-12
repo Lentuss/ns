@@ -1,12 +1,11 @@
 @import '/styles/mixins/css-lock';
 
 .feedback {
-  padding: 108px 0 120px;
-
-  background-color: var(--white);
+  padding-top: 108px;
+  @include css-lock(120, 240, 320, 1280, margin-bottom);
 
   @media (max-width: 767px) {
-    padding: 72px 0 120px;
+    padding-top: 72px;
   }
 }
 

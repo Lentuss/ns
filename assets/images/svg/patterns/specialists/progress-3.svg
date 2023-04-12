@@ -1,0 +1,16 @@
+<svg width="440" height="120" viewBox="0 0 440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.1">
+<rect width="40" height="40" transform="matrix(1 0 0 -1 240 40)" fill="#FF666F" fill-opacity="0.4"/>
+<rect width="40" height="40" transform="matrix(1 0 0 -1 280 40)" fill="#FF666F" fill-opacity="0.4"/>
+<rect width="40" height="40" transform="matrix(1 0 0 -1 320 120)" fill="#FF666F" fill-opacity="0.4"/>
+<rect width="40" height="40" transform="matrix(1 0 0 -1 280 80)" fill="#FF666F" fill-opacity="0.8"/>
+<rect width="40" height="40" transform="matrix(1 0 0 -1 320 40)" fill="#FF666F" fill-opacity="0.8"/>
+<rect width="40" height="40" transform="matrix(1 0 0 -1 360 40)" fill="#FF666F" fill-opacity="0.8"/>
+<rect width="40" height="40" transform="matrix(1 0 0 -1 360 80)" fill="#FF666F" fill-opacity="0.4"/>
+<rect width="40" height="40" transform="matrix(1 0 0 -1 400 120)" fill="#FF666F" fill-opacity="0.4"/>
+<rect width="40" height="40" transform="matrix(1 0 0 -1 200 80)" fill="#FF666F" fill-opacity="0.4"/>
+<rect width="40" height="40" transform="matrix(1 0 0 -1 400 40)" fill="#FF666F" fill-opacity="0.4"/>
+<rect width="40" height="40" transform="matrix(1 0 0 -1 400 80)" fill="#FF666F" fill-opacity="0.8"/>
+<rect width="40" height="40" transform="matrix(1 0 0 -1 160 40)" fill="#FF666F" fill-opacity="0.4"/>
+</g>
+</svg>

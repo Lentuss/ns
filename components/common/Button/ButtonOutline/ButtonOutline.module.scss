@@ -1,14 +1,27 @@
-.outline-black {
+.outline {
   background-color: transparent;
+
+  &.isDisabled {
+    pointer-events: none;
+  }
+}
+
+.outline-black {
   border: 1px solid var(--black-1000);
 
-  &:hover:enabled {
-    background-color: var(--pink-primary);
-
+  &.isActive,
+  &:hover {
     color: var(--white);
+
+    border-color: var(--pink-primary);
   }
 
-  &:disabled {
+  &.isActive,
+  &::after {
+    background-color: var(--pink-primary);
+  }
+
+  &.isDisabled {
     border-color: var(--black-400);
 
     color: var(--black-400);
@@ -16,18 +29,23 @@
 }
 
 .outline-white {
-  background-color: transparent;
   border: 1px solid var(--white);
 
   color: var(--white);
 
-  &:hover:enabled {
-    background-color: var(--cyan-primary);
-
+  &.isActive,
+  &:hover {
     color: var(--black-900);
+
+    border-color: var(--cyan-primary);
   }
 
-  &:disabled {
+  &.isActive,
+  &::after {
+    background-color: var(--cyan-primary);
+  }
+
+  &.isDisabled {
     border-color: var(--black-700);
 
     color: var(--black-700);

@@ -22,4 +22,8 @@
   @include css-lock(20, 27, 320, 1280, line-height);
   font-style: initial;
   color: currentColor;
+
+  &:hover {
+    color: var(--cyan-primary);
+  }
 }

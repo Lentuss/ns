@@ -6,6 +6,12 @@
   @include css-lock(24, 48, 320, 1280, padding-top);
   @include css-lock(24, 48, 320, 1280, padding-bottom);
 
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: var(--black-600);
+  }
+
   &.isOpened {
     .collapseButtonIcon {
       transform: rotateX(-180deg);

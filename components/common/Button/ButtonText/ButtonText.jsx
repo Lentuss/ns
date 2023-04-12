@@ -11,7 +11,8 @@ export const ButtonText = memo((props) => {
     children,
     className,
     appearance = 'black',
-    isActive,
+    isActive = false,
+    isDisabled = false,
     ...buttonProps
   } = props;
 
@@ -21,6 +22,7 @@ export const ButtonText = memo((props) => {
         s.buttonText,
         s[`text-${appearance}`],
         { [s.isActive]: isActive },
+        { [s.isDisabled]: isDisabled },
         className
       )}
       {...buttonProps}
@@ -34,5 +36,6 @@ ButtonText.propTypes = {
   className: PropTypes.string,
   appearance: PropTypes.oneOf(['black', 'pink', 'white']),
   children: PropTypes.node.isRequired,
-  isActive: PropTypes.bool
+  isActive: PropTypes.bool,
+  isDisabled: PropTypes.bool
 };

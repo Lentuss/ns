@@ -2,14 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 
-import {
-  ButtonPrimary,
-  Htag,
-  Label,
-  Modal,
-  Ptag,
-  Subtitle
-} from '../../common';
+import { Htag, Label, Modal, Ptag, Subtitle } from '../../common';
 
 import {
   selectSpecialist,

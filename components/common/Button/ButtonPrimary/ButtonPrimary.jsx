@@ -12,14 +12,16 @@ export const ButtonPrimary = memo((props) => {
     className,
     appearance = 'pink',
     isActive = false,
+    isDisabled = false,
     ...buttonProps
   } = props;
 
   return (
     <Button
       className={cx(
+        s.primary,
         s[`primary-${appearance}`],
-        { [s.isActive]: isActive },
+        { [s.isActive]: isActive, [s.isDisabled]: isDisabled },
         className
       )}
       {...buttonProps}
@@ -32,5 +34,7 @@ export const ButtonPrimary = memo((props) => {
 ButtonPrimary.propTypes = {
   className: PropTypes.string,
   appearance: PropTypes.oneOf(['pink', 'cyan', 'white', 'grey']),
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  isActive: PropTypes.bool,
+  isDisabled: PropTypes.bool
 };

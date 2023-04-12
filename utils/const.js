@@ -26,3 +26,11 @@ export const SPECIALISTS_PAGE_ROUTE = '/specialists';
 export const BLOG_PAGE_ROUTE = '/blog';
 export const ABOUT_PAGE_ROUTE = '/about';
 export const CONTACTS_PAGE_ROUTE = '/contacts';
+
+export const pageTypes = {
+  home: 'home',
+  specialists: 'specialists',
+  howItWorks: 'how-it-works',
+  about: 'about',
+  careers: 'careers'
+};

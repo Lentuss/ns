@@ -19,3 +19,4 @@ export * from './Modal/Modal';
 export * from './Heading/Heading';
 export * from './Text/Text';
 export * from './Rating/Rating';
+export * from './PatternsAnimationWrap/PatternsAnimationWrap';

@@ -1,3 +1,5 @@
+import cx from 'classnames';
+
 import { widthLayout } from '@/layout/Layout';
 import {
   Hero,
@@ -19,15 +21,17 @@ import {
   SuccessModal
 } from '@/components/modals';
 
+import { pageTypes } from '@/utils/const';
+
 import s from '@/styles/pages/Home.module.scss';
 
 function Home() {
   return (
     <>
-      <Hero />
-      <Outstaff />
+      <Hero className={cx(s.hero, s.homeSectionM)} />
+      <Outstaff className={s.homeSectionM} />
 
-      <section className={s.specialistSection}>
+      <section className={s.homeSectionL}>
         <Wrapper>
           <Subtitle className={s.specialistSubTitle} size="thin">
             NewStaff 5 років на ринку
@@ -40,13 +44,13 @@ function Home() {
         </Wrapper>
       </section>
 
-      <Partners />
+      <Partners className={s.homeSectionL} />
       <Comparison />
-      <Practicing />
-      <Cooperation />
-      <LatestNews />
-      <OftenQuestions />
-      <FeedBack page="home" />
+      <Practicing className={s.homeSectionL} />
+      <Cooperation className={s.homeSectionL} />
+      <LatestNews className={s.homeSectionL} />
+      <OftenQuestions className={s.oftenQuestions} />
+      <FeedBack className={s.homeSectionL} page="home" />
 
       <HomeFormModal />
       <SuccessModal />
@@ -56,4 +60,4 @@ function Home() {
   );
 }
 
-export default widthLayout(Home);
+export default widthLayout(Home, pageTypes.home);

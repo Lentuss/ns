@@ -2,6 +2,7 @@
   max-width: 640px;
   width: 100%;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 
   padding: 80px 16px 64px 64px;
 
@@ -10,7 +11,7 @@
   right: 0;
   bottom: 0;
 
-  z-index: 150;
+  z-index: 200;
 
   background-color: #f7f7f7;
 
@@ -22,10 +23,16 @@
 
   @media (max-width: 768px) {
     padding: 64px 0 16px 16px;
+
+    inset: 0;
+
+    max-width: unset;
+
+    transform: translateX(0) translateY(200%);
   }
 
   &.isOpen {
-    transform: translateX(0);
+    transform: translate(0);
   }
 }
 

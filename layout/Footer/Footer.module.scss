@@ -75,12 +75,6 @@
   gap: 12px;
 }
 
-.footerNavItem {
-  @include css-lock(13, 16, 320, 1280);
-  line-height: 1.5;
-  color: var(--white);
-}
-
 .footerCopyright {
   display: flex;
   justify-content: space-between;

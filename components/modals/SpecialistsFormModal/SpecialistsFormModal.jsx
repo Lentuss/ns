@@ -76,6 +76,7 @@ export const SpecialistsFormModal = (props) => {
       secondareButtonLabel="Підтвердити"
       onClickPrimaryButton={onGoBackHandler}
       onClickSecondaryButton={onCloseHandler}
+      className={s.specialistFormModal}
     >
       <Text className={s.modalHeader} size="l">
         Зворотній зв’язок
