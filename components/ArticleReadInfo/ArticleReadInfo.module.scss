@@ -1,7 +1,9 @@
+@import '/styles/mixins/css-lock';
+
 .articleInfo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  @include css-lock(8, 12, 320, 1280, gap);
 
   color: var(--black-700);
 }

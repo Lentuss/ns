@@ -26,6 +26,7 @@ export const SPECIALISTS_PAGE_ROUTE = '/specialists';
 export const BLOG_PAGE_ROUTE = '/blog';
 export const ABOUT_PAGE_ROUTE = '/about';
 export const CONTACTS_PAGE_ROUTE = '/contacts';
+export const CAREERS_PAGE_ROUTE = '/careers';
 
 export const pageTypes = {
   home: 'home',

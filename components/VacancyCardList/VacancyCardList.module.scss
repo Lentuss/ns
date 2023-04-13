@@ -1,0 +1,68 @@
+@import '/styles/mixins/css-lock';
+
+.vacancyTitle {
+  margin-bottom: 64px;
+}
+
+.vacancyCard {
+  padding: 56px 0px;
+
+  border-top: 1px solid var(--black-400);
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 40px 0;
+    gap: 32px;
+
+    flex-direction: column;
+
+    align-items: unset;
+    justify-content: unset;
+  }
+}
+
+.vacancyCardDescription {
+  max-width: 620px;
+}
+
+.vacancyCardTitle {
+  @include css-lock(20, 16, 320, 1280, margin-bottom);
+}
+
+.vacancyCardInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: unset;
+  }
+}
+
+.vacancyCardButton {
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.vacancyPattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
