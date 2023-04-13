@@ -14,7 +14,7 @@ import {
 import { ArticleReadInfo } from '..';
 
 import { vacancyCardListData } from '@/utils/templateData';
-import { black800 } from '@/utils/const';
+import { CAREERS_PAGE_ROUTE, black800 } from '@/utils/const';
 
 import ProgressIcon1 from '@/assets/images/svg/patterns/specialists/progress-1.svg';
 import ProgressIcon2 from '@/assets/images/svg/patterns/specialists/progress-2.svg';
@@ -54,6 +54,7 @@ export const VacancyCardList = ({ className }) => {
                 <ButtonPrimary
                   className={s.vacancyCardButton}
                   appearance="grey"
+                  href={`${CAREERS_PAGE_ROUTE}/${id}`}
                 >
                   Детальніше
                 </ButtonPrimary>

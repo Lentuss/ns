@@ -1,0 +1,106 @@
+@import '/styles/mixins/css-lock';
+
+.vacancy {
+  @include css-lock(104, 164, 320, 1280, padding-top);
+  @include css-lock(120, 240, 320, 1280, margin-bottom);
+}
+
+.vacancyInner {
+  display: grid;
+  grid-template-columns: 1fr 470px;
+  grid-template-rows: fit-content(100%) 1fr;
+  gap: 24px 0;
+  @include css-lock(15, 120, 1024, 1280, column-gap);
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, fit-content(100%));
+
+    column-gap: unset;
+    gap: unset;
+  }
+}
+
+.vacancyButtonBack {
+  @media (min-width: 1024px) {
+    grid-column: 1 / 3;
+  }
+
+  @media (max-width: 1024px) {
+    margin-bottom: 24px;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  svg {
+    fill: transparent;
+    stroke: currentColor;
+  }
+}
+
+.vacancyInfo {
+  @media (min-width: 1024px) {
+    grid-column: 1 / 2;
+  }
+
+  @media (max-width: 1024px) {
+    margin-bottom: 120px;
+  }
+}
+
+.vacancyTitle {
+  margin-bottom: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 48px;
+  }
+}
+
+.vacancyTitleSallary {
+  @media (max-width: 1024px) {
+    display: inline;
+  }
+}
+
+.vacancyTitleTags {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: unset;
+  }
+}
+
+.vacancyDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.vacancyDescriptionItem {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vacancyForm {
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    grid-column: 2 / 3;
+  }
+
+  @media (max-width: 1024px) {
+    margin: 0 auto;
+  }
+}
