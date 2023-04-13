@@ -1,0 +1,25 @@
+.listWidthBullets {
+}
+
+.listWidthBulletsItem {
+  padding-left: 12px;
+
+  position: relative;
+
+  & + & {
+    margin-top: 4px;
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 0;
+
+    width: 4px;
+    height: 4px;
+
+    background-color: var(--cyan-primary);
+  }
+}
