@@ -20,4 +20,4 @@ export * from './Heading/Heading';
 export * from './Text/Text';
 export * from './Rating/Rating';
 export * from './PatternsAnimationWrap/PatternsAnimationWrap';
-export * from './InputDownload/InputDownload';
+export * from './InputFile/InputFile';
