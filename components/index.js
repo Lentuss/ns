@@ -31,3 +31,4 @@ export * from './VacancyCardList/VacancyCardList';
 export * from './CareersForm/CareersForm';
 export * from './ListWithBullets/ListWithBullets';
 export * from './VacancyForm/VacancyForm';
+export * from './CookiesBanner/CookiesBanner';

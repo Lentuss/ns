@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
-
 import { Provider } from 'react-redux';
-import gsap from "gsap/dist/gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import gsap from 'gsap/dist/gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+
+import { CookiesBanner } from '@/components';
+import { CookiesModal } from '@/components/modals';
 
 import { store } from '@/store/store';
 
@@ -11,9 +13,7 @@ import '@/styles/reset.sass';
 import '@/styles/globals.css';
 
 export default function App({ Component, pageProps }) {
-
   gsap.registerPlugin(ScrollTrigger);
-
 
   return (
     <>
@@ -31,6 +31,8 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Provider store={store}>
         <Component {...pageProps} />
+        <CookiesBanner />
+        <CookiesModal />
       </Provider>
     </>
   );

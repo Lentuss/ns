@@ -2,7 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isOpenMobileMenu: false,
-  seletedLanguage: {}
+  seletedLanguage: {},
+  isShowCookiesBanner: true,
+  isShowCookiesModal: false
 };
 
 const generalSlice = createSlice({
@@ -14,10 +16,21 @@ const generalSlice = createSlice({
     },
     setLanguage: (state, action) => {
       state.seletedLanguage = action.payload;
+    },
+    toggleCookiesBanner: (state, action) => {
+      state.isShowCookiesBanner = action.payload;
+    },
+    toggleCookiesModal: (state, action) => {
+      state.isShowCookiesModal = action.payload;
     }
   }
 });
 
-export const { toogleMobileMenu, setLanguage } = generalSlice.actions;
+export const {
+  toogleMobileMenu,
+  setLanguage,
+  toggleCookiesBanner,
+  toggleCookiesModal
+} = generalSlice.actions;
 
 export default generalSlice.reducer;
