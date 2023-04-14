@@ -27,5 +27,5 @@ export const PatternsAnimationWrap = ({ children, isShow }) => {
 
 PatternsAnimationWrap.propTypes = {
   isShow: PropTypes.bool,
-  children: PropTypes.array
+  children: PropTypes.object
 };
