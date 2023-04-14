@@ -12,16 +12,21 @@ import s from './Partners.module.scss';
 export const Partners = () => {
   const ref = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
+  let entered = false;
 
   useEffect(() => {
     const ctx = gsap.context((self) => {
 
       let items = gsap.utils.toArray(".partner");
 
+      gsap.set(items, { opacity: 0 })
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".partners",
-          onEnter: () => { gsap.fromTo(items, { opacity: 0, yPercent: 100 }, { opacity: 1, yPercent: 0, duration: 0.8, stagger: 0.05, ease: Expo.easeOut }) },
+          start: 'top 50%',
+          onEnter: () => {
+            if (!entered) { entered = true; gsap.fromTo(items, { opacity: 0, yPercent: 100 }, { opacity: 1, yPercent: 0, duration: 0.8, stagger: 0.05, ease: Expo.easeOut }) }
+          },
         }
       });
     }, ref);
@@ -33,8 +38,7 @@ export const Partners = () => {
       <Wrapper>
         <div className={s.partnersInner} ref={ref} >
           <Htag className={s.partnersHeading} tag='h2'>Нам довіряють
-            <AccentH location='partners'> 50+ компаній, </AccentH>
-            серед яких
+            <AccentH location='partners'> 50+ компаній, </AccentH> серед яких
           </Htag>
           <ul className={s.partnersList}>{partners.map((p, i) =>
             <li className={cx(s.partnersItem, 'partner')} key={i}>{p}</li>)}
