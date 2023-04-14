@@ -1,12 +1,22 @@
-.inputDownload {
+.inputFile {
   width: 100%;
+
+  &.isDisabled {
+    pointer-events: none;
+
+    .inputFileButton {
+      border-color: var(--black-600);
+
+      color: var(--black-600);
+    }
+  }
 }
 
-.inputDownloadInput {
+.inputFileInput {
   display: none;
 }
 
-.inputDownloadButton {
+.inputFileButton {
   padding: 18px 16px;
 
   width: inherit;
@@ -35,4 +45,12 @@
     fill: transparent;
     stroke: currentColor;
   }
+}
+
+.inputFileName {
+  color: var(--black-1000);
+
+  max-width: 70%;
+
+  overflow: hidden;
 }

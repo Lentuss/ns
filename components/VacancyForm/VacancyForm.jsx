@@ -1,13 +1,16 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { ButtonPrimary, Input, InputDownload, Ptag, Text } from '../common';
+import { ButtonPrimary, Input, InputFile, Ptag, Text } from '../common';
 
 import { black700 } from '@/utils/const';
 
 import s from './VacancyForm.module.scss';
 
 export const VacancyForm = ({ className }) => {
+  const [uploadedFile, setUploadedFile] = useState({});
+
   return (
     <form className={cx(s.vacancyForm, className)}>
       <Text className={s.vacancyFormTitle} size="l">
@@ -27,7 +30,11 @@ export const VacancyForm = ({ className }) => {
         або
       </Ptag>
 
-      <InputDownload placeholder="Завантажити резюме" />
+      <InputFile
+        placeholder="Завантажити резюме"
+        fileHandler={setUploadedFile}
+        uploadedFileName={uploadedFile?.name}
+      />
 
       <ButtonPrimary className={s.vacancyFormSubmitButton}>
         Підтвердити
