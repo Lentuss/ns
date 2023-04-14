@@ -39,12 +39,16 @@ export const Modal = ({
           {children}
 
           <div className={cx(s.modalBottomButtons, bottomButtonsClassName)}>
-            <ButtonPrimary appearance="grey" onClick={onClickPrimaryButton}>
-              {primaryButtonLabel}
-            </ButtonPrimary>
-            <ButtonPrimary onClick={onClickSecondaryButton}>
-              {secondareButtonLabel}
-            </ButtonPrimary>
+            {primaryButtonLabel && (
+              <ButtonPrimary appearance="grey" onClick={onClickPrimaryButton}>
+                {primaryButtonLabel}
+              </ButtonPrimary>
+            )}
+            {secondareButtonLabel && (
+              <ButtonPrimary onClick={onClickSecondaryButton}>
+                {secondareButtonLabel}
+              </ButtonPrimary>
+            )}
           </div>
         </div>
       </div>
