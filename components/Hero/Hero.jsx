@@ -35,7 +35,7 @@ export const Hero = ({ className }) => {
               <HeroTitle location={page} />
             </Htag>
           </div>
-          <div className={s.heroCall}>
+          <div className={s.heroText}>
             <Ptag size="m">{heroes[page].text}</Ptag>
             {page === 'home' && <ButtonPrimary
               href={SPECIALISTS_PAGE_ROUTE}

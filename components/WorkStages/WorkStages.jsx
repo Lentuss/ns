@@ -15,7 +15,6 @@ export const WorkStages = () => {
     const handleScroll = (event) => {
         const target = event.target;
         const stage = target.querySelector('.stage')
-        // console.log(stage)
     };
 
     useEffect(() => {
@@ -28,200 +27,67 @@ export const WorkStages = () => {
                     trigger: ".container",
                     pin: true,
                     scrub: true,
-                    snap: "labelsDirectional",
+                    snap: {
+                        snapTo: "labelsDirectional",
+                        duration: { min: 0.1, max: 0.3 },
+                        ease: "power1.inOut"
+                    }
                 }
             })
                 .addLabel('stage 1')
                 .to('.box5', {
                     xPercent: 100,
-                    duration: 1
+                    duration: 0.3
                 })
                 .to(sections, {
                     yPercent: -100,
                     ease: "none",
-                    duration: 0.5,
-                }, '-=0.5')
+                    duration: 0.3,
+                }, '-=0.3')
                 .to('.box8', {
                     xPercent: 100,
-                    duration: 1
-                })
+                    duration: 0.3
+                }, '-=0.3')
                 .addLabel('stage 2')
                 .to('.box4', {
-                    yPercent: -100
+                    yPercent: -100, duration: 0.3
                 })
                 .to('.box11', {
-                    yPercent: -100
-                })
+                    yPercent: -100, duration: 0.3
+                }, '-=0.3')
                 .to(sections, {
                     yPercent: -200,
                     ease: "none",
-                    duration: 0.5,
-                }, '-=0.5')
+                    duration: 0.3,
+                }, '-=0.3')
                 .to('.box15', {
-                    yPercent: -100
-                })
+                    yPercent: -100, duration: 0.3
+                }, '-=0.3')
                 .addLabel('stage 3')
                 .to('.box13', {
-                    yPercent: -300
+                    yPercent: -300, duration: 0.3
                 })
                 .to('.box14', {
                     yPercent: -200, xPercent: -100
-                })
+                }, '-=0.3')
                 .to('.box5', {
-                    yPercent: 100
-                })
+                    yPercent: 100, duration: 0.3
+                }, '-=0.3')
                 .to(sections, {
                     yPercent: -300,
                     ease: "none",
-                    duration: 0.5,
-                }, '-=0.5')
+                    duration: 0.3,
+                }, '-=0.3')
                 .to('.box2', {
-                    yPercent: 100, xPercent: 100
-                })
+                    yPercent: 100, xPercent: 100, duration: 0.3
+                }, '-=0.3')
                 .to('.box8', {
-                    yPercent: 100
-                })
+                    yPercent: 100, duration: 0.3
+                }, '-=0.3')
                 .to('.box15', {
-                    yPercent: 0
-                })
+                    yPercent: 0, duration: 0.3
+                }, '-=0.3')
                 .addLabel('stage 4')
-
-            // const tl = gsap.timeline();
-            // // gsap.set('.box15', { yPercent: 100 });
-
-            // // tl.snapTo('')
-
-            // tl.to(sections, {
-            //     yPercent: -100 * (sections.length - 1),
-            //     ease: "none",
-            //     duration: 0.1,
-            //     scrollTrigger: {
-            //         trigger: ".container",
-            //         pin: true,
-            //         scrub: true,
-            //         snap: 1 / (sections.length - 1),
-            //         // end: "+=450",
-            //         markers: { startColor: "brown", endColor: "pink", fontSize: "24px" }
-            //     }
-            // })
-            //     .to('.box5', {
-            //         xPercent: 100, duration: 1, scrollTrigger: {
-            //             trigger: ".stage2",
-            //             endTrigger: '.stage3',
-
-            //             scrub: true,
-            //             start: "top 55%",
-            //             end: "top 57%",
-            //             // markers: true
-            //         }
-            //     })
-            //     .to('.box8', {
-            //         xPercent: 100, duration: 1, scrollTrigger: {
-            //             trigger: ".stage2",
-            //             endTrigger: '.stage3',
-            //             scrub: true,
-            //             start: "top 55%",
-            //             end: "top 57%",
-            //         }
-            //     })
-            //     .to('.box4', {
-            //         yPercent: -100, scrollTrigger: {
-            //             trigger: ".stage3",
-            //             endTrigger: '.stage4',
-            //             scrub: true,
-            //             start: "top 50%",
-            //             end: "top 57%",
-            //             // markers: true
-            //         }
-            //     })
-            //     .to('.box11', {
-            //         yPercent: -100, scrollTrigger: {
-            //             trigger: ".stage3",
-            //             endTrigger: '.stage4',
-            //             scrub: true,
-            //             start: "top 50%",
-            //             end: "top 57%",
-            //         }
-            //     })
-            //     .to('.box15', {
-            //         yPercent: -100, scrollTrigger: {
-            //             trigger: ".stage3",
-            //             endTrigger: '.stage4',
-            //             scrub: true,
-            //             start: "top 50%",
-            //             end: "top 57%",
-            //         }
-            //     })
-            //     .to('.box13', {
-            //         yPercent: -300, scrollTrigger: {
-            //             trigger: ".stage4",
-            //             endTrigger: '.stage4',
-            //             scrub: true,
-            //             start: "top 45%",
-            //             end: "bottom 60%",
-            //             // markers: { startColor: "blue", endColor: "violet", fontSize: "24px" }
-            //         }
-            //     })
-            //     .to('.box14', {
-            //         yPercent: -200, xPercent: -100, scrollTrigger: {
-            //             trigger: ".stage4",
-            //             endTrigger: '.stage4',
-            //             scrub: true,
-            //             start: "top 45%",
-            //             end: "bottom 60%",
-            //             // markers: { startColor: "blue", endColor: "violet", fontSize: "24px" }
-            //         }
-            //     })
-            //     .to('.box5', {
-            //         yPercent: 100, scrollTrigger: {
-            //             trigger: ".stage4",
-            //             endTrigger: '.stage4',
-            //             scrub: true,
-            //             start: "top 45%",
-            //             end: "bottom 60%",
-            //             // markers: { startColor: "blue", endColor: "violet", fontSize: "24px" }
-            //         }
-            //     })
-            //     .to('.box2', {
-            //         yPercent: 100, xPercent: 100, scrollTrigger: {
-            //             trigger: ".stage4",
-            //             endTrigger: '.stage4',
-            //             scrub: true,
-            //             start: "top 45%",
-            //             end: "bottom 60%",
-            //             // markers: { startColor: "blue", endColor: "violet", fontSize: "24px" }
-            //         }
-            //     })
-            //     .to('.box8', {
-            //         yPercent: 100, scrollTrigger: {
-            //             trigger: ".stage4",
-            //             endTrigger: '.stage4',
-            //             scrub: true,
-            //             start: "top 45%",
-            //             end: "bottom 60%",
-            //             // markers: { startColor: "blue", endColor: "violet", fontSize: "24px" }
-            //         }
-            //     })
-            //     .to('.box15', {
-            //         yPercent: 0, scrollTrigger: {
-            //             trigger: ".stage4",
-            //             endTrigger: '.stage4',
-            //             scrub: true,
-            //             start: "top 45%",
-            //             end: "bottom 60%",
-            //             // markers: { startColor: "blue", endColor: "violet", fontSize: "24px" }
-            //         }
-            //     })
-            // .fromTo('.box15', { yPercent: -100 }, {
-            //     yPercent: 0, scrollTrigger: {
-            //         trigger: ".stage4",
-            //         endTrigger: '.stage4',
-            //         scrub: true,
-            //         start: "top 45%",
-            //         end: "bottom 60%",
-            // markers: { startColor: "blue", endColor: "violet", fontSize: "24px" }
-            //     }
-            // })
 
         }, ref);
         return () => ctx.revert();
