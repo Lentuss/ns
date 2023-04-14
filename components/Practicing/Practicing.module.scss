@@ -1,7 +1,7 @@
 @import '/styles/mixins/css-lock';
 
 .practicing {
-  padding: 170px 16px 60px;
+  padding: 170px 16px 0;
 
   @media (min-width: 1024px) {
     background-image: url(../../assets/images/svg/patterns/practicing-pattern.svg);
@@ -11,7 +11,7 @@
   }
 
   @media (max-width: 767px) {
-    padding: 120px 0;
+    padding: 120px 0 0;
   }
 }
 

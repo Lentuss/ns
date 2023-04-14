@@ -1,5 +1,9 @@
 @import '/styles/mixins/css-lock';
 
+.specialistFormModal {
+  overflow-y: auto;
+}
+
 .modalHeader {
   @include css-lock(40, 48, 320, 1280, margin-bottom);
 }

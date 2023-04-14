@@ -1,0 +1,97 @@
+@import '/styles/mixins/css-lock';
+
+.article {
+  @include css-lock(88, 172, 320, 1280, padding-top);
+  @include css-lock(120, 240, 320, 1280, margin-bottom);
+}
+
+.articleInner {
+  display: grid;
+  grid-template-columns: 1fr 1px 350px;
+  grid-template-rows: fit-content(100%) 1fr fit-content(100%);
+  grid-template-areas:
+    'article line sidebar'
+    'commentForm line .'
+    'comments line .';
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr repeat(2, fit-content(100%));
+    grid-template-areas:
+      'article'
+      'sidebar'
+      'commentForm'
+      'comments';
+  }
+}
+
+.articleItem {
+  grid-area: article;
+
+  @include css-lock(32, 64, 1024, 1280, padding-right);
+
+  @media (max-width: 1024px) {
+    padding-right: 0;
+  }
+}
+
+.articleLine {
+  grid-area: line;
+
+  width: 1px;
+
+  background-color: var(--black-400);
+
+  height: 100%;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.articleSidebar {
+  grid-area: sidebar;
+
+  @include css-lock(24, 48, 1024, 1280, padding-left);
+
+  @media (max-width: 1024px) {
+    padding-left: 0;
+  }
+}
+
+.articleCommentForm {
+  grid-area: commentForm;
+
+  @include css-lock(64, 90, 320, 1280, margin-bottom);
+  @include css-lock(64, 80, 320, 1280, padding-top);
+  @include css-lock(32, 64, 1024, 1280, padding-right);
+
+  position: relative;
+
+  @media (max-width: 1024px) {
+    padding-right: 0;
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: -80px;
+
+    height: 1px;
+
+    background-color: var(--black-400);
+  }
+}
+
+.articleCommentsList {
+  grid-area: comments;
+
+  @include css-lock(32, 64, 1024, 1280, padding-right);
+
+  @media (max-width: 1024px) {
+    padding-right: 0;
+  }
+}

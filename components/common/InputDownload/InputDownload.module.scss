@@ -1,0 +1,38 @@
+.inputDownload {
+  width: 100%;
+}
+
+.inputDownloadInput {
+  display: none;
+}
+
+.inputDownloadButton {
+  padding: 18px 16px;
+
+  width: inherit;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--pink-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px dashed var(--pink-primary);
+  border-radius: 8px;
+
+  background-color: transparent;
+
+  @media (max-width: 768px) {
+    padding: 16px 14px;
+
+    font-size: 13px;
+  }
+
+  svg {
+    fill: transparent;
+    stroke: currentColor;
+  }
+}

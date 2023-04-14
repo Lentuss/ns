@@ -1,5 +1,10 @@
 @import '/styles/mixins/css-lock';
 
+.specialistsHead {
+  @include css-lock(120, 172, 320, 1280, padding-top);
+  @include css-lock(64, 120, 320, 1280, margin-bottom);
+}
+
 .specialistSection {
   & + & {
     @include css-lock(78, 160, 320, 1280, margin-top);

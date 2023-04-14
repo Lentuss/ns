@@ -1,7 +1,10 @@
 import {
   BLOG_PAGE_ROUTE,
   MAIN_PAGE_ROUTE,
-  SPECIALISTS_PAGE_ROUTE, ABOUT_PAGE_ROUTE, HOW_IT_WORKS_PAGE_ROUTE
+  SPECIALISTS_PAGE_ROUTE,
+  ABOUT_PAGE_ROUTE,
+  CONTACTS_PAGE_ROUTE,
+  CAREERS_PAGE_ROUTE, HOW_IT_WORKS_PAGE_ROUTE
 } from './const';
 
 export const navLinks = [
@@ -10,8 +13,8 @@ export const navLinks = [
   { label: 'Як це працює', href: HOW_IT_WORKS_PAGE_ROUTE },
   { label: 'Про нас', href: ABOUT_PAGE_ROUTE },
   { label: 'Блог', href: BLOG_PAGE_ROUTE },
-  { label: 'Контакти', href: '#' },
-  { label: 'Вакансії', href: '#' }
+  { label: 'Контакти', href: CONTACTS_PAGE_ROUTE },
+  { label: 'Вакансії', href: CAREERS_PAGE_ROUTE }
 ];
 
 import GBFlagIcon from '@/assets/images/svg/flags/GB.svg';
@@ -166,8 +169,9 @@ export const latestNewsList = [
     author: 'Дмитро Степанчук',
     publicDate: '09.03.2023',
     tags: ['Аутстафінг', 'NewStaff'],
+    rating: 4,
     timeRead: '5 хвилин',
-    href: '/',
+    href: '/1',
     image: latestNews1,
     desription:
       'У світі розробки програмного забезпечення існує давнє питання: що краще — ІТ-аутсорсинг чи аутстафінг і чи є різниця між ними? Простіше кажучи: що буде ефективніше — найняти зовнішню команду за кордоном чи замовити спеціальну команду розробки програмного забезпечення повного циклу в компанії, яка пропонує таку послугу.'
@@ -177,8 +181,9 @@ export const latestNewsList = [
     author: 'Олена Іванчук',
     publicDate: '09.03.2023',
     tags: ['NewStaff'],
+    rating: 3,
     timeRead: '5 хвилин',
-    href: '/',
+    href: '/2',
     image: latestNews2,
     desription:
       'Простіше кажучи: що буде ефективніше — найняти зовнішню команду за кордоном чи замовити спеціальну команду розробки програмного забезпечення повного циклу в компанії, яка пропонує таку послугу.'
@@ -188,8 +193,9 @@ export const latestNewsList = [
     author: 'Богдан Романчук',
     publicDate: '09.03.2023',
     tags: ['Cпеціалізації', 'Аутстафінг', 'NewStaff'],
+    rating: 5,
     timeRead: '5 хвилин',
-    href: '/',
+    href: '/3',
     image: latestNews3,
     desription:
       'Простіше кажучи: що буде ефективніше — найняти зовнішню команду за кордоном чи замовити спеціальну команду розробки програмного забезпечення повного циклу в компанії, яка пропонує таку послугу.'
@@ -246,7 +252,8 @@ export const specialistsCategoriesList = [
     id: 3,
     label: 'Інженерія',
     count: '12',
-    href: '/engineers'
+    href: '/engineers',
+    labelText: 'Revit'
   },
   {
     id: 4,
@@ -298,6 +305,7 @@ import Logo10 from '@/assets/images/svg/practicing/company-s3.svg';
 import Logo11 from '@/assets/images/svg/practicing/company-m2.svg';
 import Logo12 from '@/assets/images/svg/practicing/company-m3.svg';
 import Logo13 from '@/assets/images/svg/practicing/company-l4.svg';
+import { symbol } from 'prop-types';
 
 export const practicing = [
   <Logo0 />,
@@ -352,12 +360,103 @@ export const footerCopyrightLinks = [
   { label: 'Налаштування Cookie', href: '#' }
 ];
 
+export const mainTextArticle = [
+  {
+    title: 'The Difference between Outsourcing and Outstaffing',
+    text: `People often assume Outsourcing and Outstaffing are the same things, but they are not.
+  Software Development Outsourcing refers to a model where a company hires workers from another company to get specific tasks done. The IT industry can be developing an app, a website, software product, etc. Often, Outsourcing means that the contractor will carry out the entire scope of work and not just one or two tasks. For instance, if you want to develop a mobile app, they will deal with everything, from technical requirements to maintenance and final checks.
+  If you choose to outsource, you will get a project manager assigned to your project. They will interact with you and also handle the entire team.
+  On the contrary, Outstaffing is a type of model in which a third-party worker or a team performs your work. The third party is officially employed by another company but performs the work for you. In Outstaffing, the customers control the entire scope of work, and they have direct access to the outsourced team. When you outsource, you have to manage the hired team and your own; however, the Outstaffing team will handle the payroll.
+  This approach works best when you already have a development team but lack some expertise required for a particular project.`
+  },
+  {
+    title: 'Outsourcing vs. Outstaffing: Looking for the Best Fit',
+    text: `There is no one-size-fits-all, and no one can tell you what to opt for. Every situation is unique and requires consideration. To develop the best fit, you need first to evaluate the available resources at your disposal.
+  If you don’t have a software department in your company and have enough funds to accomplish your project, Outsourcing is the option for you. On the contrary, your team doesn’t have enough strength, and you can seamlessly manage a third-party team and yours to complete a project, outstaffing is the best choice for you.
+  When deciding between Outsourcing and outstaffing, you need to be aware of the general principles on which the models work.`
+  },
+  {
+    title: 'Make Outsourcing and Outstaffing Great (Always): Useful Cues',
+    text: `Whether it is Outsourcing or outstaffing, you need to determine the goal of your project. You need first to know which model you will choose. After hiring a team, you can then communicate your objectives to the vendor to get started. It would help if you then supplied them with a complete list of the details of your project. With more accurate information, they will let you know the cost and duration of the project.
+  When picking vendors for your project, you need to consider a few essential points, the competence domain of your vendor, their portfolio, past client’s reviews, etc. Other crucial considerations include language barriers, timezone, work ethics, cultural background, etc. This will narrow down the options for you to decide on the best company.
+  It may sound tempting, but you should disregard the vendor who charges the lowest rates. You cannot expect to get quality at thrift prices; hence, such a decision may make you compromise on the key performance indicators of your software product.
+  In the beginning, if you know how much you will have to pay, you will have a sense of control and safety since all upcharges and financial risks will be handled by your outsourcer only. However, if you relieve yourself from all the worries, you may face other concerns. For instance, in the fixed cost, the vendor may keep a risk margin along, and hence you end up paying more. Also, if the sum is stipulated initially, the developers will limit their creativity and try to fit in the budget with no improvements.
+  The best recipe to get financial, technical, communication, management, and all possible moments regulated, signing a contract is a must. This document will cover all necessary details of the project and will be signed by both parties.
+  If you cooperate with a vendor for the first time, we recommend starting with an assignment of smaller scope. If you are satisfied with the results, you can continue obtaining the benefits of software development outsourcing.
+  Don’t make the entire payment upfront. A sensible move is to make an advance payment of one-third of the final amount and then divide the remaining amount to complete milestones. In this way, they will also work towards meeting deadlines.
+  When you choose outstaffing, this tip is essential. When you explain the potential benefits to your regular employees, they will accept, and the resistance of introducing new temporary employees will be reduced. It further helps to enhance the efficacy of the workflow.
+  Communication is essential when cooperating with remote teams. If it fails, the project may be defeated. To prevent such mishaps, you should establish effective communication channels with which both sides are comfortable.
+  It is critical to integrate a support clause specifying the possible cooperation of the parties after the completion of a project. By doing so, you will not have to look for another vendor to get the required fixes done or get something corrected after the product launch.`
+  }
+];
+
+export const commentsData = [
+  {
+    id: 1,
+    author: 'Дмитро Степанчук',
+    publishDate: '09.03.2023',
+    rating: 5,
+    comment:
+      'The benefits of outsourcing and outstaffing are that they can help you save money by hiring people who are cheaper than your staff, they can also be used when your own team lacks skills, or if the team lacks the time to complete the work.',
+    likes: 4,
+    answers: []
+  },
+  {
+    id: 2,
+    author: 'Дмитро Степанчук',
+    publishDate: '09.03.2023',
+    rating: 5,
+    comment:
+      'The benefits of outsourcing and outstaffing are that they can help you save money by hiring people who are cheaper than your staff, they can also be used when your own team lacks skills, or if the team lacks the time to complete the work.',
+    likes: 4,
+    answers: [
+      {
+        id: 21,
+        author: 'Дмитро Степанчук',
+        publishDate: '09.03.2023',
+        rating: 5,
+        comment:
+          'The benefits of outsourcing and outstaffing are that they can help you save money by hiring people who are cheaper than your staff, they can also be used when your own team lacks skills, or if the team lacks the time to complete the work.',
+        likes: 4
+      }
+    ]
+  }
+];
+
+export const articleNewsMini = [
+  {
+    publishDate: '09.03.2023',
+    timeRead: '5 хвилин',
+    title: 'Аутсорсинг або аутстафінг. 10 ефективних порад',
+    id: 1
+  },
+  {
+    publishDate: '09.03.2023',
+    timeRead: '5 хвилин',
+    title: '2022 у NewStaff: огляд року',
+    id: 2
+  },
+  {
+    publishDate: '09.03.2023',
+    timeRead: '5 хвилин',
+    title: 'Інженери програмного забезпечення NewStaff',
+    id: 3
+  }
+];
 
 export const heroes = {
-  home: { subtitle: 'послуги аутстафінгу', text: '100+ компетентних, мотивованих і висококваліфікованих віддалених працівників, готові працювати для вас', button: 'Дивитись перелік спеціалістів' },
-  about: { subtitle: 'Про нас', text: 'Ми поєднуємо лаконічність та професійність, кожен раз знаходячи оптимальне кадрове рішення до кожного бізнесу', button: '' },
+  home: {
+    subtitle: 'послуги аутстафінгу',
+    text: '100+ компетентних, мотивованих і висококваліфікованих віддалених працівників, готові працювати для вас',
+    button: 'Дивитись перелік спеціалістів'
+  },
+  about: {
+    subtitle: 'Про нас',
+    text: 'Ми поєднуємо лаконічність та професійність, кожен раз знаходячи оптимальне кадрове рішення до кожного бізнесу',
+    button: ''
+  },
   howItWorks: { subtitle: 'Як це працює', text: 'Ми наймаємо компетентних спеціалістів. Робимо відбір, контроль якості та онбординг. Надаючи їх компаніям, контролюємо їх ефективність та закриваємо базові потреби, в тому числі і юридичні. Після укладання договору, компанія-споживач отримує працівника майже одразу', button: '' }
-}
+};
 
 export const inNumbers = [
   { number: 20, text: 'працюючих спеціалістів станом на сьогодні' },
@@ -366,13 +465,210 @@ export const inNumbers = [
   { number: null, text: ' ' },
   { number: 7, text: 'партнерів' },
   { number: 4, text: 'роки на ринку' }
-]
+];
 
 export const ourWay = [
-  { year: '2020', text: 'В 2020 році, ми відкрили напрямок діяльності в сфері аутстафінгу - надання для віддаленої роботи, якісних працівників з України в закордонні компанії. Наша діяльність обумовлена викликами, які прийшли в бізнес по всьому світу. ' },
-  { year: '2021', text: 'З появою коронавіруса, запит на віддалену роботу виріс, багато компаній почали формувати штат віддалених працівників, для гнучкості. Відповідно підвищений попит на українських спеціалістів сформував наше бачення на наступні роки.' },
-  { year: '2022', text: 'Проте війна внесла свої корективи в темп росту, але все ж зробила нас сильнішими, ми пройшли і продовжуєм шлях до цілі створення рабочих місць.' }
-]
+  {
+    year: '2020',
+    text: 'В 2020 році, ми відкрили напрямок діяльності в сфері аутстафінгу - надання для віддаленої роботи, якісних працівників з України в закордонні компанії. Наша діяльність обумовлена викликами, які прийшли в бізнес по всьому світу. '
+  },
+  {
+    year: '2021',
+    text: 'З появою коронавіруса, запит на віддалену роботу виріс, багато компаній почали формувати штат віддалених працівників, для гнучкості. Відповідно підвищений попит на українських спеціалістів сформував наше бачення на наступні роки.'
+  },
+  {
+    year: '2022',
+    text: 'Проте війна внесла свої корективи в темп росту, але все ж зробила нас сильнішими, ми пройшли і продовжуєм шлях до цілі створення рабочих місць.'
+  }
+];
+
+export const contactInfoData = {
+  legalInfo: [
+    {
+      label: 'ТОВ',
+      info: '"НЬЮСТАФФ"'
+    },
+    {
+      label: 'Юридична адреса',
+      info: 'Україна, 04108, Київ, Проспект Правди 9-Б, кв. 132'
+    },
+    {
+      label: 'ЄДРПОУ',
+      info: '37571469'
+    },
+    {
+      label: 'IBAN',
+      info: 'UA391342178878366161231831936'
+    },
+    {
+      label: 'Privatbank SWIFT CODE',
+      info: 'PBANUA2X'
+    },
+    {
+      label: 'SWIFT CODE',
+      info: 'CHASUS33'
+    }
+  ],
+  legalInfo: [
+    {
+      label: 'ТОВ',
+      info: '"НЬЮСТАФФ"'
+    },
+    {
+      label: 'Юридична адреса',
+      info: 'Україна, 04108, Київ, Проспект Правди 9-Б, кв. 132'
+    },
+    {
+      label: 'ЄДРПОУ',
+      info: '37571469'
+    },
+    {
+      label: 'IBAN',
+      info: 'UA391342178878366161231831936'
+    },
+    {
+      label: 'Privatbank SWIFT CODE',
+      info: 'PBANUA2X'
+    },
+    {
+      label: 'SWIFT CODE',
+      info: 'CHASUS33'
+    }
+  ],
+  emailsInfo: [
+    {
+      label: 'HR',
+      info: 'hr@newstaff.co.il'
+    },
+    {
+      label: 'Finance',
+      info: 'finance@newstaff.co.il'
+    },
+    {
+      label: 'Lawyer',
+      info: 'lawyer@newstaff.co.il'
+    }
+  ]
+};
+
+export const vacancyCardListData = [
+  {
+    title: 'Архітектор-візуалізатор',
+    experiense: '5+ років досвіду',
+    infoTags: ['Повна зайнятість', 'Англійська B2', 'Київ'],
+    description:
+      'Архітектурний супровід реалізації девелоперських проектів на всіх стадіях, від концепції до благоустрою та озеленення території.',
+    id: 1
+  },
+  {
+    title: 'Розробник Python',
+    experiense: '5+ років досвіду',
+    infoTags: ['Повна зайнятість', 'Англійська B2', 'Київ'],
+    description:
+      'Архітектурний супровід реалізації девелоперських проектів на всіх стадіях, від концепції до благоустрою та озеленення території.',
+    id: 2
+  },
+  {
+    title: "Дизайн інтер'єру",
+    experiense: '5+ років досвіду',
+    infoTags: ['Повна зайнятість', 'Англійська B2', 'Київ'],
+    description:
+      'Архітектурний супровід реалізації девелоперських проектів на всіх стадіях, від концепції до благоустрою та озеленення території.',
+    id: 3
+  },
+  {
+    title: 'Консультант зі сталого розвитку',
+    experiense: '5+ років досвіду',
+    infoTags: ['Повна зайнятість', 'Англійська B2', 'Київ'],
+    description:
+      'Архітектурний супровід реалізації девелоперських проектів на всіх стадіях, від концепції до благоустрою та озеленення території.',
+    id: 4
+  },
+  {
+    title: 'Керівник проекту',
+    experiense: '5+ років досвіду',
+    infoTags: ['Повна зайнятість', 'Англійська B2', 'Київ'],
+    description:
+      'Архітектурний супровід реалізації девелоперських проектів на всіх стадіях, від концепції до благоустрою та озеленення території.',
+    id: 5
+  },
+  {
+    title: 'Молодший архітектурний дизайнер',
+    experiense: '5+ років досвіду',
+    infoTags: ['Повна зайнятість', 'Англійська B2', 'Київ'],
+    description:
+      'Архітектурний супровід реалізації девелоперських проектів на всіх стадіях, від концепції до благоустрою та озеленення території.',
+    id: 6
+  }
+];
+
+export const vacancyDescriptionData = [
+  {
+    title: 'Про NewStaff',
+    description: `Якщо ти спеціаліст у своїй справі, хочеш стати частиною крутої команди та реалізувати свій потенціал, бути в курсі трендів індустрії, прагнеш навчитися чогось нового та готовий обмінятися своїм досвідом — приєднуйся! Ми цінуємо та поважаємо наших співробітників, створюємо середовище, де можна навчатися та зростати.
+    Ми розглядаємо різні діапазони досвіду, від одного (1) рокіу і більше, а заробітна плата буде відповідати досвіду.`
+  },
+  {
+    title: 'Опис вакансії',
+    description: `Якщо ти спеціаліст у своїй справі, хочеш стати частиною крутої команди та реалізувати свій потенціал, бути в курсі трендів індустрії, прагнеш навчитися чогось нового та готовий обмінятися своїм досвідом — приєднуйся! Ми цінуємо та поважаємо наших співробітників, створюємо середовище, де можна навчатися та зростати.
+    Ми розглядаємо різні діапазони досвіду, від одного (1) рокіу і більше, а заробітна плата буде відповідати досвіду.`
+  },
+  {
+    title: 'Що ви будете робити',
+    description: `Якщо ти спеціаліст у своїй справі, хочеш стати частиною крутої команди та реалізувати свій потенціал, бути в курсі трендів індустрії, прагнеш навчитися чогось нового та готовий обмінятися своїм досвідом — приєднуйся!`,
+    listData: [
+      'Розробка проєктної документації',
+      'Робота з деталям та системами, підбір обладнання',
+      'Знання норм та специфікацій країн СНГ та Європи',
+      'Гнучке адаптивне мислення',
+      'Креативні підходи для вирішення стандартних та нестандартних завдань чи проєктів',
+      'Використання технологій BIM 360, робота в “хмарі”',
+      'Колективне програмування та індивідуальні проєкти в глобальному проєкті'
+    ]
+  },
+  {
+    title: 'Що ми пропонуємо',
+    description: `Ми розглядаємо різні діапазони досвіду, від одного (1) рокіу і більше, а заробітна плата буде відповідати досвіду.`,
+    listData: [
+      'Розробка проєктної документації',
+      'Робота з деталям та системами, підбір обладнання',
+      'Знання норм та специфікацій країн СНГ та Європи',
+      'Гнучке адаптивне мислення',
+      'Креативні підходи для вирішення стандартних та нестандартних завдань чи проєктів',
+      'Використання технологій BIM 360, робота в “хмарі”',
+      'Колективне програмування та індивідуальні проєкти в глобальному проєкті'
+    ]
+
+  }
+];
+
+export const cookiesModalConfigData = [
+  {
+    id: 1,
+    title: 'Необхідні',
+    description: `Ці файли cookie необхідні для функціонування веб-сайту, і їх не можна вимкнути в наших системах. Зазвичай вони встановлюються лише у відповідь на виконані вами дії, які є запитом на надання послуг, наприклад налаштування ваших налаштувань конфіденційності, вхід або заповнення форм. Ви можете налаштувати свій браузер на блокування цих файлів cookie або сповіщення про них, але деякі частини сайту не працюватимуть. Ці файли cookie не зберігають жодної особистої інформації.`,
+    isAlwaysActive: true
+  },
+  {
+    id: 2,
+    title: 'Маркетинг',
+    description: `Ці елементи використовуються для показу реклами, яка більше відповідає вам і вашим інтересам. Вони також можуть використовуватися для обмеження кількості переглядів реклами та вимірювання ефективності рекламних кампаній. Рекламні мережі зазвичай розміщують їх з дозволу оператора сайту.`,
+    isAlwaysActive: false
+  },
+  {
+    id: 3,
+    title: 'Персоналізація',
+    description: `Ці елементи дозволяють веб-сайту запам’ятовувати ваш вибір (наприклад, ваше ім’я користувача, мову чи регіон, у якому ви перебуваєте), і надавати розширені, більш персональні функції. Наприклад, веб-сайт може надавати вам місцеві прогнози погоди або новини про дорожній рух, зберігаючи дані про ваше поточне місцезнаходження.`,
+    isAlwaysActive: false
+  },
+  {
+    id: 4,
+    title: 'Аналітика',
+    description: `Ці елементи допомагають оператору веб-сайту зрозуміти, як працює його веб-сайт, як відвідувачі взаємодіють із сайтом і чи можуть бути технічні проблеми. Цей тип зберігання зазвичай не збирає інформацію, яка ідентифікує відвідувача.`,
+    isAlwaysActive: false
+  }
+];
+
 
 import member1 from '@/assets/images/team/member1.jpg'
 import member2 from '@/assets/images/team/member2.jpg'

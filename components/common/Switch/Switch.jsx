@@ -1,23 +1,27 @@
-// import React from 'react';
-// import PropTypes from 'prop-types';
+import { memo } from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-// import s from './Switch.module.scss';
+import s from './Switch.module.scss';
 
-// export const Switch = (props) => {
-//   const { isChecked = false, ...chProps } = props;
-//   return (
-//     <label className={s.Switch} labelfor="checkbox">
-//       <input
-//         className={s.Checkbox}
-//         type="checkbox"
-//         id="checkbox"
-//         checked={isChecked}
-//       />
-//       <span className={s.Slider}></span>
-//     </label>
-//   );
-// };
+export const Switch = memo((props) => {
+  const { isChecked = false, className, onChange, ...chProps } = props;
+  return (
+    <label className={cx(s.Switch, className)} labelfor="checkbox">
+      <input
+        className={s.Checkbox}
+        type="checkbox"
+        id="checkbox"
+        checked={isChecked}
+        onChange={onChange}
+      />
+      <span className={s.Slider}></span>
+    </label>
+  );
+});
 
-// Switch.propTypes = {
-//   checked: PropTypes.bool
-// };
+Switch.propTypes = {
+  isChecked: PropTypes.bool,
+  className: PropTypes.string,
+  onChange: PropTypes.func
+};

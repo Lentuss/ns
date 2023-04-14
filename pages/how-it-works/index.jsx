@@ -19,4 +19,4 @@ function HowItWorks() {
     );
 }
 
-export default widthLayout(HowItWorks);
+export default widthLayout(HowItWorks, pageTypes.howItWorks);

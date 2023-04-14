@@ -1,0 +1,10 @@
+@import '/styles/mixins/css-lock';
+
+.careersVacancies {
+  @include css-lock(120, 212, 320, 1280, padding-top);
+  @include css-lock(88, 96, 320, 1280, margin-bottom);
+}
+
+.careersForm {
+  @include css-lock(120, 240, 320, 1280, margin-bottom);
+}

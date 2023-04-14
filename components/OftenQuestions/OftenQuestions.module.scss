@@ -1,7 +1,6 @@
 @import '/styles/mixins/css-lock';
 
 .oftenQuestions {
-  @include css-lock(88, 180, 320, 1280, margin-bottom);
 }
 
 .oftenQuestionsTitle {

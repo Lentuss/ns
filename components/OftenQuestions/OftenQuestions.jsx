@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 import { CustomCollapse, Htag, Ptag, Wrapper } from '../common';
@@ -8,7 +9,7 @@ import { black800 } from '@/utils/const';
 
 import s from './OftenQuestions.module.scss';
 
-export const OftenQuestions = (props) => {
+export const OftenQuestions = ({ className }) => {
   const [activeCollapse, setActiveCollapse] = useState([]);
 
   const setActiveCollapseHandler = (id) =>
@@ -39,7 +40,7 @@ export const OftenQuestions = (props) => {
     </ul>
   );
   return (
-    <section className={s.oftenQuestions}>
+    <section className={cx(s.oftenQuestions, className)}>
       <Wrapper>
         <Htag className={s.oftenQuestionsTitle} tag="h2">
           Часті запитання

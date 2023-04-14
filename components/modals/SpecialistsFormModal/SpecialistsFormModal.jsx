@@ -25,6 +25,8 @@ export const SpecialistsFormModal = (props) => {
 
   const { imageSrc, jobName } = selectedSpecialist || {};
 
+  // if (!selectedSpecialist) return <></>;
+
   const onCloseHandler = () => {
     dispatch(toogleShowSpecialistFormModal(false));
     dispatch(selectSpecialist(null));
@@ -44,7 +46,7 @@ export const SpecialistsFormModal = (props) => {
       </Heading>
 
       <div className={s.modalSelectedSpecialist}>
-        <Image className={s.modalSelectedImage} src={imageSrc} />
+        <Image className={s.modalSelectedImage} src={imageSrc} alt={jobName} />
         <Heading size="s">{jobName}</Heading>
       </div>
     </div>
@@ -74,6 +76,7 @@ export const SpecialistsFormModal = (props) => {
       secondareButtonLabel="Підтвердити"
       onClickPrimaryButton={onGoBackHandler}
       onClickSecondaryButton={onCloseHandler}
+      className={s.specialistFormModal}
     >
       <Text className={s.modalHeader} size="l">
         Зворотній зв’язок

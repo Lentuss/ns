@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import s from './Footer.module.scss';
 
-import { Htag, AccentH, ButtonPrimary } from '@/components/common';
+import { Htag, AccentH, ButtonPrimary, ButtonText } from '@/components/common';
 import { FooterContacts, FooterCopyright, FooterSocials } from '@/components';
 
 import { navLinks } from '@/utils/templateData';
@@ -29,10 +29,10 @@ export const Footer = () => {
 
           <ul className={s.footerNav}>
             {navLinks.map(({ label, href }) => (
-              <li className={s.footerNavItem} key={label}>
-                <Link className={s.footerNavItemLink} href={href}>
+              <li key={label}>
+                <ButtonText appearance="white" href={href}>
                   {label}
-                </Link>
+                </ButtonText>
               </li>
             ))}
           </ul>

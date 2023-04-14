@@ -15,6 +15,6 @@
 }
 
 .Ptag-l {
-  font-size: 18px;
-  line-height: 29px;
+  @include css-lock(13, 20, 320, 1280);
+  @include css-lock(20, 32, 320, 1280, line-height);
 }

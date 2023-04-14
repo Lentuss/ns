@@ -1,0 +1,67 @@
+@import '/styles/mixins/css-lock';
+
+.commentForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, fit-content(100%));
+  gap: 0 40px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, fit-content(100%));
+
+    gap: 0;
+  }
+}
+
+.commentFormTitle {
+  @include css-lock(40, 48, 320, 1280, margin-bottom);
+
+  @media (min-width: 769px) {
+    grid-column: 1 / 3;
+  }
+}
+
+.commentFormInputName {
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
+}
+
+.commentFormInputEmail {
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
+}
+
+.commentFormInputComment {
+  @media (min-width: 769px) {
+    margin-top: 32px;
+    grid-column: 1 / 3;
+  }
+}
+
+.commentFormBottom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 42px 16px;
+
+  margin-top: 40px;
+
+  @media (min-width: 769px) {
+    grid-column: 1 / 3;
+  }
+}
+
+.commentFormSubmit {
+  @media (min-width: 769px) {
+    margin-left: auto;
+
+    min-width: 260px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}

@@ -5,11 +5,12 @@
 
   @media (max-width: 1024px) {
     padding-top: 0;
+
+    overflow: hidden;
   }
 }
 
 .sidebarTitle {
-  // @include css-lock(40, 80, 320, 1280, margin-bottom);
   margin-bottom: 32px;
 
   @media (max-width: 1024px) {
@@ -26,7 +27,19 @@
 
   @media (max-width: 1024px) {
     margin-bottom: 64px;
+
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 0;
+    }
   }
+}
+
+.sidebarCategoriesItem {
+  flex-shrink: 0;
 }
 
 .sidebarContancts {

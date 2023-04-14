@@ -7,7 +7,7 @@ import { widthLayout } from '@/layout/Layout';
 import { SpecialistsFormModal } from '@/components/modals';
 
 import { specialistPageSections } from '@/utils/templateData';
-import { SPECIALISTS_PAGE_ROUTE } from '@/utils/const';
+import { SPECIALISTS_PAGE_ROUTE, pageTypes } from '@/utils/const';
 
 import s from '@/styles/pages/Specialists.module.scss';
 
@@ -18,7 +18,7 @@ function Specialist({ headData }) {
 
   return (
     <>
-      <SpecialistsHead />
+      <SpecialistsHead className={s.specialistsHead} />
       <SpecialistSection title={title} accent={accent} />
       <div className={s.specialistPagination}>
         <Wrapper>
@@ -44,7 +44,7 @@ function Specialist({ headData }) {
   );
 }
 
-export default widthLayout(Specialist);
+export default widthLayout(Specialist, pageTypes.specialists);
 
 export const getStaticPaths = async () => {
   return {
@@ -63,7 +63,8 @@ export const getStaticProps = async ({ params }) => {
   }
 
   const headData =
-    specialistPageSections.find(({ href }) => href === params.alias) || {};
+    specialistPageSections.find(({ href }) => href.includes(params.alias)) ||
+    {};
 
   return {
     props: {

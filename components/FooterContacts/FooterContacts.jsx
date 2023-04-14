@@ -17,12 +17,12 @@ export const FooterContacts = ({ className }) => {
             {country}
           </Subtitle>
           <a
-            href={`tel:${phone.replace(/[),(, ,-]/g, '')}`}
             className={s.footerAddressLink}
+            href={`tel:${phone.replace(/[),(, ,-]/g, '')}`}
           >
             {phone}
           </a>
-          <a href={`email:${email}`} className={s.footerAddressLink}>
+          <a className={s.footerAddressLink} href={`email:${email}`}>
             {email}
           </a>
         </address>

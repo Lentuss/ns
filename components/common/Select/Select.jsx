@@ -79,8 +79,10 @@ export const Select = memo((props) => {
             borderColor: isError ? pinkPrimary : black200,
             cursor: 'pointer',
             boxShadow: 'none',
+            color: state.isFocused ? black1000 : black700,
             '&:hover': {
-              borderColor: black200
+              borderColor: black200,
+              color: black1000
             }
           }),
           dropdownIndicator: (baseStyles, state) => ({
@@ -100,17 +102,18 @@ export const Select = memo((props) => {
           }),
           placeholder: (baseStyles, state) => ({
             ...baseStyles,
-            color: state.isFocused ? black1000 : black700
+            color: 'inherit'
           }),
           input: (baseStyles, state) => ({
             ...baseStyles,
-            color: black1000
+            color: 'inherit'
           }),
           menu: (baseStyles, state) => ({
             ...baseStyles,
             marginTop: 0,
             backgroundColor: white,
-            borderRadius: isLangMode ? 8 : '0 0 8px 8px'
+            borderRadius: isLangMode ? 8 : '0 0 8px 8px',
+            width: isLangMode ? 120 : '100%'
           }),
           option: (baseStyles, state) => ({
             ...baseStyles,
@@ -135,7 +138,7 @@ export const Select = memo((props) => {
 });
 
 Select.propTypes = {
-  options: PropTypes.array.isRequired,
+  options: PropTypes.array,
   selectedOption: PropTypes.object,
   className: PropTypes.string,
   onChange: PropTypes.func,

@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Image from 'next/image';
+import cx from 'classnames';
 
 import { ButtonOutline, Htag, Label, Ptag, Subtitle, Wrapper } from '../common';
 
-import s from './LatestNews.module.scss';
 import { black700 } from '@/utils/const';
 import { latestNewsList } from '@/utils/templateData';
+
+import s from './LatestNews.module.scss';
 
 const Article = ({
   title,
@@ -39,7 +41,7 @@ const Article = ({
   </Link>
 );
 
-export const LatestNews = (props) => {
+export const LatestNews = ({ className }) => {
   const renderHead = () => (
     <>
       <Htag className={s.latestNewsTitle} tag="h2">
@@ -62,7 +64,7 @@ export const LatestNews = (props) => {
   );
 
   return (
-    <div className={s.latestNews}>
+    <div className={cx(s.latestNews, className)}>
       <Wrapper>
         <div className={s.latestNewsInner}>
           {renderHead()}

@@ -1,0 +1,5 @@
+@import '/styles/mixins/css-lock';
+
+.hero {
+  @include css-lock(96, 252, 320, 1280, padding-top);
+}

@@ -2,11 +2,12 @@ import { useRouter } from 'next/router';
 
 import { widthLayout } from '@/layout/Layout';
 import { FeedBack, SpecialistsHead, SpecialistSection } from '@/components';
+import { SpecialistsFormModal, SpecialistsModal } from '@/components/modals';
 
 import { specialistPageSections } from '@/utils/templateData';
+import { pageTypes } from '@/utils/const';
 
 import s from '@/styles/pages/Specialists.module.scss';
-import { SpecialistsFormModal, SpecialistsModal } from '@/components/modals';
 
 function Specialists() {
   const { asPath } = useRouter();
@@ -25,7 +26,7 @@ function Specialists() {
 
   return (
     <>
-      <SpecialistsHead />
+      <SpecialistsHead className={s.specialistsHead} />
 
       {renderSpecialistSections()}
 
@@ -37,4 +38,4 @@ function Specialists() {
   );
 }
 
-export default widthLayout(Specialists);
+export default widthLayout(Specialists, pageTypes.specialists);

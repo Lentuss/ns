@@ -1,8 +1,19 @@
+.primary {
+  &.isDisabled {
+    background-color: var(--black-150);
+
+    color: var(--black-500);
+
+    pointer-events: none;
+  }
+}
+
 .primary-pink {
   background-color: var(--pink-primary);
   color: var(--white);
 
-  &:hover:enabled {
+  &.isActive,
+  &::after {
     background-color: var(--pink-secondary);
   }
 }
@@ -11,11 +22,12 @@
   background-color: var(--cyan-primary);
   color: var(--black-900);
 
-  &:hover:enabled {
+  &.isActive,
+  &::after {
     background-color: var(--cyan-secondary);
   }
 
-  &:disabled {
+  &.isDisabled {
     background-color: var(--black-800);
 
     color: var(--black-600);
@@ -26,7 +38,8 @@
   background-color: var(--white);
   color: var(--black-1000);
 
-  &:hover:enabled {
+  &.isActive,
+  &::after {
     background-color: var(--black-150);
   }
 }
@@ -34,10 +47,13 @@
 .primary-grey {
   background-color: var(--black-150);
 
-  &:hover:enabled,
+  &::after,
   &.isActive {
     background-color: var(--pink-primary);
+  }
 
+  &.isActive,
+  &:hover {
     color: var(--white);
   }
 }

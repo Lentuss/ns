@@ -1,3 +1,4 @@
+import CountUp from 'react-countup';
 import { useDispatch } from 'react-redux';
 import cx from 'classnames';
 
@@ -21,9 +22,20 @@ export const Outstaff = ({ className }) => {
 
   const renderBenefits = () => (
     <ul className={s.benefits}>
-      {benefitsData.map(({ value, text }) => (
+      {benefitsData.map(({ value, text }, idx) => (
         <li className={s.benefitsItem} key={value}>
-          <span className={s.benefitsItemValue}>{value}</span>
+          <span className={s.benefitsItemValue}>
+            {idx === 1 && (
+              <span style={{ marginRight: 10 }}>{value.match(/\D/)}</span>
+            )}
+            <CountUp
+              end={parseInt(value.match(/\d+/))}
+              scrollSpyOnce
+              scrollSpyDelay={100}
+              enableScrollSpy
+            />
+            {idx === 0 && value.match(/\D/)}
+          </span>
           <Ptag className={s.benefitsItemText} size="m">
             {text}
           </Ptag>

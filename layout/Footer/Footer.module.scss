@@ -16,6 +16,8 @@
     margin: 0;
     padding: 48px 16px 24px;
     background-image: url(../../assets/images/svg/patterns/footer-mobile-pattern.svg);
+
+    border-radius: 0;
   }
 }
 
@@ -73,12 +75,6 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-}
-
-.footerNavItem {
-  @include css-lock(13, 16, 320, 1280);
-  line-height: 1.5;
-  color: var(--white);
 }
 
 .footerCopyright {

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Heading, Label, Ptag } from '../common';
 
 import { latestNewsList } from '@/utils/templateData';
-import { black700 } from '@/utils/const';
+import { BLOG_PAGE_ROUTE, black700 } from '@/utils/const';
 
 import s from './Articles.module.scss';
 
@@ -27,7 +27,7 @@ export const Articles = ({ className }) => {
           title
         }) => (
           <li className={s.articlesItem} key={title}>
-            <Link className={s.articlesLink} href={href}>
+            <Link className={s.articlesLink} href={BLOG_PAGE_ROUTE + href}>
               <Image className={s.articlesItemImage} src={image} alt={title} />
 
               <div className={s.articlesItemPublishInfo}>

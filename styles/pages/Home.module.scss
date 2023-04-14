@@ -1,7 +1,15 @@
 @import '/styles/mixins/css-lock';
 
-.specialistSection {
-  @include css-lock(160, 300, 320, 1280, margin-bottom);
+.hero {
+  @include css-lock(120, 210, 320, 1280, padding-top);
+}
+
+.homeSectionM {
+  @include css-lock(80, 200, 320, 1280, margin-bottom);
+}
+
+.homeSectionL {
+  @include css-lock(120, 240, 320, 1280, margin-bottom);
 }
 
 .specialistSubTitle {
@@ -16,4 +24,8 @@
     align-items: center;
     gap: 0 10px;
   }
+}
+
+.oftenQuestions {
+  @include css-lock(64, 132, 320, 1280, margin-bottom);
 }

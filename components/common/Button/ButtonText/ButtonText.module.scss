@@ -6,21 +6,25 @@
 
   position: relative;
 
+  overflow: visible;
+
   &::after {
     content: '';
 
     position: absolute;
     left: 0;
     right: 0;
-    top: 100%;
+    bottom: 0;
 
     transition: background-color 0.2s ease;
 
     height: 1px;
   }
 
-  &:disabled {
+  &.isDisabled {
     color: var(--black-400);
+
+    pointer-events: none;
   }
 }
 
@@ -37,16 +41,24 @@
 
 .text-pink {
   color: var(--pink-primary);
+
+  &:hover,
+  &.isActive {
+    &::after {
+      background-color: var(--pink-primary);
+    }
+  }
 }
 
 .text-white {
   color: var(--white);
 
-  &:hover:enabled {
+  &:hover,
+  &.isActive {
     color: var(--cyan-primary);
-  }
 
-  &:disabled {
-    color: var(--black-700);
+    &::after {
+      background-color: var(--cyan-primary);
+    }
   }
 }
