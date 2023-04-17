@@ -12,11 +12,6 @@ export const WorkStages = () => {
     const ref = useRef(null);
     gsap.registerPlugin(ScrollTrigger);
 
-    const handleScroll = (event) => {
-        const target = event.target;
-        const stage = target.querySelector('.stage')
-    };
-
     useEffect(() => {
         const ctx = gsap.context((self) => {
 
@@ -100,7 +95,7 @@ export const WorkStages = () => {
                     <Stage />
                     <div className={s.workStagesContent}>
                         <Subtitle>Процес співпраці</Subtitle>
-                        <div className={cx(s.workStagesWrapper, 'block')} onScroll={handleScroll}>
+                        <div className={cx(s.workStagesWrapper, 'block')}>
                             <Htag tag='h2' className={cx(s.workStagesText, 'stage')}>Обираєте спеціаліста</Htag>
                             <Htag tag='h2' className={cx(s.workStagesText, 'stage', 'stage2')}>Ознайом&shy;люєтесь з договором</Htag>
                             <Htag tag='h2' className={cx(s.workStagesText, 'stage', 'stage3')}>Підписуємо договір</Htag>

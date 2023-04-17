@@ -1,3 +1,7 @@
+import React, { useEffect, useRef } from 'react';
+import { gsap } from "gsap";
+import { Back } from 'gsap/dist/all';
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import cx from 'classnames';
 
 import { useWindowDimensions } from '@/hooks';
@@ -10,8 +14,29 @@ import { Logo } from './Logo/Logo';
 import { practicing } from '@/utils/templateData';
 
 export const Practicing = ({ className }) => {
-  const { width } = useWindowDimensions();
+  const ref = useRef(null);
+  gsap.registerPlugin(ScrollTrigger);
   let logos = [];
+  let entered = false;
+
+  useEffect(() => {
+    const ctx = gsap.context((self) => {
+      let items = gsap.utils.toArray(".logo");
+
+      gsap.set(items, { scale: 0 })
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".practicing",
+          start: 'top 11%',
+          markers: true,
+          onEnter: () => { if (!entered) { entered = true; gsap.fromTo(items, { scale: 0.1 }, { scale: 1, duration: 0.6, ease: Back.easeOut }) } },
+        }
+      });
+    }, ref);
+    return () => ctx.revert();
+  }, [logos])
+
+  const { width } = useWindowDimensions();
   if (width <= BREAKPOINTS.mobile) {
     logos = practicing.slice(0, 6);
   } else if (width >= BREAKPOINTS.tablet) {
@@ -20,7 +45,7 @@ export const Practicing = ({ className }) => {
     logos = practicing.slice(0, 10);
   }
   return (
-    <div className={cx(s.practicing, className)}>
+    <div className={cx(s.practicing, 'practicing', className)} ref={ref}>
       <Wrapper>
         <div className={s.practicingInner}>
           <Htag tag="h2" className={s.practicingHeading}>

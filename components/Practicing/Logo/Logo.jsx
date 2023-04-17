@@ -11,7 +11,7 @@ export const Logo = props => {
             <ul className={s.logoList}>
                 {
                     data.map((item, i) =>
-                        <li className={cx(s.logoItem, s[`logoItem-${i}`])} key={`item${i}`}>
+                        <li className={cx(s.logoItem, 'logo', s[`logoItem-${i}`])} key={`item${i}`}>
                             {item}
                         </li>
                     )
