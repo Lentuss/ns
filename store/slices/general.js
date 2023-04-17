@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   isOpenMobileMenu: false,
   seletedLanguage: {},
-  isShowCookiesBanner: true,
+  isShowCookiesBanner: false,
   isShowCookiesModal: false
 };
 

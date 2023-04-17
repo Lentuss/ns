@@ -13,7 +13,7 @@ import HowItWorksPattern from '@/assets/images/svg/patterns/header/how-it-works.
 import AboutPattern from '@/assets/images/svg/patterns/header/about.svg';
 import CareersPattern from '@/assets/images/svg/patterns/header/careers.svg';
 
-import { pageTypes } from '@/utils/const';
+import { MOVE_IN_ANIMATION_TIME, pageTypes } from '@/utils/const';
 
 import s from './Layout.module.scss';
 
@@ -22,7 +22,18 @@ const Layout = ({ children, pageType }) => {
   const { about, careers, home, howItWorks, specialists } = pageTypes;
 
   useEffect(() => {
-    setStartAnimation(true);
+    let timeout;
+
+    if (pageType === home) {
+      timeout = setTimeout(
+        () => setStartAnimation(true),
+        MOVE_IN_ANIMATION_TIME
+      );
+    } else {
+      setStartAnimation(true);
+    }
+
+    return () => clearTimeout(timeout);
   }, []);
 
   const renderHomePattern = () => (

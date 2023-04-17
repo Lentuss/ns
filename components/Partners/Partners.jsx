@@ -10,16 +10,19 @@ export const Partners = () => {
     <div className={s.partners}>
       <Wrapper>
         <div className={s.partnersInner}>
-          <Htag className={s.partnersHeading} tag='h2'>Нам довіряють
-            <AccentH location='partners'> 50+ компаній, </AccentH>
-            серед яких
+          <Htag tag="h2">
+            Нам довіряють&nbsp;
+            <AccentH location="partners">50+ компаній,</AccentH>&nbsp;серед яких
           </Htag>
-          <ul className={s.partnersList}>{partners.map((p, i) =>
-            <li className={s.partnersItem} key={i}>{p}</li>)}
+          <ul className={s.partnersList}>
+            {partners.map((p, i) => (
+              <li className={s.partnersItem} key={i}>
+                {p}
+              </li>
+            ))}
           </ul>
         </div>
       </Wrapper>
     </div>
-  )
-}
-
+  );
+};

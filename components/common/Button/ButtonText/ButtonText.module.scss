@@ -7,8 +7,6 @@
 
   position: relative;
 
-  overflow: hidden;
-
   &::after {
     content: '';
 
@@ -17,9 +15,9 @@
     right: 0;
     top: 80%;
 
-    transition: transform 0s;
+    transition: transform 0.6s;
 
-    background-color: currentColor;
+    background-color: transparent;
 
     height: 1px;
 
@@ -30,14 +28,16 @@
   &.isEnter {
     &::after {
       transform: translateX(0);
-      transition: transform 0.6s ease;
+
+      background-color: currentColor;
     }
   }
 
   &.isLeave {
     &::after {
       transform: translateX(100%);
-      transition: transform 0.6s ease;
+
+      background-color: currentColor;
     }
   }
 

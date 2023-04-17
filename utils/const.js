@@ -36,3 +36,5 @@ export const pageTypes = {
   about: 'about',
   careers: 'careers'
 };
+
+export const MOVE_IN_ANIMATION_TIME = 1000;

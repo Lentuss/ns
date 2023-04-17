@@ -12,6 +12,16 @@
 
 .Htag-h2 {
   @include css-lock(28, 56, 320, 1280);
+
+  transition: transform 1s ease, opacity 1s ease;
+
+  transform: translateY(50px);
+  opacity: 0;
+
+  &.isAnimation {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .Htag-h3 {

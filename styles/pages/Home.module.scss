@@ -20,9 +20,9 @@
   @include css-lock(48, 96, 320, 1280, margin-bottom);
 
   @media (min-width: 1025px) {
-    display: flex;
-    align-items: center;
-    gap: 0 10px;
+    // display: flex;
+    // align-items: center;
+    // gap: 0 10px;
   }
 }
 
