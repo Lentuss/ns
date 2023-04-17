@@ -37,7 +37,7 @@ function Home() {
             NewStaff 5 років на ринку
           </Subtitle>
           <Htag className={s.specialistTitle} tag="h2">
-            Ми маємо спеціалістів,
+            Ми маємо спеціалістів,&nbsp;
             <AccentH location="specialists">яких ви шукаєте</AccentH>
           </Htag>
           <SpecialistCards />

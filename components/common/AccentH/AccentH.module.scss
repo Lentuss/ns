@@ -1,91 +1,120 @@
 @import '/styles/mixins/css-lock';
 
 .AccentH {
-  position: relative;
-
   width: fit-content;
 
   color: var(--cyan-primary);
   font-family: inherit;
   font-size: inherit;
+
+  display: inline-block;
+}
+
+.AccentHInner {
+  position: relative;
+
+  @include css-lock(6, 8, 320, 1280, padding-bottom);
+
+  &.isShow {
+    .lineMain,
+    .lineWork {
+      stroke-dashoffset: 0;
+    }
+    .lineSpecialists {
+      stroke-dashoffset: -1600;
+    }
+    .lineCompanies {
+      stroke-dashoffset: -800;
+    }
+    .linePracticing {
+      stroke-dashoffset: -880;
+    }
+    .lineCooperationDesktop {
+      stroke-dashoffset: -1440;
+    }
+    .lineFooter {
+      stroke-dashoffset: -1000;
+    }
+    .lineAbout {
+      stroke-dashoffset: -1000;
+    }
+    .lineContacts {
+      stroke-dashoffset: -1400;
+    }
+  }
 }
 
 .line {
   position: absolute;
   left: 0;
+  right: 0;
 
-  background-repeat: no-repeat;
-  background-size: contain;
+  transition: stroke-dashoffset 0.5s ease;
 }
 
-.line-main {
-  bottom: -8px;
+.lineBaseStyle {
+  width: 100%;
 
-  background-image: url(../../../assets/images/svg/accent-lines/l-main.svg);
-  @include css-lock(219, 461, 320, 1280, width);
-  @include css-lock(8, 14, 320, 1280, height);
-}
-
-.line-specialists {
-  bottom: -64px;
-
-  background-image: url(../../../assets/images/svg/accent-lines/arr-specialists.svg);
-  @include css-lock(254, 530, 320, 1280, width);
-  @include css-lock(41, 116, 320, 1280, height);
-}
-
-.line-partners {
-  bottom: -8px;
-
-  background-image: url(../../../assets/images/svg/accent-lines/l-companies.svg);
-  @include css-lock(191, 391, 320, 1280, width);
-  @include css-lock(3, 10, 320, 1280, height);
-}
-
-.line-practicing {
-  bottom: -8px;
-
-  background-image: url(../../../assets/images/svg/accent-lines/line.svg);
-  @include css-lock(214, 412, 320, 1280, width);
-  @include css-lock(3, 7, 320, 1280, height);
-}
-
-.line-cooperation {
-  bottom: -15px;
-
-  background-image: url(../../../assets/images/svg/accent-lines/arr-cooperation.svg);
-  @include css-lock(251, 620, 320, 1280, width);
-  @include css-lock(1, 49, 320, 1280, height);
-}
-
-.line-footer {
-  bottom: 0px;
-
-  background-image: url(../../../assets/images/svg/accent-lines/line.svg);
-  @include css-lock(241, 482, 320, 1280, width);
-  @include css-lock(3, 10, 320, 1280, height);
-}
-
-.line-works {
-  bottom: -8px;
-
-  background-image: url(../../../assets/images/svg/accent-lines/l-works.svg);
-  @include css-lock(149, 652, 320, 1280, width);
-  @include css-lock(4, 10, 320, 1280, height);
-}
-
-.line-about {
   bottom: 0;
-
-  background-image: url(../../../assets/images/svg/accent-lines/l-about.svg);
-  @include css-lock(192, 435, 320, 1280, width);
-  @include css-lock(4, 10, 320, 1280, height);
 }
 
-.line-contacts {
-  bottom: 0;
+.lineSpecialists {
+  width: 115%;
 
-  background-image: url(../../../assets/images/svg/accent-lines/l-contacts.svg);
-  @include css-lock(208, 673, 320, 1280, width);
-  @include css-lock(5, 10, 320, 1280, height);
+  @include css-lock(-25, 15, 320, 1280, top);
+
+  stroke-dashoffset: -800;
+  stroke-dasharray: 800;
+}
+
+.lineCooperationDesktop {
+  width: 115%;
+
+  stroke-dashoffset: -720;
+  stroke-dasharray: 720;
+
+  @include css-lock(100, 30, 768, 1280, top);
+
+  @media (max-width: 1219px) {
+    display: none;
+  }
+}
+
+.lineCooperationMobile {
+  @media (min-width: 1220px) {
+    display: none;
+  }
+}
+
+.lineMain {
+  stroke-dashoffset: -470;
+  stroke-dasharray: 470;
+}
+
+.lineCompanies {
+  stroke-dashoffset: -400;
+  stroke-dasharray: 400;
+}
+
+.linePracticing {
+  stroke-dashoffset: -440;
+  stroke-dasharray: 440;
+}
+
+.lineFooter {
+  stroke-dasharray: 500;
+  stroke-dashoffset: -500;
+}
+
+.lineWork {
+  stroke-dasharray: 700;
+  stroke-dashoffset: -700;
+}
+.lineAbout {
+  stroke-dasharray: 500;
+  stroke-dashoffset: -500;
+}
+.lineContacts {
+  stroke-dasharray: 700;
+  stroke-dashoffset: -700;
 }
