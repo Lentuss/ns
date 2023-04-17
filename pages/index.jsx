@@ -47,7 +47,7 @@ function Home() {
       <Partners className={s.homeSectionL} />
       <Comparison />
       <Practicing className={s.homeSectionL} />
-      <Cooperation className={s.homeSectionL} />
+      <Cooperation />
       <LatestNews className={s.homeSectionL} />
       <OftenQuestions className={s.oftenQuestions} />
       <FeedBack className={s.homeSectionL} page="home" />

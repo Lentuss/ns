@@ -1,8 +1,5 @@
 @import '/styles/mixins/css-lock';
 
-.partners {
-}
-
 .partnersInner {
   display: flex;
   flex-direction: column;
@@ -10,6 +7,15 @@
 
   @media (max-width: 1023px) {
     gap: 42px;
+  }
+}
+
+.partnersHeading {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 1023px) {
+    flex-direction: column;
   }
 }
 
@@ -22,13 +28,11 @@
   @media (max-width: 1023px) {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    // grid-gap: 16px;
   }
 
   @media (max-width: 767px) {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    // grid-gap: 8px;
   }
 }
 

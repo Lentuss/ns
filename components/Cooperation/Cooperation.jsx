@@ -24,9 +24,11 @@ export const Cooperation = ({ className }) => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: ".cooperation-heading",
-            start: 'top 100px',
+            start: 'top top',
             end: '+=60%',
             pin: true,
+            pinType: 'transform',
+            // markers: true
           }
         }).fromTo(factors, { xPercent: 200 }, { xPercent: 0, duration: 0.8, stagger: 0.2, ease: Power2.easeIn }, '-=0.2');
       }, ref);

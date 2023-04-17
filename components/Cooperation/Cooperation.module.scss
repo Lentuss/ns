@@ -1,7 +1,7 @@
 @import '/styles/mixins/css-lock';
 
 .cooperation {
-  padding: 100px 0 140px;
+  padding: 0 0 140px;
   overflow: hidden;
 
   @media (max-width: 1023px) {
@@ -12,6 +12,7 @@
 .cooperationInner {
   display: flex;
   justify-content: space-between;
+  // background-color: #c8e4bf;
 
   @include css-lock(16, 80, 1024, 1440, padding-right);
 
@@ -22,7 +23,12 @@
 }
 
 .cooperationWrapper {
+  will-change: transform;
+
   @media (min-width: 1024px) {
+    padding-top: 100px;
+    // background-color: #e4bfbf;
+
     background-image: url(../../assets/images/svg/patterns/cooperation-pattern.svg);
     background-position: left center;
     background-repeat: no-repeat;
@@ -35,6 +41,8 @@
 
   @include css-lock(16, 80, 1024, 1440, padding-left);
 
+  will-change: transform;
+
   @media (max-width: 1023px) {
     max-width: 100%;
   }
@@ -44,6 +52,7 @@
   padding-top: 100px;
   max-width: 519px;
 
+  will-change: transform;
   @media (max-width: 1023px) {
     max-width: 100%;
     padding-top: 0;
