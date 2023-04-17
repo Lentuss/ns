@@ -68,12 +68,12 @@ export const AccentH = (props) => {
         {location === LOCATIONS_TYPES.cooperation && (
           <>
             <CooperationLine className={cx(s.line, s.lineCooperationDesktop)} />
-            <PracticingLine
+            <ContactsLine
               className={cx(
                 s.line,
                 s.lineCooperationMobile,
                 s.lineBaseStyle,
-                s.linePracticing
+                s.lineContacts
               )}
             />
           </>

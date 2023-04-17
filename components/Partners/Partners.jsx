@@ -5,9 +5,9 @@ import { partners } from '@/utils/templateData';
 
 import s from './Partners.module.scss';
 
-export const Partners = () => {
+export const Partners = ({ className }) => {
   return (
-    <div className={s.partners}>
+    <div className={cx(s.partners, className)}>
       <Wrapper>
         <div className={s.partnersInner}>
           <Htag tag="h2">
