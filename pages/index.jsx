@@ -29,7 +29,7 @@ function Home() {
   return (
     <>
       <Hero className={cx(s.hero, s.homeSectionM)} />
-      <Outstaff className={s.homeSectionM} />
+      {/* <Outstaff className={s.homeSectionM} />
 
       <section className={s.homeSectionL}>
         <Wrapper>
@@ -46,7 +46,7 @@ function Home() {
 
       <Partners className={s.homeSectionL} />
       <Comparison />
-      <Practicing className={s.homeSectionL} />
+      <Practicing className={s.homeSectionL} /> */}
       <Cooperation className={s.homeSectionL} />
       <LatestNews className={s.homeSectionL} />
       <OftenQuestions className={s.oftenQuestions} />

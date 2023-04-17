@@ -14,6 +14,7 @@ import { Logo } from './Logo/Logo';
 import { practicing } from '@/utils/templateData';
 
 export const Practicing = ({ className }) => {
+  const { width } = useWindowDimensions();
   const ref = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
   let logos = [];
@@ -28,7 +29,7 @@ export const Practicing = ({ className }) => {
         scrollTrigger: {
           trigger: ".practicing",
           start: 'top 11%',
-          markers: true,
+          // markers: true,
           onEnter: () => { if (!entered) { entered = true; gsap.fromTo(items, { scale: 0.1 }, { scale: 1, duration: 0.6, ease: Back.easeOut }) } },
         }
       });
@@ -36,7 +37,6 @@ export const Practicing = ({ className }) => {
     return () => ctx.revert();
   }, [logos])
 
-  const { width } = useWindowDimensions();
   if (width <= BREAKPOINTS.mobile) {
     logos = practicing.slice(0, 6);
   } else if (width >= BREAKPOINTS.tablet) {
