@@ -19,10 +19,8 @@
 .specialistTitle {
   @include css-lock(48, 96, 320, 1280, margin-bottom);
 
-  @media (min-width: 1025px) {
-    display: flex;
-    align-items: center;
-    gap: 0 10px;
+  @media (min-width: 1024px) {
+    padding-right: 50px;
   }
 }
 

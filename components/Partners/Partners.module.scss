@@ -13,15 +13,6 @@
   }
 }
 
-.partnersHeading {
-  display: flex;
-  gap: 15px;
-
-  @media (max-width: 1023px) {
-    flex-direction: column;
-  }
-}
-
 .partnersList {
   display: grid;
   grid-template-columns: repeat(6, 1fr);

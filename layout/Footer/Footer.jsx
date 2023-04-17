@@ -13,7 +13,10 @@ export const Footer = () => {
     <footer className={s.footer}>
       <div className={s.footerHeading}>
         <Htag tag="h2" className={s.footerTitle}>
-          Українці добре<AccentH location="footer">працюють в Revit</AccentH>
+          Українці добре
+          <AccentH className={s.footerTitleAccent} location="footer">
+            працюють в Revit
+          </AccentH>
         </Htag>
         <ButtonPrimary
           className={s.footerBtn}
