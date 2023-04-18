@@ -1,14 +1,10 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .practicing {
   padding: 170px 16px 0;
 
-  @media (min-width: 1024px) {
-    background-image: url(../../assets/images/svg/patterns/practicing-pattern.svg);
-    background-position: top left;
-    background-size: auto;
-    background-repeat: no-repeat;
-  }
+  position: relative;
 
   @media (max-width: 767px) {
     padding: 120px 0 0;
@@ -32,4 +28,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.practicingPatternIcon {
+  position: absolute;
+  top: 0;
+
+  @include rtl {
+    right: 0;
+
+    transform: rotateY(180deg);
+  }
+
+  @include ltr {
+    left: 0;
+  }
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
 }

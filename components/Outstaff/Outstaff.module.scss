@@ -1,4 +1,5 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .outstaff {
   overflow: hidden;
@@ -11,9 +12,6 @@
 
   position: relative;
 
-  @include css-lock(20, 48, 320, 1280, padding);
-  @include css-lock(20, 64, 320, 1280, padding-left);
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -22,7 +20,17 @@
     'button benefits';
   gap: 40px 0;
 
-  @media (max-width: 1024px) {
+  @include css-lock(20, 48, 320, 1280, padding);
+
+  @include rtl {
+    @include css-lock(20, 64, 1000, 1280, padding-right);
+  }
+
+  @include ltr {
+    @include css-lock(20, 64, 320, 1280, padding-left);
+  }
+
+  @media (max-width: 1023px) {
     grid-template-columns: 1fr;
     grid-template-rows: 102px 1fr 55px;
     grid-template-areas:
@@ -40,12 +48,9 @@
 .outstaffTitle {
   color: var(--white);
 
-  //   TMP
-  font-weight: 100;
-
   grid-area: title;
 
-  @media (min-width: 1025px) {
+  @media (max-width: 1024px) {
     transform: translateY(36px);
   }
 }
@@ -55,11 +60,11 @@
 
   z-index: 15;
 
-  @media (min-width: 1025px) {
-    margin-top: 36px;
-  }
+  // @media (max-width: 1024px) {
+  // margin-top: 36px;
+  // }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     width: 100%;
   }
 }
@@ -71,11 +76,11 @@
 
   grid-area: benefits;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     justify-content: center;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     margin: 0 -12px;
   }
 }
@@ -96,29 +101,55 @@
   justify-content: center;
   flex-direction: column;
 
-  //   TMP
-  font-weight: 100;
-
   position: relative;
 
   &:nth-child(1) {
-    transform: translateX(24px);
-    z-index: 5;
+    @include rtl {
+      transform: translateX(-24px);
+
+      z-index: 1;
+    }
+
+    @include ltr {
+      transform: translateX(24px);
+
+      z-index: 5;
+    }
   }
 
   &:nth-child(2) {
-    transform: translateX(-24px);
+    @include rtl {
+      transform: translateX(24px);
 
-    z-index: 1;
+      z-index: 5;
+    }
+
+    @include ltr {
+      transform: translateX(-24px);
+
+      z-index: 1;
+    }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     &:nth-child(1) {
-      transform: translateX(12px);
+      @include rtl {
+        transform: translateX(-12px);
+      }
+
+      @include ltr {
+        transform: translateX(12px);
+      }
     }
 
     &:nth-child(2) {
-      transform: translateX(-12px);
+      @include rtl {
+        transform: translateX(12px);
+      }
+
+      @include ltr {
+        transform: translateX(-12px);
+      }
     }
   }
 }
@@ -133,7 +164,7 @@
 }
 
 .benefitsItemText {
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     max-width: 58px;
 
     text-align: center;
@@ -141,10 +172,21 @@
 }
 
 .outstaffBgIcon {
-  position: absolute;
-
-  bottom: 0;
-  right: 0;
-
   z-index: 10;
+
+  position: absolute;
+  bottom: 0;
+
+  max-width: 650px;
+  width: 100%;
+
+  @include rtl {
+    left: 0;
+
+    transform: rotateY(180deg);
+  }
+
+  @include ltr {
+    right: 0;
+  }
 }

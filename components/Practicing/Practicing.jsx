@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import { gsap } from "gsap";
+import { gsap } from 'gsap';
 import { Back } from 'gsap/dist/all';
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import cx from 'classnames';
 
 import { useWindowDimensions } from '@/hooks';
@@ -13,6 +13,8 @@ import { Wrapper, Htag, AccentH } from '@/components/common';
 import { Logo } from './Logo/Logo';
 import { practicing } from '@/utils/templateData';
 
+import PracticingPatternIcon from '@/assets/images/svg/patterns/practicing-pattern.svg';
+
 export const Practicing = ({ className }) => {
   const { width } = useWindowDimensions();
   const ref = useRef(null);
@@ -22,20 +24,29 @@ export const Practicing = ({ className }) => {
 
   useEffect(() => {
     const ctx = gsap.context((self) => {
-      let items = gsap.utils.toArray(".logo");
+      let items = gsap.utils.toArray('.logo');
 
-      gsap.set(items, { scale: 0 })
+      gsap.set(items, { scale: 0 });
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: ".practicing",
+          trigger: '.practicing',
           start: 'top 11%',
           // markers: true,
-          onEnter: () => { if (!entered) { entered = true; gsap.fromTo(items, { scale: 0.1 }, { scale: 1, duration: 0.6, ease: Back.easeOut }) } },
+          onEnter: () => {
+            if (!entered) {
+              entered = true;
+              gsap.fromTo(
+                items,
+                { scale: 0.1 },
+                { scale: 1, duration: 0.6, ease: Back.easeOut }
+              );
+            }
+          }
         }
       });
     }, ref);
     return () => ctx.revert();
-  }, [logos])
+  }, [logos]);
 
   if (width <= BREAKPOINTS.mobile) {
     logos = practicing.slice(0, 6);
@@ -46,6 +57,7 @@ export const Practicing = ({ className }) => {
   }
   return (
     <div className={cx(s.practicing, 'practicing', className)} ref={ref}>
+      <PracticingPatternIcon className={s.practicingPatternIcon} />
       <Wrapper>
         <div className={s.practicingInner}>
           <Htag tag="h2" className={s.practicingHeading}>

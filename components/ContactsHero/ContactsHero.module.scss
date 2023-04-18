@@ -14,7 +14,7 @@
 
   @include css-lock(20, 80, 1024, 1280, column-gap);
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, fit-content(100%));
     grid-template-areas:
@@ -33,7 +33,7 @@
   @include css-lock(0, 24, 1024, 1280, margin-bottom);
   @include css-lock(0, 40, 1024, 1280, margin-top);
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     margin-bottom: 20px;
   }
 }
@@ -48,7 +48,7 @@
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     margin-bottom: 48px;
     gap: 0 10px;
 
@@ -60,7 +60,7 @@
     &:nth-child(2n) {
       margin-left: auto;
 
-      @media (max-width: 1024px) {
+      @media (max-width: 1023px) {
         margin-left: unset;
       }
     }
@@ -75,7 +75,7 @@
   @include css-lock(24, 64, 1024, 1280, gap);
   @include css-lock(0, 40, 1024, 1280, margin-bottom);
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     flex-direction: column;
   }
 }
@@ -97,7 +97,7 @@
 
   overflow: hidden;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     margin-bottom: 80px;
   }
 

@@ -77,6 +77,10 @@
 
 .teamCardsArrow {
   align-self: self-end;
+
+  fill: transparent;
+  stroke: currentColor;
+  stroke-width: 2px;
 }
 
 .pattern {

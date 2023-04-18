@@ -6,9 +6,9 @@ import { Ptag } from '../common';
 
 import s from './ArticleReadInfo.module.scss';
 
-export const ArticleReadInfo = ({ info = [], className }) => {
+export const ArticleReadInfo = ({ info = [], className, size = 'm' }) => {
   return (
-    <Ptag className={cx(s.articleInfo, className)} size="m">
+    <Ptag className={cx(s.articleInfo, className)} size={size}>
       {info.map((i, idx) => (
         <Fragment key={i}>
           <span>{i}</span>
@@ -21,5 +21,6 @@ export const ArticleReadInfo = ({ info = [], className }) => {
 
 ArticleReadInfo.propTypes = {
   info: PropTypes.array,
-  className: PropTypes.string
+  className: PropTypes.string,
+  size: PropTypes.string
 };

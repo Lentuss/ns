@@ -16,7 +16,7 @@
 
   @include css-lock(60, 120, 1024, 1280, column-gap);
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, fit-content(100%));
 
@@ -48,7 +48,7 @@
     grid-row: 2 / 3;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
@@ -74,7 +74,7 @@
 
   background-color: var(--black-900);
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     flex-direction: column;
     gap: 8px;
   }

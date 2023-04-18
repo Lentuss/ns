@@ -1,4 +1,5 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .vacancyTitle {
   margin-bottom: 64px;
@@ -17,7 +18,7 @@
 
   position: relative;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     padding: 40px 0;
     gap: 32px;
 
@@ -43,7 +44,7 @@
 
   margin-bottom: 32px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     flex-direction: column;
     align-items: unset;
   }
@@ -52,7 +53,7 @@
 .vacancyCardButton {
   flex-shrink: 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     width: 100%;
   }
 }
@@ -60,9 +61,18 @@
 .vacancyPattern {
   position: absolute;
   top: 0;
-  right: 0;
 
-  @media (max-width: 768px) {
+  @include rtl {
+    left: 0;
+
+    transform: rotateY(180deg);
+  }
+
+  @include ltr {
+    right: 0;
+  }
+
+  @media (max-width: 767px) {
     display: none;
   }
 }

@@ -2,12 +2,18 @@ import { memo, useRef, useState } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
-import { useMoveInAnimation, useObserver } from '@/hooks';
+import { useMoveInAnimation } from '@/hooks';
 
 import s from './Htag.module.scss';
 
 export const Htag = memo((props) => {
-  const { className, tag: Tag = 'h1', children, ...hProps } = props;
+  const {
+    className,
+    tag: Tag = 'h1',
+    canAnimation = true,
+    children,
+    ...hProps
+  } = props;
   const hTagRef = useRef(null);
 
   const startAnimation = useMoveInAnimation(hTagRef, 0, Tag === 'h2');
@@ -17,7 +23,10 @@ export const Htag = memo((props) => {
       className={cx(
         s.Htag,
         s[`Htag-${Tag}`],
-        { [s.isAnimation]: startAnimation },
+        {
+          [s.isCanAnimation]: canAnimation,
+          [s.isAnimation]: startAnimation && canAnimation
+        },
         className
       )}
       ref={hTagRef}

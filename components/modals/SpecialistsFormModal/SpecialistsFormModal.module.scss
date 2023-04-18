@@ -15,7 +15,7 @@
 .modalSelectedTitle {
   @include css-lock(12, 24, 320, 1280, margin-bottom);
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     color: var(--black-700);
     text-transform: uppercase;
   }
@@ -48,6 +48,7 @@
 }
 
 .modalForm {
+  @include css-lock(48, 180, 320, 1280, margin-bottom);
 }
 
 .modalFormTitle {

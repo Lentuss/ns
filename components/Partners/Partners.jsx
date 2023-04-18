@@ -4,7 +4,7 @@ import { Expo } from 'gsap/dist/all';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import cx from 'classnames';
 
-import { Wrapper, Htag, AccentH } from '@/components/common';
+import { Wrapper, Htag, AccentH, TextSpace } from '@/components/common';
 import { partners } from '@/utils/templateData';
 
 import s from './Partners.module.scss';
@@ -51,7 +51,10 @@ export const Partners = ({ className }) => {
         <div className={s.partnersInner} ref={ref}>
           <Htag className={s.partnersHeading} tag="h2">
             Нам довіряють
-            <AccentH location="partners">50+ компаній,</AccentH> серед яких
+            <TextSpace />
+            <AccentH location="partners">50+ компаній,</AccentH>
+            <TextSpace />
+            серед яких
           </Htag>
           <ul className={s.partnersList}>
             {partners.map((p, i) => (

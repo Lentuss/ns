@@ -1,4 +1,5 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .latestNews {
 }
@@ -12,7 +13,7 @@
     'news news news';
   gap: 80px 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     grid-template-columns: 1fr;
     grid-template-rows: 35px 1fr 55px;
     grid-template-areas:
@@ -32,7 +33,7 @@
 
   justify-self: end;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     justify-self: center;
 
     max-width: 288px;
@@ -47,7 +48,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     grid-template-columns: 1fr;
     gap: 40px 0;
 
@@ -82,7 +83,7 @@
 
   width: 100%;
 
-  @media (min-width: 769px) {
+  @media (max-width: 768px) {
     max-height: 420px;
   }
 
@@ -105,11 +106,14 @@
 }
 
 .articleTopInfo {
-  display: flex;
-  align-items: center;
-  @include css-lock(8, 12, 320, 1280, gap);
-
   @include css-lock(12, 16, 320, 1280, margin-bottom);
+
+  text-transform: uppercase;
+
+  @include rtl {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
 }
 
 .articleTitle {

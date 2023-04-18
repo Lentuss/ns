@@ -4,7 +4,8 @@ import {
   SPECIALISTS_PAGE_ROUTE,
   ABOUT_PAGE_ROUTE,
   CONTACTS_PAGE_ROUTE,
-  CAREERS_PAGE_ROUTE, HOW_IT_WORKS_PAGE_ROUTE
+  CAREERS_PAGE_ROUTE,
+  HOW_IT_WORKS_PAGE_ROUTE
 } from './const';
 
 export const navLinks = [
@@ -455,7 +456,11 @@ export const heroes = {
     text: 'Ми поєднуємо лаконічність та професійність, кожен раз знаходячи оптимальне кадрове рішення до кожного бізнесу',
     button: ''
   },
-  howItWorks: { subtitle: 'Як це працює', text: 'Ми наймаємо компетентних спеціалістів. Робимо відбір, контроль якості та онбординг. Надаючи їх компаніям, контролюємо їх ефективність та закриваємо базові потреби, в тому числі і юридичні. Після укладання договору, компанія-споживач отримує працівника майже одразу', button: '' }
+  howItWorks: {
+    subtitle: 'Як це працює',
+    text: 'Ми наймаємо компетентних спеціалістів. Робимо відбір, контроль якості та онбординг. Надаючи їх компаніям, контролюємо їх ефективність та закриваємо базові потреби, в тому числі і юридичні. Після укладання договору, компанія-споживач отримує працівника майже одразу',
+    button: ''
+  }
 };
 
 export const inNumbers = [
@@ -638,7 +643,6 @@ export const vacancyDescriptionData = [
       'Використання технологій BIM 360, робота в “хмарі”',
       'Колективне програмування та індивідуальні проєкти в глобальному проєкті'
     ]
-
   }
 ];
 
@@ -669,18 +673,72 @@ export const cookiesModalConfigData = [
   }
 ];
 
-
-import member1 from '@/assets/images/team/member1.jpg'
-import member2 from '@/assets/images/team/member2.jpg'
-import member3 from '@/assets/images/team/member3.jpg'
-import member4 from '@/assets/images/team/member4.jpg'
-import member5 from '@/assets/images/team/member5.jpg'
-import member6 from '@/assets/images/team/member6.jpg'
+import member1 from '@/assets/images/team/member1.jpg';
+import member2 from '@/assets/images/team/member2.jpg';
+import member3 from '@/assets/images/team/member3.jpg';
+import member4 from '@/assets/images/team/member4.jpg';
+import member5 from '@/assets/images/team/member5.jpg';
+import member6 from '@/assets/images/team/member6.jpg';
 
 export const team = [
-  { id: 1, img: member1, name: 'Олександр Коваленко', title: 'CEO', info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff', linkedin: '#', twitter: '#' },
-  { id: 2, img: member2, name: 'Олександр Коваленко', title: 'Technical Writer', info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff', linkedin: '#', twitter: '#' },
-  { id: 3, img: member3, name: 'Олександр Коваленко', title: 'Project Manager', info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff', linkedin: '#', twitter: '#' },
-  { id: 4, img: member4, name: 'Олександр Коваленко', title: 'Customer Support Specialist', info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff', linkedin: '#', twitter: '#' },
-  { id: 5, img: member5, name: 'Олександр Коваленко', title: 'Quality Assurance Engineer', info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff', linkedin: '#', twitter: '#' },
-  { id: 6, img: member6, name: 'Олександр Коваленко', title: 'Data Analyst', info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff', linkedin: '#', twitter: '#' }]
+  {
+    id: 1,
+    img: member1,
+    name: 'Олександр Коваленко',
+    title: 'CEO',
+    info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff',
+    linkedin: '#',
+    twitter: '#'
+  },
+  {
+    id: 2,
+    img: member2,
+    name: 'Олександр Коваленко',
+    title: 'Technical Writer',
+    info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff',
+    linkedin: '#',
+    twitter: '#'
+  },
+  {
+    id: 3,
+    img: member3,
+    name: 'Олександр Коваленко',
+    title: 'Project Manager',
+    info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff',
+    linkedin: '#',
+    twitter: '#'
+  },
+  {
+    id: 4,
+    img: member4,
+    name: 'Олександр Коваленко',
+    title: 'Customer Support Specialist',
+    info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff',
+    linkedin: '#',
+    twitter: '#'
+  },
+  {
+    id: 5,
+    img: member5,
+    name: 'Олександр Коваленко',
+    title: 'Quality Assurance Engineer',
+    info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff',
+    linkedin: '#',
+    twitter: '#'
+  },
+  {
+    id: 6,
+    img: member6,
+    name: 'Олександр Коваленко',
+    title: 'Data Analyst',
+    info: 'Олександр Коваленко - керуючий партнер, засновник аутстафінгової компанії NewStaff',
+    linkedin: '#',
+    twitter: '#'
+  }
+];
+
+export const specialistModalSkills = [
+  'Розробка проєктної документації',
+  'Робота з деталям та системами, підбір обладнання',
+  'Знання норм та специфікацій країн СНГ та Європи'
+];

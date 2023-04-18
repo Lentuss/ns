@@ -1,4 +1,5 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .pagination {
   display: flex;
@@ -32,11 +33,23 @@
 }
 
 .paginationButtonPrev {
-  transform: rotate(90deg);
+  @include rtl {
+    transform: rotate(-90deg);
+  }
+
+  @include ltr {
+    transform: rotate(90deg);
+  }
 }
 
 .paginationButtonNext {
-  transform: rotate(-90deg);
+  @include rtl {
+    transform: rotate(90deg);
+  }
+
+  @include ltr {
+    transform: rotate(-90deg);
+  }
 }
 
 .paginationList {

@@ -23,7 +23,11 @@ export const MobileHeader = ({ isOpen, seletedLanguage, setLanguage }) => {
     const { clientHeight, clientWidth, offsetLeft } =
       activeSelectedItem[0] || {};
 
-    setSelectedOptions({ clientHeight, clientWidth, offsetLeft });
+    setSelectedOptions({
+      clientHeight,
+      clientWidth,
+      offsetLeft
+    });
   }, [seletedLanguage]);
 
   const renderLanguageSelect = () => (

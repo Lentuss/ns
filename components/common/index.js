@@ -21,3 +21,4 @@ export * from './Text/Text';
 export * from './Rating/Rating';
 export * from './PatternsAnimationWrap/PatternsAnimationWrap';
 export * from './InputFile/InputFile';
+export * from './TextSpace/TextSpace';

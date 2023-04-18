@@ -15,7 +15,9 @@ import { BREAKPOINTS, SPECIALISTS_PAGE_ROUTE } from '@/utils/const';
 import {
   disableHTMLScrolling,
   enableHTMLScrolling,
-  setCssVH
+  setAttributeOnHtml,
+  setCssVH,
+  setPropertyOnHtml
 } from '@/utils/utils';
 
 import MenuIcon from '@/assets/icons/menu.svg';
@@ -48,7 +50,9 @@ export const Header = () => {
   };
 
   useEffect(() => {
-    setLanguageHandler(langSelectOptions[0]);
+    // TMP
+    setLanguageHandler(langSelectOptions[1]);
+    // TMP
 
     setCssVH();
 
@@ -63,6 +67,18 @@ export const Header = () => {
       enableHTMLScrolling();
     }
   }, [pathname]);
+
+  // TMP
+  useEffect(() => {
+    if (seletedLanguage.value === 'il') {
+      setAttributeOnHtml('dir', 'rtl');
+      setPropertyOnHtml('--direction', 'rtl');
+    } else {
+      setAttributeOnHtml('dir', 'ltr');
+      setPropertyOnHtml('--direction', 'ltr');
+    }
+  }, [seletedLanguage]);
+  // TMP
 
   return (
     <>

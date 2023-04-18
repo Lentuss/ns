@@ -1,4 +1,5 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .specialistItem {
   border-top: 1px solid var(--black-400);
@@ -9,7 +10,7 @@
 
   cursor: pointer;
 
-  @media (min-width: 1025px) {
+  @media (min-width: 1024px) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -20,7 +21,7 @@
     gap: 32px 0;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     display: block;
 
     padding: 40px 0px;
@@ -28,12 +29,20 @@
 
   &.isActive {
     background-color: var(--white);
-    margin: 0 -16px;
-    padding-left: 16px;
 
     z-index: 250;
 
     pointer-events: none;
+
+    @include rtl {
+      padding-right: 16px;
+      margin-right: -16px;
+    }
+
+    @include ltr {
+      padding-left: 16px;
+      margin-left: -16px;
+    }
   }
 }
 
@@ -53,8 +62,12 @@
   display: flex;
   gap: 10px;
 
+  @include rtl {
+    flex-direction: row-reverse;
+  }
+
   button {
-    @media (max-width: 1024px) {
+    @media (max-width: 1023px) {
       width: 100%;
     }
   }
@@ -63,9 +76,18 @@
 .specialistItemPattern {
   position: absolute;
   top: 0;
-  right: 0;
 
-  @media (max-width: 768px) {
+  @include rtl {
+    left: 0;
+
+    transform: rotateY(180deg);
+  }
+
+  @include ltr {
+    right: 0;
+  }
+
+  @media (max-width: 767px) {
     display: none;
   }
 }

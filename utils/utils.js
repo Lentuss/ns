@@ -12,8 +12,16 @@ export const enableHTMLScrolling = () => {
 
 export const isEmail = (str) => str.includes('@');
 
+export const setAttributeOnHtml = (property, value) => {
+  document.getElementsByTagName('html')[0].setAttribute(property, value);
+};
+
+export const setPropertyOnHtml = (property, value) => {
+  document.documentElement.style.setProperty(property, value);
+};
+
 export const setCssVH = () => {
   const vh = window.innerHeight * 0.01;
 
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  setPropertyOnHtml('--vh', `${vh}px`);
 };

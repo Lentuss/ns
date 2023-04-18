@@ -15,9 +15,7 @@ export const HeroTitle = (props) => {
           <span className={s.start}>Надаємо</span>
           <span>українських</span>
           <span className={s.start}>спеціалістів</span>
-          <AccentH className={s.start} location="main">
-            тут і зараз
-          </AccentH>
+          <AccentH location="main">тут і зараз</AccentH>
         </>
       )}
       {location === 'about' && (

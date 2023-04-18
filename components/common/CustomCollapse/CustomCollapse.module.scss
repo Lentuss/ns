@@ -1,4 +1,5 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .collapse {
   border-top: 1px solid var(--black-400);
@@ -32,7 +33,7 @@
 
   background-color: transparent;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     grid-template-columns: 1fr 32px;
     grid-template-rows: 16px 1fr;
     grid-template-areas:
@@ -76,11 +77,23 @@
 .collapseContent {
   @include css-lock(16, 24, 320, 1280, padding-top);
 
-  padding-left: 78px;
+  @include rtl {
+    padding-right: 78px;
+  }
+
+  @include ltr {
+    padding-left: 78px;
+  }
 
   max-width: 800px;
 
-  @media (max-width: 768px) {
-    padding-left: 0;
+  @media (max-width: 767px) {
+    @include rtl {
+      padding-right: 0;
+    }
+
+    @include ltr {
+      padding-left: 0;
+    }
   }
 }

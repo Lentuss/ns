@@ -1,4 +1,5 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .label {
   position: relative;
@@ -36,7 +37,7 @@
 
   background-color: transparent;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     padding: 18px 14px 10px;
   }
 }
@@ -45,28 +46,18 @@
   position: relative;
 }
 
-// .textArea {
-//   border-top: 0;
-//   border-left: 0;
-//   border-right: 0;
-
-//   resize: vertical;
-
-//   min-height: 60px;
-//   max-height: 60px;
-
-//   overflow: hidden;
-
-//   @media (max-width: 768px) {
-//     resize: none;
-//   }
-// }
-
 .inputPlaceholder {
   position: absolute;
 
   top: 22px;
-  left: 16px;
+
+  @include rtl {
+    right: 16px;
+  }
+
+  @include ltr {
+    left: 16px;
+  }
 
   color: var(--black-700);
 
@@ -79,7 +70,7 @@
 
     transform: translateY(-22px);
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       font-size: 10px;
     }
   }
@@ -93,7 +84,14 @@
   position: absolute;
 
   top: 22px;
-  right: 16px;
+
+  @include rtl {
+    left: 16px;
+  }
+
+  @include ltr {
+    right: 16px;
+  }
 
   fill: var(--white);
 
@@ -104,8 +102,15 @@
 
 .erorrMessage {
   position: absolute;
-  left: 16px;
   top: calc(100% + 2px);
+
+  @include rtl {
+    right: 16px;
+  }
+
+  @include ltr {
+    left: 16px;
+  }
 
   color: var(--pink-primary);
 }
@@ -113,13 +118,22 @@
 .sizingIcon {
   position: absolute;
   bottom: 2px;
-  right: 2px;
   width: 20px;
   height: 20px;
 
+  @include rtl {
+    left: 2px;
+
+    transform: rotateY(180deg);
+  }
+
+  @include ltr {
+    right: 2px;
+  }
+
   stroke: var(--black-500);
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: none;
   }
 }
