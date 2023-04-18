@@ -12,7 +12,7 @@
 .cooperationInner {
   display: flex;
   justify-content: space-between;
-  // background-color: #c8e4bf;
+  background-color: #c8e4bf;
 
   @include css-lock(16, 80, 1024, 1440, padding-right);
 
@@ -27,7 +27,7 @@
 
   @media (min-width: 1024px) {
     padding-top: 100px;
-    // background-color: #e4bfbf;
+    background-color: #e4bfbf;
 
     background-image: url(../../assets/images/svg/patterns/cooperation-pattern.svg);
     background-position: left center;
