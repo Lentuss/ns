@@ -155,6 +155,8 @@
 
   @include rtl {
     right: 32px;
+
+    transform: rotateY(180deg);
   }
 
   @include ltr {

@@ -1,9 +1,18 @@
+@import '/styles/mixins/direction';
+
 .cookiesBanner {
   padding: 48px;
 
   position: fixed;
   bottom: 24px;
-  left: 24px;
+
+  @include rtl {
+    right: 24px;
+  }
+
+  @include ltr {
+    left: 24px;
+  }
 
   z-index: 100;
 
@@ -33,7 +42,14 @@
 .cookiesBannerCloseButton {
   position: absolute;
   top: 32px;
-  right: 32px;
+
+  @include rtl {
+    left: 32px;
+  }
+
+  @include ltr {
+    right: 32px;
+  }
 
   width: 24px;
   height: 24px;
@@ -42,7 +58,14 @@
 
   @media (max-width: 767px) {
     top: 16px;
-    right: 16px;
+
+    @include rtl {
+      left: 16px;
+    }
+
+    @include ltr {
+      right: 16px;
+    }
   }
 
   svg {

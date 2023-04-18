@@ -18,7 +18,7 @@
 .commentFormTitle {
   @include css-lock(40, 48, 320, 1280, margin-bottom);
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     grid-column: 1 / 3;
   }
 }
@@ -36,7 +36,7 @@
 }
 
 .commentFormInputComment {
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     margin-top: 32px;
     grid-column: 1 / 3;
   }
@@ -50,13 +50,13 @@
 
   margin-top: 40px;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     grid-column: 1 / 3;
   }
 }
 
 .commentFormSubmit {
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     min-width: 260px;
 
     @include rtl {

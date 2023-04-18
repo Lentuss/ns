@@ -5,6 +5,7 @@ import cx from 'classnames';
 import StarIcon from '@/assets/icons/star.svg';
 
 import s from './Rating.module.scss';
+import { Ptag } from '..';
 
 const RATING_ARR = [1, 2, 3, 4, 5];
 
@@ -56,6 +57,7 @@ export const Rating = memo(
                 [s.isActive]: rate <= currentRating
               })}
             />
+            <Ptag className={s.ratingItemValue}>{rate}</Ptag>
           </li>
         ))}
       </ul>

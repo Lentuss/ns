@@ -51,7 +51,7 @@ export const Header = () => {
 
   useEffect(() => {
     // TMP
-    setLanguageHandler(langSelectOptions[1]);
+    setLanguageHandler(langSelectOptions[0]);
     // TMP
 
     setCssVH();

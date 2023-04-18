@@ -83,7 +83,7 @@
 
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     max-height: 420px;
   }
 
