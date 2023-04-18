@@ -27,11 +27,15 @@ export const Cooperation = ({ className }) => {
             start: 'top top',
             end: '+=60%',
             pin: ".cooperation-heading",
-            // pinType: 'transform',
+            pinReparent: true,
             pinSpacing: false,
-            markers: true
+            // markers: true
           }
-        }).fromTo(factors, { xPercent: 200 }, { xPercent: 0, duration: 0.8, stagger: 0.2, ease: Power2.easeIn }, '-=0.2');
+        }).fromTo(factors, { xPercent: 200 }, { xPercent: 0, duration: 0.8, stagger: 0.2, ease: Power2.easeIn });
+        setTimeout(() => {
+          tl.scrollTrigger.update()
+          tl.scrollTrigger.refresh()
+        }, 100)
       }, ref);
       return () => ctx.revert();
     })

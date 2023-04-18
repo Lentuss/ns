@@ -29,6 +29,7 @@ export const Practicing = ({ className }) => {
         scrollTrigger: {
           trigger: ".practicing",
           start: 'top 11%',
+          once: true,
           // markers: true,
           onEnter: () => { if (!entered) { entered = true; gsap.fromTo(items, { scale: 0.1 }, { scale: 1, duration: 0.6, ease: Back.easeOut }) } },
         }
