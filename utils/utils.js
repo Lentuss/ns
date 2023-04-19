@@ -25,3 +25,5 @@ export const setCssVH = () => {
 
   setPropertyOnHtml('--vh', `${vh}px`);
 };
+
+export const isEmpty = (obj) => Object.keys(obj).length === 0;

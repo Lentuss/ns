@@ -15,6 +15,7 @@ import { BREAKPOINTS, SPECIALISTS_PAGE_ROUTE } from '@/utils/const';
 import {
   disableHTMLScrolling,
   enableHTMLScrolling,
+  isEmpty,
   setAttributeOnHtml,
   setCssVH,
   setPropertyOnHtml
@@ -51,7 +52,9 @@ export const Header = () => {
 
   useEffect(() => {
     // TMP
-    setLanguageHandler(langSelectOptions[0]);
+    if (isEmpty(seletedLanguage)) {
+      setLanguageHandler(langSelectOptions[0]);
+    }
     // TMP
 
     setCssVH();
