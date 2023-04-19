@@ -1,3 +1,5 @@
+@import '/styles/mixins/direction';
+
 .selectWrapper {
   position: relative;
 
@@ -9,9 +11,16 @@
 .errorMessage {
   position: absolute;
   top: calc(100% + 2px);
-  left: 16px;
 
   color: var(--pink-primary);
+
+  @include rtl {
+    right: 16px;
+  }
+
+  @include ltr {
+    left: 16px;
+  }
 }
 
 .optionPrimary {
@@ -30,5 +39,11 @@
 }
 
 .optionLabel {
-  margin-left: 12px;
+  @include rtl {
+    margin-right: 12px;
+  }
+
+  @include ltr {
+    margin-left: 12px;
+  }
 }

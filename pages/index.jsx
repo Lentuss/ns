@@ -13,7 +13,13 @@ import {
   OftenQuestions,
   Practicing
 } from '@/components';
-import { AccentH, Htag, Subtitle, Wrapper } from '@/components/common';
+import {
+  AccentH,
+  Htag,
+  Subtitle,
+  TextSpace,
+  Wrapper
+} from '@/components/common';
 import {
   HomeFormModal,
   SpecialistsFormModal,
@@ -37,7 +43,8 @@ function Home() {
             NewStaff 5 років на ринку
           </Subtitle>
           <Htag className={s.specialistTitle} tag="h2">
-            Ми маємо спеціалістів,&nbsp;
+            Ми маємо спеціалістів,
+            <TextSpace />
             <AccentH location="specialists">яких ви шукаєте</AccentH>
           </Htag>
           <SpecialistCards />

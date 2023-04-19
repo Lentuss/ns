@@ -4,6 +4,11 @@ import cx from 'classnames';
 import { inNumbers } from '@/utils/templateData';
 import { Wrapper, Htag, Ptag } from '@/components/common';
 
+import NumbersBigPatternIcon from '@/assets/images/svg/patterns/numbers-big-pattern.svg';
+import NumbersBigMobilePatternIcon from '@/assets/images/svg/patterns/numbers-big-mobile-pattern.svg';
+import NumbersPatternIcon from '@/assets/images/svg/patterns/numbers-pattern.svg';
+import NumbersMobilePatternIcon from '@/assets/images/svg/patterns/numbers-mobile-pattern.svg';
+
 import s from './InNumbers.module.scss';
 
 export const InNumbers = () => {
@@ -35,6 +40,19 @@ export const InNumbers = () => {
             ))}
           </ul>
         </div>
+        <NumbersPatternIcon
+          className={cx(s.isNumbersInnerIcon, s.isNumbersDesktopIcon)}
+        />
+        <NumbersMobilePatternIcon
+          className={cx(s.isNumbersInnerIcon, s.isNumbersMobileIcon)}
+        />
+
+        <NumbersBigPatternIcon
+          className={cx(s.isNumbersIcon, s.isNumbersDesktopIcon)}
+        />
+        <NumbersBigMobilePatternIcon
+          className={cx(s.isNumbersIcon, s.isNumbersMobileIcon)}
+        />
       </Wrapper>
     </div>
   );

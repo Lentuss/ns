@@ -1,8 +1,16 @@
+@import '/styles/mixins/direction';
+
 .listWidthBullets {
 }
 
 .listWidthBulletsItem {
-  padding-left: 12px;
+  @include rtl {
+    padding-right: 12px;
+  }
+
+  @include ltr {
+    padding-left: 12px;
+  }
 
   position: relative;
 
@@ -15,7 +23,14 @@
 
     position: absolute;
     top: calc(50% - 2px);
-    left: 0;
+
+    @include rtl {
+      right: 0;
+    }
+
+    @include ltr {
+      left: 0;
+    }
 
     width: 4px;
     height: 4px;

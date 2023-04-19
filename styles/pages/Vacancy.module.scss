@@ -1,4 +1,5 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .vacancy {
   @include css-lock(104, 164, 320, 1280, padding-top);
@@ -12,7 +13,7 @@
   gap: 24px 0;
   @include css-lock(15, 120, 1024, 1280, column-gap);
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, fit-content(100%));
 
@@ -26,7 +27,7 @@
     grid-column: 1 / 3;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     margin-bottom: 24px;
   }
 
@@ -39,6 +40,10 @@
   svg {
     fill: transparent;
     stroke: currentColor;
+
+    @include rtl {
+      transform: rotateY(180deg);
+    }
   }
 }
 
@@ -47,7 +52,7 @@
     grid-column: 1 / 2;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     margin-bottom: 120px;
   }
 }
@@ -59,13 +64,13 @@
   flex-direction: column;
   gap: 24px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     margin-bottom: 48px;
   }
 }
 
 .vacancyTitleSallary {
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     display: inline;
   }
 }
@@ -75,7 +80,7 @@
   align-items: center;
   gap: 16px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     flex-direction: column;
     align-items: unset;
   }
@@ -100,7 +105,7 @@
     grid-column: 2 / 3;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     margin: 0 auto;
   }
 }

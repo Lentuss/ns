@@ -1,15 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Image from 'next/image';
 import cx from 'classnames';
 
-import { ButtonOutline, Htag, Label, Ptag, Subtitle, Wrapper } from '../common';
+import { ButtonOutline, Htag, Label, Ptag, Wrapper } from '../common';
 
 import { black700 } from '@/utils/const';
 import { latestNewsList } from '@/utils/templateData';
 
 import s from './LatestNews.module.scss';
+import { ArticleReadInfo } from '..';
 
 const Article = ({
   title,
@@ -24,9 +24,11 @@ const Article = ({
     <div className={s.articleWrapImage}>
       <Image className={s.articleImage} src={image} alt={title} />
     </div>
-    <Subtitle className={s.articleTopInfo} size="small">
-      <span>{author}</span>|<span>{publicDate}</span>
-    </Subtitle>
+    <ArticleReadInfo
+      className={s.articleTopInfo}
+      info={[author, publicDate]}
+      size="s"
+    />
     <Htag className={s.articleTitle} tag="h4">
       {title}
     </Htag>

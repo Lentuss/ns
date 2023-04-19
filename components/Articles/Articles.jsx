@@ -9,6 +9,7 @@ import { latestNewsList } from '@/utils/templateData';
 import { BLOG_PAGE_ROUTE, black700 } from '@/utils/const';
 
 import s from './Articles.module.scss';
+import { ArticleReadInfo } from '..';
 
 const MAX_DESCRIPTION_SIZE = 250;
 
@@ -30,17 +31,10 @@ export const Articles = ({ className }) => {
             <Link className={s.articlesLink} href={BLOG_PAGE_ROUTE + href}>
               <Image className={s.articlesItemImage} src={image} alt={title} />
 
-              <div className={s.articlesItemPublishInfo}>
-                <Ptag size="m" color={black700}>
-                  {author}
-                </Ptag>
-                <Ptag size="m" color={black700}>
-                  |
-                </Ptag>
-                <Ptag size="m" color={black700}>
-                  {publicDate}
-                </Ptag>
-              </div>
+              <ArticleReadInfo
+                className={s.articlesItemPublishInfo}
+                info={[author, publicDate]}
+              />
 
               <Heading className={s.articlesItemTitle} size="s">
                 {title}

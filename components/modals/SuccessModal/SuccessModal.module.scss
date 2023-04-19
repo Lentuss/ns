@@ -9,7 +9,7 @@
 }
 
 .modalBody {
-  @media (min-width: 769px) {
+  @media (min-width: 768px) {
     position: absolute;
     top: 50%;
 
@@ -20,7 +20,7 @@
 }
 
 .modalBottomButtons {
-  @media (min-width: 769px) {
+  @media (min-width: 768px) {
     margin-left: 0;
     margin-top: 0;
   }

@@ -1,16 +1,34 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .careersFormPatternIcon {
   position: absolute;
   top: 0;
   left: 0;
 
+  @include rtl {
+    right: 0;
+
+    transform: rotateY(180deg);
+  }
+
+  @include ltr {
+    left: 0;
+  }
+
   @include css-lock(120, 358, 320, 1280, width);
   @include css-lock(48, 144, 320, 1280, height);
 
-  @media (max-width: 768px) {
-    right: 0;
-    left: unset;
+  @media (max-width: 767px) {
+    @include rtl {
+      left: 0;
+      right: unset;
+    }
+
+    @include ltr {
+      right: 0;
+      left: unset;
+    }
 
     transform: rotateY(180deg);
   }
@@ -24,7 +42,7 @@
 
   @include css-lock(72, 144, 320, 1280, padding-top);
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     flex-direction: column;
     gap: 48px;
   }
@@ -50,7 +68,7 @@
 
   @include css-lock(16, 24, 320, 1280, border-radius);
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     max-width: unset;
   }
 }

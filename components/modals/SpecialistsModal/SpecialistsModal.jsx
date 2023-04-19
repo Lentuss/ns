@@ -13,6 +13,8 @@ import {
 import { enableHTMLScrolling } from '@/utils/utils';
 
 import s from './SpecialistsModal.module.scss';
+import { ListWithBullets } from '@/components';
+import { specialistModalSkills } from '@/utils/templateData';
 
 export const SpecialistsModal = (props) => {
   const dispatch = useDispatch();
@@ -61,13 +63,7 @@ export const SpecialistsModal = (props) => {
           <Subtitle className={s.modalFeaturesLabel} size="small">
             {label}
           </Subtitle>
-          <ul className={s.modalFeaturesList}>
-            {list?.map((i) => (
-              <li key={i}>
-                <Label name={i} />
-              </li>
-            ))}
-          </ul>
+          <ListWithBullets listData={list} />
         </div>
       ))}
     </div>
@@ -92,17 +88,10 @@ export const SpecialistsModal = (props) => {
       <Htag className={s.modalSectionTitle} tag="h6">
         Вміння
       </Htag>
-      <ul className={s.modalSkillsList}>
-        <li className={s.modalSkillsListItem}>
-          <Ptag size="m">Розробка проєктної документації</Ptag>
-        </li>
-        <li className={s.modalSkillsListItem}>
-          <Ptag size="m">Робота з деталям та системами, підбір обладнання</Ptag>
-        </li>
-        <li className={s.modalSkillsListItem}>
-          <Ptag size="m">Знання норм та специфікацій країн СНГ та Європи</Ptag>
-        </li>
-      </ul>
+      <ListWithBullets
+        className={s.modalSkillsList}
+        listData={specialistModalSkills}
+      />
     </div>
   );
 
@@ -117,8 +106,6 @@ export const SpecialistsModal = (props) => {
     >
       {renderModalHead()}
       {renderModalFeatures()}
-      {renderModalDescription()}
-      {renderModalSkills()}
       {renderModalDescription()}
       {renderModalSkills()}
     </Modal>

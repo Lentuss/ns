@@ -1,48 +1,15 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .feedback {
-  padding-top: 108px;
   @include css-lock(120, 240, 320, 1280, margin-bottom);
+}
+
+.feedbackInner {
+  padding-top: 108px;
 
   @media (max-width: 767px) {
     padding-top: 72px;
-  }
-}
-
-.feedback-home {
-  background-image: url(../../assets/images/svg/patterns/feedback-pattern.svg);
-  background-position: top right;
-  background-repeat: no-repeat;
-
-  @media (max-width: 767px) {
-    background-image: url(../../assets/images/svg/patterns/feedback-mobile-pattern.svg);
-  }
-}
-.feedback-specialists {
-  background-image: url(../../assets/images/svg/patterns/feedback-specialists-pattern.svg);
-  background-position: top right;
-  background-repeat: no-repeat;
-
-  @media (max-width: 767px) {
-    background-image: url(../../assets/images/svg/patterns/feedback-specialists-mobile-pattern.svg);
-  }
-}
-.feedback-about {
-  background-image: url(../../assets/images/svg/patterns/feedback-about-pattern.svg);
-  background-position: top right;
-  background-repeat: no-repeat;
-
-  @media (max-width: 767px) {
-    background-image: url(../../assets/images/svg/patterns/feedback-about-mobile-pattern.svg);
-  }
-}
-.feedback-works {
-  background-image: url(../../assets/images/svg/patterns/feedback-works-pattern.svg);
-  background-position: top right;
-  background-repeat: no-repeat;
-
-  @media (max-width: 767px) {
-    background-image: url(../../assets/images/svg/patterns/feedback-works-mobile-pattern.svg);
   }
 }
 
@@ -124,4 +91,31 @@
 
 .formBtn {
   width: 100%;
+}
+
+.feedbackPatternIcon {
+  position: absolute;
+  top: 0;
+
+  @include rtl {
+    left: 0;
+
+    transform: rotateY(180deg);
+  }
+
+  @include ltr {
+    right: 0;
+  }
+}
+
+.feedbackPatternIconDesktop {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.feedbackPatternIconMobile {
+  @media (min-width: 768px) {
+    display: none;
+  }
 }

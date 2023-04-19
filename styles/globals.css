@@ -30,6 +30,8 @@
   --black-800: #515151;
   --black-900: #2c2c2c;
   --black-1000: #070707;
+
+  --direction: ltr;
 }
 
 html,
@@ -44,6 +46,8 @@ body {
   color: var(--black-1000);
 
   background-color: #f7f7f7;
+
+  direction: var(--direction);
 }
 
 mark {

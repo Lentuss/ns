@@ -29,7 +29,7 @@
     '. tags';
   gap: 16px 40px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, fit-content(100%));
     grid-template-areas:
@@ -53,17 +53,13 @@
 
   align-self: flex-start;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: none;
   }
 }
 
 .articlesItemPublishInfo {
   grid-area: publishInfo;
-
-  display: flex;
-  align-items: center;
-  gap: 12px;
 
   width: fit-content;
 }
@@ -77,7 +73,7 @@
 
   margin-bottom: 16px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: none;
   }
 }

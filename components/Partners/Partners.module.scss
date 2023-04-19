@@ -12,7 +12,7 @@
 
 .partnersHeading {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
 
   @media (max-width: 1023px) {
     flex-direction: column;

@@ -1,27 +1,42 @@
+@import '/styles/mixins/direction';
+
 .modal {
   max-width: 640px;
   width: 100%;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
 
-  padding: 80px 16px 64px 64px;
-
   position: fixed;
   top: 0;
-  right: 0;
   bottom: 0;
 
   z-index: 300;
 
   background-color: #f7f7f7;
 
-  transform: translateX(200%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
 
-  transition: transform 0.4s ease;
+  opacity: 0;
 
   border-left: 1px solid var(--black-400);
 
-  @media (max-width: 768px) {
+  @include rtl {
+    padding: 80px 64px 64px 16px;
+
+    left: 0;
+
+    transform: translateX(-200%);
+  }
+
+  @include ltr {
+    padding: 80px 16px 64px 64px;
+
+    right: 0;
+
+    transform: translateX(200%);
+  }
+
+  @media (max-width: 767px) {
     padding: 64px 0 16px 16px;
 
     inset: 0;
@@ -29,10 +44,19 @@
     max-width: unset;
 
     transform: translateX(0) translateY(200%);
+
+    @include rtl {
+      padding: 64px 16px 16px 0;
+    }
+
+    @include ltr {
+      padding: 64px 0 16px 16px;
+    }
   }
 
   &.isOpen {
     transform: translate(0);
+    opacity: 1;
   }
 }
 
@@ -41,13 +65,25 @@
 
   height: 100%;
 
-  padding-right: 40px;
-
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 768px) {
-    padding-right: 16px;
+  @include rtl {
+    padding-left: 40px;
+  }
+
+  @include ltr {
+    padding-right: 40px;
+  }
+
+  @media (max-width: 767px) {
+    @include rtl {
+      padding-left: 16px;
+    }
+
+    @include ltr {
+      padding-right: 16px;
+    }
   }
 
   /* width */
@@ -78,18 +114,31 @@
   gap: 8px;
 
   margin-top: auto;
-  margin-left: auto;
 
-  @media (max-width: 768px) {
+  @include rtl {
+    margin-right: auto;
+  }
+
+  @include ltr {
+    margin-left: auto;
+  }
+
+  @media (max-width: 767px) {
     justify-content: space-between;
 
-    margin-left: 0;
+    @include rtl {
+      margin-right: 0;
+    }
+
+    @include ltr {
+      margin-left: 0;
+    }
   }
 
   button {
     min-width: 180px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       min-width: unset;
       width: 100%;
     }
@@ -103,12 +152,29 @@
 
   position: absolute;
   top: 32px;
-  left: 32px;
 
-  @media (max-width: 768px) {
+  @include rtl {
+    right: 32px;
+
+    transform: rotateY(180deg);
+  }
+
+  @include ltr {
+    left: 32px;
+  }
+
+  @media (max-width: 767px) {
     top: 16px;
-    right: 16px;
-    left: unset;
+
+    @include rtl {
+      right: unset;
+      left: 16px;
+    }
+
+    @include ltr {
+      right: 16px;
+      left: unset;
+    }
   }
 
   svg {
@@ -122,7 +188,7 @@
 }
 
 .modalChevronsIcon {
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     display: none;
   }
 }
@@ -130,7 +196,7 @@
 .modalCrossIcon {
   display: none;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     display: block;
   }
 }

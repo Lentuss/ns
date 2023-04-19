@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import cx from 'classnames';
 
 import s from './Footer.module.scss';
 
@@ -7,6 +7,9 @@ import { FooterContacts, FooterCopyright, FooterSocials } from '@/components';
 
 import { navLinks } from '@/utils/templateData';
 import { SPECIALISTS_PAGE_ROUTE } from '@/utils/const';
+
+import FooterPatternIcon from '@/assets/images/svg/patterns/footer-pattern.svg';
+import FooterMobilePatternIcon from '@/assets/images/svg/patterns/footer-mobile-pattern.svg';
 
 export const Footer = () => {
   return (
@@ -45,6 +48,13 @@ export const Footer = () => {
       </div>
 
       <FooterCopyright className={s.footerCopyright} />
+
+      <FooterPatternIcon
+        className={cx(s.footerBgIcon, s.footerBgIconDesktop)}
+      />
+      <FooterMobilePatternIcon
+        className={cx(s.footerBgIcon, s.footerBgIconMobile)}
+      />
     </footer>
   );
 };

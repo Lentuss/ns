@@ -17,7 +17,7 @@
 
   gap: 16px 24px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     grid-template-areas:
       'image title'
       'labels labels';
@@ -56,13 +56,6 @@
   margin-bottom: 16px;
 }
 
-.modalFeaturesList {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
 .modalSectionTitle {
   margin-bottom: 16px;
 }
@@ -73,30 +66,4 @@
 
 .modalSkillsList {
   @include css-lock(48, 56, 320, 1280, margin-bottom);
-}
-
-.modalSkillsListItem {
-  padding-left: 12px;
-
-  position: relative;
-
-  & + & {
-    margin-top: 4px;
-  }
-
-  &::before {
-    content: '';
-
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-
-    width: 4px;
-    height: 4px;
-
-    background-color: var(--cyan-primary);
-
-    border: 100%;
-  }
 }

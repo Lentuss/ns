@@ -15,7 +15,7 @@
   visibility: hidden;
   opacity: 0;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     display: block;
   }
 
@@ -44,7 +44,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  //   gap: 4px;
 
   padding: 4px;
   margin-top: 40px;
@@ -55,6 +54,8 @@
   border-radius: 100px;
 
   position: relative;
+
+  direction: ltr;
 }
 
 .languageSelectItem {

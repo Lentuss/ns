@@ -1,4 +1,5 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .header {
 }
@@ -6,10 +7,19 @@
 .headerPatterIcon {
   position: absolute;
   top: 0;
-  right: 0;
 
   @include css-lock(216, 648, 320, 1280, max-width);
   @include css-lock(96, 288, 320, 1280, max-height);
+
+  @include rtl {
+    left: 0;
+
+    transform: rotateY(180deg);
+  }
+
+  @include ltr {
+    right: 0;
+  }
 }
 
 .body {

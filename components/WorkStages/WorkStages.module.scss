@@ -32,7 +32,7 @@
   overflow: hidden;
   overscroll-behavior: none;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     height: 105px;
   }
 }
@@ -43,7 +43,7 @@
   text-transform: uppercase;
   word-wrap: break-word;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     height: 105px;
     max-width: 100%;
   }

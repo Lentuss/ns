@@ -1,4 +1,5 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .commentsList {
 }
@@ -16,18 +17,17 @@
 }
 
 .commentItemAnswer {
-  @include css-lock(12, 16, 320, 1280, margin-left);
-
   position: relative;
 
   border: 1px solid var(--black-400);
 
-  // transition: max-height 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+  @include rtl {
+    @include css-lock(12, 16, 320, 1280, margin-right);
+  }
 
-  // visibility: visible;
-  // opacity: 1;
-
-  // max-height: 100vh;
+  @include ltr {
+    @include css-lock(12, 16, 320, 1280, margin-left);
+  }
 
   &::before {
     content: '';
@@ -35,7 +35,14 @@
     position: absolute;
     top: 16px;
     bottom: 16px;
-    @include css-lock(-12, -16, 320, 1280, left);
+
+    @include rtl {
+      @include css-lock(-12, -16, 320, 1280, right);
+    }
+
+    @include ltr {
+      @include css-lock(-12, -16, 320, 1280, left);
+    }
 
     width: 1px;
 
@@ -44,17 +51,6 @@
 
   &.isHidden {
     display: none;
-    // max-height: 0;
-
-    // overflow: hidden;
-    // opacity: 0;
-
-    // transition: max-height 0.3s ease, visibility 0.3s ease, opacity 0.3s ease,
-    //   margin 0.5s ease, padding 0.5s ease, border 1s ease;
-
-    // padding: 0;
-    // margin: 0;
-    // border: 0;
   }
 }
 
@@ -65,7 +61,7 @@
 
   margin-bottom: 12px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
@@ -86,7 +82,7 @@
   display: flex;
   align-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     flex-direction: column;
     align-items: flex-start;
 
@@ -99,10 +95,22 @@
   align-items: center;
   gap: 8px;
 
-  margin-right: 24px;
+  @include rtl {
+    margin-left: 24px;
+  }
 
-  @media (max-width: 768px) {
-    margin-right: 0;
+  @include ltr {
+    margin-right: 24px;
+  }
+
+  @media (max-width: 767px) {
+    @include rtl {
+      margin-left: 0;
+    }
+
+    @include ltr {
+      margin-right: 0;
+    }
   }
 }
 
@@ -115,15 +123,25 @@
 }
 
 .commentItemToggleAnswersButton {
-  @media (max-width: 768px) {
-  }
 }
 
 .commentItemAnswerButton {
-  margin-left: auto;
+  @include rtl {
+    margin-right: auto;
+  }
 
-  @media (max-width: 768px) {
-    margin-left: unset;
+  @include ltr {
+    margin-left: auto;
+  }
+
+  @media (max-width: 767px) {
+    @include rtl {
+      margin-right: unset;
+    }
+
+    @include ltr {
+      margin-left: unset;
+    }
 
     margin-top: 8px;
   }

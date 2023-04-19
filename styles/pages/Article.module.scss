@@ -1,4 +1,5 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .article {
   @include css-lock(88, 172, 320, 1280, padding-top);
@@ -14,7 +15,7 @@
     'commentForm line .'
     'comments line .';
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr repeat(2, fit-content(100%));
     grid-template-areas:
@@ -28,10 +29,22 @@
 .articleItem {
   grid-area: article;
 
-  @include css-lock(32, 64, 1024, 1280, padding-right);
+  @include rtl {
+    @include css-lock(32, 64, 1024, 1280, padding-left);
+  }
 
-  @media (max-width: 1024px) {
-    padding-right: 0;
+  @include ltr {
+    @include css-lock(32, 64, 1024, 1280, padding-right);
+  }
+
+  @media (max-width: 1023px) {
+    @include rtl {
+      padding-left: 0;
+    }
+
+    @include ltr {
+      padding-right: 0;
+    }
   }
 }
 
@@ -44,7 +57,7 @@
 
   height: 100%;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     display: none;
   }
 }
@@ -52,10 +65,22 @@
 .articleSidebar {
   grid-area: sidebar;
 
-  @include css-lock(24, 48, 1024, 1280, padding-left);
+  @include rtl {
+    @include css-lock(24, 48, 1024, 1280, padding-right);
+  }
 
-  @media (max-width: 1024px) {
-    padding-left: 0;
+  @include ltr {
+    @include css-lock(24, 48, 1024, 1280, padding-left);
+  }
+
+  @media (max-width: 1023px) {
+    @include rtl {
+      padding-right: 0;
+    }
+
+    @include ltr {
+      padding-left: 0;
+    }
   }
 }
 
@@ -64,12 +89,25 @@
 
   @include css-lock(64, 90, 320, 1280, margin-bottom);
   @include css-lock(64, 80, 320, 1280, padding-top);
-  @include css-lock(32, 64, 1024, 1280, padding-right);
+
+  @include rtl {
+    @include css-lock(32, 64, 1024, 1280, padding-left);
+  }
+
+  @include ltr {
+    @include css-lock(32, 64, 1024, 1280, padding-right);
+  }
 
   position: relative;
 
-  @media (max-width: 1024px) {
-    padding-right: 0;
+  @media (max-width: 1023px) {
+    @include rtl {
+      padding-left: 0;
+    }
+
+    @include ltr {
+      padding-right: 0;
+    }
   }
 
   &::before {
@@ -78,7 +116,14 @@
     position: absolute;
     top: 0;
     right: 0;
-    left: -80px;
+
+    @include rtl {
+      right: -80px;
+    }
+
+    @include ltr {
+      left: -80px;
+    }
 
     height: 1px;
 
@@ -89,9 +134,21 @@
 .articleCommentsList {
   grid-area: comments;
 
-  @include css-lock(32, 64, 1024, 1280, padding-right);
+  @include rtl {
+    @include css-lock(32, 64, 1024, 1280, padding-left);
+  }
 
-  @media (max-width: 1024px) {
-    padding-right: 0;
+  @include ltr {
+    @include css-lock(32, 64, 1024, 1280, padding-right);
+  }
+
+  @media (max-width: 1023px) {
+    @include rtl {
+      padding-left: 0;
+    }
+
+    @include ltr {
+      padding-right: 0;
+    }
   }
 }

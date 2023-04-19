@@ -29,7 +29,7 @@
   justify-content: center;
   @include css-lock(8, 16, 320, 1280, gap);
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     flex-direction: row-reverse;
   }
 }

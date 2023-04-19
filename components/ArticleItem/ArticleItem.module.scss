@@ -1,4 +1,5 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .article {
 }
@@ -46,12 +47,24 @@
   background-color: rgba(104, 201, 194, 0.25);
 
   & + & {
-    margin-left: 4px;
+    @include rtl {
+      margin-right: 4px;
+    }
+
+    @include ltr {
+      margin-left: 4px;
+    }
   }
 }
 
 .articleReadTime {
-  margin-left: 16px;
+  @include rtl {
+    margin-right: 16px;
+  }
+
+  @include ltr {
+    margin-left: 16px;
+  }
 }
 
 .articleContent {
@@ -70,7 +83,13 @@
 .articleContentItem {
   position: relative;
 
-  padding-left: 12px;
+  @include rtl {
+    padding-right: 12px;
+  }
+
+  @include ltr {
+    padding-left: 12px;
+  }
 
   & + & {
     margin-top: 12px;
@@ -80,9 +99,15 @@
     content: '';
 
     position: absolute;
-    left: 0;
-    top: 50%;
     top: calc(50% - 2px);
+
+    @include rtl {
+      right: 0;
+    }
+
+    @include ltr {
+      left: 0;
+    }
 
     width: 4px;
     height: 4px;

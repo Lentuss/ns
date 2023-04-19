@@ -10,7 +10,7 @@
 
   gap: 80px 20px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     grid-template-columns: 1fr;
     grid-template-rows: fit-content(100%) 1fr fit-content(100%);
     grid-template-areas:
@@ -24,7 +24,7 @@
 .specialistSectionTitle {
   grid-area: title;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     margin-bottom: 48px;
   }
 }
@@ -38,7 +38,7 @@
 .specialistSectionButton {
   grid-area: button;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     width: 100%;
   }
 }

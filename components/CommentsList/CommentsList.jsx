@@ -76,7 +76,7 @@ export const CommentsList = ({ className }) => {
 
   const onToggleVisibileAnswersHandler = (id, isShow) => {
     const answer = isShowAnswers.find((a) => a.id === id);
-    console.log('isShow', isShow);
+
     if (answer) {
       answer.isShow = isShow;
       setShowAnswers([...isShowAnswers.filter((a) => a.id !== id), answer]);
@@ -84,8 +84,6 @@ export const CommentsList = ({ className }) => {
       setShowAnswers([...isShowAnswers, { id, isShow }]);
     }
   };
-
-  console.log('isShowAnswers', isShowAnswers);
 
   return (
     <ul className={cx(s.commentsList, className)}>

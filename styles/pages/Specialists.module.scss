@@ -27,13 +27,13 @@
 }
 
 .specialistPaginationElement {
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: none;
   }
 }
 
 .specialistPaginationButtonMore {
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     width: 100%;
   }
 }

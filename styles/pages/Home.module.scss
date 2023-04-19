@@ -1,4 +1,5 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .hero {
   @include css-lock(120, 210, 320, 1280, padding-top);
@@ -20,7 +21,13 @@
   @include css-lock(48, 96, 320, 1280, margin-bottom);
 
   @media (min-width: 1024px) {
-    padding-right: 50px;
+    @include rtl {
+      padding-left: 50px;
+    }
+
+    @include ltr {
+      padding-right: 50px;
+    }
   }
 }
 
