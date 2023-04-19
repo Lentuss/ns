@@ -1,3 +1,5 @@
+@import '/styles/mixins/css-lock';
+
 .workStages {
   //   margin: 120px 0;
   //   //   height: 100vh;
@@ -42,6 +44,7 @@
 
   text-transform: uppercase;
   word-wrap: break-word;
+  @include css-lock(28, 56, 320, 1280);
 
   @media (max-width: 1023px) {
     height: 105px;

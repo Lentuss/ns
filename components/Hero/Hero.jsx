@@ -33,7 +33,7 @@ export const Hero = ({ className }) => {
   }
 
   return (
-    <div>
+    <div className={s.hero}>
       <Wrapper>
         <div
           className={cx(

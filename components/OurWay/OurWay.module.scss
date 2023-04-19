@@ -1,4 +1,5 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .ourWay {
   position: relative;
@@ -63,6 +64,8 @@
   color: var(--black-400);
 
   @media (max-width: 767px) {
+    width: 40%;
+
     margin-right: 0;
     margin-bottom: 12px;
     order: 2;
@@ -80,9 +83,17 @@
   justify-content: center;
   width: 5%;
 
+  @include rtl {
+    right: 40%;
+  }
+
   @media (max-width: 767px) {
     left: 0;
     order: 1;
+
+    @include rtl {
+      right: 50%;
+    }
   }
 }
 
@@ -111,6 +122,10 @@
   border-radius: 50%;
   background-color: var(--black-400);
   transform: translateX(-7px);
+
+  @include rtl {
+    transform: translateX(7px);
+  }
 }
 
 .ourWayRight {

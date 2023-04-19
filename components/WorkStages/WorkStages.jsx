@@ -96,10 +96,10 @@ export const WorkStages = () => {
                     <div className={s.workStagesContent}>
                         <Subtitle>Процес співпраці</Subtitle>
                         <div className={cx(s.workStagesWrapper, 'block')}>
-                            <Htag tag='h2' className={cx(s.workStagesText, 'stage')}>Обираєте спеціаліста</Htag>
-                            <Htag tag='h2' className={cx(s.workStagesText, 'stage', 'stage2')}>Ознайом&shy;люєтесь з договором</Htag>
-                            <Htag tag='h2' className={cx(s.workStagesText, 'stage', 'stage3')}>Підписуємо договір</Htag>
-                            <Htag tag='h2' className={cx(s.workStagesText, 'stage', 'stage4')}>Спеціаліст починає роботу</Htag>
+                            <Htag tag='h3' className={cx(s.workStagesText, 'stage')}>Обираєте спеціаліста</Htag>
+                            <Htag tag='h3' className={cx(s.workStagesText, 'stage', 'stage2')}>Ознайом&shy;люєтесь з договором</Htag>
+                            <Htag tag='h3' className={cx(s.workStagesText, 'stage', 'stage3')}>Підписуємо договір</Htag>
+                            <Htag tag='h3' className={cx(s.workStagesText, 'stage', 'stage4')}>Спеціаліст починає роботу</Htag>
                         </div>
                     </div>
                 </div>
