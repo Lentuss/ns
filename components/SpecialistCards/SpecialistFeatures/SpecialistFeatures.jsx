@@ -4,8 +4,9 @@ import cx from 'classnames';
 import { Label, Ptag, Subtitle } from '@/components/common';
 
 import s from './SpecialistFeatures.module.scss';
+import { memo } from 'react';
 
-export const SpecialistFeatures = ({ className, skills }) => {
+export const SpecialistFeatures = memo(({ className, skills }) => {
   return (
     <ul className={cx(s.SpecialistFeaturesList, className)}>
       {skills.map(({ label, list }) => (
@@ -27,7 +28,7 @@ export const SpecialistFeatures = ({ className, skills }) => {
       ))}
     </ul>
   );
-};
+});
 
 SpecialistFeatures.propTypes = {
   className: PropTypes.string,

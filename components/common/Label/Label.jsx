@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import s from './Label.module.scss';
 
-export const Label = (props) => {
+export const Label = memo((props) => {
   const { className, name, ...cProps } = props;
   return (
     <span className={cx(s.Label, className)} {...cProps}>
       {name}
     </span>
   );
-};
+});
 
 Label.propTypes = {
   className: PropTypes.string,

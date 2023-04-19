@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, memo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
@@ -6,7 +6,7 @@ import { Ptag } from '../common';
 
 import s from './ArticleReadInfo.module.scss';
 
-export const ArticleReadInfo = ({ info = [], className, size = 'm' }) => {
+export const ArticleReadInfo = memo(({ info = [], className, size = 'm' }) => {
   return (
     <Ptag className={cx(s.articleInfo, className)} size={size}>
       {info.map((i, idx) => (
@@ -17,7 +17,7 @@ export const ArticleReadInfo = ({ info = [], className, size = 'm' }) => {
       ))}
     </Ptag>
   );
-};
+});
 
 ArticleReadInfo.propTypes = {
   info: PropTypes.array,

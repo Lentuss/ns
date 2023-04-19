@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Nav } from '@/components';
 import { Wrapper } from '@/components/common';
 
+import { useWindowDimensions } from '@/hooks';
 import { langSelectOptions, navLinks } from '@/utils/templateData';
 
 import s from './MobileHeader.module.scss';
@@ -14,8 +15,11 @@ export const MobileHeader = ({ isOpen, seletedLanguage, setLanguage }) => {
   const selectListRef = useRef(null);
   const selectItemRef = useRef([]);
   const selectActivePointRef = useRef(null);
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
+    if (!isOpen) return;
+
     const activeSelectedItem = selectItemRef.current.filter(
       (item) => item.dataset.active === 'true'
     );
@@ -28,7 +32,7 @@ export const MobileHeader = ({ isOpen, seletedLanguage, setLanguage }) => {
       clientWidth,
       offsetLeft
     });
-  }, [seletedLanguage]);
+  }, [seletedLanguage, width, isOpen]);
 
   const renderLanguageSelect = () => (
     <ul className={s.languageSelect} ref={selectListRef}>

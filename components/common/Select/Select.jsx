@@ -94,7 +94,10 @@ export const Select = memo((props) => {
           }),
           valueContainer: (baseStyles, state) => ({
             ...baseStyles,
-            padding: 0
+            padding: 0,
+            input: {
+              width: isLangMode ? 0 : 'unset'
+            }
           }),
           indicatorSeparator: (baseStyles, state) => ({
             ...baseStyles,
