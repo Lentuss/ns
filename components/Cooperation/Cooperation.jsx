@@ -23,14 +23,19 @@ export const Cooperation = ({ className }) => {
 
         const tl = gsap.timeline({
           scrollTrigger: {
-            trigger: ".cooperation-heading",
+            trigger: ".cooperation",
             start: 'top top',
             end: '+=60%',
-            pin: true,
-            pinType: 'transform',
+            pin: ".cooperation-heading",
+            pinReparent: true,
+            pinSpacing: false,
             // markers: true
           }
-        }).fromTo(factors, { xPercent: 200 }, { xPercent: 0, duration: 0.8, stagger: 0.2, ease: Power2.easeIn }, '-=0.2');
+        }).fromTo(factors, { xPercent: 200 }, { xPercent: 0, duration: 0.8, stagger: 0.2, ease: Power2.easeIn });
+        setTimeout(() => {
+          tl.scrollTrigger.update()
+          tl.scrollTrigger.refresh()
+        }, 100)
       }, ref);
       return () => ctx.revert();
     })

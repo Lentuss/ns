@@ -31,6 +31,7 @@ export const Practicing = ({ className }) => {
         scrollTrigger: {
           trigger: '.practicing',
           start: 'top 11%',
+          once: true,
           // markers: true,
           onEnter: () => {
             if (!entered) {
