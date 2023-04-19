@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { gsap } from "gsap";
+import { gsap } from "gsap/dist/gsap";
 import { Power2 } from 'gsap/dist/all';
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import cx from 'classnames';
@@ -23,11 +23,10 @@ export const Cooperation = ({ className }) => {
 
         const tl = gsap.timeline({
           scrollTrigger: {
-            trigger: ".cooperation",
+            trigger: ref.current,
             start: 'top top',
             end: '+=60%',
             pin: ".cooperation-heading",
-            pinReparent: true,
             pinSpacing: false,
             // markers: true
           }

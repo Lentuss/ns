@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import { gsap } from "gsap/dist/gsap";
 import { Expo } from 'gsap/dist/all';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import cx from 'classnames';
@@ -21,7 +21,7 @@ export const Partners = ({ className }) => {
       gsap.set(items, { opacity: 0 });
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: '.partners',
+          trigger: ref.current,
           start: 'top 50%',
           onEnter: () => {
             if (!entered) {

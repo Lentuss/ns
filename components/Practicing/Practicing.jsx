@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import { gsap } from "gsap/dist/gsap";
 import { Back } from 'gsap/dist/all';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import cx from 'classnames';
@@ -29,7 +29,7 @@ export const Practicing = ({ className }) => {
       gsap.set(items, { scale: 0 });
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: '.practicing',
+          trigger: ref.current,
           start: 'top 11%',
           once: true,
           // markers: true,
