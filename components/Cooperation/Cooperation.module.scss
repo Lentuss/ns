@@ -1,4 +1,5 @@
 @import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
 
 .cooperation {
   padding: 0 0 140px;
@@ -16,6 +17,9 @@
 
   @include css-lock(16, 80, 1024, 1440, padding-right);
 
+  @include rtl {
+    @include css-lock(16, 80, 1024, 1440, padding-left);
+  }
   @media (max-width: 1023px) {
     flex-direction: column;
     gap: 48px;
@@ -32,6 +36,10 @@
     background-image: url(../../assets/images/svg/patterns/cooperation-pattern.svg);
     background-position: left center;
     background-repeat: no-repeat;
+
+    @include rtl {
+      background-position: right center;
+    }
   }
 }
 

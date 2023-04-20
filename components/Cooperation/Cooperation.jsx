@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import { gsap } from "gsap/dist/gsap";
 import { Power2 } from 'gsap/dist/all';
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -11,6 +12,8 @@ import { factors } from '@/utils/templateData';
 
 export const Cooperation = ({ className }) => {
   const ref = useRef(null);
+  const lang = useSelector(state => state.general.seletedLanguage.value)
+  console.log(lang)
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
@@ -19,18 +22,38 @@ export const Cooperation = ({ className }) => {
 
       mm.add('(min-width: 1024px)', () => {
         let factors = gsap.utils.toArray(".factor");
-        gsap.set(factors, { xPercent: 200 })
+        console.log(lang === 'il')
+        let tl;
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: ref.current,
-            start: 'top top',
-            end: '+=60%',
-            pin: ".cooperation-heading",
-            pinSpacing: false,
-            // markers: true
-          }
-        }).fromTo(factors, { xPercent: 200 }, { xPercent: 0, duration: 0.8, stagger: 0.2, ease: Power2.easeIn });
+        if (lang === 'il') {
+          console.log('fucking il')
+          gsap.set(factors, { xPercent: -200 })
+
+          tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: ref.current,
+              start: 'top top',
+              end: '+=60%',
+              pin: ".cooperation-heading",
+              pinSpacing: false,
+              // markers: true
+            }
+          }).fromTo(factors, { xPercent: -200 }, { xPercent: 0, duration: 0.8, stagger: 0.2, ease: Power2.easeIn });
+        } else {
+          gsap.set(factors, { xPercent: 200 })
+
+          tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: ref.current,
+              start: 'top top',
+              end: '+=60%',
+              pin: ".cooperation-heading",
+              pinSpacing: false,
+              // markers: true
+            }
+          }).fromTo(factors, { xPercent: 200 }, { xPercent: 0, duration: 0.8, stagger: 0.2, ease: Power2.easeIn });
+        }
+
         setTimeout(() => {
           tl.scrollTrigger.update()
           tl.scrollTrigger.refresh()
@@ -38,7 +61,7 @@ export const Cooperation = ({ className }) => {
       }, ref);
       return () => ctx.revert();
     })
-  }, [])
+  }, [lang])
 
   return (
     <div className={cx(s.cooperation, 'cooperation', className)} ref={ref}>
