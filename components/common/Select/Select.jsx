@@ -80,6 +80,7 @@ export const Select = memo((props) => {
             cursor: 'pointer',
             boxShadow: 'none',
             color: state.isFocused ? black1000 : black700,
+            fontSize: isMobile ? 13 : 16,
             '&:hover': {
               borderColor: black200,
               color: black1000
@@ -92,11 +93,14 @@ export const Select = memo((props) => {
             transition: 'transform 0.2s ease',
             padding: 0
           }),
-          valueContainer: (baseStyles, state) => ({
+          valueContainer: (baseStyles) => ({
             ...baseStyles,
             padding: 0,
             input: {
               width: isLangMode ? 0 : 'unset'
+            },
+            svg: {
+              display: 'none'
             }
           }),
           indicatorSeparator: (baseStyles, state) => ({
@@ -105,7 +109,8 @@ export const Select = memo((props) => {
           }),
           placeholder: (baseStyles, state) => ({
             ...baseStyles,
-            color: 'inherit'
+            color: 'inherit',
+            fontSize: 'inherit'
           }),
           input: (baseStyles, state) => ({
             ...baseStyles,
