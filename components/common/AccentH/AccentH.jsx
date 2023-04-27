@@ -99,6 +99,6 @@ export const AccentH = (props) => {
 
 AccentH.propTypes = {
   className: PropTypes.string,
-  location: PropTypes.oneOf([Object.keys(LOCATIONS_TYPES)]),
+  // location: PropTypes.oneOf([Object.keys(LOCATIONS_TYPES)]),
   children: PropTypes.node.isRequired
 };
