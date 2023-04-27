@@ -12,23 +12,17 @@ import { factors } from '@/utils/templateData';
 
 export const Cooperation = ({ className }) => {
   const ref = useRef(null);
-  const lang = useSelector(state => state.general.seletedLanguage.value)
-  console.log(lang)
+  const lang = useSelector(state => state.general.seletedLanguage.value);
+
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
+    let factors = gsap.utils.toArray(".factor");
     const ctx = gsap.context((self) => {
       const mm = gsap.matchMedia();
-
+      let tl;
       mm.add('(min-width: 1024px)', () => {
-        let factors = gsap.utils.toArray(".factor");
-        console.log(lang === 'il')
-        let tl;
-
         if (lang === 'il') {
-          console.log('fucking il')
-          gsap.set(factors, { xPercent: -200 })
-
           tl = gsap.timeline({
             scrollTrigger: {
               trigger: ref.current,
@@ -55,12 +49,19 @@ export const Cooperation = ({ className }) => {
         }
 
         setTimeout(() => {
-          tl.scrollTrigger.update()
-          tl.scrollTrigger.refresh()
+          if (tl.scrollTrigger) {
+            tl.scrollTrigger.update()
+            tl.scrollTrigger.refresh()
+          }
         }, 100)
       }, ref);
-      return () => ctx.revert();
+
+      return () => {
+        gsap.set(factors, { clearProps: 'all' })
+      }
     })
+    return () => ctx.revert()
+
   }, [lang])
 
   return (
