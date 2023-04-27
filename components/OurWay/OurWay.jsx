@@ -15,7 +15,9 @@ export const OurWay = () => {
 
     useEffect(() => {
         const ctx = gsap.context((self) => {
-            const sections = self.selector('.section');
+            console.log('ref', ref.current)
+            const sections = ref.current.querySelectorAll('.section')
+            // const sections = self.selector('.section');
 
             sections.forEach((section) => {
                 const tl = gsap.timeline();

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { widthLayout } from '@/layout/Layout';
 import {
   FeedBack, Hero,
-  // InNumbers,
+  AboutNumbers,
   OurWay, Product, Team
 } from '@/components';
 
@@ -17,7 +17,7 @@ function About() {
   return (
     <>
       <Hero className={s.hero} />
-      {/* <InNumbers /> */}
+      <AboutNumbers />
       <OurWay />
       <Product />
       <Team />
