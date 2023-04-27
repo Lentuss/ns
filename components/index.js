@@ -12,7 +12,7 @@ export * from './OftenQuestions/OftenQuestions';
 export * from './SpecialistsHead/SpecialistsHead';
 export * from './SpecialistSection/SpecialistSection';
 export * from './Practicing/Practicing';
-export * from './inNumbers/inNumbers';
+// export * from './inNumbers/inNumbers';
 export * from './OurWay/OurWay';
 export * from './Product/Product';
 export * from './Articles/Articles';
@@ -34,3 +34,4 @@ export * from './CareersForm/CareersForm';
 export * from './ListWithBullets/ListWithBullets';
 export * from './VacancyForm/VacancyForm';
 export * from './CookiesBanner/CookiesBanner';
+export * from './InNumbers/InNumbers'
