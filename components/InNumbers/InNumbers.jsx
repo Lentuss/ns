@@ -12,6 +12,7 @@ import NumbersMobilePatternIcon from '@/assets/images/svg/patterns/numbers-mobil
 import s from './InNumbers.module.scss';
 
 export const InNumbers = () => {
+
   return (
     <div className={s.inNumbers}>
       <Wrapper>
