@@ -1,7 +1,7 @@
 @import '/styles/mixins/css-lock';
 @import '/styles/mixins/direction';
 
-.inNumbers {
+.AboutNumbers {
   padding-top: 120px;
 
   @media (max-width: 767px) {
@@ -9,7 +9,7 @@
   }
 }
 
-.inNumbersInner {
+.AboutNumbersInner {
   display: flex;
 
   padding-bottom: 180px;
@@ -21,13 +21,13 @@
   }
 }
 
-.inNumbersHeading {
+.AboutNumbersHeading {
   @media (min-width: 1024px) {
     max-width: 326px;
   }
 }
 
-.inNumbersList {
+.AboutNumbersList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -41,7 +41,7 @@
   }
 }
 
-.inNumbersItem {
+.AboutNumbersItem {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -54,12 +54,12 @@
   }
 }
 
-.inNumbersItem-0 {
+.AboutNumbersItem-0 {
   grid-area: it1;
   border-bottom: 1px solid var(--black-400);
 }
 
-.inNumbersItem-1 {
+.AboutNumbersItem-1 {
   grid-area: it2;
 
   border-bottom: 1px solid var(--black-400);
@@ -85,7 +85,7 @@
   }
 }
 
-.inNumbersItem-2 {
+.AboutNumbersItem-2 {
   grid-area: it3;
   border-bottom: 1px solid var(--black-400);
 
@@ -98,11 +98,11 @@
   }
 }
 
-.inNumbersItem-3 {
+.AboutNumbersItem-3 {
   grid-area: it4;
 }
 
-.inNumbersItem-4 {
+.AboutNumbersItem-4 {
   grid-area: it5;
 
   @include rtl {
@@ -118,7 +118,7 @@
   }
 }
 
-.inNumbersItem-5 {
+.AboutNumbersItem-5 {
   grid-area: it6;
 
   @include rtl {
@@ -130,14 +130,14 @@
   }
 }
 
-.inNumbersNumber {
+.AboutNumbersNumber {
   font-family: var(--font-family-title);
   line-height: 120%;
   @include css-lock(34, 76, 320, 1280);
   color: var(--cyan-primary);
 }
 
-.inNumbersText {
+.AboutNumbersText {
   @include css-lock(10, 16, 320, 1280);
   @include css-lock(12, 24, 320, 1280, line-height);
 }

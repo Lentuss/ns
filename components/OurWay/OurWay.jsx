@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { gsap } from "gsap";
+import React, { useRef, useEffect } from 'react'
+import { gsap } from "gsap/dist/gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import cx from 'classnames';
 
@@ -11,11 +11,13 @@ import { cyanPrimary, black900 } from '@/utils/const';
 
 export const OurWay = () => {
     const ref = useRef(null);
-    gsap.registerPlugin(ScrollTrigger);
 
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
         const ctx = gsap.context((self) => {
-            const sections = self.selector('.section');
+            const sections = [...ref.current.querySelectorAll('.section')];
+            // const sections = self.selector('.section');
+            console.log(sections)
 
             sections.forEach((section) => {
                 const tl = gsap.timeline();
@@ -69,9 +71,11 @@ export const OurWay = () => {
                             // markers: true
                         },
                     })
-
             });
-        }, ref);
+            return () => {
+                gsap.set(sections, { clearProps: 'all' })
+            }
+        });
         return () => ctx.revert();
     }, []);
 

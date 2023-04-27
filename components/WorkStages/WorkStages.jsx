@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import cx from 'classnames';
-import { gsap } from "gsap";
+import { gsap } from "gsap/dist/gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 import { Wrapper, Htag, Subtitle } from '@/components/common';
@@ -19,7 +19,7 @@ export const WorkStages = () => {
 
             const tl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: ".container",
+                    trigger: ref.current,
                     pin: true,
                     scrub: true,
                     snap: {
