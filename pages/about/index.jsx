@@ -17,7 +17,6 @@ function About() {
       <OurWay />
       <Product />
       <Team />
-
       <FeedBack page="about" />
     </>
   );
