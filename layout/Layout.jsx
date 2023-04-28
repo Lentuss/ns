@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { Header } from './Header/Header';
 import { Footer } from './Footer/Footer';
-import { PatternsAnimationWrap, Wrapper } from '@/components/common';
+import { PatternsAnimationWrap } from '@/components/common';
 
 import HomePattern1 from '@/assets/images/svg/patterns/header/home-1.svg';
 import HomePattern2 from '@/assets/images/svg/patterns/header/home-2.svg';
@@ -16,6 +16,7 @@ import CareersPattern from '@/assets/images/svg/patterns/header/careers.svg';
 import { MOVE_IN_ANIMATION_TIME, pageTypes } from '@/utils/const';
 
 import s from './Layout.module.scss';
+``;
 
 const Layout = ({ children, pageType }) => {
   const [isStartAnimation, setStartAnimation] = useState(false);

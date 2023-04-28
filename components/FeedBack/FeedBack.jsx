@@ -145,5 +145,5 @@ export const FeedBack = (props) => {
 
 FeedBack.propTypes = {
   className: PropTypes.string,
-  page: PropTypes.oneOf(['home', 'specialists', 'works', 'about'])
+  page: PropTypes.oneOf(['home', 'specialists', 'how-it-works', 'about'])
 };

@@ -7,14 +7,14 @@ import { pageTypes } from '@/utils/const';
 import s from '@/styles/pages/HowItWorks.module.scss';
 
 function HowItWorks() {
-    const { pathname } = useRouter();
-    return (
-        <div>
-            <Hero className={s.hero} />
-            <WorkStages />
-            <FeedBack page='works' />
-        </div>
-    );
+  const { pathname } = useRouter();
+  return (
+    <div>
+      <Hero className={s.hero} />
+      <WorkStages />
+      <FeedBack page="how-it-works" />
+    </div>
+  );
 }
 
 export default widthLayout(HowItWorks, pageTypes.howItWorks);
