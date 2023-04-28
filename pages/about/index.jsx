@@ -9,6 +9,7 @@ import s from '@/styles/pages/About.module.scss';
 
 function About() {
   const { pathname } = useRouter();
+
   return (
     <>
       <Hero className={s.hero} />
