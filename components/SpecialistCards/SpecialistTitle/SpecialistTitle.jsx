@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import cx from 'classnames';
 
-import { Htag, Label } from '@/components/common';
+import { Htag, Label, Ptag } from '@/components/common';
+
+import { pinkPrimary } from '@/utils/const';
 
 import s from './SpecialistTitle.module.scss';
 
 export const SpecialistTitle = memo(
-  ({ className, image, jobName, experience }) => {
+  ({ className, image, jobName, experience, sallary }) => {
     return (
       <div className={cx(s.specialistTitle, className)}>
         <Image className={s.specialistImage} src={image} alt="specialist" />
@@ -17,7 +19,14 @@ export const SpecialistTitle = memo(
           {jobName}
         </Htag>
 
-        <Label className={s.specialistExperience} name={experience} />
+        <div className={s.specialistExperience}>
+          <Label name={experience} />
+          {sallary && (
+            <Ptag size="m" color={pinkPrimary}>
+              {sallary}
+            </Ptag>
+          )}
+        </div>
       </div>
     );
   }

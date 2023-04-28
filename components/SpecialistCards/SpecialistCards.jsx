@@ -22,8 +22,11 @@ import ProgressIcon3 from '@/assets/images/svg/patterns/specialists/progress-3.s
 import ProgressIcon4 from '@/assets/images/svg/patterns/specialists/progress-4.svg';
 
 import s from './SpecialistCards.module.scss';
+import { useRouter } from 'next/router';
+import { SPECIALISTS_PAGE_ROUTE } from '@/utils/const';
 
 export const SpecialistCards = (props) => {
+  const { asPath } = useRouter();
   const { className } = props;
   const [isShowPatterns, setShowPatterns] = useState(null);
   const selectedSpecialist = useSelector(
@@ -31,6 +34,8 @@ export const SpecialistCards = (props) => {
   );
 
   const dispatch = useDispatch();
+
+  const isSpecialistPage = asPath.includes(SPECIALISTS_PAGE_ROUTE);
 
   const onSelectSpecialistHandler = (data) => {
     dispatch(selectSpecialist(data));
@@ -48,8 +53,8 @@ export const SpecialistCards = (props) => {
   return (
     <ul className={className}>
       {specialistCards.map((specialist) => {
-        const { id, experiense, features, imageSrc, jobName } = specialist;
-
+        const { id, experiense, features, imageSrc, jobName, sallary } =
+          specialist;
         return (
           <li
             className={cx(s.specialistItem, {
@@ -65,6 +70,7 @@ export const SpecialistCards = (props) => {
               experience={experiense}
               image={imageSrc}
               jobName={jobName}
+              sallary={!isSpecialistPage && sallary}
             />
             <SpecialistFeatures
               className={s.specialistItemFeatures}
