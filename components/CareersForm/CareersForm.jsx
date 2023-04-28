@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import { ButtonPrimary, Htag, Input, Ptag, Subtitle, Wrapper } from '../common';
-
 import { black800 } from '@/utils/const';
 
 import PatternFormIcon from '@/assets/images/svg/patterns/careers-form-pattern.svg';
