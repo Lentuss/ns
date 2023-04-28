@@ -63,7 +63,7 @@ export const SpecialistsModal = (props) => {
           <Subtitle className={s.modalFeaturesLabel} size="small">
             {label}
           </Subtitle>
-          <ListWithBullets listData={list} />
+          {list.map((item) => <Label name={item} className={s.modalFeaturesLabel} />)}
         </div>
       ))}
     </div>

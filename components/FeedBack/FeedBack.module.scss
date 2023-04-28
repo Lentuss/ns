@@ -2,6 +2,7 @@
 @import '/styles/mixins/direction';
 
 .feedback {
+  position: relative;
   @include css-lock(120, 240, 320, 1280, margin-bottom);
 }
 

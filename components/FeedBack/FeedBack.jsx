@@ -137,8 +137,8 @@ export const FeedBack = (props) => {
             </div>
           </form>
         </div>
-        {renderPattetnIcons()}
       </Wrapper>
+      {renderPattetnIcons()}
     </div>
   );
 };

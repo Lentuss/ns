@@ -22,7 +22,7 @@ const CommentItem = ({
   isCommentWithAnswer = false,
   isShowAnswers = false,
   id,
-  onToggleVisibileAnswers = () => {}
+  onToggleVisibileAnswers = () => { }
 }) => (
   <li
     className={cx(s.commentItem, {
@@ -58,7 +58,7 @@ const CommentItem = ({
           appearance="pink"
           onClick={() => onToggleVisibileAnswers(id, !isShowAnswers)}
         >
-          {isShowAnswers ? 'Сховати відповіді' : 'Показати відповіді'}
+          {isShowAnswers ? 'Показати відповіді' : 'Сховати відповіді'}
         </ButtonText>
       )}
 

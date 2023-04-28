@@ -24,27 +24,50 @@ export const Practicing = ({ className }) => {
 
   useEffect(() => {
     const ctx = gsap.context((self) => {
+      const mm = gsap.matchMedia();
       let items = gsap.utils.toArray('.logo');
-
       gsap.set(items, { scale: 0 });
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ref.current,
-          start: 'top 11%',
-          once: true,
-          // markers: true,
-          onEnter: () => {
-            if (!entered) {
-              entered = true;
-              gsap.fromTo(
-                items,
-                { scale: 0.1 },
-                { scale: 1, duration: 0.6, ease: Back.easeOut }
-              );
+
+      mm.add('(min-width: 768px)', () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ref.current,
+            start: 'top 11%',
+            once: true,
+            // markers: true,
+            onEnter: () => {
+              if (!entered) {
+                entered = true;
+                gsap.fromTo(
+                  items,
+                  { scale: 0.1 },
+                  { scale: 1, duration: 0.6, ease: Back.easeOut }
+                );
+              }
             }
           }
-        }
-      });
+        });
+      })
+      mm.add('(max-width: 767px)', () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ref.current,
+            start: 'top 30%',
+            once: true,
+            // markers: true,
+            onEnter: () => {
+              if (!entered) {
+                entered = true;
+                gsap.fromTo(
+                  items,
+                  { scale: 0.1 },
+                  { scale: 0.62, duration: 0.6, ease: Back.easeOut }
+                );
+              }
+            }
+          }
+        });
+      })
     }, ref);
     return () => ctx.revert();
   }, [logos]);

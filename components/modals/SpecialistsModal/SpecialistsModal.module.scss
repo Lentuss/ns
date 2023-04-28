@@ -40,6 +40,12 @@
   }
 }
 
+.modalFeaturesLabel {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
 .modalHeadLabels {
   grid-area: labels;
 
