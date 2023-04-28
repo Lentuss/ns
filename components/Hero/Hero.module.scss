@@ -74,9 +74,15 @@
 
   @media (max-width: 1023px) {
     margin-right: 0;
+    max-width: 100%;
   }
 }
 
 .heroBtn {
   width: fit-content;
+  @media (max-width: 767px) {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
 }

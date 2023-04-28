@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 
 import { widthLayout } from '@/layout/Layout';
-import { FeedBack, Hero, InNumbers, OurWay, Product, Team } from '@/components';
+import { FeedBack, Hero, AboutNumbers, OurWay, Product, Team } from '@/components';
 
 import { pageTypes } from '@/utils/const';
 
@@ -13,7 +13,7 @@ function About() {
   return (
     <>
       <Hero className={s.hero} />
-      <InNumbers />
+      <AboutNumbers />
       <OurWay />
       <Product />
       <Team />

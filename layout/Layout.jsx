@@ -71,13 +71,13 @@ const Layout = ({ children, pageType }) => {
 
   return (
     <>
-      <Wrapper>
-        {pageType === home && renderHomePattern()}
-        {pageType === specialists && renderSpecialistPattern()}
-        {pageType === howItWorks && renderHowItWorksPattern()}
-        {pageType === about && renderAboutPattern()}
-        {pageType === careers && renderCareersPattern()}
-      </Wrapper>
+      {/* <Wrapper> */}
+      {pageType === home && renderHomePattern()}
+      {pageType === specialists && renderSpecialistPattern()}
+      {pageType === howItWorks && renderHowItWorksPattern()}
+      {pageType === about && renderAboutPattern()}
+      {pageType === careers && renderCareersPattern()}
+      {/* </Wrapper> */}
 
       <Header className={s.header} />
       <main className={s.body}>{children}</main>

@@ -2,7 +2,7 @@
 @import '/styles/mixins/direction';
 
 .blog {
-  @include css-lock(40, 172, 320, 1280, padding-top);
+  @include css-lock(102, 172, 320, 1280, padding-top);
   @include css-lock(96, 120, 320, 1280, margin-bottom);
 }
 

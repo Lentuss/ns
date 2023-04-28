@@ -60,6 +60,10 @@
   }
 }
 
+.contactsFooterWrapper {
+  background-color: var(--black-900);
+}
+
 .contactsFooter {
   max-width: 1440px;
 
@@ -71,8 +75,6 @@
 
   display: flex;
   justify-content: space-between;
-
-  background-color: var(--black-900);
 
   @media (max-width: 767px) {
     flex-direction: column;

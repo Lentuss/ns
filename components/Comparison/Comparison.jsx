@@ -10,6 +10,7 @@ import { features } from '@/utils/templateData';
 
 import { Wrapper, Htag, ButtonPrimary } from '@/components/common';
 import { Features } from '@/components';
+import Pattern from '../../assets/images/svg/patterns/comparison-mobile-pattern.svg'
 
 import s from './Comparison.module.scss';
 
@@ -25,6 +26,7 @@ export const Comparison = ({ className }) => {
 
   return (
     <div className={cx(s.comparison, className)}>
+      <Pattern className={s.comparisonMobPattern} />
       <Wrapper>
         <div className={s.comparisonInner}>
           <div className={s.comparisonStandart}>

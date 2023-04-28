@@ -32,7 +32,8 @@ export const Cooperation = ({ className }) => {
               pinSpacing: false,
               // markers: true
             }
-          }).fromTo(factors, { xPercent: -200 }, { xPercent: 0, duration: 0.8, stagger: 0.2, ease: Power2.easeIn });
+          })
+          gsap.fromTo(factors, { xPercent: -200 }, { xPercent: 0, duration: 0.8, stagger: 0.2, ease: Power2.easeIn, scrollTrigger: { trigger: ref.current, start: 'top 80%' } });
         } else {
           gsap.set(factors, { xPercent: 200 })
 
@@ -45,7 +46,8 @@ export const Cooperation = ({ className }) => {
               pinSpacing: false,
               // markers: true
             }
-          }).fromTo(factors, { xPercent: 200 }, { xPercent: 0, duration: 0.8, stagger: 0.2, ease: Power2.easeIn });
+          })
+          gsap.fromTo(factors, { xPercent: 200 }, { xPercent: 0, duration: 0.8, stagger: 0.2, ease: Power2.easeIn, scrollTrigger: { trigger: ref.current, start: 'top 80%' } });
         }
 
         setTimeout(() => {

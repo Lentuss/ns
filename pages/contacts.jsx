@@ -37,7 +37,9 @@ function Contacts() {
           </div>
         </Wrapper>
       </div>
-      <FooterCopyright className={s.contactsFooter} tag="footer" />
+      <div className={s.contactsFooterWrapper}>
+        <FooterCopyright className={s.contactsFooter} tag="footer" />
+      </div>
     </>
   );
 }
