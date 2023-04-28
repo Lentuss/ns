@@ -28,6 +28,10 @@
 
 .modalHeadImage {
   grid-area: image;
+
+  border-radius: 100%;
+
+  overflow: hidden;
 }
 
 .modalHeadTitle {

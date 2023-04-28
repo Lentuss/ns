@@ -34,6 +34,27 @@
 
     pointer-events: none;
 
+    &::before {
+      content: '';
+
+      position: absolute;
+      inset: 0;
+
+      background-color: var(--white);
+
+      @include rtl {
+        transform: translateX(100%);
+
+        *::-webkit-scrollbar {
+          width: 0px;
+        }
+      }
+
+      @include ltr {
+        transform: translateX(-100%);
+      }
+    }
+
     @include rtl {
       padding-right: 16px;
       margin-right: -16px;
