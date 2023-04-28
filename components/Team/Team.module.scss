@@ -1,3 +1,5 @@
+@import '/styles/mixins/direction';
+
 .teamCards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -112,4 +114,22 @@
 .pattern4 {
   background-image: url(../../assets/images/svg/patterns/about-st4.svg);
   transition: opacity 200ms ease-out;
+}
+
+.teamPattern {
+  position: absolute;
+
+  top: 0;
+
+  transform: translateY(-30%);
+
+  @include rtl {
+    left: 0;
+
+    transform: translateY(-30%) rotateY(180deg);
+  }
+
+  @include ltr {
+    right: 0;
+  }
 }
