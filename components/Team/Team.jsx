@@ -14,9 +14,9 @@ import s from './Team.module.scss';
 
 export const Team = () => {
   return (
-    <Wrapper>
-      <Htag tag="h2">Команда</Htag>
-      <div className={s.team}>
+    <div className={s.team}>
+      <Wrapper>
+        <Htag tag="h2">Команда</Htag>
         <ul className={s.teamCards}>
           <li className={s.teamCardsColumnLeft}>
             <TeamCard data={team[0]} key={team[0].id} />
@@ -41,8 +41,8 @@ export const Team = () => {
             </Link>
           </li>
         </ul>
-        <TeamPatternIcon className={s.teamPattern} />
-      </div>
-    </Wrapper>
+      </Wrapper>
+      <TeamPatternIcon className={s.teamPattern} />
+    </div>
   );
 };

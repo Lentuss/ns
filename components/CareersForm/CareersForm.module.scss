@@ -1,6 +1,10 @@
 @import '/styles/mixins/css-lock';
 @import '/styles/mixins/direction';
 
+.careersFormWrapper {
+  position: relative;
+}
+
 .careersFormPatternIcon {
   position: absolute;
   top: 0;

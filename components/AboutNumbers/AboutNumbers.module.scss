@@ -2,6 +2,7 @@
 @import '/styles/mixins/direction';
 
 .AboutNumbers {
+  position: relative;
   padding-top: 120px;
 
   @media (max-width: 767px) {

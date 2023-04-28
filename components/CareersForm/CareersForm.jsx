@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import { ButtonPrimary, Htag, Input, Ptag, Subtitle, Wrapper } from '../common';
 
@@ -10,9 +11,9 @@ import s from './CareersForm.module.scss';
 
 export const CareersForm = ({ className }) => {
   return (
-    <div className={className}>
+    <div className={cx(s.careersFormWrapper, className)}>
+      <PatternFormIcon className={s.careersFormPatternIcon} />
       <Wrapper>
-        <PatternFormIcon className={s.careersFormPatternIcon} />
         <div className={s.careersFormSectionInner}>
           <div className={s.careersFormContainer}>
             <Subtitle size="large">Зворотній зв’язок</Subtitle>

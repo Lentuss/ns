@@ -41,20 +41,20 @@ export const AboutNumbers = () => {
                         ))}
                     </ul>
                 </div>
-                <NumbersPatternIcon
-                    className={cx(s.isNumbersInnerIcon, s.isNumbersDesktopIcon)}
-                />
-                <NumbersMobilePatternIcon
-                    className={cx(s.isNumbersInnerIcon, s.isNumbersMobileIcon)}
-                />
-
-                <NumbersBigPatternIcon
-                    className={cx(s.isNumbersIcon, s.isNumbersDesktopIcon)}
-                />
-                <NumbersBigMobilePatternIcon
-                    className={cx(s.isNumbersIcon, s.isNumbersMobileIcon)}
-                />
             </Wrapper>
+            <NumbersPatternIcon
+                className={cx(s.isNumbersInnerIcon, s.isNumbersDesktopIcon)}
+            />
+            <NumbersMobilePatternIcon
+                className={cx(s.isNumbersInnerIcon, s.isNumbersMobileIcon)}
+            />
+
+            <NumbersBigPatternIcon
+                className={cx(s.isNumbersIcon, s.isNumbersDesktopIcon)}
+            />
+            <NumbersBigMobilePatternIcon
+                className={cx(s.isNumbersIcon, s.isNumbersMobileIcon)}
+            />
         </div>
     );
 };
