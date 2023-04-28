@@ -1,0 +1,14 @@
+.Label {
+  display: inline-block;
+  padding: 6px 12px;
+
+  color: var(--black-900);
+  font-weight: 400;
+  line-height: 1.2;
+
+  background-color: var(--black-150);
+  border-radius: 100px;
+
+  width: fit-content;
+  height: fit-content;
+}

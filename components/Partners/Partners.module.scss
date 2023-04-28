@@ -1,0 +1,46 @@
+@import '/styles/mixins/css-lock';
+
+.partnersInner {
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+
+  @media (max-width: 1023px) {
+    gap: 42px;
+  }
+}
+
+.partnersHeading {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: 1023px) {
+    flex-direction: column;
+  }
+}
+
+.partnersList {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  @include css-lock(8, 25, 320, 1280, grid-gap);
+
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+.partnersItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  @include css-lock(90, 165, 320, 1280, height);
+  @include css-lock(90, 165, 320, 1280, width);
+}

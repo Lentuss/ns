@@ -1,0 +1,33 @@
+.stage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  direction: ltr;
+}
+
+.stageBox {
+  height: 64px;
+  width: 64px;
+
+  @media (max-width: 767px) {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.stageBox2,
+.stageBox4,
+.stageBox8,
+.stageBox11,
+.stageBox13 {
+  background-color: var(--pink-primary);
+}
+
+.stageBox5,
+.stageBox14,
+.stageBox15 {
+  background-color: var(--pink-tertiary);
+}

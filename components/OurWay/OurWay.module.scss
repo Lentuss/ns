@@ -1,0 +1,142 @@
+@import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
+
+.ourWay {
+  position: relative;
+}
+
+.ourWayInner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ourWayHeading {
+  padding-bottom: 120px;
+  text-align: center;
+
+  @media (max-width: 767px) {
+    padding-bottom: 48px;
+  }
+}
+
+.ourWayWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ourWayPeriodWrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+.ourWayPeriod {
+  display: flex;
+  justify-content: center;
+  height: 30vh;
+}
+
+.ourWayTextWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    order: 2;
+    margin-left: 29px;
+  }
+}
+
+.ourWayLeft {
+  width: 45%;
+  height: fit-content;
+  text-align: right;
+  margin-right: 159px;
+
+  font-family: var(--font-family-title);
+  line-height: 120%;
+  @include css-lock(34, 76, 320, 1280);
+  color: var(--black-400);
+
+  @media (max-width: 767px) {
+    width: 40%;
+
+    margin-right: 0;
+    margin-bottom: 12px;
+    order: 2;
+
+    text-align: left;
+    // padding-bottom: 48px;
+  }
+}
+
+.ourWayCenter {
+  position: relative;
+  left: 50%;
+
+  display: flex;
+  justify-content: center;
+  width: 5%;
+
+  @include rtl {
+    right: 40%;
+  }
+
+  @media (max-width: 767px) {
+    left: 0;
+    order: 1;
+
+    @include rtl {
+      right: 50%;
+    }
+  }
+}
+
+.ourWayProgress {
+  background-color: var(--black-400);
+  width: 5px;
+}
+
+.ourWayProgressBar {
+  position: absolute;
+  top: -100%;
+  right: 50%;
+
+  width: 5px;
+  height: 100%;
+
+  background-color: var(--cyan-primary);
+  transform: translateX(50%);
+}
+
+.ourWayCircle {
+  width: 20px;
+  height: 20px;
+
+  border: 4px solid var(--white);
+  border-radius: 50%;
+  background-color: var(--black-400);
+  transform: translateX(-7px);
+
+  @include rtl {
+    transform: translateX(7px);
+  }
+}
+
+.ourWayRight {
+  width: 40%;
+  height: fit-content;
+  margin-left: 96px;
+
+  color: var(--black-500);
+
+  @media (max-width: 767px) {
+    margin-left: 0;
+    order: 3;
+  }
+}

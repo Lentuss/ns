@@ -1,0 +1,49 @@
+@import '/styles/mixins/direction';
+
+.selectWrapper {
+  position: relative;
+
+  &.disabled {
+    pointer-events: none;
+  }
+}
+
+.errorMessage {
+  position: absolute;
+  top: calc(100% + 2px);
+
+  color: var(--pink-primary);
+
+  @include rtl {
+    right: 16px;
+  }
+
+  @include ltr {
+    left: 16px;
+  }
+}
+
+.optionPrimary {
+  // padding: 16px;
+}
+
+.optionSecondary {
+  display: flex;
+  align-items: center;
+
+  padding: 8px 0;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.optionLabel {
+  @include rtl {
+    margin-right: 12px;
+  }
+
+  @include ltr {
+    margin-left: 12px;
+  }
+}

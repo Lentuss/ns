@@ -1,0 +1,85 @@
+@import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
+
+.pagination {
+  display: flex;
+  align-items: center;
+  @include css-lock(4, 24, 320, 1280, gap);
+}
+
+.paginationButton {
+  pointer-events: none;
+
+  cursor: pointer;
+
+  background-color: transparent;
+
+  &.isActive {
+    pointer-events: all;
+
+    .paginationButtonIcon {
+      stroke: var(--pink-primary);
+    }
+  }
+}
+
+.paginationButtonIcon {
+  stroke: var(--black-400);
+  stroke-width: 2px;
+  fill: transparent;
+
+  @include css-lock(24, 32, 320, 1280, width);
+  @include css-lock(24, 32, 320, 1280, height);
+}
+
+.paginationButtonPrev {
+  @include rtl {
+    transform: rotate(-90deg);
+  }
+
+  @include ltr {
+    transform: rotate(90deg);
+  }
+}
+
+.paginationButtonNext {
+  @include rtl {
+    transform: rotate(90deg);
+  }
+
+  @include ltr {
+    transform: rotate(-90deg);
+  }
+}
+
+.paginationList {
+  display: flex;
+  @include css-lock(4, 8, 320, 1280, gap);
+}
+
+.paginationListItem {
+  width: 44px;
+  height: 44px;
+
+  @include css-lock(36, 44, 320, 1280, width);
+  @include css-lock(36, 44, 320, 1280, height);
+
+  border-radius: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--black-800);
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--black-150);
+  }
+
+  &.isActive {
+    color: var(--white);
+    background-color: var(--pink-primary);
+  }
+}

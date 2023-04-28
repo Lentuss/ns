@@ -1,0 +1,36 @@
+@import '/styles/mixins/direction';
+
+.SpecialistFeaturesList {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  @media (max-width: 1023px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+
+    margin-bottom: 32px;
+  }
+}
+
+.SpecialistFeatureItem {
+}
+
+.SpecialistFeatureLabel {
+  margin-bottom: 10px;
+
+  @media (max-width: 1023px) {
+    margin-bottom: 6px;
+  }
+}
+
+.SpecialistFeatureCount {
+  @include rtl {
+    margin-right: 8px;
+  }
+
+  @include ltr {
+    margin-left: 8px;
+  }
+}

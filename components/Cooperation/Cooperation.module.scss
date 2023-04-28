@@ -1,0 +1,102 @@
+@import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
+
+.cooperation {
+  padding: 0 0 140px;
+  overflow: hidden;
+
+  @media (max-width: 1023px) {
+    padding: 0 0 120px;
+  }
+}
+
+.cooperationInner {
+  display: flex;
+  justify-content: space-between;
+
+  @include css-lock(16, 80, 1024, 1440, padding-right);
+
+  @include rtl {
+    @include css-lock(16, 80, 1024, 1440, padding-left);
+  }
+  @media (max-width: 1023px) {
+    flex-direction: column;
+    gap: 48px;
+    padding: 0 16px;
+  }
+}
+
+.cooperationWrapper {
+  will-change: transform;
+
+  @media (min-width: 1024px) {
+    padding-top: 100px;
+
+    background-image: url(../../assets/images/svg/patterns/cooperation-pattern.svg);
+    background-position: left center;
+    background-repeat: no-repeat;
+
+    @include rtl {
+      background-position: right center;
+    }
+  }
+}
+
+.cooperationHeading {
+  max-width: 623px;
+  height: 100%;
+
+  @include css-lock(16, 80, 1024, 1440, padding-left);
+
+  will-change: transform;
+
+  @media (max-width: 1023px) {
+    max-width: 100%;
+  }
+}
+
+.cooperationFactors {
+  padding-top: 100px;
+  max-width: 519px;
+
+  will-change: transform;
+  @media (max-width: 1023px) {
+    max-width: 100%;
+    padding-top: 0;
+  }
+}
+
+.factors {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (max-width: 1023px) {
+    gap: 16px;
+  }
+}
+
+.factorsItem {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 40px 48px 48px;
+
+  background-color: var(--black-150);
+  border-radius: 24px;
+
+  @media (max-width: 1023px) {
+    gap: 24px;
+    padding: 20px;
+  }
+}
+
+.factorsHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.factorsText {
+  color: var(--black-800);
+}

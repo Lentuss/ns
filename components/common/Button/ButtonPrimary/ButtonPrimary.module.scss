@@ -1,0 +1,59 @@
+.primary {
+  &.isDisabled {
+    background-color: var(--black-150);
+
+    color: var(--black-500);
+
+    pointer-events: none;
+  }
+}
+
+.primary-pink {
+  background-color: var(--pink-primary);
+  color: var(--white);
+
+  &.isActive,
+  &::after {
+    background-color: var(--pink-secondary);
+  }
+}
+
+.primary-cyan {
+  background-color: var(--cyan-primary);
+  color: var(--black-900);
+
+  &.isActive,
+  &::after {
+    background-color: var(--cyan-secondary);
+  }
+
+  &.isDisabled {
+    background-color: var(--black-800);
+
+    color: var(--black-600);
+  }
+}
+
+.primary-white {
+  background-color: var(--white);
+  color: var(--black-1000);
+
+  &.isActive,
+  &::after {
+    background-color: var(--black-150);
+  }
+}
+
+.primary-grey {
+  background-color: var(--black-150);
+
+  &::after,
+  &.isActive {
+    background-color: var(--pink-primary);
+  }
+
+  &.isActive,
+  &:hover {
+    color: var(--white);
+  }
+}

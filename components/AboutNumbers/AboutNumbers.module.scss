@@ -1,0 +1,181 @@
+@import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
+
+.AboutNumbers {
+  padding-top: 120px;
+
+  @media (max-width: 767px) {
+    padding-top: 0;
+  }
+}
+
+.AboutNumbersInner {
+  display: flex;
+
+  padding-bottom: 180px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+
+    padding-bottom: 48px;
+  }
+}
+
+.AboutNumbersHeading {
+  @media (min-width: 1024px) {
+    max-width: 326px;
+  }
+}
+
+.AboutNumbersList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 'it1 it2 it3' 'it4 it5 it6';
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 'it1 it3' 'it2 it5' 'it4 it6';
+    margin-top: 48px;
+  }
+}
+
+.AboutNumbersItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 40px 40px;
+  @include css-lock(144, 282, 320, 1280, height);
+  @include css-lock(144, 282, 320, 1280, height);
+
+  @media (max-width: 1023px) {
+    padding: 16px 16px 20px;
+  }
+}
+
+.AboutNumbersItem-0 {
+  grid-area: it1;
+  border-bottom: 1px solid var(--black-400);
+}
+
+.AboutNumbersItem-1 {
+  grid-area: it2;
+
+  border-bottom: 1px solid var(--black-400);
+
+  @include rtl {
+    border-right: 1px solid var(--black-400);
+  }
+
+  @include ltr {
+    border-left: 1px solid var(--black-400);
+  }
+
+  @media (max-width: 767px) {
+    border-left: 0;
+
+    @include rtl {
+      border-right: 0;
+    }
+
+    @include ltr {
+      border-left: 0;
+    }
+  }
+}
+
+.AboutNumbersItem-2 {
+  grid-area: it3;
+  border-bottom: 1px solid var(--black-400);
+
+  @include rtl {
+    border-right: 1px solid var(--black-400);
+  }
+
+  @include ltr {
+    border-left: 1px solid var(--black-400);
+  }
+}
+
+.AboutNumbersItem-3 {
+  grid-area: it4;
+}
+
+.AboutNumbersItem-4 {
+  grid-area: it5;
+
+  @include rtl {
+    border-right: 1px solid var(--black-400);
+  }
+
+  @include ltr {
+    border-left: 1px solid var(--black-400);
+  }
+
+  @media (max-width: 767px) {
+    border-bottom: 1px solid var(--black-400);
+  }
+}
+
+.AboutNumbersItem-5 {
+  grid-area: it6;
+
+  @include rtl {
+    border-right: 1px solid var(--black-400);
+  }
+
+  @include ltr {
+    border-left: 1px solid var(--black-400);
+  }
+}
+
+.AboutNumbersNumber {
+  font-family: var(--font-family-title);
+  line-height: 120%;
+  @include css-lock(34, 76, 320, 1280);
+  color: var(--cyan-primary);
+}
+
+.AboutNumbersText {
+  @include css-lock(10, 16, 320, 1280);
+  @include css-lock(12, 24, 320, 1280, line-height);
+}
+
+.isNumbersIcon {
+  position: absolute;
+  bottom: 0;
+
+  @include rtl {
+    right: 0;
+  }
+
+  @include ltr {
+    left: 0;
+  }
+}
+
+.isNumbersDesktopIcon {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.isNumbersMobileIcon {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.isNumbersInnerIcon {
+  position: absolute;
+  top: 0;
+
+  @include rtl {
+    left: 0;
+  }
+
+  @include ltr {
+    right: 0;
+  }
+}

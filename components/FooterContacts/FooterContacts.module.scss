@@ -1,0 +1,29 @@
+@import '/styles/mixins/css-lock';
+
+.footerAddressWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.footerAddress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footerAddressCountry {
+  margin-bottom: 8px;
+}
+
+.footerAddressLink {
+  font-family: var(--font-family-title);
+  @include css-lock(17, 21, 320, 1280);
+  @include css-lock(20, 27, 320, 1280, line-height);
+  font-style: initial;
+  color: currentColor;
+
+  &:hover {
+    color: var(--cyan-primary);
+  }
+}

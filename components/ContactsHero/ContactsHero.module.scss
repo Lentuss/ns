@@ -1,0 +1,146 @@
+@import '/styles/mixins/css-lock';
+
+.contactHero {
+}
+
+.contactHeroInner {
+  display: grid;
+  grid-template-columns: 1fr 460px;
+  grid-template-rows: repeat(3, fit-content(100%));
+  grid-template-areas:
+    'subtitle form'
+    'title form'
+    'contacts form';
+
+  @include css-lock(20, 80, 1024, 1280, column-gap);
+
+  @media (max-width: 1023px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, fit-content(100%));
+    grid-template-areas:
+      'subtitle'
+      'title'
+      'form'
+      'contacts';
+
+    gap: 0;
+  }
+}
+
+.contactsHeroSubtitle {
+  grid-area: subtitle;
+
+  @include css-lock(0, 24, 1024, 1280, margin-bottom);
+  @include css-lock(0, 40, 1024, 1280, margin-top);
+
+  @media (max-width: 1023px) {
+    margin-bottom: 20px;
+  }
+}
+
+.contactsHeroTitle {
+  grid-area: title;
+
+  @include css-lock(0, 64, 1024, 1280, margin-bottom);
+
+  text-transform: uppercase;
+
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 1023px) {
+    margin-bottom: 48px;
+    gap: 0 10px;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  span {
+    &:nth-child(2n) {
+      margin-left: auto;
+
+      @media (max-width: 1023px) {
+        margin-left: unset;
+      }
+    }
+  }
+}
+
+.contactHeroContacts {
+  grid-area: contacts;
+
+  flex-direction: row;
+
+  @include css-lock(24, 64, 1024, 1280, gap);
+  @include css-lock(0, 40, 1024, 1280, margin-bottom);
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+.contactHeroForm {
+  grid-area: form;
+
+  background-color: var(--black-150);
+
+  @include css-lock(16, 24, 320, 1280, border-radius);
+
+  @include css-lock(20, 48, 320, 1280, padding);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+  @media (max-width: 1023px) {
+    margin-bottom: 80px;
+  }
+
+  input {
+    @include css-lock(16, 20, 320, 1280, margin-top);
+  }
+}
+
+.contactHeroFormAcceptView {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+
+  background-color: var(--black-150);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 24px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.2s ease;
+
+  &.isActive {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.contactHeroFormTitle {
+  margin-bottom: 16px;
+}
+
+.contactHeroFormText {
+  @include css-lock(40, 24, 320, 1280, margin-bottom);
+}
+
+.contactHeroFormSubmit {
+  margin-top: 40px;
+
+  width: 100%;
+}

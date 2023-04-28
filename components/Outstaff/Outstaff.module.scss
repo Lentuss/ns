@@ -1,0 +1,188 @@
+@import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
+
+.outstaff {
+  overflow: hidden;
+}
+
+.outstaffInner {
+  background-color: var(--cyan-primary);
+
+  border-radius: 24px;
+
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    'title benefits'
+    'button benefits';
+  gap: 40px 0;
+
+  @include css-lock(20, 48, 320, 1280, padding);
+
+  @include rtl {
+    @include css-lock(20, 64, 1000, 1280, padding-right);
+  }
+
+  @include ltr {
+    @include css-lock(20, 64, 320, 1280, padding-left);
+  }
+
+  @media (max-width: 1023px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 102px 1fr 55px;
+    grid-template-areas:
+      'title '
+      'benefits'
+      'button';
+    gap: 32px 0;
+  }
+}
+
+.outstaffLeft {
+  max-width: 520px;
+}
+
+.outstaffTitle {
+  color: var(--white);
+
+  grid-area: title;
+
+  @media (min-width: 1024px) {
+    transform: translateY(36px);
+  }
+}
+
+.outstaffButton {
+  grid-area: button;
+
+  z-index: 15;
+
+  @media (max-width: 1023px) {
+    width: 100%;
+  }
+}
+
+.benefits {
+  display: flex;
+  justify-content: flex-end;
+  align-self: center;
+
+  grid-area: benefits;
+
+  @media (max-width: 1023px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 767px) {
+    margin: 0 -12px;
+  }
+}
+
+.benefitsItem {
+  @include css-lock(136, 280, 320, 1280, width);
+  @include css-lock(136, 280, 320, 1280, height);
+
+  border-radius: 50%;
+  border: 1px solid var(--white);
+
+  color: var(--white);
+
+  background-color: var(--cyan-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  position: relative;
+
+  &:nth-child(1) {
+    @include rtl {
+      transform: translateX(-24px);
+
+      z-index: 1;
+    }
+
+    @include ltr {
+      transform: translateX(24px);
+
+      z-index: 5;
+    }
+  }
+
+  &:nth-child(2) {
+    @include rtl {
+      transform: translateX(24px);
+
+      z-index: 5;
+    }
+
+    @include ltr {
+      transform: translateX(-24px);
+
+      z-index: 1;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &:nth-child(1) {
+      @include rtl {
+        transform: translateX(-12px);
+      }
+
+      @include ltr {
+        transform: translateX(12px);
+      }
+    }
+
+    &:nth-child(2) {
+      @include rtl {
+        transform: translateX(12px);
+      }
+
+      @include ltr {
+        transform: translateX(-12px);
+      }
+    }
+  }
+}
+
+.benefitsItemValue {
+  font-family: var(--font-family-title);
+  font-weight: 900;
+  @include css-lock(34, 72, 320, 1280);
+  @include css-lock(41, 72, 320, 1280, line-height);
+
+  margin-bottom: 8px;
+}
+
+.benefitsItemText {
+  @media (max-width: 767px) {
+    max-width: 58px;
+
+    text-align: center;
+  }
+}
+
+.outstaffBgIcon {
+  z-index: 10;
+
+  position: absolute;
+  bottom: 0;
+
+  max-width: 650px;
+  width: 100%;
+
+  @include rtl {
+    left: 0;
+
+    transform: rotateY(180deg);
+  }
+
+  @include ltr {
+    right: 0;
+  }
+}

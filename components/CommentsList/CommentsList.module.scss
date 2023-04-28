@@ -1,0 +1,148 @@
+@import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
+
+.commentsList {
+}
+
+.commentItem {
+  @include css-lock(20, 40, 320, 1280, padding);
+
+  background-color: var(--white);
+
+  border-radius: 24px;
+
+  & + & {
+    @include css-lock(16, 24, 320, 1280, margin-top);
+  }
+}
+
+.commentItemAnswer {
+  position: relative;
+
+  border: 1px solid var(--black-400);
+
+  @include rtl {
+    @include css-lock(12, 16, 320, 1280, margin-right);
+  }
+
+  @include ltr {
+    @include css-lock(12, 16, 320, 1280, margin-left);
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 16px;
+    bottom: 16px;
+
+    @include rtl {
+      @include css-lock(-12, -16, 320, 1280, right);
+    }
+
+    @include ltr {
+      @include css-lock(-12, -16, 320, 1280, left);
+    }
+
+    width: 1px;
+
+    background-color: var(--black-400);
+  }
+
+  &.isHidden {
+    display: none;
+  }
+}
+
+.commentItemTitle {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  margin-bottom: 12px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    margin-bottom: 16px;
+  }
+}
+
+.commentItemRating {
+  @include css-lock(24, 32, 320, 1280, margin-bottom);
+}
+
+.commentItemComment {
+  @include css-lock(24, 32, 320, 1280, margin-bottom);
+}
+
+.commentItemBottom {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 16px;
+  }
+}
+
+.commentItemLike {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @include rtl {
+    margin-left: 24px;
+  }
+
+  @include ltr {
+    margin-right: 24px;
+  }
+
+  @media (max-width: 767px) {
+    @include rtl {
+      margin-left: 0;
+    }
+
+    @include ltr {
+      margin-right: 0;
+    }
+  }
+}
+
+.commentItemButtonLike {
+  background-color: transparent;
+
+  svg {
+    fill: var(--black-500);
+  }
+}
+
+.commentItemToggleAnswersButton {
+}
+
+.commentItemAnswerButton {
+  @include rtl {
+    margin-right: auto;
+  }
+
+  @include ltr {
+    margin-left: auto;
+  }
+
+  @media (max-width: 767px) {
+    @include rtl {
+      margin-right: unset;
+    }
+
+    @include ltr {
+      margin-left: unset;
+    }
+
+    margin-top: 8px;
+  }
+}

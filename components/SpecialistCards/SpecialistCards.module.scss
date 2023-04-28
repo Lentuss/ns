@@ -1,0 +1,115 @@
+@import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
+
+.specialistItem {
+  border-top: 1px solid var(--black-400);
+
+  position: relative;
+
+  padding: 56px 0px;
+
+  cursor: pointer;
+
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      'title title .'
+      'features features buttons';
+
+    gap: 32px 0;
+  }
+
+  @media (max-width: 1023px) {
+    display: block;
+
+    padding: 40px 0px;
+  }
+
+  &.isActive {
+    background-color: var(--white);
+
+    z-index: 250;
+
+    pointer-events: none;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      inset: 0;
+
+      background-color: var(--white);
+
+      @include rtl {
+        transform: translateX(100%);
+
+        *::-webkit-scrollbar {
+          width: 0px;
+        }
+      }
+
+      @include ltr {
+        transform: translateX(-100%);
+      }
+    }
+
+    @include rtl {
+      padding-right: 16px;
+      margin-right: -16px;
+    }
+
+    @include ltr {
+      padding-left: 16px;
+      margin-left: -16px;
+    }
+  }
+}
+
+.specialistItemTitle {
+  grid-area: title;
+  align-items: center;
+}
+
+.specialistItemFeatures {
+  grid-area: features;
+}
+
+.specialistItemButtons {
+  grid-area: buttons;
+
+  align-self: end;
+  justify-self: end;
+  display: flex;
+  gap: 10px;
+
+  @include rtl {
+    flex-direction: row-reverse;
+  }
+
+  button {
+    @media (max-width: 1023px) {
+      width: 100%;
+    }
+  }
+}
+
+.specialistItemPattern {
+  position: absolute;
+  top: 0;
+
+  @include rtl {
+    left: 0;
+
+    transform: rotateY(180deg);
+  }
+
+  @include ltr {
+    right: 0;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}

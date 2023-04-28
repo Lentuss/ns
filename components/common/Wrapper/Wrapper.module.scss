@@ -1,0 +1,13 @@
+@import '/styles/mixins/css-lock';
+
+.wrapper {
+  max-width: 1440px;
+  width: 100%;
+  height: inherit;
+
+  margin: 0 auto;
+  @include css-lock(16, 80, 1024, 1440, padding-left);
+  @include css-lock(16, 80, 1024, 1440, padding-right);
+
+  position: relative;
+}

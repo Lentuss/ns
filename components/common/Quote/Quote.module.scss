@@ -1,0 +1,41 @@
+@import '/styles/mixins/css-lock';
+@import '/styles/mixins/direction';
+
+.quote {
+  @include css-lock(48, 64, 320, 1280, padding-top);
+  @include css-lock(48, 64, 320, 1280, padding-bottom);
+
+  border-top: 1px solid var(--black-400);
+  border-bottom: 1px solid var(--black-400);
+}
+
+.qouteText {
+  color: var(--black-900);
+
+  @include rtl {
+    @include css-lock(12, 24, 320, 1280, padding-right);
+  }
+
+  @include ltr {
+    @include css-lock(12, 24, 320, 1280, padding-left);
+  }
+
+  position: relative;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 2px;
+
+    background-color: var(--cyan-primary);
+  }
+}
+
+.quoteAuthor {
+  display: block;
+}

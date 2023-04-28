@@ -1,0 +1,91 @@
+@import '/styles/mixins/css-lock';
+
+.articlesList {
+}
+
+.articlesItem {
+  @include css-lock(24, 48, 320, 1280, padding-top);
+  @include css-lock(24, 48, 320, 1280, padding-bottom);
+
+  border-top: 1px solid var(--black-400);
+
+  &:hover {
+    border-top: 1px solid var(--black-700);
+
+    .articlesItemPublishInfo {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.articlesLink {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  grid-template-rows: repeat(4, fit-content(100%));
+  grid-template-areas:
+    'image publishInfo'
+    'image title'
+    'image description'
+    '. tags';
+  gap: 16px 40px;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, fit-content(100%));
+    grid-template-areas:
+      'publishInfo'
+      'title'
+      'tags';
+    gap: 16px;
+  }
+}
+
+.articlesItemImage {
+  border-radius: 20px;
+  overflow: hidden;
+
+  object-fit: cover;
+
+  width: 100%;
+  height: auto;
+
+  grid-area: image;
+
+  align-self: flex-start;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.articlesItemPublishInfo {
+  grid-area: publishInfo;
+
+  width: fit-content;
+}
+
+.articlesItemTitle {
+  grid-area: title;
+}
+
+.articlesItemDescription {
+  grid-area: description;
+
+  margin-bottom: 16px;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.articlesItemTagsInfo {
+  grid-area: tags;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.articlesItemTag {
+  background-color: rgba(104, 201, 194, 0.25);
+}
