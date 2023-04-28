@@ -27,6 +27,8 @@
   @include css-lock(48, 64, 320, 1280, height);
 
   border-radius: 100%;
+
+  align-self: flex-start;
 }
 
 .specialistJobname {
@@ -35,4 +37,8 @@
 
 .specialistExperience {
   grid-area: features;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
