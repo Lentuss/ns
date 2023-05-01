@@ -26,7 +26,7 @@ function Vacancy({ vacancyData }) {
   const { back } = useRouter();
   const { title, experiense, infoTags } = vacancyData || {};
 
-  const renderVacancyTitle = () => (
+  const renderVacancyTitle = (
     <div className={s.vacancyTitle}>
       <Htag tag="h2">
         {title}
@@ -39,7 +39,7 @@ function Vacancy({ vacancyData }) {
     </div>
   );
 
-  const renderVacancyDescription = () => (
+  const renderVacancyDescription = (
     <ul className={s.vacancyDescription}>
       {vacancyDescriptionData.map(({ title, description, listData }) => (
         <li className={s.vacancyDescriptionItem} key={title}>
@@ -62,8 +62,8 @@ function Vacancy({ vacancyData }) {
             Назад
           </ButtonText>
           <div className={s.vacancyInfo}>
-            {renderVacancyTitle()}
-            {renderVacancyDescription()}
+            {renderVacancyTitle}
+            {renderVacancyDescription}
           </div>
           <VacancyForm className={s.vacancyForm} />
         </div>

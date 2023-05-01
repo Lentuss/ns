@@ -12,23 +12,19 @@ import s from '@/styles/pages/Specialists.module.scss';
 function Specialists() {
   const { asPath } = useRouter();
 
-  const renderSpecialistSections = () => {
-    return specialistPageSections.map(({ title, accent, href }) => (
-      <SpecialistSection
-        className={s.specialistSection}
-        title={title}
-        accent={accent}
-        href={href ? `${asPath}${href}` : ''}
-        key={title}
-      />
-    ));
-  };
-
   return (
     <>
       <SpecialistsHead className={s.specialistsHead} />
 
-      {renderSpecialistSections()}
+      {specialistPageSections.map(({ title, accent, href }) => (
+        <SpecialistSection
+          className={s.specialistSection}
+          title={title}
+          accent={accent}
+          href={href ? `${asPath}${href}` : ''}
+          key={title}
+        />
+      ))}
 
       <FeedBack page="specialists" />
 

@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useCallback, useState } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -22,7 +22,7 @@ const CommentItem = ({
   isCommentWithAnswer = false,
   isShowAnswers = false,
   id,
-  onToggleVisibileAnswers = () => { }
+  onToggleVisibileAnswers = () => {}
 }) => (
   <li
     className={cx(s.commentItem, {
@@ -74,16 +74,19 @@ const CommentItem = ({
 export const CommentsList = ({ className }) => {
   const [isShowAnswers, setShowAnswers] = useState([]);
 
-  const onToggleVisibileAnswersHandler = (id, isShow) => {
-    const answer = isShowAnswers.find((a) => a.id === id);
+  const onToggleVisibileAnswersHandler = useCallback(
+    (id, isShow) => {
+      const answer = isShowAnswers.find((a) => a.id === id);
 
-    if (answer) {
-      answer.isShow = isShow;
-      setShowAnswers([...isShowAnswers.filter((a) => a.id !== id), answer]);
-    } else {
-      setShowAnswers([...isShowAnswers, { id, isShow }]);
-    }
-  };
+      if (answer) {
+        answer.isShow = isShow;
+        setShowAnswers([...isShowAnswers.filter((a) => a.id !== id), answer]);
+      } else {
+        setShowAnswers([...isShowAnswers, { id, isShow }]);
+      }
+    },
+    [isShowAnswers]
+  );
 
   return (
     <ul className={cx(s.commentsList, className)}>

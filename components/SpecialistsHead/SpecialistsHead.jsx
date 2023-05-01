@@ -16,7 +16,7 @@ import s from './SpecialistsHead.module.scss';
 export const SpecialistsHead = memo(({ className }) => {
   const { query } = useRouter();
 
-  const renderCategories = () => (
+  const renderCategories = (
     <ul className={s.specialistsHeadList}>
       {specialistsCategoriesList.map(
         ({ id, count, label, href, labelText }) => (
@@ -52,7 +52,7 @@ export const SpecialistsHead = memo(({ className }) => {
           Оберіть сферу
         </Htag>
 
-        {renderCategories()}
+        {renderCategories}
       </Wrapper>
     </div>
   );

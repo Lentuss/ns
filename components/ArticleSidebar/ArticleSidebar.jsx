@@ -16,7 +16,7 @@ import { articleNewsMini, socialsData } from '@/utils/templateData';
 import s from './ArticleSidebar.module.scss';
 
 export const ArticleSidebar = ({ className }) => {
-  const renderSocials = () => (
+  const renderSocials = (
     <>
       <Text className={s.sidebarTitle}>Поділитися у мережах</Text>
       <ul className={s.sidebarSocials}>
@@ -35,7 +35,7 @@ export const ArticleSidebar = ({ className }) => {
     </>
   );
 
-  const renderLatestNews = () => (
+  const renderLatestNews = (
     <>
       <Text className={s.sidebarTitle}>
         Більше на тему <mark>Аутстафінг</mark>
@@ -63,8 +63,8 @@ export const ArticleSidebar = ({ className }) => {
 
   return (
     <aside className={cx(s.sidebar, className)}>
-      {renderSocials()}
-      {renderLatestNews()}
+      {renderSocials}
+      {renderLatestNews}
     </aside>
   );
 };

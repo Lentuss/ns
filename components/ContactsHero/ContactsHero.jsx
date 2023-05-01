@@ -27,7 +27,7 @@ export const ContactsHero = ({ className }) => {
     setTimeout(() => setAcceptFormView(false), 2000);
   };
 
-  const renderContactsHeroForm = () => (
+  const renderContactsHeroForm = (
     <form className={s.contactHeroForm}>
       <Text className={s.contactHeroFormTitle} size="l">
         Зворотній зв’язок
@@ -73,7 +73,7 @@ export const ContactsHero = ({ className }) => {
             <span>та пропозицій</span>
           </Htag>
           <FooterContacts className={s.contactHeroContacts} />
-          {renderContactsHeroForm()}
+          {renderContactsHeroForm}
         </div>
       </Wrapper>
     </section>

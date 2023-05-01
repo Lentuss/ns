@@ -41,7 +41,7 @@ export const SpecialistsModal = (props) => {
     dispatch(toogleShowSpecialistFormModal(true));
   };
 
-  const renderModalHead = () => (
+  const renderModalHead = (
     <div className={s.modalHead}>
       <Image className={s.modalHeadImage} src={imageSrc} alt={jobName} />
       <Htag className={s.modalHeadTitle} tag="h4">
@@ -56,20 +56,22 @@ export const SpecialistsModal = (props) => {
     </div>
   );
 
-  const renderModalFeatures = () => (
+  const renderModalFeatures = (
     <div className={s.modalSection}>
       {features?.map(({ label, list }) => (
         <div className={s.modalFeatures} key={label}>
           <Subtitle className={s.modalFeaturesLabel} size="small">
             {label}
           </Subtitle>
-          {list.map((item) => <Label name={item} className={s.modalFeaturesLabel} />)}
+          {list.map((item) => (
+            <Label name={item} className={s.modalFeaturesLabel} />
+          ))}
         </div>
       ))}
     </div>
   );
 
-  const renderModalDescription = () => (
+  const renderModalDescription = (
     <div className={s.modalSection}>
       <Htag className={s.modalSectionTitle} tag="h6">
         Опис
@@ -83,7 +85,7 @@ export const SpecialistsModal = (props) => {
     </div>
   );
 
-  const renderModalSkills = () => (
+  const renderModalSkills = (
     <div className={s.modalSection}>
       <Htag className={s.modalSectionTitle} tag="h6">
         Вміння
@@ -104,10 +106,10 @@ export const SpecialistsModal = (props) => {
       onClickPrimaryButton={onCloseHandler}
       onClickSecondaryButton={onNextStepHandler}
     >
-      {renderModalHead()}
-      {renderModalFeatures()}
-      {renderModalDescription()}
-      {renderModalSkills()}
+      {renderModalHead}
+      {renderModalFeatures}
+      {renderModalDescription}
+      {renderModalSkills}
     </Modal>
   );
 };

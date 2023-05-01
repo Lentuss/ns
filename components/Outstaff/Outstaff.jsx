@@ -20,7 +20,7 @@ export const Outstaff = ({ className }) => {
     disableHTMLScrolling();
   };
 
-  const renderBenefits = () => (
+  const renderBenefits = (
     <ul className={s.benefits}>
       {benefitsData.map(({ value, text }, idx) => (
         <li className={s.benefitsItem} key={value}>
@@ -60,7 +60,7 @@ export const Outstaff = ({ className }) => {
             Отримати спеціаліста
           </ButtonPrimary>
 
-          {renderBenefits()}
+          {renderBenefits}
 
           <OutstaffPatternIcon className={s.outstaffBgIcon} />
         </div>

@@ -34,7 +34,7 @@ export const MobileHeader = ({ isOpen, seletedLanguage, setLanguage }) => {
     });
   }, [seletedLanguage, width, isOpen]);
 
-  const renderLanguageSelect = () => (
+  const renderLanguageSelect = (
     <ul className={s.languageSelect} ref={selectListRef}>
       {langSelectOptions.map((option, idx) => (
         <Fragment key={option.value}>
@@ -71,7 +71,7 @@ export const MobileHeader = ({ isOpen, seletedLanguage, setLanguage }) => {
         <div className={s.mobileHeaderInner}>
           <Nav className={s.mobileHeaderNav} data={navLinks} />
 
-          {renderLanguageSelect()}
+          {renderLanguageSelect}
         </div>
       </Wrapper>
     </div>

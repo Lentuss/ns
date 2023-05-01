@@ -30,7 +30,7 @@ export const ArticleItem = ({ className }) => {
     rating
   } = articleData || {};
 
-  const renderArticleInfo = () => (
+  const renderArticleInfo = (
     <div className={s.articleInfo}>
       <ArticleReadInfo info={[author, publicDate]} />
 
@@ -38,7 +38,7 @@ export const ArticleItem = ({ className }) => {
     </div>
   );
 
-  const renderArticleHead = () => (
+  const renderArticleHead = (
     <>
       <Heading className={s.articleTitle} size="l">
         {title}
@@ -57,7 +57,7 @@ export const ArticleItem = ({ className }) => {
     </>
   );
 
-  const renderContentArticle = () => (
+  const renderContentArticle = (
     <div className={s.articleContent}>
       <Heading className={s.articleContentHead}>Зміст</Heading>
       <ul>
@@ -89,22 +89,21 @@ export const ArticleItem = ({ className }) => {
     </div>
   );
 
-  const renderMainTextArticle = () =>
-    mainTextArticle.map(({ title, text }) => (
-      <div className={s.articleParagraph} key={title}>
-        <Heading className={s.articleParagraphTitle}>{title}</Heading>
-        <Ptag size="l">{text}</Ptag>
-      </div>
-    ));
+  const renderMainTextArticle = mainTextArticle.map(({ title, text }) => (
+    <div className={s.articleParagraph} key={title}>
+      <Heading className={s.articleParagraphTitle}>{title}</Heading>
+      <Ptag size="l">{text}</Ptag>
+    </div>
+  ));
 
   return (
     <div className={cx(s.article, className)}>
       <Image className={s.articleImage} src={image} alt={title} />
 
-      {renderArticleInfo()}
-      {renderArticleHead()}
-      {renderContentArticle()}
-      {renderMainTextArticle()}
+      {renderArticleInfo}
+      {renderArticleHead}
+      {renderContentArticle}
+      {renderMainTextArticle}
 
       <Quote
         className={s.articleQuote}

@@ -30,7 +30,7 @@ export const HomeFormModal = (props) => {
     dispatch(toogleShowSuccessModal(true));
   };
 
-  const renderModalForm = () => (
+  const renderModalForm = (
     <form className={s.modalForm}>
       <Heading className={s.modalFormTitle} size="s">
         Ваші дані
@@ -69,7 +69,7 @@ export const HomeFormModal = (props) => {
         ознайомлення
       </Ptag>
 
-      {renderModalForm()}
+      {renderModalForm}
     </Modal>
   );
 };

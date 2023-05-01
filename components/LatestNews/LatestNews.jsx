@@ -44,7 +44,7 @@ const Article = ({
 );
 
 export const LatestNews = ({ className }) => {
-  const renderHead = () => (
+  const renderHead = (
     <>
       <Htag className={s.latestNewsTitle} tag="h2">
         Останні новини
@@ -55,7 +55,7 @@ export const LatestNews = ({ className }) => {
     </>
   );
 
-  const renderLatestNewsList = () => (
+  const renderLatestNewsList = (
     <ul className={s.latestNewsList}>
       {latestNewsList.map((newsData) => (
         <li className={s.latestNewsListItem} key={newsData.title}>
@@ -69,8 +69,8 @@ export const LatestNews = ({ className }) => {
     <div className={cx(s.latestNews, className)}>
       <Wrapper>
         <div className={s.latestNewsInner}>
-          {renderHead()}
-          {renderLatestNewsList()}
+          {renderHead}
+          {renderLatestNewsList}
         </div>
       </Wrapper>
     </div>

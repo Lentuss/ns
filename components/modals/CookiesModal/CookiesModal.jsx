@@ -35,22 +35,22 @@ export const CookiesModal = () => {
     enableHTMLScrolling();
   }, [isShowCookiesModal]);
 
-  const setCookiesConfigHandler = (id) => {
+  const setCookiesConfigHandler = useCallback((id) => {
     setCookiesConfig({
       ...cookiesConfig,
       [id]: !cookiesConfig[id]
     });
-  };
+  }, []);
 
-  const onCookiesHandler = (bool = true) => {
+  const onCookiesHandler = useCallback((bool = true) => {
     const configs = { ...cookiesConfigBase };
     Object.keys(configs).forEach((key) => (configs[key] = bool));
 
     setCookiesConfig(configs);
     // onCloseHandler();
-  };
+  }, []);
 
-  const renderModalHead = () => (
+  const renderModalHead = (
     <div className={s.modalHead}>
       <Text className={s.modalHeadTitle} size="l">
         Налаштування конфіденційності
@@ -80,7 +80,7 @@ export const CookiesModal = () => {
     </div>
   );
 
-  const renderModalConfig = () => (
+  const renderModalConfig = (
     <div className={s.modalConfig}>
       <Heading className={s.modalConfigTitle}>Керування налаштуваннями</Heading>
       <ul className={s.modalConfigList}>
@@ -125,8 +125,8 @@ export const CookiesModal = () => {
       secondareButtonLabel="Зберегти мої налаштування"
       // onClickSecondaryButton={}
     >
-      {renderModalHead()}
-      {renderModalConfig()}
+      {renderModalHead}
+      {renderModalConfig}
     </Modal>
   );
 };

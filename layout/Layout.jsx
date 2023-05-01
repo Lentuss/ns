@@ -37,7 +37,7 @@ const Layout = ({ children, pageType }) => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const renderHomePattern = () => (
+  const renderHomePattern = (
     <PatternsAnimationWrap isShow={isStartAnimation}>
       <HomePattern1 className={s.headerPatterIcon} />
       <HomePattern2 className={s.headerPatterIcon} />
@@ -46,25 +46,25 @@ const Layout = ({ children, pageType }) => {
     </PatternsAnimationWrap>
   );
 
-  const renderSpecialistPattern = () => (
+  const renderSpecialistPattern = (
     <PatternsAnimationWrap isShow={isStartAnimation}>
       <SpecialistsPattern className={s.headerPatterIcon} />
     </PatternsAnimationWrap>
   );
 
-  const renderHowItWorksPattern = () => (
+  const renderHowItWorksPattern = (
     <PatternsAnimationWrap isShow={isStartAnimation}>
       <HowItWorksPattern className={s.headerPatterIcon} />
     </PatternsAnimationWrap>
   );
 
-  const renderAboutPattern = () => (
+  const renderAboutPattern = (
     <PatternsAnimationWrap isShow={isStartAnimation}>
       <AboutPattern className={s.headerPatterIcon} />
     </PatternsAnimationWrap>
   );
 
-  const renderCareersPattern = () => (
+  const renderCareersPattern = (
     <PatternsAnimationWrap isShow={isStartAnimation}>
       <CareersPattern className={s.headerPatterIcon} />
     </PatternsAnimationWrap>
@@ -73,11 +73,11 @@ const Layout = ({ children, pageType }) => {
   return (
     <>
       {/* <Wrapper> */}
-      {pageType === home && renderHomePattern()}
-      {pageType === specialists && renderSpecialistPattern()}
-      {pageType === howItWorks && renderHowItWorksPattern()}
-      {pageType === about && renderAboutPattern()}
-      {pageType === careers && renderCareersPattern()}
+      {pageType === home && renderHomePattern}
+      {pageType === specialists && renderSpecialistPattern}
+      {pageType === howItWorks && renderHowItWorksPattern}
+      {pageType === about && renderAboutPattern}
+      {pageType === careers && renderCareersPattern}
       {/* </Wrapper> */}
 
       <Header className={s.header} />
