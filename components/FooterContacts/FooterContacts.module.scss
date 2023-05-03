@@ -26,4 +26,10 @@
   &:hover {
     color: var(--cyan-primary);
   }
+
+  &.isPinkHover {
+    &:hover {
+      color: var(--pink-primary);
+    }
+  }
 }

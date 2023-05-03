@@ -4,7 +4,8 @@ const initialState = {
   isOpenMobileMenu: false,
   seletedLanguage: {},
   isShowCookiesBanner: true,
-  isShowCookiesModal: false
+  isShowCookiesModal: false,
+  isScrollToFeedbackForm: false
 };
 
 const generalSlice = createSlice({
@@ -22,6 +23,9 @@ const generalSlice = createSlice({
     },
     toggleCookiesModal: (state, action) => {
       state.isShowCookiesModal = action.payload;
+    },
+    toggleScrollToFeedbackForm: (state, action) => {
+      state.isScrollToFeedbackForm = action.payload;
     }
   }
 });
@@ -30,7 +34,8 @@ export const {
   toogleMobileMenu,
   setLanguage,
   toggleCookiesBanner,
-  toggleCookiesModal
+  toggleCookiesModal,
+  toggleScrollToFeedbackForm
 } = generalSlice.actions;
 
 export default generalSlice.reducer;

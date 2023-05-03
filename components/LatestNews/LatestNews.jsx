@@ -4,12 +4,12 @@ import Image from 'next/image';
 import cx from 'classnames';
 
 import { ButtonOutline, Htag, Label, Ptag, Wrapper } from '../common';
+import { ArticleReadInfo } from '..';
 
-import { black700 } from '@/utils/const';
+import { BLOG_PAGE_ROUTE, black700 } from '@/utils/const';
 import { latestNewsList } from '@/utils/templateData';
 
 import s from './LatestNews.module.scss';
-import { ArticleReadInfo } from '..';
 
 const Article = ({
   title,
@@ -49,7 +49,11 @@ export const LatestNews = ({ className }) => {
       <Htag className={s.latestNewsTitle} tag="h2">
         Останні новини
       </Htag>
-      <ButtonOutline className={s.latestNewsButton} appearance="black">
+      <ButtonOutline
+        className={s.latestNewsButton}
+        appearance="black"
+        href={BLOG_PAGE_ROUTE}
+      >
         Читати всі новини
       </ButtonOutline>
     </>

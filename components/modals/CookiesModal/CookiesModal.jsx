@@ -47,7 +47,7 @@ export const CookiesModal = () => {
     Object.keys(configs).forEach((key) => (configs[key] = bool));
 
     setCookiesConfig(configs);
-    // onCloseHandler();
+    onCloseHandler();
   }, []);
 
   const renderModalHead = (

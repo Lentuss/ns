@@ -12,8 +12,8 @@
   &:hover {
     border-top: 1px solid var(--black-700);
 
-    .articlesItemPublishInfo {
-      flex-direction: row-reverse;
+    .articlesItemImage {
+      transform: scale(1.1);
     }
   }
 }
@@ -40,18 +40,22 @@
   }
 }
 
-.articlesItemImage {
-  border-radius: 20px;
+.articlesItemImageWrap {
+  border-radius: 8px;
   overflow: hidden;
 
+  grid-area: image;
+
+  align-self: flex-start;
+}
+
+.articlesItemImage {
   object-fit: cover;
 
   width: 100%;
   height: auto;
 
-  grid-area: image;
-
-  align-self: flex-start;
+  transition: transform 0.3s ease;
 
   @media (max-width: 767px) {
     display: none;

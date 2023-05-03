@@ -22,6 +22,7 @@ import ProgressIcon3 from '@/assets/images/svg/patterns/specialists/progress-3.s
 import ProgressIcon4 from '@/assets/images/svg/patterns/specialists/progress-4.svg';
 
 import s from './VacancyCardList.module.scss';
+import Link from 'next/link';
 
 export const VacancyCardList = ({ className }) => {
   const [isShowPatterns, setShowPatterns] = useState(null);
@@ -36,35 +37,38 @@ export const VacancyCardList = ({ className }) => {
           {vacancyCardListData.map(
             ({ description, experiense, id, infoTags, title }) => (
               <li
-                className={s.vacancyCard}
                 key={id}
                 onMouseEnter={() => setShowPatterns(id)}
                 onMouseLeave={() => setShowPatterns(null)}
               >
-                <div className={s.vacancyCardDescription}>
-                  <Heading className={s.vacancyCardTitle}>{title}</Heading>
-                  <div className={s.vacancyCardInfo}>
-                    <Label name={experiense} />
-                    <ArticleReadInfo info={infoTags} />
-                  </div>
-                  <Ptag size="m" color={black800}>
-                    {description}
-                  </Ptag>
-                </div>
-                <ButtonPrimary
-                  className={s.vacancyCardButton}
-                  appearance="grey"
+                <Link
+                  className={s.vacancyCard}
                   href={`${CAREERS_PAGE_ROUTE}/${id}`}
                 >
-                  Детальніше
-                </ButtonPrimary>
+                  <div className={s.vacancyCardDescription}>
+                    <Heading className={s.vacancyCardTitle}>{title}</Heading>
+                    <div className={s.vacancyCardInfo}>
+                      <Label name={experiense} />
+                      <ArticleReadInfo info={infoTags} />
+                    </div>
+                    <Ptag size="m" color={black800}>
+                      {description}
+                    </Ptag>
+                  </div>
+                  <ButtonPrimary
+                    className={s.vacancyCardButton}
+                    appearance="grey"
+                  >
+                    Детальніше
+                  </ButtonPrimary>
 
-                <PatternsAnimationWrap isShow={isShowPatterns === id}>
-                  <ProgressIcon1 className={s.vacancyPattern} />
-                  <ProgressIcon2 className={s.vacancyPattern} />
-                  <ProgressIcon3 className={s.vacancyPattern} />
-                  <ProgressIcon4 className={s.vacancyPattern} />
-                </PatternsAnimationWrap>
+                  <PatternsAnimationWrap isShow={isShowPatterns === id}>
+                    <ProgressIcon1 className={s.vacancyPattern} />
+                    <ProgressIcon2 className={s.vacancyPattern} />
+                    <ProgressIcon3 className={s.vacancyPattern} />
+                    <ProgressIcon4 className={s.vacancyPattern} />
+                  </PatternsAnimationWrap>
+                </Link>
               </li>
             )
           )}

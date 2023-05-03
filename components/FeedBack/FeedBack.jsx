@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
@@ -11,6 +12,8 @@ import {
   Select,
   ButtonPrimary
 } from '@/components/common';
+
+import { toggleScrollToFeedbackForm } from '@/store/slices/general';
 
 import { pageTypes } from '@/utils/const';
 
@@ -26,10 +29,31 @@ import FeedBackWorksMobilePatternIcon from '@/assets/images/svg/patterns/feedbac
 import s from './FeedBack.module.scss';
 
 export const FeedBack = (props) => {
+  const { className, page } = props;
+  const dispatch = useDispatch();
+
+  const feedBackRef = useRef(null);
+
   const [inputName, setInputName] = useState('');
   const [inputEmail, setInputEmail] = useState('');
   const [inputText, setInputText] = useState('');
-  const { className, page } = props;
+  const [isOpenSelect, setIsOpenSelect] = useState(false);
+
+  const isScrollToFeedbackForm = useSelector(
+    (state) => state.general.isScrollToFeedbackForm
+  );
+
+  useEffect(() => {
+    if (isScrollToFeedbackForm) {
+      feedBackRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+      dispatch(toggleScrollToFeedbackForm(false));
+      setIsOpenSelect(true);
+    }
+  }, [isScrollToFeedbackForm]);
 
   const options = [
     { value: 'Unit', label: 'Unit' },
@@ -80,7 +104,10 @@ export const FeedBack = (props) => {
   };
 
   return (
-    <div className={cx(s.feedback, s[`feedback-${page}`], className)}>
+    <div
+      className={cx(s.feedback, s[`feedback-${page}`], className)}
+      ref={feedBackRef}
+    >
       <Wrapper>
         <div className={s.feedbackInner}>
           <Subtitle>Зворотній зв’язок</Subtitle>
@@ -109,7 +136,14 @@ export const FeedBack = (props) => {
                 </div>
                 <div className={s.formInputWrapper}>
                   <Ptag className={s.formSubtitle}>Оберіть спеціаліста</Ptag>
-                  <Select options={options} placeholder="Оберіть сферу" />
+                  <Select
+                    options={options}
+                    placeholder="Оберіть сферу"
+                    menuIsOpen={isOpenSelect}
+                    onMenuClose={() => setIsOpenSelect(false)}
+                    onMenuOpen={() => setIsOpenSelect(true)}
+                  />
+
                   <Select options={options} placeholder="Оберіть спеціаліста" />
                 </div>
               </div>

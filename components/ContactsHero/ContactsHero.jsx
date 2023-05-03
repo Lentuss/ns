@@ -72,7 +72,7 @@ export const ContactsHero = ({ className }) => {
             <span>до ваших питань</span>
             <span>та пропозицій</span>
           </Htag>
-          <FooterContacts className={s.contactHeroContacts} />
+          <FooterContacts className={s.contactHeroContacts} isPinkHover />
           {renderContactsHeroForm}
         </div>
       </Wrapper>

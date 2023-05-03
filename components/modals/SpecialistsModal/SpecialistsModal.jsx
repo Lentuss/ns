@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Image from 'next/image';
-import PropTypes from 'prop-types';
 
 import { Htag, Label, Modal, Ptag, Subtitle } from '../../common';
 
@@ -16,7 +15,7 @@ import s from './SpecialistsModal.module.scss';
 import { ListWithBullets } from '@/components';
 import { specialistModalSkills } from '@/utils/templateData';
 
-export const SpecialistsModal = (props) => {
+export const SpecialistsModal = () => {
   const dispatch = useDispatch();
   const selectedSpecialist = useSelector(
     (state) => state.specialist.selectedSpecialist

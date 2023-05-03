@@ -24,7 +24,7 @@ export const BlogSidebar = ({ className }) => {
       </ul>
 
       <Text className={s.sidebarTitle}>Контакти</Text>
-      <FooterContacts className={s.sidebarContancts} />
+      <FooterContacts className={s.sidebarContancts} isPinkHover />
 
       <ul className={s.sidebarSocials}>
         {socialsData.map(({ label, href }) => (
