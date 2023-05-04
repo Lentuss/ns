@@ -27,6 +27,7 @@ export const WorkStages = () => {
                         // duration: { min: 0.1, max: 0.3 },
                         duration: 0.1,
                         ease: "power1.inOut"
+
                     }
                 }
             })
