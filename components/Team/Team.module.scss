@@ -121,19 +121,21 @@
 }
 
 .teamPattern {
-  position: absolute;
+  @media (min-width: 1024px) {
+    position: absolute;
 
-  top: 0;
+    top: 0;
 
-  transform: translateY(-30%);
+    transform: translateY(-30%);
 
-  @include rtl {
-    left: 0;
+    @include rtl {
+      left: 0;
 
-    transform: translateY(-30%) rotateY(180deg);
-  }
+      transform: translateY(-30%) rotateY(180deg);
+    }
 
-  @include ltr {
-    right: 0;
+    @include ltr {
+      right: 0;
+    }
   }
 }
