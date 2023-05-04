@@ -36,7 +36,11 @@
 .ourWayPeriod {
   display: flex;
   justify-content: center;
-  height: 30vh;
+  min-height: 30vh;
+
+  @media (max-width: 767px) {
+    min-height: 20vh;
+  }
 }
 
 .ourWayTextWrapper {
@@ -134,8 +138,10 @@
   margin-left: 96px;
 
   color: var(--black-500);
+  @include css-lock(13, 16, 320, 1280);
 
   @media (max-width: 767px) {
+    width: 100%;
     margin-left: 0;
     order: 3;
   }

@@ -16,8 +16,6 @@ export const OurWay = () => {
         gsap.registerPlugin(ScrollTrigger);
         const ctx = gsap.context((self) => {
             const sections = [...ref.current.querySelectorAll('.section')];
-            // const sections = self.selector('.section');
-            console.log(sections)
 
             sections.forEach((section) => {
                 const tl = gsap.timeline();
@@ -61,7 +59,7 @@ export const OurWay = () => {
                             scrub: true,
                         },
                     })
-                    .to(section, {
+                    .to(section.querySelector('.progress'), {
                         y: `${sectionHeight - contentHeight}`,
                         scrollTrigger: {
                             trigger: section,
@@ -91,7 +89,7 @@ export const OurWay = () => {
 
                                 <div className={cx(s.ourWayPeriod, 'section')}>
                                     <div className={cx(s.ourWayCenter, 'center')}>
-                                        <div className={cx(s.ourWayProgress)}>
+                                        <div className={cx(s.ourWayProgress, 'progress')}>
                                             <div className={cx(s.ourWayProgressBar)}></div>
                                             <div className={cx(s.ourWayCircle, 'circle')}></div>
                                         </div>
