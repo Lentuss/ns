@@ -1,10 +1,13 @@
+@import '/styles/mixins/css-lock';
+
 .Label {
   display: inline-block;
   padding: 6px 12px;
 
   color: var(--black-900);
   font-weight: 400;
-  line-height: 1.2;
+  @include css-lock(13, 16, 320, 1280);
+  @include css-lock(20, 24, 320, 1280, line-height);
 
   background-color: var(--black-150);
   border-radius: 100px;

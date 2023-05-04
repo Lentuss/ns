@@ -21,7 +21,7 @@ export const Pagination = ({ numPages, className, activePage, onClick }) => {
   const isFirstPage = activePage > 1;
   const isLastPage = activePage < numPages;
 
-  const renderPaginationList = () => (
+  const renderPaginationList = (
     <ul className={s.paginationList}>
       {new Array(numPages).fill(0).map((_, idx) => {
         const currentPage = idx + 1;
@@ -54,7 +54,7 @@ export const Pagination = ({ numPages, className, activePage, onClick }) => {
         isActive={isFirstPage}
         onClick={() => onClickHandler(activePage - 1)}
       />
-      {renderPaginationList()}
+      {renderPaginationList}
       <PaginationButton
         className={s.paginationButtonNext}
         isActive={isLastPage}

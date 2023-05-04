@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux';
 import { memo } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
@@ -6,6 +7,7 @@ import cx from 'classnames';
 
 import { ButtonOutline, Chip, Htag, Wrapper } from '../common';
 
+import { toggleScrollToFeedbackForm } from '@/store/slices/general';
 import { specialistsCategoriesList } from '@/utils/templateData';
 import { SPECIALISTS_PAGE_ROUTE } from '@/utils/const';
 
@@ -15,8 +17,11 @@ import s from './SpecialistsHead.module.scss';
 
 export const SpecialistsHead = memo(({ className }) => {
   const { query } = useRouter();
+  const dispatch = useDispatch();
 
-  const renderCategories = () => (
+  const scrollToFeedback = () => dispatch(toggleScrollToFeedbackForm(true));
+
+  const renderCategories = (
     <ul className={s.specialistsHeadList}>
       {specialistsCategoriesList.map(
         ({ id, count, label, href, labelText }) => (
@@ -36,6 +41,7 @@ export const SpecialistsHead = memo(({ className }) => {
         <ButtonOutline
           className={s.specialistsHeadListButton}
           appearance="black"
+          onClick={scrollToFeedback}
         >
           <span>
             <PlusIcon />
@@ -52,7 +58,7 @@ export const SpecialistsHead = memo(({ className }) => {
           Оберіть сферу
         </Htag>
 
-        {renderCategories()}
+        {renderCategories}
       </Wrapper>
     </div>
   );

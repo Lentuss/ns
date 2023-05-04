@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import s from './PatternsAnimationWrap.module.scss';
 
+const TRANSITION_DELAY = 30;
+
 export const PatternsAnimationWrap = ({ children, isShow }) => {
   const arrayChildren = Children.toArray(children);
 
@@ -16,8 +18,8 @@ export const PatternsAnimationWrap = ({ children, isShow }) => {
           }),
           style: {
             transitionDelay: isShow
-              ? `0.${idx + 1}s`
-              : `0.${arrayChildren.length - idx}s`
+              ? `${(idx + 1) * TRANSITION_DELAY}ms`
+              : `${(arrayChildren.length - idx + 1) * TRANSITION_DELAY}ms`
           }
         });
       })}

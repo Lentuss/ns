@@ -21,7 +21,7 @@ export const OftenQuestions = ({ className }) => {
       }
     });
 
-  const renderCollapses = () => (
+  const renderCollapses = (
     <ul>
       {oftenQuestionsData.map(({ id, question, answer }, idx) => (
         <li key={id}>
@@ -45,7 +45,7 @@ export const OftenQuestions = ({ className }) => {
         <Htag className={s.oftenQuestionsTitle} tag="h2">
           Часті запитання
         </Htag>
-        {renderCollapses()}
+        {renderCollapses}
       </Wrapper>
     </section>
   );

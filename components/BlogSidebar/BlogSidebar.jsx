@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import { ButtonPrimary, Text } from '../common';
-import { FooterContacts, FooterCopyright, FooterSocials } from '..';
+import { FooterContacts, FooterCopyright } from '..';
 
 import s from './BlogSidebar.module.scss';
 import { blogCategoriesList } from '@/utils/templateData';
 import { socialsData } from '@/utils/templateData';
 
 export const BlogSidebar = ({ className }) => {
-  const renderCategories = () => (
-    <>
+  return (
+    <aside className={cx(s.sidebar, className)}>
       <Text className={s.sidebarTitle}>Категорії</Text>
       <ul className={s.sidebarCategoriesList}>
         {blogCategoriesList.map((category, idx) => (
@@ -22,37 +22,24 @@ export const BlogSidebar = ({ className }) => {
           </li>
         ))}
       </ul>
-    </>
-  );
 
-  const renderContacts = () => (
-    <>
       <Text className={s.sidebarTitle}>Контакти</Text>
-      <FooterContacts className={s.sidebarContancts} />
-    </>
-  );
+      <FooterContacts className={s.sidebarContancts} isPinkHover />
 
-  const renderSocials = () => (
-    <ul className={s.sidebarSocials}>
-      {socialsData.map(({ label, href }) => (
-        <li key={label}>
-          <ButtonPrimary
-            className={s.sidebarSocialsButton}
-            appearance="grey"
-            href={href}
-          >
-            {label}
-          </ButtonPrimary>
-        </li>
-      ))}
-    </ul>
-  );
+      <ul className={s.sidebarSocials}>
+        {socialsData.map(({ label, href }) => (
+          <li key={label}>
+            <ButtonPrimary
+              className={s.sidebarSocialsButton}
+              appearance="grey"
+              href={href}
+            >
+              {label}
+            </ButtonPrimary>
+          </li>
+        ))}
+      </ul>
 
-  return (
-    <aside className={cx(s.sidebar, className)}>
-      {renderCategories()}
-      {renderContacts()}
-      {renderSocials()}
       <FooterCopyright className={s.sidebarCopyright} />
     </aside>
   );

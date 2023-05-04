@@ -6,6 +6,7 @@ import { Wrapper, Htag, Ptag } from '@/components/common';
 import { TeamCard } from '../TeamCard/TeamCard';
 
 import { team } from '@/utils/templateData';
+import { CAREERS_PAGE_ROUTE } from '@/utils/const';
 
 import Arrow from '../../assets/icons/arrow-up-right.svg';
 import TeamPatternIcon from '../../assets/images/svg/patterns/team-pattern.svg';
@@ -29,7 +30,7 @@ export const Team = () => {
           </li>
           <li className={s.teamCardsColumnRight}>
             <TeamCard data={team[5]} key={team[5].id} />
-            <Link href="/careers">
+            <Link href={CAREERS_PAGE_ROUTE}>
               <div className={s.teamCardsLink}>
                 <div className={cx(s.pattern, s.pattern1)}></div>
                 <div className={cx(s.pattern, s.pattern2)}></div>

@@ -39,7 +39,7 @@ export const SpecialistsFormModal = (props) => {
     dispatch(toogleShowSpecialistModal(true));
   };
 
-  const renderSelectedSpecialist = () => (
+  const renderSelectedSpecialist = (
     <div className={s.modalSelected}>
       <Heading className={s.modalSelectedTitle} size="s">
         Обрано
@@ -52,7 +52,7 @@ export const SpecialistsFormModal = (props) => {
     </div>
   );
 
-  const renderModalForm = () => (
+  const renderModalForm = (
     <form className={s.modalForm}>
       <Heading className={s.modalFormTitle} size="s">
         Ваші дані
@@ -82,8 +82,8 @@ export const SpecialistsFormModal = (props) => {
         Зворотній зв’язок
       </Text>
 
-      {renderSelectedSpecialist()}
-      {renderModalForm()}
+      {renderSelectedSpecialist}
+      {renderModalForm}
     </Modal>
   );
 };

@@ -8,7 +8,9 @@ import { contactsData } from '@/utils/templateData';
 
 import s from './FooterContacts.module.scss';
 
-export const FooterContacts = ({ className }) => {
+export const FooterContacts = ({ className, isPinkHover = false }) => {
+  const linkClasses = cx(s.footerAddressLink, { [s.isPinkHover]: isPinkHover });
+
   return (
     <div className={cx(s.footerAddressWrapper, className)}>
       {contactsData.map(({ country, email, phone }) => (
@@ -17,12 +19,12 @@ export const FooterContacts = ({ className }) => {
             {country}
           </Subtitle>
           <a
-            className={s.footerAddressLink}
+            className={linkClasses}
             href={`tel:${phone.replace(/[),(, ,-]/g, '')}`}
           >
             {phone}
           </a>
-          <a className={s.footerAddressLink} href={`email:${email}`}>
+          <a className={linkClasses} href={`email:${email}`}>
             {email}
           </a>
         </address>
@@ -32,5 +34,6 @@ export const FooterContacts = ({ className }) => {
 };
 
 FooterContacts.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  isPinkHover: PropTypes.bool
 };

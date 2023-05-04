@@ -83,6 +83,8 @@
 .articleContentItem {
   position: relative;
 
+  cursor: pointer;
+
   @include rtl {
     padding-right: 12px;
   }

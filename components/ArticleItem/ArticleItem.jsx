@@ -2,13 +2,14 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useSelector } from 'react-redux';
+import { Link, Element } from 'react-scroll';
 
 import { Heading, Label, Ptag, Rating } from '../common';
 import { ArticleReadInfo } from '..';
 import { Quote } from '../common/Quote/Quote';
 
 import { black700 } from '@/utils/const';
-import { mainTextArticle } from '@/utils/templateData';
+import { contentArticleData, mainTextArticle } from '@/utils/templateData';
 
 import s from './ArticleItem.module.scss';
 
@@ -30,7 +31,7 @@ export const ArticleItem = ({ className }) => {
     rating
   } = articleData || {};
 
-  const renderArticleInfo = () => (
+  const renderArticleInfo = (
     <div className={s.articleInfo}>
       <ArticleReadInfo info={[author, publicDate]} />
 
@@ -38,7 +39,7 @@ export const ArticleItem = ({ className }) => {
     </div>
   );
 
-  const renderArticleHead = () => (
+  const renderArticleHead = (
     <>
       <Heading className={s.articleTitle} size="l">
         {title}
@@ -57,54 +58,36 @@ export const ArticleItem = ({ className }) => {
     </>
   );
 
-  const renderContentArticle = () => (
+  const renderContentArticle = (
     <div className={s.articleContent}>
       <Heading className={s.articleContentHead}>Зміст</Heading>
       <ul>
-        <li className={s.articleContentItem}>
-          <Ptag size="l">
-            The Difference between Outsourcing and Outstaffing
-          </Ptag>
-        </li>
-        <li className={s.articleContentItem}>
-          <Ptag size="l">
-            Outsourcing vs. Outstaffing: Looking for the Best Fit
-          </Ptag>
-        </li>
-        <li className={s.articleContentItem}>
-          <Ptag size="l">How does Outsourcing work?</Ptag>
-        </li>
-        <li className={s.articleContentItem}>
-          <Ptag size="l">How does Outstaffing Work?</Ptag>
-        </li>
-        <li className={s.articleContentItem}>
-          <Ptag size="l">
-            Make Outsourcing and Outstaffing Great (Always): Useful Cues
-          </Ptag>
-        </li>
-        <li className={s.articleContentItem}>
-          <Ptag size="l">Conclusion</Ptag>
-        </li>
+        {contentArticleData.map((item, idx) => (
+          <li className={s.articleContentItem}>
+            <Link to={`test${idx}`} spy smooth offset={-10} duration={500}>
+              <Ptag size="l">{item}</Ptag>
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
 
-  const renderMainTextArticle = () =>
-    mainTextArticle.map(({ title, text }) => (
-      <div className={s.articleParagraph} key={title}>
-        <Heading className={s.articleParagraphTitle}>{title}</Heading>
-        <Ptag size="l">{text}</Ptag>
-      </div>
-    ));
+  const renderMainTextArticle = mainTextArticle.map(({ title, text }, idx) => (
+    <Element className={s.articleParagraph} key={title} name={`test${idx}`}>
+      <Heading className={s.articleParagraphTitle}>{title}</Heading>
+      <Ptag size="l">{text}</Ptag>
+    </Element>
+  ));
 
   return (
     <div className={cx(s.article, className)}>
       <Image className={s.articleImage} src={image} alt={title} />
 
-      {renderArticleInfo()}
-      {renderArticleHead()}
-      {renderContentArticle()}
-      {renderMainTextArticle()}
+      {renderArticleInfo}
+      {renderArticleHead}
+      {renderContentArticle}
+      {renderMainTextArticle}
 
       <Quote
         className={s.articleQuote}

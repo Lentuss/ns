@@ -29,7 +29,13 @@ export const Articles = ({ className }) => {
         }) => (
           <li className={s.articlesItem} key={title}>
             <Link className={s.articlesLink} href={BLOG_PAGE_ROUTE + href}>
-              <Image className={s.articlesItemImage} src={image} alt={title} />
+              <div className={s.articlesItemImageWrap}>
+                <Image
+                  className={s.articlesItemImage}
+                  src={image}
+                  alt={title}
+                />
+              </div>
 
               <ArticleReadInfo
                 className={s.articlesItemPublishInfo}
