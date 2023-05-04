@@ -90,6 +90,7 @@ export const WorkStages = () => {
         return () => ctx.revert();
     }, [])
 
+
     return (
         <div className={cx(s.workStages, 'container')} >
             <Wrapper>
