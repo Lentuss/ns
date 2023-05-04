@@ -742,3 +742,9 @@ export const specialistModalSkills = [
   'Робота з деталям та системами, підбір обладнання',
   'Знання норм та специфікацій країн СНГ та Європи'
 ];
+
+export const contentArticleData = [
+  'The Difference between Outsourcing and Outstaffing',
+  'Outsourcing vs. Outstaffing: Looking for the Best Fit',
+  'How does Outsourcing work?'
+];

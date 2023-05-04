@@ -24,6 +24,7 @@
     "react-dom": "18.2.0",
     "react-intersection-observer": "^9.4.3",
     "react-redux": "^8.0.5",
+    "react-scroll": "^1.8.9",
     "react-select": "^5.7.2",
     "react-transition-group-v2": "^4.3.0",
     "sass": "^1.60.0"
