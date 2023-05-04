@@ -29,7 +29,7 @@ export const Team = () => {
           </li>
           <li className={s.teamCardsColumnRight}>
             <TeamCard data={team[5]} key={team[5].id} />
-            <Link href="#">
+            <Link href="/careers">
               <div className={s.teamCardsLink}>
                 <div className={cx(s.pattern, s.pattern1)}></div>
                 <div className={cx(s.pattern, s.pattern2)}></div>

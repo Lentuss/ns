@@ -64,19 +64,19 @@
   &:hover {
     & .pattern1 {
       opacity: 1;
-      transition: opacity 200ms ease-out;
+      transition: opacity 25ms ease-out;
     }
     & .pattern2 {
       opacity: 1;
-      transition: opacity 200ms ease-out 100ms;
+      transition: opacity 25ms ease-out 25ms;
     }
     & .pattern3 {
       opacity: 1;
-      transition: opacity 200ms ease-out 200ms;
+      transition: opacity 25ms ease-out 50ms;
     }
     & .pattern4 {
       opacity: 1;
-      transition: opacity 200ms ease-out 300ms;
+      transition: opacity 25ms ease-out 75ms;
     }
   }
 }
@@ -105,27 +105,28 @@
 
 .pattern1 {
   background-image: url(../../assets/images/svg/patterns/about-st1.svg);
-  transition: opacity 200ms ease-out 300ms;
+  transition: opacity 25ms ease-out 75ms;
 }
 .pattern2 {
   background-image: url(../../assets/images/svg/patterns/about-st2.svg);
-  transition: opacity 200ms ease-out 200ms;
+  transition: opacity 25ms ease-out 50ms;
 }
 .pattern3 {
   background-image: url(../../assets/images/svg/patterns/about-st3.svg);
-  transition: opacity 200ms ease-out 100ms;
+  transition: opacity 25ms ease-out 25ms;
 }
 .pattern4 {
   background-image: url(../../assets/images/svg/patterns/about-st4.svg);
-  transition: opacity 200ms ease-out;
+  transition: opacity 25ms ease-out;
 }
 
 .teamPattern {
+  display: none;
   @media (min-width: 1024px) {
     position: absolute;
-
     top: 0;
 
+    display: block;
     transform: translateY(-30%);
 
     @include rtl {
