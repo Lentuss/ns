@@ -55,7 +55,6 @@ export const SpecialistsHead = memo(({ className }) => {
         <Htag className={s.specialistsHeadTitle} tag="h2">
           Оберіть сферу
         </Htag>
-
         {renderCategories}
       </Wrapper>
     </div>
