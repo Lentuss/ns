@@ -3,15 +3,18 @@
 .Htag {
   font-family: var(--font-family-title);
   line-height: 120%;
+  -webkit-font-smoothing: antialiased;
 }
 
 .Htag-h1 {
   @include css-lock(34, 76, 320, 1280);
   text-transform: uppercase;
+  font-weight: 900;
 }
 
 .Htag-h2 {
   @include css-lock(28, 56, 320, 1280);
+  font-weight: 900;
 
   &.isAnimation {
     transform: translateY(0) !important;
@@ -28,6 +31,7 @@
 }
 
 .Htag-h3 {
+  font-weight: 900;
   @include css-lock(28, 47, 320, 1280);
 }
 
@@ -35,14 +39,5 @@
   font-family: var(--family-title);
   @include css-lock(17, 27, 320, 1280);
   @include css-lock(24, 35, 320, 1280, line-height);
-}
-
-.Htag-h5 {
-  @include css-lock(23, 36, 320, 1280);
-}
-
-.Htag-h6 {
-  font-family: var(--family-title);
-  @include css-lock(17, 21, 320, 1280);
-  @include css-lock(24, 29, 320, 1280, line-height);
+  font-weight: 500;
 }

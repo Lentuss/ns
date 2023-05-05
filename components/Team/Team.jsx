@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import cx from 'classnames';
 
-import { Wrapper, Htag, Ptag } from '@/components/common';
+import { Wrapper, Htag, Ptag, Text } from '@/components/common';
 import { TeamCard } from '../TeamCard/TeamCard';
 
 import { team } from '@/utils/templateData';
@@ -37,7 +37,7 @@ export const Team = () => {
                 <div className={cx(s.pattern, s.pattern3)}></div>
                 <div className={cx(s.pattern, s.pattern4)}></div>
                 <Arrow className={s.teamCardsArrow} />
-                <Htag tag="h5">Приєднуйтесь до команди!</Htag>
+                <Text size="l">Приєднуйтесь до команди!</Text>
               </div>
             </Link>
           </li>

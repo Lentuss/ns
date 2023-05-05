@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Image from 'next/image';
 
-import { Htag, Label, Modal, Ptag, Subtitle } from '../../common';
+import { Heading, Htag, Label, Modal, Ptag, Subtitle } from '../../common';
 
 import {
   selectSpecialist,
@@ -72,9 +72,9 @@ export const SpecialistsModal = () => {
 
   const renderModalDescription = (
     <div className={s.modalSection}>
-      <Htag className={s.modalSectionTitle} tag="h6">
+      <Heading className={s.modalSectionTitle} size="s">
         Опис
-      </Htag>
+      </Heading>
       <Ptag className={s.modalDescriptionText} size="m">
         Фахівець з вищою технічною освітою, який здійснює інженерну діяльність з
         систем вентиляції, кондиціювання та опалення (за потребою). Від 3-х
@@ -86,9 +86,9 @@ export const SpecialistsModal = () => {
 
   const renderModalSkills = (
     <div className={s.modalSection}>
-      <Htag className={s.modalSectionTitle} tag="h6">
+      <Heading className={s.modalSectionTitle} size="s">
         Вміння
-      </Htag>
+      </Heading>
       <ListWithBullets
         className={s.modalSkillsList}
         listData={specialistModalSkills}
