@@ -43,10 +43,8 @@ export const SpecialistsHead = memo(({ className }) => {
           appearance="black"
           onClick={scrollToFeedback}
         >
-          <span>
             <PlusIcon />
             Інша
-          </span>
         </ButtonOutline>
       </li>
     </ul>
