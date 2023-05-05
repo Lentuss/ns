@@ -20,6 +20,13 @@
     height: 0;
   }
 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  @media (max-width: 1023px) {
+    margin: 0 -16px;
+  }
+
   li {
     flex-shrink: 0;
   }
