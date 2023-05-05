@@ -49,6 +49,7 @@ export const SpecialistsHead = memo(({ className }) => {
       </li>
     </ul>
   );
+
   return (
     <div className={cx(s.specialistsHead, className)}>
       <Wrapper>
