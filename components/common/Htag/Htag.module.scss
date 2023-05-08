@@ -35,6 +35,14 @@
   @include css-lock(28, 47, 320, 1280);
 }
 
+.Htag-h1,
+.Htag-h2,
+.Htag-h3 {
+  @media (max-width: 1023px) {
+    font-weight: 400;
+  }
+}
+
 .Htag-h4 {
   font-family: var(--family-title);
   @include css-lock(17, 27, 320, 1280);
