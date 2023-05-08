@@ -4,3 +4,7 @@ export * from './useDetectDevice';
 export * from './useScrollDirection';
 export * from './useObserver';
 export * from './useMoveInAnimation';
+export * from './useFormattedPageName';
+export * from './useElementsAppearance';
+export * from './useStickyAnimation';
+export * from './useTimelineAnimation';
