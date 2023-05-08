@@ -74,9 +74,23 @@ function Vacancy({ vacancyData }) {
 
 export default widthLayout(Vacancy);
 
-export const getStaticPaths = async () => {
+export const getStaticPaths = async ({ locales }) => {
+  let paths = [];
+  // vacancyCardListData.map(({ id }) => `${CAREERS_PAGE_ROUTE}/${id}`)
+
+  vacancyCardListData.forEach(({ id }) => {
+    for (const locale of locales) {
+      paths.push({
+        params: {
+          alias: '/' + id
+        },
+        locale
+      });
+    }
+  });
+
   return {
-    paths: vacancyCardListData.map(({ id }) => `${CAREERS_PAGE_ROUTE}/${id}`),
+    paths,
     fallback: true
   };
 };

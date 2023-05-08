@@ -13,7 +13,6 @@ import {
 
 import { setArticleData } from '@/store/slices/article';
 import { latestNewsList } from '@/utils/templateData';
-import { BLOG_PAGE_ROUTE } from '@/utils/const';
 
 import s from '@/styles/pages/Article.module.scss';
 
@@ -22,7 +21,7 @@ function Article({ articleData }) {
 
   useEffect(() => {
     dispatch(setArticleData(articleData));
-  }, []);
+  }, [articleData]);
 
   return (
     <>
@@ -47,14 +46,27 @@ function Article({ articleData }) {
 
 export default Article;
 
-export const getStaticPaths = async () => {
+export const getStaticPaths = ({ locales }) => {
+  let paths = [];
+
+  latestNewsList.forEach(({ href }) => {
+    for (const locale of locales) {
+      paths.push({
+        params: {
+          slug: href
+        },
+        locale
+      });
+    }
+  });
+
   return {
-    paths: latestNewsList.map(({ href }) => BLOG_PAGE_ROUTE + href),
+    paths,
     fallback: true
   };
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = ({ params }) => {
   if (!params) {
     return {
       notFound: true
@@ -62,8 +74,9 @@ export const getStaticProps = async ({ params }) => {
   }
 
   const articleData =
-    latestNewsList.find(({ href }) => href.includes(params.alias)) || {};
+    latestNewsList.find(({ href }) => href.includes(params.slug)) || {};
 
+  console.log('params', articleData);
   return {
     props: {
       articleData

@@ -46,11 +46,25 @@ function Specialist({ headData }) {
 
 export default widthLayout(Specialist, pageTypes.specialists);
 
-export const getStaticPaths = async () => {
+export const getStaticPaths = async ({ locales }) => {
+  // specialistPageSections
+  //     .map(({ href }) => href && `${SPECIALISTS_PAGE_ROUTE}${href}`)
+
+  let paths = [];
+
+  specialistPageSections.forEach(({ href }) => {
+    for (const locale of locales) {
+      paths.push({
+        params: {
+          alias: href
+        },
+        locale
+      });
+    }
+  });
+
   return {
-    paths: specialistPageSections
-      .map(({ href }) => href && `${SPECIALISTS_PAGE_ROUTE}${href}`)
-      .filter((href) => href),
+    paths,
     fallback: true
   };
 };

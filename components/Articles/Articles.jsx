@@ -4,12 +4,12 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 import { Heading, Label, Ptag } from '../common';
+import { ArticleReadInfo } from '..';
 
 import { latestNewsList } from '@/utils/templateData';
 import { BLOG_PAGE_ROUTE, black700 } from '@/utils/const';
 
 import s from './Articles.module.scss';
-import { ArticleReadInfo } from '..';
 
 const MAX_DESCRIPTION_SIZE = 250;
 
@@ -28,7 +28,15 @@ export const Articles = ({ className }) => {
           title
         }) => (
           <li className={s.articlesItem} key={title}>
-            <Link className={s.articlesLink} href={BLOG_PAGE_ROUTE + href}>
+            <Link
+              className={s.articlesLink}
+              href={{
+                pathname: `${BLOG_PAGE_ROUTE}/[slug]`,
+                query: { slug: href.split('')[1] }
+              }}
+
+              // href={BLOG_PAGE_ROUTE + href}
+            >
               <div className={s.articlesItemImageWrap}>
                 <Image
                   className={s.articlesItemImage}
@@ -66,4 +74,6 @@ export const Articles = ({ className }) => {
   );
 };
 
-Articles.propTypes = {};
+Articles.propTypes = {
+  className: PropTypes.string
+};

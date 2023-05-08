@@ -63,7 +63,7 @@ export const ArticleItem = ({ className }) => {
       <Heading className={s.articleContentHead}>Зміст</Heading>
       <ul>
         {contentArticleData.map((item, idx) => (
-          <li className={s.articleContentItem}>
+          <li className={s.articleContentItem} key={item}>
             <Link to={`test${idx}`} spy smooth offset={-10} duration={500}>
               <Ptag size="l">{item}</Ptag>
             </Link>

@@ -28,6 +28,7 @@ export const ABOUT_PAGE_ROUTE = '/about';
 export const CONTACTS_PAGE_ROUTE = '/contacts';
 export const CAREERS_PAGE_ROUTE = '/careers';
 export const HOW_IT_WORKS_PAGE_ROUTE = '/how-it-works';
+export const NOT_FOUND_PAGE_ROUTE = '/404';
 
 export const pageTypes = {
   home: 'home',

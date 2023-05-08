@@ -11,7 +11,11 @@ import { setLanguage, toogleMobileMenu } from '@/store/slices/general';
 import { useScrollDirection, useWindowDimensions } from '@/hooks';
 
 import { langSelectOptions, navLinks } from '@/utils/templateData';
-import { BREAKPOINTS, SPECIALISTS_PAGE_ROUTE } from '@/utils/const';
+import {
+  BREAKPOINTS,
+  NOT_FOUND_PAGE_ROUTE,
+  SPECIALISTS_PAGE_ROUTE
+} from '@/utils/const';
 import {
   disableHTMLScrolling,
   enableHTMLScrolling,
@@ -28,7 +32,7 @@ import s from './Header.module.scss';
 
 export const Header = () => {
   const dispatch = useDispatch();
-  const { pathname, push, locale } = useRouter();
+  const { pathname, push, locale, asPath } = useRouter();
   const { width } = useWindowDimensions();
   const direction = useScrollDirection();
   const isOpenMobileMenu = useSelector(
@@ -39,10 +43,15 @@ export const Header = () => {
   const setLanguageHandler = (option) => {
     dispatch(setLanguage(option));
 
-    push(pathname, pathname, { locale: option.value });
-  };
+    if (pathname.includes(NOT_FOUND_PAGE_ROUTE)) {
+      push(NOT_FOUND_PAGE_ROUTE, NOT_FOUND_PAGE_ROUTE, {
+        locale: option.value
+      });
+      return;
+    }
 
-  const router = useRouter();
+    push(asPath, asPath, { locale: option.value });
+  };
 
   const toggleMobileMenuHandler = () => {
     const isWillOpen = !isOpenMobileMenu;
