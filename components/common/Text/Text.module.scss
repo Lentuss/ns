@@ -3,6 +3,10 @@
 .text {
   font-family: var(--font-family-title);
   font-weight: 900;
+
+  @media (max-width: 1023px) {
+    font-weight: 400;
+  }
 }
 
 .text-l {
