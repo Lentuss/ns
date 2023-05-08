@@ -30,8 +30,12 @@ import {
 import { pageTypes } from '@/utils/const';
 
 import s from '@/styles/pages/Home.module.scss';
+import { useRouter } from 'next/router';
 
 function Home() {
+  const router = useRouter();
+
+  console.log('router', router);
   return (
     <>
       <Hero className={cx(s.hero, s.homeSectionM)} />

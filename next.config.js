@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  i18n: {
+    locales: ['en', 'il', 'ua'],
+    defaultLocale: 'ua',
+    localeDetection: false
+  },
   // reactStrictMode: true,
   webpack(config, options) {
     config.module.rules.push({
@@ -23,10 +28,10 @@ const nextConfig = {
         titleProp: true
       },
       test: /\.svg$/
-    })
+    });
 
-    return config
+    return config;
   }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

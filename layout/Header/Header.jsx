@@ -28,7 +28,7 @@ import s from './Header.module.scss';
 
 export const Header = () => {
   const dispatch = useDispatch();
-  const { pathname } = useRouter();
+  const { pathname, push, locale } = useRouter();
   const { width } = useWindowDimensions();
   const direction = useScrollDirection();
   const isOpenMobileMenu = useSelector(
@@ -36,7 +36,13 @@ export const Header = () => {
   );
   const seletedLanguage = useSelector((state) => state.general.seletedLanguage);
 
-  const setLanguageHandler = (option) => dispatch(setLanguage(option));
+  const setLanguageHandler = (option) => {
+    dispatch(setLanguage(option));
+
+    push(pathname, pathname, { locale: option.value });
+  };
+
+  const router = useRouter();
 
   const toggleMobileMenuHandler = () => {
     const isWillOpen = !isOpenMobileMenu;
@@ -53,7 +59,7 @@ export const Header = () => {
   useEffect(() => {
     // TMP
     if (isEmpty(seletedLanguage)) {
-      setLanguageHandler(langSelectOptions[0]);
+      setLanguageHandler(langSelectOptions.find((o) => o.value === locale));
     }
     // TMP
 

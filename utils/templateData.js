@@ -23,9 +23,9 @@ import ILFlagIcon from '@/assets/images/svg/flags/IL.svg';
 import UAFlagIcon from '@/assets/images/svg/flags/UA.svg';
 
 export const langSelectOptions = [
+  { value: 'ua', label: 'UA', icon: <UAFlagIcon /> },
   { value: 'en', label: 'EN', icon: <GBFlagIcon /> },
-  { value: 'il', label: 'IL', icon: <ILFlagIcon /> },
-  { value: 'ua', label: 'UA', icon: <UAFlagIcon /> }
+  { value: 'il', label: 'IL', icon: <ILFlagIcon /> }
 ];
 
 export const benefitsData = [
