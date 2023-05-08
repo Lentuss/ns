@@ -1,93 +1,18 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useSelector } from 'react-redux';
-import { gsap } from 'gsap/dist/gsap';
-import { Power2 } from 'gsap/dist/all';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+
 import cx from 'classnames';
 
 import s from './Cooperation.module.scss';
 
 import { Htag, AccentH, Ptag, Subtitle, Text } from '@/components/common';
 import { factors } from '@/utils/templateData';
+import { useStickyAnimation } from '@/hooks';
 
 export const Cooperation = ({ className }) => {
   const ref = useRef(null);
   const lang = useSelector((state) => state.general.seletedLanguage.value);
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  useEffect(() => {
-    let factors = gsap.utils.toArray('.factor');
-    const ctx = gsap.context((self) => {
-      const mm = gsap.matchMedia();
-      let tl;
-      mm.add(
-        '(min-width: 1024px)',
-        () => {
-          if (lang === 'il') {
-            tl = gsap.timeline({
-              scrollTrigger: {
-                trigger: ref.current,
-                start: 'top top',
-                end: '+=60%',
-                pin: '.cooperation-heading',
-                pinSpacing: false
-                // markers: true
-              }
-            });
-            gsap.fromTo(
-              factors,
-              { xPercent: -200 },
-              {
-                xPercent: 0,
-                duration: 0.8,
-                stagger: 0.2,
-                ease: Power2.easeIn,
-                scrollTrigger: { trigger: ref.current, start: 'top 80%' }
-              }
-            );
-          } else {
-            gsap.set(factors, { xPercent: 200 });
-
-            tl = gsap.timeline({
-              scrollTrigger: {
-                trigger: ref.current,
-                start: 'top top',
-                end: '+=60%',
-                pin: '.cooperation-heading',
-                pinSpacing: false
-                // markers: true
-              }
-            });
-            gsap.fromTo(
-              factors,
-              { xPercent: 200 },
-              {
-                xPercent: 0,
-                duration: 0.8,
-                stagger: 0.2,
-                ease: Power2.easeIn,
-                scrollTrigger: { trigger: ref.current, start: 'top 80%' }
-              }
-            );
-          }
-
-          setTimeout(() => {
-            if (tl.scrollTrigger) {
-              tl.scrollTrigger.update();
-              tl.scrollTrigger.refresh();
-            }
-          }, 100);
-        },
-        ref
-      );
-
-      return () => {
-        gsap.set(factors, { clearProps: 'all' });
-      };
-    });
-    return () => ctx.revert();
-  }, [lang]);
+  useStickyAnimation(ref, lang)
 
   return (
     <div className={cx(s.cooperation, 'cooperation', className)} ref={ref}>

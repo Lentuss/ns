@@ -34,7 +34,6 @@ export const Practicing = ({ className }) => {
             trigger: ref.current,
             start: 'top 11%',
             once: true,
-            // markers: true,
             onEnter: () => {
               if (!entered) {
                 entered = true;

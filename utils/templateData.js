@@ -348,10 +348,10 @@ export const contactsData = [
 ];
 
 export const socialsData = [
-  { label: 'Instagram', href: '#' },
-  { label: 'YouTube', href: '#' },
-  { label: 'Telegram', href: '#' },
-  { label: 'Twitter', href: '#' }
+  { label: 'Instagram', href: 'https://instagram.com/_newstaff_?igshid=YmMyMTA2M2Y=' },
+  { label: 'Facebook', href: 'https://www.facebook.com/people/NewStaff/100064463562394/' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/93368134' }
+
 ];
 
 export const footerCopyrightLinks = [

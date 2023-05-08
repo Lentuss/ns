@@ -15,22 +15,13 @@ import { HeroTitle } from './HeroTitle/HeroTitle';
 
 import { heroes } from '@/utils/templateData';
 import { SPECIALISTS_PAGE_ROUTE } from '@/utils/const';
-import { useMoveInAnimation } from '@/hooks';
+import { useMoveInAnimation, useFormattedPageName } from '@/hooks';
 
 export const Hero = ({ className }) => {
-  const { pathname } = useRouter();
+
   const heroTextRef = useRef(null);
-
   const startAnimation = useMoveInAnimation(heroTextRef);
-
-  let page = pathname !== '/' ? pathname.slice(1) : 'home';
-  if (page.includes('-')) {
-    const words = page.split('-');
-    const wordFormated = words
-      .slice(1)
-      .map((word) => word.replace(word[0], word[0].toUpperCase()));
-    page = [words[0], ...wordFormated].join('');
-  }
+  const page = useFormattedPageName();
 
   return (
     <div className={s.hero}>
