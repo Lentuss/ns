@@ -53,10 +53,12 @@ export const getStaticPaths = async ({ locales }) => {
   let paths = [];
 
   specialistPageSections.forEach(({ href }) => {
+    if (!href) return;
+
     for (const locale of locales) {
       paths.push({
         params: {
-          alias: href
+          slug: href
         },
         locale
       });
@@ -77,8 +79,7 @@ export const getStaticProps = async ({ params }) => {
   }
 
   const headData =
-    specialistPageSections.find(({ href }) => href.includes(params.alias)) ||
-    {};
+    specialistPageSections.find(({ href }) => href.includes(params.slug)) || {};
 
   return {
     props: {
