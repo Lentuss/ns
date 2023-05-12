@@ -347,7 +347,6 @@ export const contactsData = [
   }
 ];
 
-
 export const socialsData = [
   {
     label: 'Instagram',
